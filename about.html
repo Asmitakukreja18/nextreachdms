@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About Us | NextReach DMS</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500&family=Geist:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "surface-container": "#edeeef",
+            "on-secondary-fixed-variant": "#3f465c",
+            "background": "#f8f9fa",
+            "primary-container": "#00d2ff",
+            "surface-variant": "#e1e3e4",
+            "primary": "#00677f",
+            "tertiary": "#505f76",
+            "tertiary-container": "#b2c2dc",
+            "outline": "#6c797f",
+            "on-primary-fixed": "#001f28",
+            "tertiary-fixed": "#d3e4fe",
+            "on-surface-variant": "#3c494e",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-container-high": "#e7e8e9",
+            "inverse-primary": "#47d6ff",
+            "on-error-container": "#93000a",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-background": "#191c1d",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2e3132",
+            "on-primary-container": "#00566a",
+            "secondary-container": "#dae2fd",
+            "surface-container-highest": "#e1e3e4",
+            "on-tertiary-container": "#405065",
+            "on-tertiary-fixed-variant": "#38485d",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "surface-bright": "#f8f9fa",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#47d6ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#191c1d",
+            "error": "#ba1a1a",
+            "surface-tint": "#00677f",
+            "outline-variant": "#bbc9cf",
+            "on-secondary-container": "#5c647a",
+            "on-error": "#ffffff",
+            "secondary": "#565e74",
+            "surface-container-low": "#f3f4f5",
+            "primary-fixed": "#b6ebff",
+            "inverse-on-surface": "#f0f1f2",
+            "on-primary-fixed-variant": "#004e60",
+            "on-tertiary-fixed": "#0b1c30"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-gap": "24px",
+            "page-margin": "64px",
+            "grid-gutter": "32px",
+            "container-max": "1440px",
+            "section-gap": "120px"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-caps": ["Geist"],
+            "display-lg": ["Montserrat"],
+            "mono-data": ["Geist"],
+            "headline-lg-mobile": ["Montserrat"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Montserrat"],
+            "headline-md": ["Montserrat"]
+          },
+          "fontSize": {
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+            "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "mono-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+            "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #191c1d;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 103, 127, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #00677f, #565e74);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-gradient {
+      background: linear-gradient(to right, #00677f, #00d2ff);
+      transition: all 0.3s ease;
+    }
+    .btn-gradient:hover {
+      box-shadow: 0 0 20px rgba(0, 103, 127, 0.3);
+      opacity: 0.9;
+    }
+    .atmospheric-glow {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 103, 127, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md bg-background text-on-background">
+  <div class="atmospheric-glow"></div>
+
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full flex justify-between items-center px-page-margin h-20 bg-background/80 backdrop-blur-xl border-b border-outline-variant z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg btn-gradient flex items-center justify-center text-white font-bold text-xl shadow-md">
+        N
+      </div>
+      <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">NextReach <span class="text-on-background">DMS</span></a>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Portfolio</a>
+      <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="about.html">About</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <a href="audit.html" class="btn-gradient px-6 py-2 rounded-full font-label-caps text-label-caps text-on-primary scale-95 active:scale-90 transition-transform inline-block">
+      Get Free Audit
+    </a>
+  </header>
+
+  <main class="mt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[550px] flex flex-col justify-center px-page-margin py-section-gap">
+      <div class="max-w-4xl">
+        <span class="font-label-caps text-label-caps text-primary mb-4 block uppercase tracking-widest">OUR NARRATIVE</span>
+        <h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg mb-8 text-gradient">
+          We started with one goal—help businesses scale without wasting capital.
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Traditional agencies thrive on billable hours. We thrive on results. NextReach DMS was forged to eliminate noise and deliver high-performance multi-channel growth systems for ambitious brands.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Bento Grid -->
+    <section class="px-page-margin py-section-gap">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter">
+        <!-- Our Mission -->
+        <div class="md:col-span-7 glass-card p-12 rounded-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-8">
+              <span class="material-symbols-outlined text-primary text-4xl">target</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface">Our Mission</h2>
+            </div>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+              To redefine the standard of marketing excellence by providing a command center for growth. We strip away vanity metrics to focus on the only number that matters: your net revenue and customer acquisition efficiency.
+            </p>
+          </div>
+          <div class="flex gap-12 mt-8">
+            <div>
+              <div class="font-headline-lg text-headline-lg text-primary">94%</div>
+              <div class="font-label-caps text-label-caps text-outline">Efficiency Gain</div>
+            </div>
+            <div>
+              <div class="font-headline-lg text-headline-lg text-primary">3.8x</div>
+              <div class="font-label-caps text-label-caps text-outline">Avg ROI Increase</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Vision -->
+        <div class="md:col-span-5 glass-card p-12 rounded-xl bg-surface-container-low border-primary/20">
+          <div class="flex items-center gap-4 mb-8">
+            <span class="material-symbols-outlined text-secondary text-4xl">visibility</span>
+            <h2 class="font-headline-md text-headline-md text-on-surface">Our Vision</h2>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            To become the global infrastructure for elite business expansion. We envision a world where marketing is not a gamble, but a calculated engineering process of sustainable, explosive growth.
+          </p>
+          <div class="mt-8 p-6 bg-surface-container-high/50 rounded-lg flex flex-col justify-center">
+            <div class="text-sm font-bold text-primary mb-1">Global Presence:</div>
+            <div class="text-xs text-on-surface-variant">📍 Delhi NCR Tech Hub | 📍 Dubai Enterprise Center</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why We Are Different -->
+    <section class="px-page-margin py-section-gap bg-surface-container-lowest">
+      <div class="max-w-3xl mb-16">
+        <span class="font-label-caps text-label-caps text-primary mb-4 block">THE EDGE</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Why We Are Different</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+        <div class="p-8 border-l border-outline-variant hover:border-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary mb-6 block text-3xl">precision_manufacturing</span>
+          <h3 class="font-headline-md text-headline-md mb-4 text-xl text-on-surface">Precision Engineering</h3>
+          <p class="text-on-surface-variant">We don't just "run ads." We build data pipelines and server-side tracking that ensure your budget is deployed with surgical accuracy.</p>
+        </div>
+        <div class="p-8 border-l border-outline-variant hover:border-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary mb-6 block text-3xl">speed</span>
+          <h3 class="font-headline-md text-headline-md mb-4 text-xl text-on-surface">Velocity First</h3>
+          <p class="text-on-surface-variant">Time is the ultimate currency. Our framework is designed for rapid 48-hour campaign deployment and rapid creative iteration cycles.</p>
+        </div>
+        <div class="p-8 border-l border-outline-variant hover:border-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary mb-6 block text-3xl">shield</span>
+          <h3 class="font-headline-md text-headline-md mb-4 text-xl text-on-surface">Anti-Waste Protocol</h3>
+          <p class="text-on-surface-variant">Our proprietary filtering system identifies and stops low-performing channels before they can drain your resources.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values/Manifesto -->
+    <section class="px-page-margin py-section-gap overflow-hidden">
+      <div class="glass-card rounded-xl p-page-margin flex flex-col md:flex-row items-center gap-grid-gutter relative">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
+        <div class="flex-1 z-10">
+          <h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface">The Elite Standard</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant italic border-l-4 border-primary pl-6">
+            "In an era of automated mediocrity, we choose obsession. Every pixel, every byte of data, every conversion event is optimized for the pursuit of perfection."
+          </p>
+        </div>
+        <div class="w-full md:w-1/3 z-10">
+          <a href="contact.html" class="w-full py-6 btn-gradient rounded-xl font-label-caps text-label-caps text-on-primary inline-block text-center uppercase tracking-wider font-bold">
+            Partner with Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-page-margin py-section-gap grid grid-cols-1 md:grid-cols-4 gap-grid-gutter bg-surface-container-lowest border-t border-outline-variant">
+    <div class="md:col-span-1">
+      <div class="font-headline-md text-headline-md font-bold text-primary mb-4">NextReach DMS</div>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        High-performance marketing for elite brands.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-label-caps text-label-caps text-primary mb-6">SERVICES</h4>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Performance Ads</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="../index.html">WhatsApp Platform</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Growth Consulting</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-label-caps text-label-caps text-primary mb-6">COMPANY</h4>
+      <ul class="space-y-4">
+        <li><a class="text-primary font-bold" href="about.html">About</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Portfolio</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-label-caps text-label-caps text-primary mb-6">RESOURCES</h4>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Case Studies</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="audit.html">Free Audit</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-4 pt-12 border-t border-outline-variant mt-12">
+      <p class="font-label-caps text-label-caps text-on-surface-variant opacity-60">
+        © 2026 NextReach DMS. All rights reserved. High-performance marketing for elite brands.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

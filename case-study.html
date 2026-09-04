@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Case Study: 3X Leads in 30 Days | NextReach DMS</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "surface-container": "#edeeef",
+            "on-secondary-fixed-variant": "#3f465c",
+            "background": "#f8f9fa",
+            "primary-container": "#00d2ff",
+            "surface-variant": "#e1e3e4",
+            "primary": "#00677f",
+            "tertiary": "#505f76",
+            "tertiary-container": "#b2c2dc",
+            "outline": "#6c797f",
+            "on-primary-fixed": "#001f28",
+            "tertiary-fixed": "#d3e4fe",
+            "on-surface-variant": "#3c494e",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-container-high": "#e7e8e9",
+            "inverse-primary": "#47d6ff",
+            "on-error-container": "#93000a",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-background": "#191c1d",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2e3132",
+            "on-primary-container": "#00566a",
+            "secondary-container": "#dae2fd",
+            "surface-container-highest": "#e1e3e4",
+            "on-tertiary-container": "#405065",
+            "on-tertiary-fixed-variant": "#38485d",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "surface-bright": "#f8f9fa",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#47d6ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#191c1d",
+            "error": "#ba1a1a",
+            "surface-tint": "#00677f",
+            "outline-variant": "#bbc9cf",
+            "on-secondary-container": "#5c647a",
+            "on-error": "#ffffff",
+            "secondary": "#565e74",
+            "surface-container-low": "#f3f4f5",
+            "primary-fixed": "#b6ebff",
+            "inverse-on-surface": "#f0f1f2",
+            "on-primary-fixed-variant": "#004e60",
+            "on-tertiary-fixed": "#0b1c30"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "margin-desktop": "40px",
+            "gutter": "24px",
+            "container-max-width": "1280px",
+            "base": "4px",
+            "stack-gap": "24px",
+            "page-margin": "40px",
+            "grid-gutter": "24px",
+            "container-max": "1280px",
+            "section-gap": "80px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Montserrat"],
+            "body-md": ["Montserrat"],
+            "headline-md": ["Montserrat"],
+            "display-lg": ["Montserrat"],
+            "body-lg": ["Montserrat"],
+            "label-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #191c1d;
+      -webkit-font-smoothing: antialiased;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 103, 127, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #00677f 0%, #00d2ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-button {
+      background: linear-gradient(135deg, #00677f 0%, #00d2ff 100%);
+      transition: all 0.3s ease;
+    }
+    .gradient-button:hover {
+      box-shadow: 0 4px 20px rgba(0, 103, 127, 0.2);
+      transform: translateY(-2px);
+    }
+    .sparkline {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 3s linear forwards;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: 0; }
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+  
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full flex justify-between items-center px-page-margin h-20 bg-surface/80 backdrop-blur-xl border-b border-outline-variant z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg gradient-button flex items-center justify-center text-white font-bold text-xl shadow-md">
+        N
+      </div>
+      <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">NextReach <span class="text-on-background">DMS</span></a>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="index.html">Home</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="process.html">Process</a>
+      <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 uppercase" href="case-study.html">Portfolio</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="about.html">About</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase" href="contact.html">Contact</a>
+    </div>
+    <a href="audit.html" class="gradient-button text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps font-bold uppercase inline-block">
+      Get Free Audit
+    </a>
+  </nav>
+
+  <main class="relative">
+    <div class="absolute top-0 left-0 w-full h-[1228px] overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-fixed/20 to-background"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-48 pb-section-gap px-page-margin">
+      <div class="max-w-container-max mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-grid-gutter">
+          <div class="md:w-2/3">
+            <span class="font-label-caps text-label-caps text-primary mb-6 block uppercase tracking-widest">Case Study: E-Commerce Velocity</span>
+            <h1 class="font-display-lg text-display-lg mb-8 leading-tight text-on-surface">
+              How We Helped a Brand Generate <span class="gradient-text">3X Leads</span> in 30 Days
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+              A deep dive into the aggressive scaling strategy and automated funnel architecture that transformed a stagnating brand into a high-performance lead generation engine.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="bg-surface-container-low px-6 py-4 rounded-xl flex items-center gap-3 border border-outline-variant/30">
+                <span class="material-symbols-outlined text-primary">speed</span>
+                <div>
+                  <p class="text-[10px] font-label-caps opacity-50 uppercase">Duration</p>
+                  <p class="font-semibold text-on-surface">30 Days</p>
+                </div>
+              </div>
+              <div class="bg-surface-container-low px-6 py-4 rounded-xl flex items-center gap-3 border border-outline-variant/30">
+                <span class="material-symbols-outlined text-primary">target</span>
+                <div>
+                  <p class="text-[10px] font-label-caps opacity-50 uppercase">Sector</p>
+                  <p class="font-semibold text-on-surface">Elite Fitness &amp; D2C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/3 w-full">
+            <div class="bg-surface-container-high p-8 aspect-square rounded-2xl overflow-hidden shadow-lg flex flex-col justify-center items-center text-center bg-gradient-to-br from-primary/10 to-primary-container/20 border border-outline-variant">
+              <span class="material-symbols-outlined text-6xl text-primary mb-4">insights</span>
+              <div class="text-3xl font-bold text-primary mb-1">+340%</div>
+              <p class="text-xs font-mono uppercase tracking-widest text-outline">Verified Revenue Lift</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-section-gap px-page-margin relative">
+      <div class="max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter">
+          <div class="md:col-span-4">
+            <h2 class="font-headline-lg text-headline-md mb-6 text-on-surface">The Stagnation <br><span class="text-primary">Barrier</span></h2>
+            <p class="text-on-surface-variant">Before our intervention, the brand faced critical infrastructure failures that capped their growth potential at nearly 0% MoM.</p>
+          </div>
+          <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-grid-gutter">
+            <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/50 hover:border-primary/40 transition-colors shadow-sm">
+              <div class="w-12 h-12 bg-error-container rounded-lg flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-error">trending_down</span>
+              </div>
+              <h3 class="font-headline-md text-[24px] mb-4 text-on-surface">Low reach</h3>
+              <p class="text-on-surface-variant text-body-md">Organic content was hitting a ceiling of 2k views, failing to penetrate high-intent audience segments.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/50 hover:border-primary/40 transition-colors shadow-sm">
+              <div class="w-12 h-12 bg-error-container rounded-lg flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-error">no_accounts</span>
+              </div>
+              <h3 class="font-headline-md text-[24px] mb-4 text-on-surface">No conversions</h3>
+              <p class="text-on-surface-variant text-body-md">High traffic but 0.2% conversion rates on landing pages due to massive friction in the lead capture flow.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-8 rounded-2xl md:col-span-2 border-l-4 border-l-error border-t border-b border-r border-outline-variant/50 hover:border-primary/40 transition-colors shadow-sm">
+              <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-error-container rounded-lg flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-error">branding_watermark</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-md text-[24px] mb-2 text-on-surface">Poor branding</h3>
+                  <p class="text-on-surface-variant text-body-md">Inconsistent visual identity across platforms eroded trust with high-net-worth prospects, leading to high bounce rates.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section class="py-section-gap px-page-margin bg-surface-container-low/50">
+      <div class="max-w-container-max mx-auto">
+        <div class="text-center mb-20">
+          <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase font-bold">Phase 01: Engineering</span>
+          <h2 class="font-display-lg text-headline-md mt-4 text-on-surface">The Growth Blueprint</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant -z-10"></div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 rounded-full bg-surface-container-lowest border border-outline-variant shadow-md flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-3xl">auto_fix_high</span>
+            </div>
+            <h4 class="font-headline-md text-[18px] mb-4 uppercase tracking-wider text-on-surface">Content revamp</h4>
+            <p class="text-on-surface-variant max-w-xs">Shifted from product-centric to authority-led content, utilizing high-production cinematic assets.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 rounded-full bg-surface-container-lowest border border-outline-variant shadow-md flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-3xl">ads_click</span>
+            </div>
+            <h4 class="font-headline-md text-[18px] mb-4 uppercase tracking-wider text-on-surface">Paid ads</h4>
+            <p class="text-on-surface-variant max-w-xs">Precision targeting using lookalike audiences and behavioral data layering to reach decision-makers.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-20 h-20 rounded-full bg-surface-container-lowest border border-outline-variant shadow-md flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-3xl">filter_alt</span>
+            </div>
+            <h4 class="font-headline-md text-[18px] mb-4 uppercase tracking-wider text-on-surface">Funnel optimization</h4>
+            <p class="text-on-surface-variant max-w-xs">Restructured the 7-step purchase journey into a frictionless 2-click conversion mechanism.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Execution Section -->
+    <section class="py-section-gap px-page-margin">
+      <div class="max-w-container-max mx-auto">
+        <div class="flex flex-col md:flex-row gap-section-gap items-center">
+          <div class="md:w-1/2">
+            <div class="space-y-12">
+              <div class="relative pl-12 border-l-2 border-primary/20">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_rgba(0,103,127,0.3)]"></div>
+                <h4 class="font-headline-md text-[24px] mb-4 text-on-surface">Reels strategy</h4>
+                <p class="text-on-surface-variant">We deployed a high-frequency 'Value-Loop' strategy, producing 12 cinematic reels weekly. Each asset was engineered with retention-optimized hooks, resulting in a viral reach of 1.2M+ unique users within the first 14 days.</p>
+              </div>
+              <div class="relative pl-12 border-l-2 border-primary/20">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_rgba(0,103,127,0.3)]"></div>
+                <h4 class="font-headline-md text-[24px] mb-4 text-on-surface">Landing page build</h4>
+                <p class="text-on-surface-variant">A custom-coded, destination page designed for ultra-low latency. We utilized A/B testing on multi-variate CTA placements to determine the psychological sweet spot for conversion.</p>
+              </div>
+              <div class="relative pl-12 border-l-2 border-primary/20">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_rgba(0,103,127,0.3)]"></div>
+                <h4 class="font-headline-md text-[24px] mb-4 text-on-surface">WhatsApp automation</h4>
+                <p class="text-on-surface-variant">Implemented an automated NextReach sequence that nurtured cold leads within 5 seconds of opt-in, increasing the lead-to-booking ratio by 45%.</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <div class="bg-surface-container-lowest p-6 rounded-3xl relative border border-outline-variant shadow-xl overflow-hidden">
+              <div class="flex justify-between items-center mb-8">
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-error/20"></div>
+                  <div class="w-3 h-3 rounded-full bg-primary/20"></div>
+                  <div class="w-3 h-3 rounded-full bg-secondary/20"></div>
+                </div>
+                <span class="font-bold text-[10px] text-outline uppercase">EXECUTION_RUNTIME_LIVE</span>
+              </div>
+              <div class="p-6 bg-surface-container rounded-xl mb-6 flex flex-col justify-center items-center text-center">
+                <div class="text-4xl font-bold text-primary mb-2">5.4x ROAS</div>
+                <p class="text-xs text-on-surface-variant uppercase font-mono">Meta Advantage+ Automated Pipeline</p>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+                  <p class="text-[10px] font-label-caps text-outline uppercase mb-1">CTR</p>
+                  <p class="font-bold text-headline-md text-primary">4.82%</p>
+                </div>
+                <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+                  <p class="text-[10px] font-label-caps text-outline uppercase mb-1">Load Time</p>
+                  <p class="font-bold text-headline-md text-secondary">0.8s</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-section-gap px-page-margin relative overflow-hidden bg-surface-container-lowest">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-[120px] -z-10"></div>
+      <div class="max-w-container-max mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-display-lg text-headline-md text-on-surface">Proof of <span class="gradient-text">Performance</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter mb-20">
+          <div class="bg-surface-container-low p-10 rounded-2xl text-center border border-outline-variant border-b-4 border-b-primary shadow-sm">
+            <p class="font-label-caps text-label-caps text-outline mb-4 uppercase">LEADS / MONTH</p>
+            <h3 class="font-display-lg text-[64px] mb-2 leading-none text-on-surface">200+</h3>
+            <p class="text-primary font-bold">From 12/month</p>
+          </div>
+          <div class="bg-surface-container-low p-10 rounded-2xl text-center border border-outline-variant border-b-4 border-b-secondary shadow-sm">
+            <p class="font-label-caps text-label-caps text-outline mb-4 uppercase">ENGAGEMENT</p>
+            <h3 class="font-display-lg text-[64px] mb-2 leading-none text-on-surface">+300%</h3>
+            <p class="text-secondary font-bold">Consistent MoM</p>
+          </div>
+          <div class="bg-surface-container-low p-10 rounded-2xl text-center border border-outline-variant border-b-4 border-b-primary-container shadow-sm">
+            <p class="font-label-caps text-label-caps text-outline mb-4 uppercase">FOLLOWERS</p>
+            <h3 class="font-display-lg text-[64px] mb-2 leading-none text-on-surface">20K</h3>
+            <p class="text-on-primary-container font-bold">5K Benchmark</p>
+          </div>
+          <div class="bg-surface-container-low p-10 rounded-2xl text-center border border-outline-variant border-b-4 border-b-outline-variant shadow-sm">
+            <p class="font-label-caps text-label-caps text-outline mb-4 uppercase">AD RECALL</p>
+            <h3 class="font-display-lg text-[64px] mb-2 leading-none text-on-surface">82%</h3>
+            <p class="text-on-surface-variant font-bold">Brand Awareness</p>
+          </div>
+        </div>
+
+        <!-- Data Viz SVG Chart -->
+        <div class="bg-surface-container-low p-12 rounded-3xl border border-outline-variant shadow-lg">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+            <div>
+              <h4 class="font-headline-md text-[24px] text-on-surface">Growth Velocity Index</h4>
+              <p class="text-on-surface-variant">Comparative analysis of lead acquisition before vs after NextReach DMS intervention</p>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-surface-container border border-outline"></div>
+                <span class="text-xs font-label-caps opacity-60 uppercase">Before Intervention</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(0,103,127,0.3)]"></div>
+                <span class="text-xs font-label-caps opacity-60 uppercase">NextReach Strategy</span>
+              </div>
+            </div>
+          </div>
+          <div class="h-64 w-full relative">
+            <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1000 100">
+              <line stroke="rgba(0,0,0,0.05)" x1="0" x2="1000" y1="20" y2="20"></line>
+              <line stroke="rgba(0,0,0,0.05)" x1="0" x2="1000" y1="50" y2="50"></line>
+              <line stroke="rgba(0,0,0,0.05)" x1="0" x2="1000" y1="80" y2="80"></line>
+              <path d="M0 90 Q 250 85, 500 88 T 1000 85" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="2"></path>
+              <path class="sparkline" d="M0 90 Q 250 85, 400 70 T 600 40 T 800 20 T 1000 5" fill="none" stroke="#00677f" stroke-width="4"></path>
+              <circle cx="1000" cy="5" fill="#00677f" r="6">
+                <animate attributeName="r" dur="2s" repeatCount="indefinite" values="6;10;6"></animate>
+                <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="1;0.4;1"></animate>
+              </circle>
+            </svg>
+            <div class="absolute -right-4 -top-8 bg-primary text-on-primary px-3 py-1 rounded text-xs font-bold shadow-xl">
+              +300% MAX_OUTPUT
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-section-gap px-page-margin">
+      <div class="max-w-container-max mx-auto">
+        <div class="bg-surface-container-highest rounded-[40px] p-16 md:p-24 text-center relative overflow-hidden border border-outline-variant shadow-inner">
+          <h2 class="font-display-lg text-headline-md mb-8 text-on-surface">Ready to Scale Your Authority?</h2>
+          <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+            Our frameworks are industry-agnostic but results-specific. We don't just "market" brands; we engineer dominance.
+          </p>
+          <div class="flex flex-col md:flex-row gap-6 justify-center">
+            <a href="audit.html" class="gradient-button text-on-primary px-10 py-5 rounded-full font-label-caps text-label-caps font-bold uppercase inline-block">
+              Apply for Partnership
+            </a>
+            <a href="contact.html" class="bg-surface-container-lowest border border-outline-variant hover:border-primary/40 text-on-surface px-10 py-5 rounded-full font-label-caps text-label-caps font-bold transition-all uppercase shadow-sm inline-block">
+              Schedule Call
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-page-margin py-section-gap grid grid-cols-1 md:grid-cols-4 gap-grid-gutter border-t border-outline-variant bg-surface-container-low">
+    <div class="md:col-span-1">
+      <div class="font-headline-md text-headline-md font-bold text-primary mb-6">NextReach DMS</div>
+      <p class="text-on-surface-variant text-body-md leading-relaxed">
+        © 2026 NextReach DMS. All rights reserved. High-performance marketing for elite brands.
+      </p>
+    </div>
+    <div>
+      <h5 class="font-label-caps text-label-caps text-primary mb-6 uppercase font-bold">SERVICES</h5>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Paid Acquisition</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Brand Strategy</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Creative Production</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="../index.html">WhatsApp Engine</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-label-caps text-label-caps text-primary mb-6 uppercase font-bold">RESOURCES</h5>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Case Studies</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="audit.html">Free Audit</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-label-caps text-label-caps text-primary mb-6 uppercase font-bold">COMPANY</h5>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            const match = target.innerText.match(/\d+/);
+            if (!match) return;
+            const countTo = parseInt(match[0]);
+            let currentCount = 0;
+            const duration = 2000;
+            const increment = countTo / (duration / 16);
+            const originalText = target.innerText;
+            const suffix = originalText.replace(/\d+/, '');
+            const updateCount = () => {
+              currentCount += increment;
+              if (currentCount < countTo) {
+                target.innerText = Math.floor(currentCount) + suffix;
+                requestAnimationFrame(updateCount);
+              } else {
+                target.innerText = countTo + suffix;
+              }
+            };
+            updateCount();
+            observer.unobserve(target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.font-display-lg').forEach(el => {
+        if (el.innerText.match(/\d+/)) observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

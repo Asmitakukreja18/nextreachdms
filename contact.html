@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact | NextReach DMS</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@400;500;600&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "surface-container": "#edeeef",
+            "on-secondary-fixed-variant": "#3f465c",
+            "background": "#f8f9fa",
+            "primary-container": "#00d2ff",
+            "surface-variant": "#e1e3e4",
+            "primary": "#00677f",
+            "tertiary": "#505f76",
+            "tertiary-container": "#b2c2dc",
+            "outline": "#6c797f",
+            "on-primary-fixed": "#001f28",
+            "tertiary-fixed": "#d3e4fe",
+            "on-surface-variant": "#3c494e",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-container-high": "#e7e8e9",
+            "inverse-primary": "#47d6ff",
+            "on-error-container": "#93000a",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-background": "#191c1d",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2e3132",
+            "on-primary-container": "#00566a",
+            "secondary-container": "#dae2fd",
+            "surface-container-highest": "#e1e3e4",
+            "on-tertiary-container": "#405065",
+            "on-tertiary-fixed-variant": "#38485d",
+            "tertiary-fixed-dim": "#b7c8e1",
+            "surface-bright": "#f8f9fa",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#47d6ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#191c1d",
+            "error": "#ba1a1a",
+            "surface-tint": "#00677f",
+            "outline-variant": "#bbc9cf",
+            "on-secondary-container": "#5c647a",
+            "on-error": "#ffffff",
+            "secondary": "#565e74",
+            "surface-container-low": "#f3f4f5",
+            "primary-fixed": "#b6ebff",
+            "inverse-on-surface": "#f0f1f2",
+            "on-primary-fixed-variant": "#004e60",
+            "on-tertiary-fixed": "#0b1c30"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-gap": "24px",
+            "page-margin": "64px",
+            "grid-gutter": "32px",
+            "container-max": "1440px",
+            "section-gap": "120px"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-caps": ["Geist"],
+            "display-lg": ["Montserrat"],
+            "mono-data": ["Geist"],
+            "headline-lg-mobile": ["Montserrat"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Montserrat"],
+            "headline-md": ["Montserrat"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #191c1d;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #00677f 0%, #00d2ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #00677f 0%, #00d2ff 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-gradient:hover {
+      box-shadow: 0 4px 20px rgba(0, 103, 127, 0.25);
+      transform: translateY(-2px);
+    }
+    .input-minimal {
+      background: #ffffff;
+      border: 1px solid rgba(108, 121, 127, 0.2);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .input-minimal:focus {
+      outline: none;
+      border-color: #00677f;
+      box-shadow: 0 0 0 3px rgba(0, 103, 127, 0.1);
+    }
+  </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+  
+  <!-- Navigation -->
+  <header class="fixed top-0 w-full flex justify-between items-center px-page-margin h-20 bg-white/80 backdrop-blur-xl border-b border-black/5 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-lg btn-gradient flex items-center justify-center text-white font-bold text-xl shadow-md">
+        N
+      </div>
+      <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">
+        NextReach <span class="text-on-background">DMS</span>
+      </a>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Portfolio</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+      <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="contact.html">Contact</a>
+    </nav>
+    <a href="audit.html" class="btn-gradient px-6 py-2.5 rounded-lg font-label-caps text-label-caps text-white font-bold uppercase tracking-wider inline-block">
+      Get Free Audit
+    </a>
+  </header>
+
+  <main class="pt-32 pb-24 px-page-margin max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-start">
+      
+      <!-- Left Column -->
+      <div class="lg:col-span-6 space-y-8">
+        <div>
+          <span class="font-label-caps text-primary tracking-widest uppercase font-bold text-sm block mb-3">GET IN TOUCH</span>
+          <h1 class="text-4xl md:text-5xl font-bold font-display-lg gradient-text leading-tight mb-4">
+            Let's Engineer Your Next Revenue Breakthrough.
+          </h1>
+          <p class="text-on-surface-variant text-lg leading-relaxed">
+            Have questions about scaling your campaigns or integrating our WhatsApp Marketing platform? Reach out directly to our leadership team.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="glass-card p-6 rounded-xl flex items-center gap-5">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-2xl">call</span>
+            </div>
+            <div>
+              <div class="text-xs uppercase font-bold text-outline">Direct Enterprise Line</div>
+              <div class="text-lg font-bold text-on-surface">+91 98201 44521</div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl flex items-center gap-5">
+            <div class="w-12 h-12 rounded-lg bg-[#25d366]/10 flex items-center justify-center text-[#25d366] shrink-0">
+              <span class="material-symbols-outlined text-2xl">chat</span>
+            </div>
+            <div>
+              <div class="text-xs uppercase font-bold text-outline">Instant WhatsApp Support</div>
+              <a href="https://wa.me/919820144521" target="_blank" class="text-lg font-bold text-[#25d366] hover:underline">
+                Chat on WhatsApp (+91 98201 44521) ⚡
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-xl flex items-center gap-5">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-2xl">location_on</span>
+            </div>
+            <div>
+              <div class="text-xs uppercase font-bold text-outline">Global Hubs</div>
+              <div class="text-sm font-semibold text-on-surface">🇮🇳 Tech Park, Sector 62, Noida, Delhi NCR</div>
+              <div class="text-sm font-semibold text-on-surface">🇦🇪 Business Bay, Prime Tower, Dubai, UAE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="lg:col-span-6">
+        <div class="glass-card p-8 md:p-10 rounded-2xl">
+          <h3 class="text-2xl font-bold mb-2">Send Us a Direct Message</h3>
+          <p class="text-sm text-on-surface-variant mb-6">We typically reply within 2 business hours.</p>
+
+          <form id="contact-form" class="space-y-4" onsubmit="event.preventDefault(); alert('🎉 Thank you! Your message has been received.'); this.reset();">
+            <div>
+              <label class="block text-xs uppercase font-bold text-outline mb-1">Your Name *</label>
+              <input type="text" class="w-full input-minimal" placeholder="Rahul Sharma" required>
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-bold text-outline mb-1">Work Email *</label>
+              <input type="email" class="w-full input-minimal" placeholder="rahul@company.com" required>
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-bold text-outline mb-1">WhatsApp / Phone Number *</label>
+              <input type="text" class="w-full input-minimal" placeholder="+91 98201 44521" required>
+            </div>
+            <div>
+              <label class="block text-xs uppercase font-bold text-outline mb-1">How can we help? *</label>
+              <textarea rows="4" class="w-full input-minimal" placeholder="Tell us about your brand goals, monthly ad budget, or timeline..." required></textarea>
+            </div>
+            <button type="submit" class="w-full btn-gradient py-4 rounded-xl text-white font-bold uppercase tracking-wider">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-page-margin py-12 border-t border-black/5 bg-white text-center text-sm text-outline">
+    © 2026 NextReach DMS. All rights reserved. High-Performance Multi-Channel Marketing Infrastructure.
+  </footer>
+
+</body>
+</html>
