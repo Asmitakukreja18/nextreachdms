@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Marketing & Omnichannel Services │ NextReach DMS</title>
-  <meta name="description" content="Explore NextReach DMS full-spectrum marketing services: Meta & Google Performance Ads, WhatsApp Marketing API, Technical SEO, Social Media Production, Custom Web Dev, and Enterprise CPaaS.">
+  <title>Growth Services & Performance Pillars │ NextReach DMS</title>
+  <meta name="description" content="Explore NextReach DMS full-spectrum growth services: Meta & Google Performance Ads, Creative Strategy & UGC, B2B Outbound Funnels, and Omnichannel Scale.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-block {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 44px);
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+    .service-block:hover {
+      border-color: var(--nr-orange-main);
+      box-shadow: 0 16px 36px -8px rgba(255, 107, 0, 0.12);
+    }
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .service-icon-lg {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--nr-navy-soft);
+      color: var(--nr-navy-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .feature-tri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .feature-mini-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+    .feature-mini-box h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+      margin-bottom: 6px;
+    }
+    .feature-mini-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 860px) {
+      .feature-tri-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -37,205 +102,164 @@
     </div>
   </header>
 
-  <!-- HEADER -->
-  <section class="hero-section" style="padding: 70px 0 40px;">
-    <div class="hero-glow"></div>
-    <div class="container hero-content">
-      <div class="badge badge-cyan" style="margin-bottom: 12px;">Full-Spectrum Digital Ecosystem</div>
-      <h1 class="hero-title" style="font-size: 3.2rem;">End-to-End <span class="gradient-text">Growth Solutions</span></h1>
-      <p class="hero-desc">Every channel, every touchpoint — synchronized for maximum revenue and sustainable customer acquisition.</p>
+  <!-- HERO SECTION -->
+  <section class="container" style="padding: 60px 24px 30px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="section-tag">Full-Spectrum Growth Capabilities</span>
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px; color: var(--nr-navy-deep);">
+        End-to-End <span class="gradient-orange-text">Revenue & Growth Solutions</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">
+        Every channel, every touchpoint — synchronized for maximum qualified pipeline and sustainable customer acquisition.
+      </p>
     </div>
   </section>
 
-  <!-- DETAILED SERVICES LIST -->
-  <section class="services-section" style="padding-top: 20px;">
-    <div class="container">
-      
-      <!-- Performance Marketing -->
-      <div id="performance" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 44px; margin-bottom: 40px; box-shadow: var(--shadow-sm);">
-        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
-          <div class="service-icon" style="color: var(--brand-primary); margin-bottom: 0;">🎯</div>
-          <div>
-            <span class="badge badge-primary">Customer Acquisition</span>
-            <h2 style="font-size: 2rem; margin-top: 4px;">Performance Marketing (Meta & Google Ads)</h2>
-          </div>
-        </div>
-        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-          We manage multi-crore ad spends across Meta (Facebook & Instagram Ads), Google Search, Performance Max, YouTube, and LinkedIn Ads. Our data-science approach combines dynamic creative testing, predictive algorithmic bidding, and real-time server-side tracking (CAPI) to deliver consistent 4x to 7x ROAS.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-          <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-md);">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--text-main);">📈 Meta Advantage+ Scaling</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Broad targeting algorithms and dynamic catalog sales tailored for maximum conversion efficiency.</p>
-          </div>
-          <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-md);">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--text-main);">🔍 Google High-Intent Search</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Exact match domination capturing ready-to-buy customers at the lowest Cost-Per-Click (CPC).</p>
-          </div>
-          <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-md);">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--text-main);">🧪 Creative Lab & Testing</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">15+ fresh video hooks and statics tested weekly to beat ad fatigue and maintain low CPA.</p>
-          </div>
+  <!-- SERVICES LIST -->
+  <main class="container" style="padding: 30px 24px 80px;">
+    
+    <!-- 1. Performance Media Buying -->
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-lg">🎯</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Customer Acquisition</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Performance Paid Ads (Meta, Google, YouTube)</h2>
         </div>
       </div>
-
-      <!-- WhatsApp Marketing Platform -->
-      <div id="whatsapp" style="background: linear-gradient(180deg, rgba(16, 185, 129, 0.07) 0%, var(--bg-card) 100%); border: 2px solid var(--brand-emerald); border-radius: var(--radius-lg); padding: 44px; margin-bottom: 40px; box-shadow: var(--shadow-sm);">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 18px;">
-          <div style="display: flex; align-items: center; gap: 14px;">
-            <div class="service-icon" style="color: var(--brand-emerald); margin-bottom: 0;">💬</div>
-            <div>
-              <span class="badge badge-emerald">Direct Platform Integration</span>
-              <h2 style="font-size: 2rem; margin-top: 4px;">WhatsApp Marketing & Meta Cloud API</h2>
-            </div>
-          </div>
-          <a href="../index.html" class="btn-primary" style="background: var(--brand-emerald); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);">
-            <span>Open WhatsApp Platform 🚀</span>
-          </a>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        We manage multi-crore monthly ad spends across Meta (Facebook & Instagram), Google Search, Performance Max, YouTube, and LinkedIn Ads. Our data-science approach combines dynamic creative testing, predictive algorithmic bidding, and real-time server-side tracking (CAPI) to deliver consistent 4x to 7x ROAS.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>📈 Meta Advantage+ Scaling</h4>
+          <p>Broad targeting algorithms and dynamic catalog sales tailored for maximum conversion efficiency.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-          Our proprietary high-throughput conversational engine enables 1M+ broadcasts with SmartQueue™ anti-ban throttling, official Meta Green Badges, and interactive 2-way AI customer support bots.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-          <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-md);">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--brand-emerald);">✓ Official Green Tick</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Guaranteed Meta Business API verification boosting customer trust and message read rates to 98%.</p>
-          </div>
-          <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-md);">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--brand-emerald);">✓ SmartQueue Anti-Drop</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Intelligent pacing system preventing number blocks and guaranteeing 99.4% inbox placement.</p>
-          </div>
-          <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius-md);">
-            <div style="font-weight: 700; margin-bottom: 6px; color: var(--brand-emerald);">✓ Dynamic Variable Catalogs</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Send personalized product links, custom discount codes, and PDF invoices with 1 tap.</p>
-          </div>
+        <div class="feature-mini-box">
+          <h4>🔍 Google High-Intent Search</h4>
+          <p>Exact match domination capturing ready-to-buy customers at the lowest Cost-Per-Click (CPC).</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🧪 Creative Velocity Lab</h4>
+          <p>15+ fresh video hooks and statics tested weekly to beat ad fatigue and maintain low CPA.</p>
         </div>
       </div>
-
-      <!-- SEO & Web Dev -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
-        <!-- SEO -->
-        <div id="seo" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px;">
-          <div class="service-icon" style="color: var(--brand-purple);">🔍</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 12px;">SEO & Organic Dominance</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            Comprehensive technical SEO audits, core web vitals optimization, high-DR backlink acquisition, and semantic content architecture to rank for high-intent queries.
-          </p>
-          <ul class="service-features">
-            <li><span>✓</span> 100/100 Google PageSpeed & Core Web Vitals</li>
-            <li><span>✓</span> Enterprise Schema & Semantic Entity SEO</li>
-            <li><span>✓</span> Google Maps & Local 3-Pack Optimization</li>
-          </ul>
-        </div>
-
-        <!-- Web Dev -->
-        <div id="web" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px;">
-          <div class="service-icon" style="color: var(--brand-cyan);">🌐</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Custom Web & CRO Funnels</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            Blazing-fast Next.js web applications, Shopify Plus stores, and conversion-engineered landing pages built with psychology-driven UX for 3x higher checkout conversions.
-          </p>
-          <ul class="service-features">
-            <li><span>✓</span> Sub-500ms Global CDN Loading Speeds</li>
-            <li><span>✓</span> Multi-Currency & Payment Gateway Integrations</li>
-            <li><span>✓</span> Heatmap Analysis & Continuous A/B Testing</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Social & CPaaS -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px;">
-        <!-- Social -->
-        <div id="social" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px;">
-          <div class="service-icon" style="color: var(--brand-orange);">📱</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Social Media & Creative Production</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            Story-driven short-form reels, high-aesthetic static ads, and influencer collaborations that cultivate brand affinity and drive organic engagement.
-          </p>
-          <ul class="service-features">
-            <li><span>✓</span> 4K Studio Video Production & Motion Graphics</li>
-            <li><span>✓</span> Influencer Sourcing & Seeding Management</li>
-            <li><span>✓</span> Community Management & Brand Reputation</li>
-          </ul>
-        </div>
-
-        <!-- CPaaS -->
-        <div id="cpaas" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px;">
-          <div class="service-icon" style="color: var(--brand-primary);">📩</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Enterprise CPaaS & Messaging</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            High-speed telecom APIs delivering transactional OTPs in 2 seconds, rich Google RCS carousels, and high-volume Voice OBD calling.
-          </p>
-          <ul class="service-features">
-            <li><span>✓</span> TRAI DLT Pre-Approved Fast SMS</li>
-            <li><span>✓</span> Verified Google RCS Messaging</li>
-            <li><span>✓</span> Voice Broadcasting with DTMF IVR Capture</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="container">
-    <div class="cta-banner">
-      <h2>Ready to Build Your Custom Growth Stack?</h2>
-      <p>Consult with our marketing directors to discuss your goals and receive a custom multichannel proposal.</p>
-      <button class="btn-primary btn-open-modal" style="padding: 14px 32px; font-size: 1.05rem;">
-        <span>Request Custom Proposal 📄</span>
-      </button>
+    <!-- 2. Creative Strategy & High-Converting UGC -->
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-orange-soft); color: var(--nr-orange-main);">⚡</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Creative Excellence</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Creative Strategy, VSLs & High-Impact UGC</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Creative is the new targeting. We produce high-converting direct-response video ads, founder video sales letters (VSLs), UGC customer testimonials, and interactive carousel static ads that capture attention and drive purchase intent.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🎬 Direct-Response VSLs</h4>
+          <p>Scriptwriting and video production designed specifically to educate and convert high-ticket leads.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📱 UGC Creator Network</h4>
+          <p>Vetted native content creators producing authentic product demonstrations and reviews.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🎨 High-CTR Static Graphics</h4>
+          <p>Scroll-stopping design with psychological hook angles tailored for Instagram and LinkedIn feeds.</p>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- 3. B2B Outbound & Lead Funnels -->
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-lg">💼</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">High-Ticket B2B</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">B2B Lead Generation & Outbound Automation</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Generate predictable enterprise sales pipeline through hyper-personalized LinkedIn outbound, verified B2B email sequences, automated calendar scheduling, and AI lead qualification bots.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🎯 Verified ICP Data Scraping</h4>
+          <p>Granular lead lists filtered by company headcount, revenue tier, intent signals, and tech stack.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🤖 AI Email Personalization</h4>
+          <p>High deliverability secondary domains with customized icebreakers achieving 65%+ open rates.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📅 Direct Calendar Bookings</h4>
+          <p>Inbound and outbound qualified meetings delivered straight into your sales team's calendar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Conversion Rate Optimization (CRO) -->
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-orange-soft); color: var(--nr-orange-main);">🚀</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Revenue Multiplication</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Conversion Rate Optimization & Funnel Architecture</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Doubling your conversion rate cuts your customer acquisition cost in half. We build blazing-fast landing pages, quiz funnels, frictionless checkout flows, and multivariate A/B testing infrastructure.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>⚡ Blazing Fast Landing Pages</h4>
+          <p>Mobile-first pages loading under 1 second with sub-pixel visual hierarchy.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📊 Multivariate A/B Testing</h4>
+          <p>Scientific headline, copy, and offer variations tested rigorously with statistical significance.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🛒 AOV Expansion Bundles</h4>
+          <p>Post-purchase 1-click upsells, tiered volume discounts, and average order value maximizers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner-box" style="margin-top: 50px;">
+      <h2>Ready to Supercharge Your Growth Engine?</h2>
+      <p>Let's map out your custom 90-day multi-channel roadmap with our senior growth strategists.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="audit.html" class="btn-orange" style="padding: 14px 34px;">
+          <span>Request Free Growth Audit →</span>
+        </a>
+        <a href="tel:+919820144521" class="btn-navy-outline" style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
+          <span>📞 Call Us: +91 98201 44521</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <div>&copy; 2026 NextReach DMS. All rights reserved. Enterprise Digital Marketing & CPaaS.</div>
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
         <div style="display: flex; gap: 20px;">
           <a href="index.html">Home</a>
-          <a href="../index.html">WhatsApp Marketing</a>
-          <a href="contact.html">Contact Hub</a>
+          <a href="services.html">Services</a>
+          <a href="audit.html">Audit</a>
+          <a href="tel:+919820144521">+91 98201 44521</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- MODAL -->
-  <div id="consult-modal" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close">&times;</button>
-      <div class="badge badge-primary" style="margin-bottom: 12px;">NextReach DMS Growth Audit</div>
-      <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Claim Your Free 30-Min Strategy Call</h3>
-      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 22px;">Get a detailed ad audit and multi-channel roadmap prepared for your brand.</p>
-
-      <form id="audit-form">
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
-        </div>
-        <div class="form-group">
-          <label>Work Email or Phone Number *</label>
-          <input type="text" name="phone" class="form-input" placeholder="e.g. +91 98201 44521" required>
-        </div>
-        <div class="form-group">
-          <label>Primary Service Needed *</label>
-          <select name="service" class="form-select" required>
-            <option value="Performance Ads (Meta/Google)">Performance Ads (Meta & Google)</option>
-            <option value="WhatsApp Marketing & API">WhatsApp Marketing & API Broadcasts</option>
-            <option value="SEO & Search Engine Domination">SEO & Organic Growth</option>
-            <option value="Custom Web/Funnel Development">Custom Web / Funnel Development</option>
-            <option value="Complete Omnichannel Retainer">Complete Omnichannel Retainer</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">
-          <span>Submit & Get Call Back 🚀</span>
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
