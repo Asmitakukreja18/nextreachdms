@@ -69,8 +69,36 @@
       }
     }
   </style>
+  <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+
+  <!-- ==========================================================================
+       1. BRAND PRELOADER
+       ========================================================================== -->
+  <div class="nr-preloader" id="nrPreloader">
+    <div class="nr-loader-brand">
+      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
+      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
+      <div class="nr-loader-bar">
+        <div class="nr-loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. SCROLL PROGRESS BAR & CUSTOM CURSOR
+       ========================================================================== -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
+
 
   <!-- NAVIGATION -->
   <header class="header-nav">
@@ -95,6 +123,7 @@
         <a href="audit.html" class="btn-orange" style="padding: 10px 22px; font-size: 0.88rem;">
           <span>Get Free Audit →</span>
         </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
       </div>
     </div>
   </header>
@@ -129,7 +158,7 @@
     <div class="project-showcase-grid" id="projectGrid">
       
       <!-- Project 1: Aura Wellness (D2C) -->
-      <div class="project-card" data-category="d2c">
+      <div class="project-card tilt-card" data-category="d2c">
         <div class="project-thumb-box">
           <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80" alt="Aura Wellness Campaign" class="project-thumb-img">
           <div class="project-thumb-overlay">
@@ -167,7 +196,7 @@
       </div>
 
       <!-- Project 2: CloudScale AI (B2B SaaS) -->
-      <div class="project-card" data-category="saas">
+      <div class="project-card tilt-card" data-category="saas">
         <div class="project-thumb-box">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="CloudScale SaaS Dashboard" class="project-thumb-img">
           <div class="project-thumb-overlay">
@@ -204,7 +233,7 @@
       </div>
 
       <!-- Project 3: Apex Luxury Estates (Real Estate) -->
-      <div class="project-card" data-category="realestate">
+      <div class="project-card tilt-card" data-category="realestate">
         <div class="project-thumb-box">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80" alt="Apex Luxury Villa" class="project-thumb-img">
           <div class="project-thumb-overlay">
@@ -241,7 +270,7 @@
       </div>
 
       <!-- Project 4: EduPeak Academy (EdTech) -->
-      <div class="project-card" data-category="edtech">
+      <div class="project-card tilt-card" data-category="edtech">
         <div class="project-thumb-box">
           <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80" alt="EduPeak Academy Platform" class="project-thumb-img">
           <div class="project-thumb-overlay">
@@ -278,7 +307,7 @@
       </div>
 
       <!-- Project 5: PrimeCare Aesthetics (Healthcare) -->
-      <div class="project-card" data-category="health-fin">
+      <div class="project-card tilt-card" data-category="health-fin">
         <div class="project-thumb-box">
           <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop&q=80" alt="PrimeCare Clinic" class="project-thumb-img">
           <div class="project-thumb-overlay">
@@ -315,7 +344,7 @@
       </div>
 
       <!-- Project 6: FinVault NeoBank (FinTech) -->
-      <div class="project-card" data-category="health-fin">
+      <div class="project-card tilt-card" data-category="health-fin">
         <div class="project-thumb-box">
           <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80" alt="FinVault App Interface" class="project-thumb-img">
           <div class="project-thumb-overlay">
@@ -465,6 +494,16 @@
   </footer>
 
   <!-- Floating WhatsApp Support Badge (Exact Design Match) -->
+
+  <!-- ==========================================================================
+       STICKY STRATEGY CALL CTA BAR & FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <a href="audit.html" class="sticky-strategy-btn" id="stickyStrategyBtn">
+    <span class="pulse-orange-dot"></span>
+    <span>⚡ Book Free Growth Call</span>
+  </a>
+
+  <!-- Floating WhatsApp Support Badge -->
   <a href="https://wa.me/918007586871?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit." target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
     <div class="wa-pill-icon">
       <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z"/></svg>
@@ -476,5 +515,133 @@
     </div>
   </a>
 
+  <!-- ==========================================================================
+       MASTER JAVASCRIPT ENGINE (All Interactivity, Demos & Animations)
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // --- 1. BRAND PRELOADER SIMULATION ---
+      const preloader = document.getElementById('nrPreloader');
+      const loaderFill = document.getElementById('loaderFill');
+      const loaderPercent = document.getElementById('loaderPercent');
+      let progress = 0;
+
+      const loaderInterval = setInterval(() => {
+        progress += Math.floor(Math.random() * 14) + 10;
+        if (progress > 100) progress = 100;
+        if (loaderFill) loaderFill.style.width = progress + '%';
+        if (loaderPercent) loaderPercent.textContent = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(loaderInterval);
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('fade-out');
+              setTimeout(() => preloader.style.display = 'none', 500);
+            }
+          }, 250);
+        }
+      }, 35);
+
+      // --- 2. LENIS SMOOTH SCROLL & SCROLL PROGRESS BAR ---
+      let lenis;
+      if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          direction: 'vertical',
+          smooth: true
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+
+      // Scroll Progress Bar Update
+      const progressBar = document.getElementById('scrollProgress');
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (progressBar) progressBar.style.width = scrolled + '%';
+      });
+
+      // --- 3. CUSTOM MAGNETIC CURSOR ---
+      const cursorDot = document.getElementById('cursorDot');
+      const cursorAura = document.getElementById('cursorAura');
+      const cursorText = document.getElementById('cursorText');
+
+      if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
+        window.addEventListener('mousemove', (e) => {
+          cursorDot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+          cursorAura.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        document.querySelectorAll('a, button, .tilt-card, .growth-card, .project-card, .service-block, .timeline-card, .feature-mini-box').forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorAura.classList.add('cursor-hover');
+            if (el.classList.contains('project-card') || el.classList.contains('service-block')) {
+              if (cursorText) cursorText.textContent = 'EXPLORE';
+            }
+          });
+          el.addEventListener('mouseleave', () => {
+            cursorAura.classList.remove('cursor-hover');
+            if (cursorText) cursorText.textContent = '';
+          });
+        });
+      }
+
+      // --- 4. VANILLA TILT CARDS ---
+      if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".service-block, .feature-mini-box, .timeline-card, .project-card, .team-card, .audit-form-card, .contact-card"), {
+          max: 6,
+          speed: 300,
+          glare: true,
+          "max-glare": 0.1
+        });
+      }
+
+      // --- 5. GSAP SCROLL REVEAL ---
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.service-block, .timeline-card, .project-card, .team-card, .contact-card').forEach(item => {
+          gsap.from(item, {
+            scrollTrigger: {
+              trigger: item,
+              start: "top 88%"
+            },
+            y: 35,
+            opacity: 0,
+            duration: 0.75,
+            ease: "power2.out"
+          });
+        });
+      }
+
+      // --- 6. MOBILE MENU TOGGLE ---
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          const isFlex = navLinks.style.display === 'flex';
+          navLinks.style.display = isFlex ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+      }
+
+    });
+  </script>
 </body>
 </html>
