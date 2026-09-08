@@ -393,12 +393,20 @@
       const cursorText = document.getElementById('cursorText');
 
       if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
-        let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+        let mouseX = -100, mouseY = -100, currentX = -100, currentY = -100;
         let isMoving = false;
+        let isInitialized = false;
 
         window.addEventListener('mousemove', (e) => {
           mouseX = e.clientX;
           mouseY = e.clientY;
+          if (!isInitialized) {
+            isInitialized = true;
+            cursorDot.classList.add('visible');
+            cursorAura.classList.add('visible');
+            currentX = mouseX;
+            currentY = mouseY;
+          }
           if (!isMoving) {
             isMoving = true;
             requestAnimationFrame(renderCursor);
