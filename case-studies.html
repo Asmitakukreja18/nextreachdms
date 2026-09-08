@@ -112,113 +112,286 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES LIST -->
+  <!-- CASE STUDIES & PROJECTS SHOWCASE -->
   <main class="container" style="padding: 20px 24px 80px;">
     
-    <!-- Case 1: B2B SaaS -->
-    <div class="case-detailed-card">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <span class="case-tag" style="background: var(--nr-orange-soft); color: var(--nr-orange-deep);">B2B SaaS &amp; Enterprise Tech</span>
-        <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-dim);">Timeline: 60 Days</span>
-      </div>
-      <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep); margin-top: 10px;">
-        Scaling High-Ticket Demo Pipeline by 410% While Slashing CAC in Half
-      </h2>
-      
-      <div class="case-metric-triple">
-        <div class="metric-mini-item">
-          <div class="val">+410%</div>
-          <div class="lbl">Qualified Demos</div>
-        </div>
-        <div class="metric-mini-item">
-          <div class="val" style="color: var(--nr-navy-main);">-52%</div>
-          <div class="lbl">Cost Per Demo</div>
-        </div>
-        <div class="metric-mini-item">
-          <div class="val" style="color: var(--nr-gold-amber);">₹4.2 Cr</div>
-          <div class="lbl">Pipeline Generated</div>
-        </div>
-      </div>
-
-      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">
-        <strong>The Problem:</strong> The client was experiencing severe LinkedIn ad fatigue and low show-up rates from generic lead form ads.<br>
-        <strong>Our Strategy:</strong> We built automated personalized video outreach SDRs, rebuilt their landing page into a friction-free calendar booking quiz, and targeted high-intent C-suite decision-makers using intent signal scrapers.
-      </p>
+    <!-- Filter Bar -->
+    <div class="project-filter-bar">
+      <button class="project-filter-btn active" data-filter="all">⚡ All Projects (6)</button>
+      <button class="project-filter-btn" data-filter="d2c">🛍️ D2C E-Commerce</button>
+      <button class="project-filter-btn" data-filter="saas">💼 B2B SaaS & Tech</button>
+      <button class="project-filter-btn" data-filter="realestate">🏢 Real Estate</button>
+      <button class="project-filter-btn" data-filter="edtech">🎓 EdTech & Coaching</button>
+      <button class="project-filter-btn" data-filter="health-fin">🏥 Healthcare & FinTech</button>
     </div>
 
-    <!-- Case 2: D2C Ecommerce -->
-    <div class="case-detailed-card">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <span class="case-tag" style="background: var(--nr-navy-soft); color: var(--nr-navy-main);">D2C Consumer Brand</span>
-        <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-dim);">Timeline: 90 Days</span>
-      </div>
-      <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep); margin-top: 10px;">
-        From ₹35L/Mo to ₹1.8 Cr/Mo with 5.6x Blended ROAS &amp; UGC Creative Sprints
-      </h2>
+    <!-- 6 Visual Project Cards Grid -->
+    <div class="project-showcase-grid" id="projectGrid">
       
-      <div class="case-metric-triple">
-        <div class="metric-mini-item">
-          <div class="val">5.6x</div>
-          <div class="lbl">Blended ROAS</div>
+      <!-- Project 1: Aura Wellness (D2C) -->
+      <div class="project-card" data-category="d2c">
+        <div class="project-thumb-box">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80" alt="Aura Wellness Campaign" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">🛍️ D2C Beauty &amp; Wellness</span>
+          </div>
+          <span class="project-stat-badge">📈 5.6x Blended ROAS</span>
         </div>
-        <div class="metric-mini-item">
-          <div class="val" style="color: var(--nr-navy-main);">+84%</div>
-          <div class="lbl">Average Order Value</div>
-        </div>
-        <div class="metric-mini-item">
-          <div class="val" style="color: var(--nr-gold-amber);">₹1.8 Cr</div>
-          <div class="lbl">Monthly Revenue</div>
-        </div>
-      </div>
-
-      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">
-        <strong>The Problem:</strong> Stagnant Meta ad performance with ROAS hovering below 2.1x due to lack of fresh creative variations.<br>
-        <strong>Our Strategy:</strong> We tested 18 fresh UGC video hooks weekly, introduced post-purchase 1-click upsell bundles that expanded AOV by +84%, and implemented instant WhatsApp abandoned cart recovery.
-      </p>
-    </div>
-
-    <!-- Case 3: High-Ticket Real Estate -->
-    <div class="case-detailed-card">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <span class="case-tag" style="background: #fef3c7; color: #b45309;">Luxury Real Estate &amp; High-Ticket</span>
-        <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-dim);">Timeline: 45 Days</span>
-      </div>
-      <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep); margin-top: 10px;">
-        ₹38 Cr Luxury Inventory Sold Out with Hyper-Targeted Video Funnels &amp; Voice OBD
-      </h2>
-      
-      <div class="case-metric-triple">
-        <div class="metric-mini-item">
-          <div class="val">₹38 Cr</div>
-          <div class="lbl">Inventory Sold</div>
-        </div>
-        <div class="metric-mini-item">
-          <div class="val" style="color: var(--nr-navy-main);">220+</div>
-          <div class="lbl">Verified Site Visits</div>
-        </div>
-        <div class="metric-mini-item">
-          <div class="val" style="color: var(--nr-gold-amber);">45 Days</div>
-          <div class="lbl">100% Sellout Speed</div>
+        <div class="project-body">
+          <h2 class="project-title">Scaling Aura Wellness from ₹25L to ₹1.8 Cr/Mo Revenue</h2>
+          <p class="project-desc">
+            Replaced stagnant ad creative fatigue with 16 weekly UGC creator video hooks, custom Shopify bundle funnels (+84% AOV), and automated WhatsApp cart recovery.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">5.6x</div>
+              <div class="p-metric-lbl">Blended ROAS</div>
+            </div>
+            <div>
+              <div class="p-metric-val">+84%</div>
+              <div class="p-metric-lbl">AOV Surge</div>
+            </div>
+            <div>
+              <div class="p-metric-val">₹1.8 Cr</div>
+              <div class="p-metric-lbl">Monthly Scale</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Meta Advantage+</span>
+            <span class="deliv-pill">UGC Video Lab</span>
+            <span class="deliv-pill">Shopify CRO</span>
+            <span class="deliv-pill">WhatsApp AI</span>
+            <span class="deliv-pill">Server CAPI</span>
+          </div>
         </div>
       </div>
 
-      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">
-        <strong>The Strategy:</strong> Google exact-match high-intent search campaigns paired with drone cinematic video ads on Meta and automated WhatsApp / Voice OBD follow-up reminders.
-      </p>
+      <!-- Project 2: CloudScale AI (B2B SaaS) -->
+      <div class="project-card" data-category="saas">
+        <div class="project-thumb-box">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="CloudScale SaaS Dashboard" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">💼 B2B Enterprise SaaS</span>
+          </div>
+          <span class="project-stat-badge">🤖 +410% Qualified Demos</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Automating Enterprise Demo Pipeline &amp; Slashing CAC by 52%</h2>
+          <p class="project-desc">
+            Built an autonomous outbound SDR system with intent signal scrapers, personalized video cold emails, and interactive calendar booking quiz funnels for C-level buyers.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">+410%</div>
+              <div class="p-metric-lbl">Demo Surge</div>
+            </div>
+            <div>
+              <div class="p-metric-val">-52%</div>
+              <div class="p-metric-lbl">Cost Per Demo</div>
+            </div>
+            <div>
+              <div class="p-metric-val">₹4.2 Cr</div>
+              <div class="p-metric-lbl">Pipeline ARR</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">LinkedIn ABM</span>
+            <span class="deliv-pill">AI Video Cold Email</span>
+            <span class="deliv-pill">HubSpot Sync</span>
+            <span class="deliv-pill">SmartLead AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Apex Luxury Estates (Real Estate) -->
+      <div class="project-card" data-category="realestate">
+        <div class="project-thumb-box">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80" alt="Apex Luxury Villa" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">🏢 Luxury Real Estate</span>
+          </div>
+          <span class="project-stat-badge">🏆 ₹38 Cr Sold in 45 Days</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">100% Villa Inventory Sold Out with 4K Drone Walkthroughs</h2>
+          <p class="project-desc">
+            Dominated Google high-intent luxury search keywords paired with drone video walkthrough ads on Meta and instant NRI WhatsApp lead scoring bots.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">₹38 Cr</div>
+              <div class="p-metric-lbl">Total Closures</div>
+            </div>
+            <div>
+              <div class="p-metric-val">220+</div>
+              <div class="p-metric-lbl">Site Visits</div>
+            </div>
+            <div>
+              <div class="p-metric-val">45 Days</div>
+              <div class="p-metric-lbl">Sellout Speed</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Google Exact Match</span>
+            <span class="deliv-pill">Cinematic Drone Ads</span>
+            <span class="deliv-pill">WhatsApp NRI Bot</span>
+            <span class="deliv-pill">Voice OBD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: EduPeak Academy (EdTech) -->
+      <div class="project-card" data-category="edtech">
+        <div class="project-thumb-box">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80" alt="EduPeak Academy Platform" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">🎓 EdTech &amp; Coaching</span>
+          </div>
+          <span class="project-stat-badge">🎯 68% Webinar Show-Up</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">3.4x High-Ticket Enrollment with Automated WhatsApp Engine</h2>
+          <p class="project-desc">
+            Replaced low-converting lead forms with interactive qualification quiz funnels and a 4-touch WhatsApp broadcast sequence that doubled live webinar attendance.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">68%</div>
+              <div class="p-metric-lbl">Show-Up Rate</div>
+            </div>
+            <div>
+              <div class="p-metric-val">3.4x</div>
+              <div class="p-metric-lbl">Paid Students</div>
+            </div>
+            <div>
+              <div class="p-metric-val">₹1.2 Cr</div>
+              <div class="p-metric-lbl">Batch Gross</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Meta Lead Ads</span>
+            <span class="deliv-pill">Quiz Funnel CRO</span>
+            <span class="deliv-pill">WhatsApp Nurture</span>
+            <span class="deliv-pill">Voice OBD Alerts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: PrimeCare Aesthetics (Healthcare) -->
+      <div class="project-card" data-category="health-fin">
+        <div class="project-thumb-box">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop&q=80" alt="PrimeCare Clinic" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">🏥 Healthcare &amp; Aesthetic Clinics</span>
+          </div>
+          <span class="project-stat-badge">⚡ 3.8x Consultation Pipeline</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Dominating City Market with Local Google Maps &amp; Video Testimonials</h2>
+          <p class="project-desc">
+            Captured ready-to-book patients with hyper-local Google Ads, geo-targeted patient transformation videos on Instagram, and automated WhatsApp appointment reminders.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">3.8x</div>
+              <div class="p-metric-lbl">Consultations</div>
+            </div>
+            <div>
+              <div class="p-metric-val">-38%</div>
+              <div class="p-metric-lbl">Booking CAC</div>
+            </div>
+            <div>
+              <div class="p-metric-val">94%</div>
+              <div class="p-metric-lbl">Show-Up Rate</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Google Local Ads</span>
+            <span class="deliv-pill">Patient VSLs</span>
+            <span class="deliv-pill">CRM Booking Sync</span>
+            <span class="deliv-pill">WhatsApp Confirmations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: FinVault NeoBank (FinTech) -->
+      <div class="project-card" data-category="health-fin">
+        <div class="project-thumb-box">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80" alt="FinVault App Interface" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">💳 FinTech &amp; Financial Services</span>
+          </div>
+          <span class="project-stat-badge">🛡️ +92% KYC Completion</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Acquiring 140,000+ Users with Low-CAC Funnels &amp; WhatsApp KYC</h2>
+          <p class="project-desc">
+            Engineered compliance-first high-trust landing pages paired with automated WhatsApp AI assistants that helped drop-off users finish identity verification effortlessly.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">+92%</div>
+              <div class="p-metric-lbl">KYC Finish</div>
+            </div>
+            <div>
+              <div class="p-metric-val">₹85</div>
+              <div class="p-metric-lbl">Acquisition CAC</div>
+            </div>
+            <div>
+              <div class="p-metric-val">140K+</div>
+              <div class="p-metric-lbl">Users Scaled</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Performance Max</span>
+            <span class="deliv-pill">High-Trust CRO</span>
+            <span class="deliv-pill">WhatsApp AI Assistant</span>
+            <span class="deliv-pill">Server-Side Tracking</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- CTA -->
-    <div class="cta-banner-box" style="margin-top: 50px;">
-      <h2>Want Similar Revenue Multipliers for Your Brand?</h2>
-      <p>Let's conduct a complimentary tear-down of your advertising, creative, and pipeline bottlenecks.</p>
+    <div class="cta-banner-box" style="margin-top: 60px;">
+      <h2>Ready to Scale Your Brand to Category Leadership?</h2>
+      <p>Let's conduct a 100% complimentary growth audit of your marketing, creative, and pipeline funnels.</p>
       <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
         <a href="audit.html" class="btn-orange" style="padding: 14px 34px;">
           <span>Request Free Growth Audit →</span>
+        </a>
+        <a href="tel:+918007586871" class="btn-navy-outline" style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
+          <span>📞 Call Us: +91 80075 86871</span>
         </a>
       </div>
     </div>
 
   </main>
+
+  <!-- Interactive Project Filtering Script -->
+  <script>
+    (function() {
+      const filterBtns = document.querySelectorAll('.project-filter-btn');
+      const projectCards = document.querySelectorAll('#projectGrid .project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
 
   <!-- FOOTER -->
   <footer class="site-footer">
