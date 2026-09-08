@@ -3399,3 +3399,494 @@ input:checked + .slider-round:before {
   }
 }
 
+
+
+
+/* ==========================================================================
+   MASTER RESPONSIVE DESIGN SYSTEM (Mobile, Tablet, Laptop, Desktop 100%)
+   ========================================================================== */
+
+/* 1. Large Tablets & Small Laptops (<= 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+  .nav-links {
+    gap: 20px;
+    font-size: 0.90rem;
+  }
+  .hero-grid {
+    gap: 30px;
+  }
+  .pricing-grid {
+    gap: 20px;
+  }
+  .dash-kpi-grid {
+    gap: 14px;
+  }
+}
+
+/* 2. Tablets & Landscape Handhelds (<= 1024px) */
+@media (max-width: 1024px) {
+  /* Navigation Drawer */
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    border: 1px solid var(--border-subtle);
+    color: var(--nr-navy-deep);
+    font-size: 1.35rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .mobile-toggle:hover {
+    background: var(--nr-orange-soft);
+    color: var(--nr-orange-main);
+    border-color: var(--nr-orange-main);
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 30px 32px;
+    gap: 0;
+    border-bottom: 2px solid var(--border-subtle);
+    box-shadow: 0 20px 40px rgba(0, 45, 98, 0.14);
+    z-index: 9999;
+    animation: mobileNavFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-links.mobile-open,
+  .nav-links.active,
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--nr-navy-deep);
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--nr-orange-main);
+    padding-left: 8px;
+  }
+
+  /* Hero Section */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-left {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-cta-box {
+    justify-content: center;
+  }
+  .client-proof-bar {
+    justify-content: center;
+  }
+
+  /* Stats / Metrics */
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+  }
+  .metric-item::after {
+    display: none !important;
+  }
+
+  /* WhatsApp Bot Simulator */
+  .wa-demo-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 28px;
+  }
+
+  /* Dashboard */
+  .dash-body-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 36px;
+  }
+
+  /* Grids & Cards */
+  .industry-grid,
+  .testimonial-grid,
+  .video-testimonials-grid,
+  .project-showcase-grid,
+  .case-study-grid,
+  .services-grid,
+  .growth-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Disable Custom Cursor on Touch/Tablet */
+  .custom-cursor-dot,
+  .custom-cursor-aura {
+    display: none !important;
+  }
+}
+
+@keyframes mobileNavFadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Portrait Tablets & Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .header-nav {
+    height: 72px;
+  }
+  .nav-links {
+    top: 72px;
+  }
+  .nav-phone-btn {
+    display: none !important; /* Hide phone in nav bar to avoid clutter */
+  }
+  .brand-logo-img {
+    height: 42px;
+  }
+  .nav-cta-btn {
+    padding: 9px 16px;
+    font-size: 0.84rem;
+  }
+
+  /* Section Spacing */
+  section {
+    padding: 50px 0 !important;
+  }
+  .hero-wrapper {
+    padding: 40px 0 60px !important;
+  }
+  .section-header {
+    margin-bottom: 36px !important;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem) !important;
+  }
+
+  /* Hero Headings */
+  .hero-heading {
+    font-size: clamp(2rem, 7vw, 2.8rem) !important;
+    line-height: 1.18;
+  }
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  /* Dashboard Frame */
+  .dash-preview-frame {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+  .dash-top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .dash-tabs-bar {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px;
+    scrollbar-width: none;
+  }
+  .dash-tabs-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .dash-tab {
+    font-size: 0.76rem;
+    padding: 6px 14px;
+    flex-shrink: 0;
+  }
+  .dash-kpi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+  .kpi-val {
+    font-size: 1.5rem;
+  }
+  .dash-svg-chart {
+    height: 170px;
+  }
+  .chart-timeline-labels {
+    font-size: 0.68rem;
+  }
+
+  /* Interactive ROI Calculator */
+  .calc-card {
+    grid-template-columns: 1fr !important;
+    padding: 24px 18px;
+  }
+
+  /* Before vs After */
+  .ba-grid-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .before-after-container {
+    padding: 22px 18px;
+  }
+
+  /* Tables & Responsive Containers */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 36px 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  /* Floating WhatsApp Support Pill */
+  .whatsapp-support-pill {
+    bottom: 16px;
+    right: 14px;
+    padding: 7px 12px 7px 8px;
+    gap: 9px;
+  }
+  .wa-pill-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .wa-pill-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+  .wa-pill-label {
+    font-size: 0.60rem;
+  }
+  .wa-pill-number {
+    font-size: 0.80rem;
+  }
+  .wa-pill-status {
+    display: none;
+  }
+}
+
+/* 4. Small Mobile Handsets (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header & Branding */
+  .header-nav {
+    height: 66px;
+  }
+  .nav-links {
+    top: 66px;
+    padding: 18px 20px 24px;
+  }
+  .brand-logo-img {
+    height: 36px;
+  }
+  .nav-cta-btn {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+  .mobile-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+
+  /* Hero Section */
+  .partner-pill {
+    font-size: 0.70rem;
+    padding: 4px 10px;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+  }
+  .hero-heading {
+    font-size: 1.85rem !important;
+  }
+  .hero-cta-box {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-cta-box .btn-orange,
+  .hero-cta-box .btn-navy-outline {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+    padding: 12px 20px;
+  }
+  .client-proof-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .proof-text {
+    font-size: 0.78rem;
+  }
+
+  /* Metrics 1 Column */
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  /* WhatsApp Bot Simulator */
+  .wa-demo-wrapper {
+    padding: 16px 12px;
+    border-radius: 18px;
+  }
+  .wa-demo-phone-frame {
+    border-width: 5px;
+    border-radius: 24px;
+  }
+  .phone-top-bar {
+    padding: 10px 12px;
+  }
+  .phone-chat-body {
+    height: 320px;
+    padding: 10px 8px;
+    gap: 10px;
+  }
+  .wa-msg {
+    max-width: 92%;
+    font-size: 0.78rem;
+    padding: 8px 10px;
+  }
+  .wa-btn-option {
+    font-size: 0.74rem;
+    padding: 7px 10px;
+  }
+  .phone-input-bar {
+    padding: 8px;
+    gap: 6px;
+  }
+  .phone-text-input {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+  .phone-send-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .info-panel-title {
+    font-size: 1.25rem;
+  }
+
+  /* Dashboard */
+  .dash-preview-frame {
+    padding: 14px 10px;
+  }
+  .dash-kpi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+  .dash-kpi-card {
+    padding: 14px 16px;
+  }
+  .kpi-val {
+    font-size: 1.4rem;
+  }
+  .feed-item {
+    font-size: 0.74rem;
+    padding: 8px;
+  }
+
+  /* Project Showcase / Case Study Cards */
+  .project-body {
+    padding: 20px 16px;
+  }
+  .project-title {
+    font-size: 1.15rem;
+  }
+  .project-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .p-metric-val {
+    font-size: 1.15rem;
+  }
+
+  /* Video Testimonials */
+  .video-poster-box {
+    height: 150px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    padding: 14px 16px;
+    font-size: 0.90rem;
+  }
+  .faq-answer {
+    padding: 0 16px 16px;
+    font-size: 0.84rem;
+  }
+
+  /* Footer 1 Column */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+  }
+}
+
+/* 5. Ultra-Narrow Screens (<= 360px - iPhone SE / Galaxy Mini) */
+@media (max-width: 360px) {
+  .hero-heading {
+    font-size: 1.65rem !important;
+  }
+  .nav-cta-btn span {
+    font-size: 0.72rem;
+  }
+  .price-amount {
+    font-size: 2rem !important;
+  }
+  .whatsapp-support-pill {
+    bottom: 12px;
+    right: 10px;
+    padding: 5px 10px 5px 6px;
+  }
+  .wa-pill-number {
+    font-size: 0.74rem;
+  }
+}
