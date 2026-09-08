@@ -1647,4 +1647,86 @@ button {
     width: 160px;
     height: 160px;
   }
+  .whatsapp-support-pill {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 14px;
+  }
+  .wa-pill-number {
+    font-size: 1rem;
+  }
 }
+
+/* ==========================================================================
+   FLOATING WHATSAPP SUPPORT BADGE (Pixel-matched to user specification)
+   ========================================================================== */
+.whatsapp-support-pill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: #1e293b;
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 12px 20px 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(12px);
+}
+
+.whatsapp-support-pill:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.5), 0 0 24px rgba(37, 211, 102, 0.35);
+  border-color: rgba(37, 211, 102, 0.5);
+}
+
+.wa-pill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 211, 102, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.wa-pill-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.wa-pill-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.wa-pill-number {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+  margin: 2px 0 1px;
+}
+
+.wa-pill-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
