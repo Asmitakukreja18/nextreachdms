@@ -3043,6 +3043,7 @@ input:checked + .slider-round:before {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
+  width: 100%;
 }
 
 .video-test-card {
@@ -3052,6 +3053,8 @@ input:checked + .slider-round:before {
   overflow: hidden;
   box-shadow: var(--shadow-card);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .video-test-card:hover {
@@ -3062,15 +3065,19 @@ input:checked + .slider-round:before {
 
 .video-poster-box {
   position: relative;
-  height: 210px;
+  height: 200px;
+  max-height: 200px;
   width: 100%;
-  background: #000000;
+  background: #001a3d;
+  overflow: hidden;
 }
 
 .video-poster-img {
   width: 100%;
   height: 100%;
+  max-height: 200px;
   object-fit: cover;
+  display: block;
   opacity: 0.85;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
