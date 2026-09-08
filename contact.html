@@ -1,241 +1,223 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact | NextReach DMS</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@400;500;600&family=Geist:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "on-primary": "#ffffff",
-            "surface-container": "#edeeef",
-            "on-secondary-fixed-variant": "#3f465c",
-            "background": "#f8f9fa",
-            "primary-container": "#06b6d4",
-            "surface-variant": "#e1e3e4",
-            "primary": "#2563eb",
-            "tertiary": "#505f76",
-            "tertiary-container": "#b2c2dc",
-            "outline": "#6c797f",
-            "on-primary-fixed": "#001f28",
-            "tertiary-fixed": "#d3e4fe",
-            "on-surface-variant": "#3c494e",
-            "secondary-fixed-dim": "#bec6e0",
-            "surface-container-high": "#e7e8e9",
-            "inverse-primary": "#47d6ff",
-            "on-error-container": "#93000a",
-            "surface": "#f8f9fa",
-            "surface-dim": "#d9dadb",
-            "on-background": "#191c1d",
-            "secondary-fixed": "#dae2fd",
-            "error-container": "#ffdad6",
-            "inverse-surface": "#2e3132",
-            "on-primary-container": "#0891b2",
-            "secondary-container": "#dae2fd",
-            "surface-container-highest": "#e1e3e4",
-            "on-tertiary-container": "#405065",
-            "on-tertiary-fixed-variant": "#38485d",
-            "tertiary-fixed-dim": "#b7c8e1",
-            "surface-bright": "#f8f9fa",
-            "on-secondary-fixed": "#131b2e",
-            "surface-container-lowest": "#ffffff",
-            "primary-fixed-dim": "#47d6ff",
-            "on-secondary": "#ffffff",
-            "on-tertiary": "#ffffff",
-            "on-surface": "#191c1d",
-            "error": "#ba1a1a",
-            "surface-tint": "#2563eb",
-            "outline-variant": "#bbc9cf",
-            "on-secondary-container": "#5c647a",
-            "on-error": "#ffffff",
-            "secondary": "#565e74",
-            "surface-container-low": "#f3f4f5",
-            "primary-fixed": "#b6ebff",
-            "inverse-on-surface": "#f0f1f2",
-            "on-primary-fixed-variant": "#1d4ed8",
-            "on-tertiary-fixed": "#0b1c30"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "stack-gap": "24px",
-            "page-margin": "64px",
-            "grid-gutter": "32px",
-            "container-max": "1440px",
-            "section-gap": "120px"
-          },
-          "fontFamily": {
-            "body-md": ["Inter"],
-            "label-caps": ["Geist"],
-            "display-lg": ["Montserrat"],
-            "mono-data": ["Geist"],
-            "headline-lg-mobile": ["Montserrat"],
-            "body-lg": ["Inter"],
-            "headline-lg": ["Montserrat"],
-            "headline-md": ["Montserrat"]
-          }
-        }
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Growth Directors │ NextReach DMS</title>
+  <meta name="description" content="Connect with NextReach DMS performance growth specialists for enterprise partnerships, ad management, and pipeline expansion.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
   <style>
-    body {
-      background-color: #f8f9fa;
-      color: #191c1d;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 36px;
+      margin: 40px auto 80px;
+      max-width: 1100px;
     }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+    .contact-info-card {
+      background: var(--nr-navy-deep);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: clamp(28px, 4vw, 44px);
+      box-shadow: var(--shadow-navy-glow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .gradient-text {
-      background: linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .contact-item-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
     }
-    .btn-gradient {
-      background: linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #06b6d4 100%);
-      transition: all 0.3s ease;
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 107, 0, 0.2);
+      border: 1px solid var(--nr-orange-main);
+      color: var(--nr-orange-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
     }
-    .btn-gradient:hover {
-      box-shadow: 0 4px 20px rgba(0, 103, 127, 0.25);
-      transform: translateY(-2px);
-    }
-    .input-minimal {
+    .contact-form-card {
       background: #ffffff;
-      border: 1px solid rgba(108, 121, 127, 0.2);
-      border-radius: 8px;
-      padding: 12px 16px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: var(--shadow-card);
     }
-    .input-minimal:focus {
+    .form-group-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .form-input-c {
+      padding: 12px 16px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-family: inherit;
       outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(0, 103, 127, 0.1);
+      transition: border-color var(--transition-fast);
+      background: #fbfcfd;
+    }
+    .form-input-c:focus {
+      border-color: var(--nr-orange-main);
+      background: #ffffff;
+    }
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-<body class="font-body-md overflow-x-hidden">
-  
-  <!-- Navigation -->
-  <header class="fixed top-0 w-full flex justify-between items-center px-page-margin h-20 bg-white/80 backdrop-blur-xl border-b border-black/5 z-50">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-lg btn-gradient flex items-center justify-center text-white font-bold text-xl shadow-md">
-        N
-      </div>
-      <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">
-        NextReach <span class="text-on-background">DMS</span>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="header-nav">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
       </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Framework</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+919820144521" class="btn-navy-outline" style="padding: 9px 18px; font-size: 0.85rem;">
+          <span>📞 +91 98201 44521</span>
+        </a>
+        <a href="audit.html" class="btn-orange" style="padding: 10px 22px; font-size: 0.88rem;">
+          <span>Get Free Audit →</span>
+        </a>
+      </div>
     </div>
-    <nav class="hidden md:flex items-center gap-8">
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Portfolio</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
-      <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="contact.html">Contact</a>
-    </nav>
-    <a href="audit.html" class="btn-gradient px-6 py-2.5 rounded-lg font-label-caps text-label-caps text-white font-bold uppercase tracking-wider inline-block">
-      Get Free Audit
-    </a>
   </header>
 
-  <main class="pt-32 pb-24 px-page-margin max-w-container-max mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-start">
+  <!-- HERO SECTION -->
+  <section class="container" style="padding: 60px 24px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="section-tag">Direct Access</span>
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px; color: var(--nr-navy-deep);">
+        Let's Talk <span class="gradient-orange-text">Revenue Growth.</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">
+        Have a question or ready to discuss your brand's growth roadmap? Connect directly with our Senior Partners.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <main class="container">
+    <div class="contact-grid">
       
-      <!-- Left Column -->
-      <div class="lg:col-span-6 space-y-8">
+      <!-- Info Card -->
+      <div class="contact-info-card">
         <div>
-          <span class="font-label-caps text-primary tracking-widest uppercase font-bold text-sm block mb-3">GET IN TOUCH</span>
-          <h1 class="text-4xl md:text-5xl font-bold font-display-lg gradient-text leading-tight mb-4">
-            Let's Engineer Your Next Revenue Breakthrough.
-          </h1>
-          <p class="text-on-surface-variant text-lg leading-relaxed">
-            Have questions about scaling your campaigns or integrating our WhatsApp Marketing platform? Reach out directly to our leadership team.
-          </p>
+          <span class="section-tag" style="background: rgba(255, 107, 0, 0.2); color: var(--nr-orange-bright); border: 1px solid var(--nr-orange-main); margin-bottom: 20px;">Fast Response SLA</span>
+          <h2 style="font-size: 1.8rem; color: #ffffff; margin-bottom: 24px;">Growth Headquarters</h2>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Direct Phone / WhatsApp</div>
+              <a href="tel:+919820144521" style="font-size: 1.1rem; font-weight: 700; color: #ffffff;">+91 98201 44521</a>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Partnership Inquiries</div>
+              <a href="mailto:partner@nextreachdms.com" style="font-size: 1.05rem; font-weight: 700; color: #ffffff;">partner@nextreachdms.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Office Locations</div>
+              <div style="font-size: 0.95rem; color: #e2e8f0; font-weight: 600;">Delhi Tech Corridor &amp; Dubai Center</div>
+            </div>
+          </div>
         </div>
 
-        <div class="space-y-6">
-          <div class="glass-card p-6 rounded-xl flex items-center gap-5">
-            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-              <span class="material-symbols-outlined text-2xl">call</span>
-            </div>
-            <div>
-              <div class="text-xs uppercase font-bold text-outline">Direct Enterprise Line</div>
-              <div class="text-lg font-bold text-on-surface">+91 98201 44521</div>
-            </div>
-          </div>
-
-          <div class="glass-card p-6 rounded-xl flex items-center gap-5">
-            <div class="w-12 h-12 rounded-lg bg-[#25d366]/10 flex items-center justify-center text-[#25d366] shrink-0">
-              <span class="material-symbols-outlined text-2xl">chat</span>
-            </div>
-            <div>
-              <div class="text-xs uppercase font-bold text-outline">Instant WhatsApp Support</div>
-              <a href="https://wa.me/919820144521" target="_blank" class="text-lg font-bold text-[#25d366] hover:underline">
-                Chat on WhatsApp (+91 98201 44521) ⚡
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card p-6 rounded-xl flex items-center gap-5">
-            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-              <span class="material-symbols-outlined text-2xl">location_on</span>
-            </div>
-            <div>
-              <div class="text-xs uppercase font-bold text-outline">Global Hubs</div>
-              <div class="text-sm font-semibold text-on-surface">🇮🇳 Tech Park, Sector 62, Noida, Delhi NCR</div>
-              <div class="text-sm font-semibold text-on-surface">🇦🇪 Business Bay, Prime Tower, Dubai, UAE</div>
-            </div>
-          </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; font-size: 0.85rem; color: #94a3b8;">
+          ⚡ All inquiries answered within 4 business hours by a dedicated Growth Director.
         </div>
       </div>
 
-      <!-- Right Column: Form -->
-      <div class="lg:col-span-6">
-        <div class="glass-card p-8 md:p-10 rounded-2xl">
-          <h3 class="text-2xl font-bold mb-2">Send Us a Direct Message</h3>
-          <p class="text-sm text-on-surface-variant mb-6">We typically reply within 2 business hours.</p>
+      <!-- Form Card -->
+      <div class="contact-form-card">
+        <h3 style="font-size: 1.4rem; color: var(--nr-navy-deep); margin-bottom: 8px;">Send a Direct Message</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">Fill out this quick form and we'll reach out promptly.</p>
 
-          <form id="contact-form" class="space-y-4" onsubmit="event.preventDefault(); alert('🎉 Thank you! Your message has been received.'); this.reset();">
-            <div>
-              <label class="block text-xs uppercase font-bold text-outline mb-1">Your Name *</label>
-              <input type="text" class="w-full input-minimal" placeholder="Rahul Sharma" required>
-            </div>
-            <div>
-              <label class="block text-xs uppercase font-bold text-outline mb-1">Work Email *</label>
-              <input type="email" class="w-full input-minimal" placeholder="rahul@company.com" required>
-            </div>
-            <div>
-              <label class="block text-xs uppercase font-bold text-outline mb-1">WhatsApp / Phone Number *</label>
-              <input type="text" class="w-full input-minimal" placeholder="+91 98201 44521" required>
-            </div>
-            <div>
-              <label class="block text-xs uppercase font-bold text-outline mb-1">How can we help? *</label>
-              <textarea rows="4" class="w-full input-minimal" placeholder="Tell us about your brand goals, monthly ad budget, or timeline..." required></textarea>
-            </div>
-            <button type="submit" class="w-full btn-gradient py-4 rounded-xl text-white font-bold uppercase tracking-wider">
-              Send Message
-            </button>
-          </form>
+        <form onsubmit="event.preventDefault(); document.getElementById('contactSent').style.display='block'; this.style.display='none';">
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">Your Name *</label>
+            <input type="text" required class="form-input-c" placeholder="e.g. Ananya Patel">
+          </div>
+
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">Email Address *</label>
+            <input type="email" required class="form-input-c" placeholder="ananya@brand.com">
+          </div>
+
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">Phone / WhatsApp *</label>
+            <input type="tel" required class="form-input-c" placeholder="+91 98201 44521">
+          </div>
+
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">How Can We Help Your Business?</label>
+            <textarea rows="3" class="form-input-c" placeholder="Tell us about your brand, current ad spend, or pipeline goals..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-orange" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; margin-top: 10px;">
+            <span>Send Message →</span>
+          </button>
+        </form>
+
+        <div id="contactSent" style="display: none; text-align: center; padding: 30px 10px;">
+          <div style="font-size: 2.5rem; margin-bottom: 10px;">✅</div>
+          <h4 style="font-size: 1.3rem; color: var(--nr-navy-deep); margin-bottom: 6px;">Message Sent Successfully!</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">A Senior Partner will get back to you shortly.</p>
         </div>
       </div>
 
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="w-full px-page-margin py-12 border-t border-black/5 bg-white text-center text-sm text-outline">
-    © 2026 NextReach DMS. All rights reserved. High-Performance Multi-Channel Marketing Infrastructure.
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="audit.html">Audit</a>
+          <a href="tel:+919820144521">+91 98201 44521</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
 </body>
