@@ -1,459 +1,585 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>NextReach DMS | Elite Growth Marketing & Revenue Machines</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&family=Geist:wght@500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "on-primary": "#ffffff",
-            "surface-container": "#edeeef",
-            "on-secondary-fixed-variant": "#3f465c",
-            "background": "#f8f9fa",
-            "primary-container": "#06b6d4",
-            "surface-variant": "#e1e3e4",
-            "primary": "#2563eb",
-            "tertiary": "#505f76",
-            "tertiary-container": "#b2c2dc",
-            "outline": "#6c797f",
-            "on-primary-fixed": "#001f28",
-            "tertiary-fixed": "#d3e4fe",
-            "on-surface-variant": "#3c494e",
-            "secondary-fixed-dim": "#bec6e0",
-            "surface-container-high": "#e7e8e9",
-            "inverse-primary": "#47d6ff",
-            "on-error-container": "#93000a",
-            "surface": "#f8f9fa",
-            "surface-dim": "#d9dadb",
-            "on-background": "#191c1d",
-            "secondary-fixed": "#dae2fd",
-            "error-container": "#ffdad6",
-            "inverse-surface": "#2e3132",
-            "on-primary-container": "#0891b2",
-            "secondary-container": "#dae2fd",
-            "surface-container-highest": "#e1e3e4",
-            "on-tertiary-container": "#405065",
-            "on-tertiary-fixed-variant": "#38485d",
-            "tertiary-fixed-dim": "#b7c8e1",
-            "surface-bright": "#f8f9fa",
-            "on-secondary-fixed": "#131b2e",
-            "surface-container-lowest": "#ffffff",
-            "primary-fixed-dim": "#47d6ff",
-            "on-secondary": "#ffffff",
-            "on-tertiary": "#ffffff",
-            "on-surface": "#191c1d",
-            "error": "#ba1a1a",
-            "surface-tint": "#2563eb",
-            "outline-variant": "#bbc9cf",
-            "on-secondary-container": "#5c647a",
-            "on-error": "#ffffff",
-            "secondary": "#565e74",
-            "surface-container-low": "#f3f4f5",
-            "primary-fixed": "#b6ebff",
-            "inverse-on-surface": "#f0f1f2",
-            "on-primary-fixed-variant": "#1d4ed8",
-            "on-tertiary-fixed": "#0b1c30"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "stack-gap": "24px",
-            "page-margin": "40px",
-            "grid-gutter": "32px",
-            "container-max": "1440px",
-            "section-gap": "120px"
-          },
-          "fontFamily": {
-            "body-md": ["Inter"],
-            "label-caps": ["Geist"],
-            "display-lg": ["Montserrat"],
-            "mono-data": ["Geist"],
-            "headline-lg-mobile": ["Montserrat"],
-            "body-lg": ["Inter"],
-            "headline-lg": ["Montserrat"],
-            "headline-md": ["Montserrat"]
-          },
-          "fontSize": {
-            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
-            "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
-            "mono-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
-            "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-            "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
-            "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-            "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
-          }
-        },
-      },
-    }
-  </script>
-  <style>
-    .glass-card {
-      background: rgba(0, 0, 0, 0.03);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    .text-gradient {
-      background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 50%, #06b6d4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .btn-gradient {
-      background: linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #06b6d4 100%);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .btn-gradient:hover {
-      box-shadow: 0 4px 20px rgba(0, 103, 127, 0.25);
-      transform: translateY(-2px);
-    }
-    .atmospheric-glow {
-      background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
-    }
-    .scroll-section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-    .scroll-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextReach DMS | B2B, B2C & D2C Performance Growth Partner</title>
+  <meta name="description" content="NextReach DMS is an elite performance marketing & AI revenue growth agency. We build hyper-converting acquisition engines, lead funnels, and omnichannel scale for high-growth brands.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<body>
 
-  <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full flex justify-between items-center px-page-margin h-20 bg-background/80 backdrop-blur-xl border-b border-on-surface/10 z-50">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-lg btn-gradient flex items-center justify-center text-white font-bold text-xl shadow-md">
-        N
-      </div>
-      <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">NextReach <span class="text-on-background">DMS</span></a>
-    </div>
-    <div class="hidden md:flex items-center gap-8">
-      <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="index.html">Home</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Case Studies</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
-      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
-      <a class="font-label-caps text-label-caps text-[#10b981] hover:underline font-bold flex items-center gap-1" href="../index.html">
-        <span>💬 WhatsApp App</span>
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================== -->
+  <header class="header-nav">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
       </a>
-    </div>
-    <a href="audit.html" class="btn-gradient px-6 py-2.5 rounded-lg font-label-caps text-label-caps text-white font-bold uppercase tracking-wider inline-block">
-      Get Free Audit
-    </a>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center pt-32 px-page-margin text-center overflow-hidden">
-    <div class="atmospheric-glow absolute inset-0 pointer-events-none"></div>
-    <!-- Background Element -->
-    <div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none"></div>
-    
-    <div class="relative z-10 max-w-5xl">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-8">
-        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-        <span class="font-label-caps text-[10px] text-primary uppercase tracking-[0.2em]">NextReach DMS Growth Engine</span>
-      </div>
-      <h1 class="font-display-lg text-display-lg md:text-[84px] leading-tight mb-8 text-gradient">
-        We Don't Just Market Brands. <br class="hidden md:block">
-        We Build Revenue Machines.
-      </h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-12">
-        High-performance growth infrastructure designed for elite enterprises. We integrate cutting-edge content strategy, hyper-targeted performance engineering, and AI-driven optimization to dominate market share.
-      </p>
-      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-        <a href="audit.html" class="btn-gradient px-10 py-5 rounded-xl font-label-caps text-body-md text-white font-bold tracking-widest min-w-[240px] inline-block text-center">
-          GET FREE GROWTH AUDIT
+      <nav class="nav-links">
+        <a href="index.html" class="active">Growth Engine</a>
+        <a href="services.html">Services & Pillars</a>
+        <a href="process.html">Our Framework</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html">About Agency</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+919820144521" class="btn-navy-outline" style="padding: 9px 18px; font-size: 0.85rem;">
+          <span>📞 +91 98201 44521</span>
         </a>
-        <a href="case-study.html" class="glass-card px-10 py-5 rounded-xl font-label-caps text-body-md text-on-surface hover:bg-on-surface/5 transition-all border border-on-surface/10 min-w-[240px] inline-block text-center">
-          VIEW CASE STUDIES
+        <a href="audit.html" class="btn-orange" style="padding: 10px 22px; font-size: 0.88rem;">
+          <span>Get Free Audit →</span>
         </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
       </div>
     </div>
+  </header>
 
-    <!-- Trust Bar -->
-    <div class="w-full max-w-container-max mx-auto mt-32 border-t border-on-surface/5 pt-12">
-      <p class="font-label-caps text-label-caps text-on-surface-variant text-center mb-10 opacity-60">TRUSTED BY 500+ HIGH-PERFORMANCE GLOBAL BRANDS</p>
-      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-60 hover:opacity-100 transition-all duration-700">
-        <div class="glass-card rounded-lg px-6 py-3 font-bold text-primary font-mono text-sm border border-outline/20">D2C E-COMMERCE</div>
-        <div class="glass-card rounded-lg px-6 py-3 font-bold text-primary font-mono text-sm border border-outline/20">REAL ESTATE LUXURY</div>
-        <div class="glass-card rounded-lg px-6 py-3 font-bold text-primary font-mono text-sm border border-outline/20">FINTECH &amp; SAAS</div>
-        <div class="glass-card rounded-lg px-6 py-3 font-bold text-primary font-mono text-sm border border-outline/20">EDTECH ENTERPRISE</div>
-        <div class="glass-card rounded-lg px-6 py-3 font-bold text-primary font-mono text-sm border border-outline/20">HEALTHCARE &amp; CLINICAL</div>
+  <!-- ==========================================================================
+       HERO SECTION (Matching Reference Screenshot Design)
+       ========================================================================== -->
+  <section class="hero-wrapper">
+    <div class="container hero-grid">
+      
+      <!-- Left Column: Copy & Value Proposition -->
+      <div class="hero-left">
+        <div class="partner-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z"/></svg>
+          <span>B2B • B2C • D2C GROWTH PARTNER</span>
+        </div>
+
+        <h1 class="hero-heading">
+          We don’t take clients.<br>
+          <span class="orange-part">We take</span> <span class="navy-part">partners.</span>
+        </h1>
+
+        <p class="hero-description">
+          We own your pain as our own and run an <strong>AI-powered growth engine</strong> — filtering high-intent leads, automated outreach, hyper-converting creative, and paid media funnels that turn attention into a predictable <strong>high-ticket revenue pipeline</strong>.
+        </p>
+
+        <div class="hero-cta-box">
+          <a href="audit.html" class="btn-orange">
+            <span>Get a Free Growth Audit</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#framework" class="btn-navy-outline">
+            <span>See how we work</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="client-proof-bar">
+          <div class="avatar-stack">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
+          </div>
+          <div class="proof-text">
+            <strong>400+ Enterprise & D2C Brands</strong> trust NextReach DMS to scale pipeline.
+          </div>
+        </div>
       </div>
+
+      <!-- Right Column: Interactive Animated "LIVE ENGINE" Card -->
+      <div class="hero-right">
+        <div class="live-engine-card" id="liveEngineCard">
+          
+          <!-- Top Window Header -->
+          <div class="engine-top-bar">
+            <div class="window-dots">
+              <span class="w-dot w-dot-red"></span>
+              <span class="w-dot w-dot-yellow"></span>
+              <span class="w-dot w-dot-orange"></span>
+            </div>
+            <div class="engine-status-tag">
+              <span class="pulse-orange-dot"></span>
+              <span>LIVE REVENUE ENGINE</span>
+            </div>
+          </div>
+
+          <!-- Slides Viewport -->
+          <div class="engine-slides-viewport">
+            
+            <!-- Slide 1: Target Radar & 4.2x ROAS Card -->
+            <div class="engine-slide active" data-slide="0">
+              <div class="target-radar-layout">
+                <div class="radar-wrapper">
+                  <div class="radar-ring ring-1"></div>
+                  <div class="radar-ring ring-2"></div>
+                  <div class="radar-ring ring-3"></div>
+                  <div class="radar-center-dot"></div>
+                  <span class="radar-label">TARGET AUDIENCE</span>
+                </div>
+
+                <div class="roas-metric-card">
+                  <div class="lbl">CONVERSIONS</div>
+                  <div class="val">4.8x</div>
+                  <div class="sub">▲ BLENDED ROAS</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 6px;">Zero Ad Waste Algorithm</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: AI Lead Qualification Funnel -->
+            <div class="engine-slide" data-slide="1">
+              <div class="funnel-container">
+                <div class="funnel-stage-lbl">RAW INBOUND AUDIENCE</div>
+                <div class="funnel-trapezoid">
+                  <div class="funnel-particles">
+                    <span class="f-particle"></span>
+                    <span class="f-particle"></span>
+                    <span class="f-particle"></span>
+                  </div>
+                </div>
+                <div class="qualified-badge">
+                  ✓ QUALIFIED HIGH-TICKET LEADS
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">
+                  Real-time Enrichment • Phone & Intent Scored
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Connected AI Network Graph (from screenshot) -->
+            <div class="engine-slide" data-slide="2">
+              <div class="ai-network-layout">
+                <div class="nodes-column">
+                  <div class="node-pill">🎯 Intent</div>
+                  <div class="node-pill">⚡ Engage</div>
+                  <div class="node-pill">📊 ICP Fit</div>
+                  <div class="node-pill">📡 Signals</div>
+                </div>
+
+                <div class="ai-center-hub">
+                  <span>AI</span>
+                  <span>ENGINE</span>
+                </div>
+
+                <div class="nodes-column">
+                  <div class="node-pill">👥 Target</div>
+                  <div class="node-pill">💬 Message</div>
+                  <div class="node-pill">⏰ Timing</div>
+                  <div class="node-pill">💰 Spend</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Omnichannel Growth Flywheel -->
+            <div class="engine-slide" data-slide="3">
+              <div style="padding: 15px 10px; text-align: center;">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 12px;">
+                  <div style="background: var(--nr-navy-soft); border: 1px solid rgba(0,45,98,0.1); border-radius: var(--radius-md); padding: 12px;">
+                    <div style="font-size: 1.2rem; margin-bottom: 2px;">📈</div>
+                    <div style="font-weight: 800; font-size: 0.85rem; color: var(--nr-navy-deep);">Meta & Google Ads</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted);">Algorithmic Bidding</div>
+                  </div>
+                  <div style="background: var(--nr-orange-soft); border: 1px solid var(--nr-orange-main); border-radius: var(--radius-md); padding: 12px;">
+                    <div style="font-size: 1.2rem; margin-bottom: 2px;">⚡</div>
+                    <div style="font-weight: 800; font-size: 0.85rem; color: var(--nr-orange-deep);">B2B Cold Outreach</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted);">LinkedIn & Email AI</div>
+                  </div>
+                </div>
+                <div style="font-size: 0.82rem; font-weight: 700; color: var(--nr-navy-main);">
+                  Omnichannel Sync • Multi-Touch Attribution
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Bar Navigation for Engine -->
+          <div class="engine-bottom-bar">
+            <div class="engine-caption" id="engineCaption">
+              Targeting: Data decides every move
+            </div>
+            <div class="engine-dots-nav">
+              <span class="slide-dot active" data-dot="0"></span>
+              <span class="slide-dot" data-dot="1"></span>
+              <span class="slide-dot" data-dot="2"></span>
+              <span class="slide-dot" data-dot="3"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Scroll Storytelling Section -->
-  <div class="space-y-section-gap pb-section-gap" id="story-trigger">
-    
-    <!-- Social Media Growth -->
-    <section class="scroll-section px-page-margin max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-grid-gutter items-center min-h-[60vh]">
-      <div>
-        <span class="font-label-caps text-label-caps text-primary mb-4 block">01 / ATTENTION ENGINEERING</span>
-        <h2 class="font-headline-lg text-headline-lg mb-6">Social Media Growth at Scale</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-          We don't post. We dominate. Our attention engineering protocols leverage algorithmic trends and psychological triggers to turn views into high-intent pipeline.
-        </p>
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg glass-card flex items-center justify-center border border-primary/20">
-            <span class="material-symbols-outlined text-primary">trending_up</span>
-          </div>
-          <span class="font-mono-data text-mono-data text-on-surface">+450% Average Organic Reach Improvement</span>
+  <!-- ==========================================================================
+       METRICS & PROOF BANNER
+       ========================================================================== -->
+  <section class="metrics-banner">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="metric-num">₹140 Cr+</div>
+          <div class="metric-desc">Verified Client Revenue Generated</div>
         </div>
-      </div>
-      <div class="relative group">
-        <div class="absolute -inset-4 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700"></div>
-        <div class="aspect-video glass-card rounded-xl overflow-hidden relative border border-on-surface/10 p-8 flex flex-col justify-center bg-surface-container-low">
-          <div class="font-mono text-xs text-primary mb-2">NEXTREACH_VIRAL_ENGINE // v3.2</div>
-          <div class="text-3xl font-bold text-on-surface mb-3">1.2M+ Monthly Reach</div>
-          <p class="text-sm text-on-surface-variant">Cinematic retention hooks, multivariate thumbnail testing, and psychological short-form video pacing.</p>
+        <div class="metric-item">
+          <div class="metric-num">4.8x</div>
+          <div class="metric-desc">Average Client Blended ROAS</div>
         </div>
-      </div>
-    </section>
-
-    <!-- Web/App Dev -->
-    <section class="scroll-section px-page-margin max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-grid-gutter items-center min-h-[60vh] flex-row-reverse">
-      <div class="md:order-2">
-        <span class="font-label-caps text-label-caps text-primary mb-4 block">02 / INFRASTRUCTURE</span>
-        <h2 class="font-headline-lg text-headline-lg mb-6">Website &amp; App Development</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-          Ultra-fast, conversion-centric digital real estate. Built with modern stacks that load in milliseconds and guide users through frictionless conversion funnels.
-        </p>
-        <ul class="space-y-4">
-          <li class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-            <span class="font-body-md text-on-surface">Next-Gen Performance (99+ Lighthouse)</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-            <span class="font-body-md text-on-surface">Conversion Rate Optimization (CRO) Driven</span>
-          </li>
-        </ul>
-      </div>
-      <div class="md:order-1 relative group">
-        <div class="absolute -inset-4 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700"></div>
-        <div class="aspect-square glass-card rounded-xl overflow-hidden relative border border-on-surface/10 p-8 flex flex-col justify-center bg-surface-container-low">
-          <div class="font-mono text-xs text-primary mb-2">INFRASTRUCTURE_SPEED // SUB-500MS</div>
-          <div class="text-3xl font-bold text-on-surface mb-3">0.8s Total Page Load</div>
-          <p class="text-sm text-on-surface-variant">Next.js &amp; Shopify Plus micro-frontends with instant headless checkout and zero latency drop-off.</p>
+        <div class="metric-item">
+          <div class="metric-num">380%</div>
+          <div class="metric-desc">Average Qualified Pipeline Surge</div>
         </div>
-      </div>
-    </section>
-
-    <!-- GEO Optimization -->
-    <section class="scroll-section px-page-margin max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-grid-gutter items-center min-h-[60vh]">
-      <div>
-        <span class="font-label-caps text-label-caps text-primary mb-4 block">03 / AI SEARCH (GEO)</span>
-        <h2 class="font-headline-lg text-headline-lg mb-6">Generative Engine Optimization</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-          SEO is evolving into GEO. We optimize your brand to be the definitive authoritative answer cited in Perplexity, Gemini, and OpenAI search ecosystems.
-        </p>
-        <div class="p-6 glass-card rounded-xl border border-primary/20 bg-primary/5">
-          <p class="font-mono-data text-mono-data text-primary mb-2">AI SOURCE CITATION RATE</p>
-          <div class="flex items-end gap-2">
-            <span class="text-4xl font-bold font-display-lg text-on-surface">89.4%</span>
-            <span class="text-on-surface-variant pb-1">Industry Leading Benchmark</span>
-          </div>
-        </div>
-      </div>
-      <div class="relative group">
-        <div class="absolute -inset-4 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700"></div>
-        <div class="aspect-video glass-card rounded-xl overflow-hidden relative border border-on-surface/10 p-8 flex flex-col justify-center bg-surface-container-low">
-          <div class="font-mono text-xs text-primary mb-2">SEMANTIC_AUTHORITY_INDEX</div>
-          <div class="text-3xl font-bold text-on-surface mb-3">Top Answer Placement</div>
-          <p class="text-sm text-on-surface-variant">Schema markup, entity graphs, and high-authority contextual knowledge citations across all major AI LLMs.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lead Gen Systems -->
-    <section class="scroll-section px-page-margin max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-grid-gutter items-center min-h-[60vh] flex-row-reverse">
-      <div class="md:order-2">
-        <span class="font-label-caps text-label-caps text-primary mb-4 block">04 / PIPELINE</span>
-        <h2 class="font-headline-lg text-headline-lg mb-6">Lead Generation Systems</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-          Automated client acquisition machines. We build proprietary ecosystems that identify, qualify, and warm leads before they even talk to your sales team.
-        </p>
-        <a href="process.html" class="flex items-center gap-2 text-primary font-label-caps uppercase tracking-widest hover:gap-4 transition-all">
-          Explore Our Logic <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
-      </div>
-      <div class="md:order-1 relative group">
-        <div class="absolute -inset-4 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700"></div>
-        <div class="aspect-square glass-card rounded-xl overflow-hidden relative border border-on-surface/10 p-8 flex flex-col justify-center bg-surface-container-low">
-          <div class="font-mono text-xs text-primary mb-2">PIPELINE_CONVERSION_RATE</div>
-          <div class="text-3xl font-bold text-on-surface mb-3">4.82% Average CTR</div>
-          <p class="text-sm text-on-surface-variant">Behavioral data layering, lookalike segmentation, and automated WhatsApp nurturing within 5 seconds.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Customer Handling -->
-    <section class="scroll-section px-page-margin max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-grid-gutter items-center min-h-[60vh]">
-      <div>
-        <span class="font-label-caps text-label-caps text-primary mb-4 block">05 / RETENTION</span>
-        <h2 class="font-headline-lg text-headline-lg mb-6">Customer Handling &amp; WhatsApp Automation</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-          Maximize LTV through automated excellence. From onboarding to loyalty, our integrated WhatsApp Cloud API and CPaaS systems ensure every customer touchpoint is immediate and personalized.
-        </p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-4 glass-card rounded-lg border border-on-surface/5">
-            <span class="block text-2xl font-bold text-primary">0%</span>
-            <span class="text-xs text-on-surface-variant uppercase">Churn Latency</span>
-          </div>
-          <div class="p-4 glass-card rounded-lg border border-on-surface/5">
-            <span class="block text-2xl font-bold text-primary">10x</span>
-            <span class="text-xs text-on-surface-variant uppercase">Support Velocity</span>
-          </div>
-        </div>
-      </div>
-      <div class="relative group">
-        <div class="absolute -inset-4 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-700"></div>
-        <div class="aspect-video glass-card rounded-xl overflow-hidden relative border border-on-surface/10 p-8 flex flex-col justify-center bg-surface-container-low">
-          <div class="font-mono text-xs text-primary mb-2">RETENTION_ECOSYSTEM // 2-WAY CHAT</div>
-          <div class="text-3xl font-bold text-on-surface mb-3">99.4% Delivery SLA</div>
-          <p class="text-sm text-on-surface-variant">Meta Verified Green Badges, instant OTP delivery, dynamic product carousels, and 1-tap checkout links.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Stats / Bento Grid Section -->
-  <section class="px-page-margin py-section-gap bg-surface-container-lowest">
-    <div class="max-w-container-max mx-auto">
-      <h2 class="font-headline-lg text-headline-lg text-center mb-16 text-on-surface">The Metrics of Mastery</h2>
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter">
-        <div class="md:col-span-8 glass-card p-10 rounded-2xl flex flex-col justify-between border border-on-surface/10">
-          <div>
-            <span class="font-label-caps text-label-caps text-primary mb-4 block">PORTFOLIO AGGREGATE</span>
-            <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">₹500Cr+ Client Revenue Generated</h3>
-            <p class="text-on-surface-variant max-w-xl">Across our elite client roster, we've engineered sustainable, scalable revenue streams that outperform industry benchmarks by 3.8x on average.</p>
-          </div>
-          <div class="mt-12 h-32 flex items-end gap-1">
-            <div class="flex-1 bg-primary/10 h-[30%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary/20 h-[45%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary/15 h-[40%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary/30 h-[60%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary/40 h-[80%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary/50 h-[75%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary/70 h-[95%] rounded-t-sm"></div>
-            <div class="flex-1 bg-primary h-full rounded-t-sm"></div>
-          </div>
-        </div>
-        <div class="md:col-span-4 glass-card p-10 rounded-2xl flex flex-col items-center justify-center text-center border border-on-surface/10">
-          <span class="material-symbols-outlined text-6xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-          <h3 class="text-4xl font-bold font-display-lg mb-2 text-on-surface">94%</h3>
-          <p class="font-label-caps text-label-caps text-on-surface-variant">Client Retention Rate</p>
-        </div>
-        <div class="md:col-span-4 glass-card p-10 rounded-2xl border border-on-surface/10">
-          <h4 class="font-headline-md text-headline-md mb-2 text-on-surface">12ms</h4>
-          <p class="text-on-surface-variant">Average Site Response Time</p>
-        </div>
-        <div class="md:col-span-4 glass-card p-10 rounded-2xl border border-on-surface/10">
-          <h4 class="font-headline-md text-headline-md mb-2 text-on-surface">48hr</h4>
-          <p class="text-on-surface-variant">Campaign Launch Velocity</p>
-        </div>
-        <div class="md:col-span-4 glass-card p-10 rounded-2xl border border-on-surface/10">
-          <h4 class="font-headline-md text-headline-md mb-2 text-on-surface">24/7</h4>
-          <p class="text-on-surface-variant">AI-Driven Optimization</p>
+        <div class="metric-item">
+          <div class="metric-num">-42%</div>
+          <div class="metric-desc">Average Customer Acquisition Cost Reduction</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="w-full px-page-margin py-section-gap grid grid-cols-1 md:grid-cols-4 gap-grid-gutter bg-surface-container-lowest border-t border-on-surface/5">
-    <div class="md:col-span-1">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-8 h-8 rounded-lg btn-gradient flex items-center justify-center text-white font-bold text-sm">N</div>
-        <span class="font-headline-md text-headline-md font-bold text-primary">NextReach DMS</span>
+  <!-- ==========================================================================
+       THE 4 GROWTH PILLARS FRAMEWORK
+       ========================================================================== -->
+  <section class="container" id="framework" style="padding: 40px 24px 80px;">
+    <div class="section-header">
+      <span class="section-tag">NextReach DMS Methodology</span>
+      <h2 class="section-title">The High-Velocity Revenue Machine</h2>
+      <p class="section-subtitle">We replace guesswork with full-stack data intelligence, high-converting creative testing, and multi-channel scale.</p>
+    </div>
+
+    <div class="growth-grid">
+      <div class="growth-card">
+        <div class="card-icon-box">🎯</div>
+        <h3>1. Precision ICP Data & Targeting</h3>
+        <p>We build granular persona maps, intent signals, and custom audience scrapers that identify your highest-paying buyers before competitors notice them.</p>
+        <a href="services.html" class="card-link">Explore Data Sourcing →</a>
       </div>
-      <p class="text-body-md text-on-surface-variant mb-8">
-        Building the future of high-performance marketing infrastructure for elite brands worldwide.
-      </p>
-    </div>
-    <div>
-      <h5 class="font-label-caps text-label-caps text-primary font-bold mb-6">SERVICES</h5>
-      <ul class="space-y-4">
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Social Growth</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Web Development</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">GEO Search</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="../index.html">WhatsApp Platform</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5 class="font-label-caps text-label-caps text-primary font-bold mb-6">COMPANY</h5>
-      <ul class="space-y-4">
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="process.html">Process</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="case-study.html">Case Studies</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5 class="font-label-caps text-label-caps text-primary font-bold mb-6">CONNECT</h5>
-      <a href="audit.html" class="btn-gradient w-full py-3 rounded-lg font-label-caps text-label-caps text-white mb-6 inline-block text-center">
-        FREE GROWTH AUDIT
-      </a>
-      <div class="flex gap-4">
-        <a class="w-10 h-10 glass-card rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-all border border-on-surface/10" href="contact.html">
-          <span class="material-symbols-outlined">public</span>
-        </a>
-        <a class="w-10 h-10 glass-card rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-all border border-on-surface/10" href="contact.html">
-          <span class="material-symbols-outlined">mail</span>
-        </a>
+
+      <div class="growth-card">
+        <div class="card-icon-box">⚡</div>
+        <h3>2. Hyper-Converting Creative Engine</h3>
+        <p>High-velocity creative sprints: UGC hooks, VSLs, founder ads, and objection-killing copy tested systematically to find breakout winners weekly.</p>
+        <a href="services.html" class="card-link">Explore Ad Creative →</a>
+      </div>
+
+      <div class="growth-card">
+        <div class="card-icon-box">📊</div>
+        <h3>3. AI Funnel & Conversion Architecture</h3>
+        <p>Frictionless landing pages, quiz funnels, calendar booking flows, and WhatsApp nurture automations that double website conversion rates.</p>
+        <a href="services.html" class="card-link">Explore Funnel Builds →</a>
+      </div>
+
+      <div class="growth-card">
+        <div class="card-icon-box">🚀</div>
+        <h3>4. Omnichannel Scale & Attribution</h3>
+        <p>Aggressive multi-channel media buying across Meta, Google Search/Shopping, YouTube, and LinkedIn backed by server-side CAPI tracking.</p>
+        <a href="services.html" class="card-link">Explore Paid Scale →</a>
       </div>
     </div>
-    <div class="md:col-span-4 pt-12 border-t border-on-surface/5 flex flex-col md:flex-row justify-between items-center gap-6">
-      <p class="font-body-md text-body-md text-on-surface-variant">
-        © 2026 NextReach DMS. All rights reserved. High-performance marketing for elite brands.
-      </p>
-      <div class="flex gap-8">
-        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Privacy Policy</a>
-        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Terms of Service</a>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE ROI & REVENUE CALCULATOR
+       ========================================================================== -->
+  <section class="calc-section">
+    <div class="container">
+      <div class="calc-card">
+        
+        <!-- Controls -->
+        <div>
+          <span class="section-tag">Pipeline Simulator</span>
+          <h2 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--nr-navy-deep);">Calculate Your Revenue Unlock</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Adjust sliders to project your scaled revenue and pipeline potential with NextReach DMS.</p>
+
+          <div class="calc-input-group">
+            <div class="calc-input-label">
+              <span>Current Monthly Ad / Marketing Spend:</span>
+              <strong id="spendVal" style="color: var(--nr-orange-main); font-size: 1.05rem;">₹3,00,000</strong>
+            </div>
+            <input type="range" class="calc-slider" id="spendSlider" min="50000" max="2500000" step="25000" value="300000">
+          </div>
+
+          <div class="calc-input-group">
+            <div class="calc-input-label">
+              <span>Average Customer Value (Deal Size / LTV):</span>
+              <strong id="dealVal" style="color: var(--nr-navy-main); font-size: 1.05rem;">₹25,000</strong>
+            </div>
+            <input type="range" class="calc-slider" id="dealSlider" min="5000" max="200000" step="5000" value="25000">
+          </div>
+
+          <div class="calc-input-group">
+            <div class="calc-input-label">
+              <span>Target Conversion Growth Multiplier:</span>
+              <strong id="multVal" style="color: var(--nr-orange-main); font-size: 1.05rem;">4.2x ROAS</strong>
+            </div>
+            <input type="range" class="calc-slider" id="multSlider" min="2.5" max="6.5" step="0.1" value="4.2">
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-box">
+          <div class="title">PROJECTED MONTHLY REVENUE</div>
+          <div class="value" id="projectedRevenue">₹12,60,000</div>
+          <div class="roi-badge" id="netProfitBadge">+₹9,60,000 Monthly Net Value</div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 20px;">Based on algorithmic optimization, creative iteration, and high-ticket lead qualification.</p>
+          <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">
+            <span>Claim Your Custom Growth Plan →</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED CASE STUDIES
+       ========================================================================== -->
+  <section class="container" style="padding: 80px 24px;">
+    <div class="section-header">
+      <span class="section-tag">Proven Results</span>
+      <h2 class="section-title">Case Studies & Partner Breakthroughs</h2>
+      <p class="section-subtitle">Real enterprise brands and high-ticket founders scaled to category leadership.</p>
+    </div>
+
+    <div class="case-study-grid">
+      
+      <div class="case-card">
+        <span class="case-tag">B2B SaaS & Tech</span>
+        <div class="case-metric-highlight">+410%</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Enterprise Demo Pipeline Scaled</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+          Built LinkedIn account-based advertising engine and AI personalized video outreach generating ₹4.2 Cr in ARR opportunities.
+        </p>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); margin-top: auto;">
+          Outcome: CAC Dropped from ₹14,200 to ₹6,800
+        </div>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag">D2C Premium Brand</span>
+        <div class="case-metric-highlight">5.6x ROAS</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">₹1.8 Cr/Month Revenue Machine</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+          Revamped Meta ad creative fatigue with 14 weekly UGC variations and custom Shopify high-AOV bundle funnels.
+        </p>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); margin-top: auto;">
+          Outcome: +84% Average Order Value
+        </div>
+      </div>
+
+      <div class="case-card">
+        <span class="case-tag">Real Estate & High-Ticket</span>
+        <div class="case-metric-highlight">₹38 Cr</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Luxury Property Inventory Sold</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+          Hyper-targeted Google Search & Meta video campaigns with instant WhatsApp qualification bot booking 220+ site visits.
+        </p>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); margin-top: auto;">
+          Outcome: 100% Sold Out in 45 Days
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BOTTOM CTA STRIP
+       ========================================================================== -->
+  <section class="container">
+    <div class="cta-banner-box">
+      <h2>Ready to Build Your Predictable Revenue Engine?</h2>
+      <p>We analyze your ad accounts, landing page funnels, and sales pipeline — delivering a 100% actionable 90-day growth roadmap.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="audit.html" class="btn-orange" style="padding: 14px 34px; font-size: 1rem;">
+          <span>🚀 Request Free Growth Audit</span>
+        </a>
+        <a href="tel:+919820144521" class="btn-navy-outline" style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
+          <span>📞 Call Growth Director: +91 98201 44521</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
+            NextReach DMS is a high-impact digital marketing & AI growth agency building revenue machines for B2B, B2C & D2C enterprise leaders.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Growth Pillars</h4>
+          <ul>
+            <li><a href="services.html">Paid Media & Meta/Google</a></li>
+            <li><a href="services.html">Creative Strategy & UGC</a></li>
+            <li><a href="services.html">B2B Outbound Engine</a></li>
+            <li><a href="services.html">Conversion Rate Optimization</a></li>
+            <li><a href="services.html">Omnichannel Attribution</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About NextReach DMS</a></li>
+            <li><a href="process.html">Our Framework</a></li>
+            <li><a href="case-studies.html">Client Case Studies</a></li>
+            <li><a href="audit.html">Free Marketing Audit</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📞 +91 98201 44521</li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Delhi Tech Hub & Dubai Office</li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">✉️ partner@nextreachdms.com</li>
+            <li style="margin-top: 10px;">
+              <a href="audit.html" class="btn-orange" style="padding: 8px 18px; font-size: 0.82rem; display: inline-flex;">Book Call</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Engagement</a>
+          <a href="#">Security SLA</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- ==========================================================================
+       INTERACTIVE LIVE ENGINE & CALCULATOR SCRIPT
+       ========================================================================== -->
   <script>
-    // Intersection Observer for scroll animations
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
+    (function() {
+      // 1. Live Engine Slides Carousel
+      const slides = document.querySelectorAll('.engine-slide');
+      const dots = document.querySelectorAll('.slide-dot');
+      const caption = document.getElementById('engineCaption');
+      const captions = [
+        'Targeting: Data decides every move',
+        'Audience Funnel: Auto-enriching & scoring high-intent leads',
+        'AI Decision Engine: Dynamic bidding & creative allocation',
+        'Omnichannel Flywheel: Multi-channel pipeline synchronization'
+      ];
+      let currentSlide = 0;
+      let slideInterval;
 
-    document.querySelectorAll('.scroll-section').forEach(section => {
-      observer.observe(section);
-    });
-
-    // Simple parallax effect for hero background
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const heroText = document.querySelector('.max-w-5xl');
-      if (heroText) {
-        heroText.style.transform = `translateY(${scrolled * 0.15}px)`;
-        heroText.style.opacity = 1 - (scrolled / 700);
+      function goToSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+        if (caption) caption.textContent = captions[currentSlide];
       }
-    });
+
+      function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+      }
+
+      function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 3500);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(slideInterval);
+      }
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          stopAutoSlide();
+          goToSlide(idx);
+          startAutoSlide();
+        });
+      });
+
+      const card = document.getElementById('liveEngineCard');
+      if (card) {
+        card.addEventListener('mouseenter', stopAutoSlide);
+        card.addEventListener('mouseleave', startAutoSlide);
+      }
+
+      startAutoSlide();
+
+      // 2. Interactive Revenue Calculator
+      const spendSlider = document.getElementById('spendSlider');
+      const dealSlider = document.getElementById('dealSlider');
+      const multSlider = document.getElementById('multSlider');
+
+      const spendVal = document.getElementById('spendVal');
+      const dealVal = document.getElementById('dealVal');
+      const multVal = document.getElementById('multVal');
+      const projectedRevenue = document.getElementById('projectedRevenue');
+      const netProfitBadge = document.getElementById('netProfitBadge');
+
+      function formatINR(val) {
+        return '₹' + Math.round(val).toLocaleString('en-IN');
+      }
+
+      function updateCalculator() {
+        if (!spendSlider || !dealSlider || !multSlider) return;
+        const spend = parseFloat(spendSlider.value);
+        const deal = parseFloat(dealSlider.value);
+        const mult = parseFloat(multSlider.value);
+
+        spendVal.textContent = formatINR(spend);
+        dealVal.textContent = formatINR(deal);
+        multVal.textContent = mult.toFixed(1) + 'x ROAS';
+
+        const projected = spend * mult;
+        const netValue = projected - spend;
+
+        projectedRevenue.textContent = formatINR(projected);
+        netProfitBadge.textContent = '+' + formatINR(netValue) + ' Monthly Net Value';
+      }
+
+      if (spendSlider && dealSlider && multSlider) {
+        spendSlider.addEventListener('input', updateCalculator);
+        dealSlider.addEventListener('input', updateCalculator);
+        multSlider.addEventListener('input', updateCalculator);
+        updateCalculator();
+      }
+
+      // 3. Mobile Navigation Toggle
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          const isFlex = navLinks.style.display === 'flex';
+          navLinks.style.display = isFlex ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+      }
+    })();
   </script>
+
 </body>
 </html>
