@@ -14,7 +14,6 @@
   <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
@@ -210,20 +209,20 @@
     </div>
   </a>
 
-  <!-- ==========================================================================
-       MASTER JAVASCRIPT ENGINE (All Interactivity, Demos & Animations)
+    <!-- ==========================================================================
+       MASTER JAVASCRIPT ENGINE (Ultra-Fast 60-120 FPS Lag-Free)
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-      // --- 1. BRAND PRELOADER SIMULATION ---
+      // --- 1. BRAND PRELOADER ---
       const preloader = document.getElementById('nrPreloader');
       const loaderFill = document.getElementById('loaderFill');
       const loaderPercent = document.getElementById('loaderPercent');
       let progress = 0;
 
       const loaderInterval = setInterval(() => {
-        progress += Math.floor(Math.random() * 14) + 10;
+        progress += Math.floor(Math.random() * 20) + 15;
         if (progress > 100) progress = 100;
         if (loaderFill) loaderFill.style.width = progress + '%';
         if (loaderPercent) loaderPercent.textContent = progress + '%';
@@ -233,92 +232,74 @@
           setTimeout(() => {
             if (preloader) {
               preloader.classList.add('fade-out');
-              setTimeout(() => preloader.style.display = 'none', 500);
+              setTimeout(() => preloader.style.display = 'none', 400);
             }
-          }, 250);
+          }, 150);
         }
-      }, 35);
+      }, 25);
 
-      // --- 2. LENIS SMOOTH SCROLL & SCROLL PROGRESS BAR ---
-      let lenis;
-      if (typeof Lenis !== 'undefined') {
-        lenis = new Lenis({
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          direction: 'vertical',
-          smooth: true
-        });
-
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-      }
-
-      // Scroll Progress Bar Update
+      // --- 2. SCROLL PROGRESS BAR (Passive & RAF Optimized) ---
       const progressBar = document.getElementById('scrollProgress');
+      let isScrolling = false;
       window.addEventListener('scroll', () => {
-        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        if (progressBar) progressBar.style.width = scrolled + '%';
-      });
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(() => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (progressBar && height > 0) progressBar.style.width = ((winScroll / height) * 100) + '%';
+            isScrolling = false;
+          });
+        }
+      }, { passive: true });
 
-      // --- 3. CUSTOM MAGNETIC CURSOR ---
+      // --- 3. CUSTOM MAGNETIC CURSOR (GPU Hardware-Accelerated) ---
       const cursorDot = document.getElementById('cursorDot');
       const cursorAura = document.getElementById('cursorAura');
       const cursorText = document.getElementById('cursorText');
 
       if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
-        window.addEventListener('mousemove', (e) => {
-          cursorDot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-          cursorAura.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-        });
+        let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+        let isMoving = false;
 
-        document.querySelectorAll('a, button, .tilt-card, .growth-card, .project-card, .service-block, .timeline-card, .feature-mini-box').forEach(el => {
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(renderCursor);
+          }
+        }, { passive: true });
+
+        function renderCursor() {
+          currentX += (mouseX - currentX) * 0.3;
+          currentY += (mouseY - currentY) * 0.3;
+          cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          cursorAura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+          if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
+            requestAnimationFrame(renderCursor);
+          } else {
+            isMoving = false;
+          }
+        }
+
+        document.querySelectorAll('a, button, .service-block, .project-card, .timeline-card, .team-card').forEach(el => {
           el.addEventListener('mouseenter', () => {
             cursorAura.classList.add('cursor-hover');
             if (el.classList.contains('project-card') || el.classList.contains('service-block')) {
               if (cursorText) cursorText.textContent = 'EXPLORE';
             }
-          });
+          }, { passive: true });
+
           el.addEventListener('mouseleave', () => {
             cursorAura.classList.remove('cursor-hover');
             if (cursorText) cursorText.textContent = '';
-          });
+          }, { passive: true });
         });
       }
 
-      // --- 4. VANILLA TILT CARDS ---
-      if (typeof VanillaTilt !== 'undefined') {
-        VanillaTilt.init(document.querySelectorAll(".service-block, .feature-mini-box, .timeline-card, .project-card, .team-card, .audit-form-card, .contact-card"), {
-          max: 6,
-          speed: 300,
-          glare: true,
-          "max-glare": 0.1
-        });
-      }
-
-      // --- 5. GSAP SCROLL REVEAL ---
-      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.utils.toArray('.service-block, .timeline-card, .project-card, .team-card, .contact-card').forEach(item => {
-          gsap.from(item, {
-            scrollTrigger: {
-              trigger: item,
-              start: "top 88%"
-            },
-            y: 35,
-            opacity: 0,
-            duration: 0.75,
-            ease: "power2.out"
-          });
-        });
-      }
-
-      // --- 6. MOBILE MENU TOGGLE ---
+      // --- 4. MOBILE MENU TOGGLE ---
       const mobileBtn = document.getElementById('mobileMenuBtn');
       const navLinks = document.querySelector('.nav-links');
       if (mobileBtn && navLinks) {
