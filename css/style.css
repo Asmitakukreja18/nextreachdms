@@ -602,7 +602,37 @@ button {
   box-shadow: var(--shadow-sm);
 }
 
-/* Slide 3: Connected AI Network Graph (from screenshot) */
+/* Slide 3: YOU + AI Network (Matching Screenshot 3) */
+.you-ai-network {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.you-ai-center {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--nr-navy-deep);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: 3px solid var(--nr-orange-main);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.you-ai-lines {
+  flex-grow: 1;
+}
+
+/* Slide 4: Connected AI Network Graph (from screenshot) */
 .ai-network-layout {
   position: relative;
   display: flex;
