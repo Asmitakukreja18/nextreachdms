@@ -217,12 +217,14 @@ button {
 .nav-links a {
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--nr-navy-main);
+  font-weight: 700;
 }
 
 .nav-links a::after {
