@@ -1294,8 +1294,297 @@ button {
 }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
+   INDUSTRY GROWTH BLUEPRINTS
    ========================================================================== */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.industry-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--nr-orange-main);
+  box-shadow: 0 16px 36px -8px rgba(255, 107, 0, 0.2);
+}
+
+.industry-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: var(--nr-navy-soft);
+  color: var(--nr-navy-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  transition: var(--transition-fast);
+}
+
+.industry-card:hover .industry-icon {
+  background: var(--gradient-orange);
+  color: #ffffff;
+}
+
+.industry-card h3 {
+  font-size: 1.2rem;
+  color: var(--nr-navy-deep);
+  margin-bottom: 8px;
+}
+
+.industry-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.industry-stat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--nr-orange-soft);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  color: var(--nr-orange-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   COMPARISON MATRIX TABLE
+   ========================================================================== */
+.comparison-table-wrapper {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-top: 40px;
+}
+
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comp-table th, .comp-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.92rem;
+}
+
+.comp-table th {
+  background: var(--nr-navy-deep);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.comp-table th.highlight-col {
+  background: var(--nr-orange-main);
+}
+
+.comp-table tr:hover td {
+  background: #fafbfc;
+}
+
+.comp-badge-nr {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nr-orange-deep);
+  font-weight: 800;
+}
+
+.comp-badge-trad {
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   TECH ARSENAL & INTEGRATIONS LOGO CLOUD
+   ========================================================================== */
+.tech-cloud-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tech-logo-pill {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--nr-navy-deep);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.tech-logo-pill:hover {
+  border-color: var(--nr-orange-main);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange-glow);
+  color: var(--nr-orange-main);
+}
+
+/* ==========================================================================
+   EXECUTIVE TESTIMONIALS
+   ========================================================================== */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--nr-orange-main);
+  box-shadow: 0 16px 36px -8px rgba(0, 45, 98, 0.12);
+}
+
+.client-rating-stars {
+  color: var(--nr-gold-amber);
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 16px;
+}
+
+.author-pic {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--nr-orange-main);
+}
+
+.author-info h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--nr-navy-deep);
+}
+
+.author-info p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   FAQ ACCORDION
+   ========================================================================== */
+.faq-accordion {
+  max-width: 860px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+}
+
+.faq-item.active {
+  border-color: var(--nr-orange-main);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--nr-navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  color: var(--nr-orange-main);
+  transition: transform var(--transition-fast);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 24px 22px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .industry-grid, .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
