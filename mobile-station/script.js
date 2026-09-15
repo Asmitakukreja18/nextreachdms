@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    MOBILE STATION │ INTERACTIVE SHOWROOM LOGIC & 3D STAGE ENGINE
    ========================================================================== */
 
@@ -399,7 +399,7 @@ function closeCartDrawer() {
 
 // 9. WhatsApp Order Builder
 function openWhatsAppOrder(customText = "") {
-  const phone = "917499181193";
+  const phone = "919322160461";
   let message = customText;
 
   if (!message) {
