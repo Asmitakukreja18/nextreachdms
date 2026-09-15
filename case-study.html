@@ -398,6 +398,19 @@
         </div>
       </div>
 
+      <!-- Comprehensive Multi-Image Visual Gallery Showcase -->
+      <div class="full-gallery-section">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span class="section-tag">Visual Assets &amp; Deliverables</span>
+          <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--nr-navy-deep); margin-top: 8px;">Full Interface &amp; Campaign Gallery</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Explore all high-definition screenshots, landing funnels, and workflows. Click any picture to enlarge in full-screen lightbox.</p>
+        </div>
+        
+        <div class="full-gallery-grid" id="cFullGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
       <!-- Final CTA Banner -->
       <div class="case-cta-banner">
         <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800; margin-bottom: 12px;">Want Similar Breakthrough Revenue for Your Brand?</h2>
@@ -416,6 +429,17 @@
 
     </div>
   </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="nr-lightbox" id="nrLightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="Enlarged View" id="lightboxImg">
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -490,10 +514,10 @@
         ],
         mainImage: "images/work-marketiqx.png",
         gallery: [
-          { label: "🖥️ Platform Home", src: "images/work-marketiqx.png" },
-          { label: "📈 Customer Success (5.2x ROI)", src: "images/marketiqx-stories.png" },
-          { label: "🎁 100 Free Credits Onboarding", src: "images/marketiqx-onboarding.png" },
-          { label: "⚡ SmartQueue™ Architecture", src: "images/marketiqx-smartqueue.png" }
+          { label: "🖥️ Platform Home", src: "images/work-marketiqx.png", desc: "Main landing interface and Meta Cloud API dashboard." },
+          { label: "📈 Customer Success (5.2x ROI)", src: "images/marketiqx-stories.png", desc: "Real case studies: Nova Luxe Apparel & UrbanBlend Direct." },
+          { label: "🎁 100 Free Credits Onboarding", src: "images/marketiqx-onboarding.png", desc: "Instant frictionless self-serve onboarding form." },
+          { label: "⚡ SmartQueue™ Architecture", src: "images/marketiqx-smartqueue.png", desc: "High-speed telecom routing and anti-ban protection." }
         ],
         challenges: [
           "Legacy broadcast tools suffered from frequent phone number bans and 20%+ message drop rates during peak sale periods.",
@@ -519,12 +543,12 @@
         ],
         mainImage: "images/work-letsexplore.png",
         gallery: [
-          { label: "🌍 Global Travel Portal", src: "images/work-letsexplore.png" },
-          { label: "🏖️ Holiday Packages", src: "images/letsexplore-packages.png" },
-          { label: "✨ Custom Dream Itineraries", src: "images/letsexplore-customise.png" },
-          { label: "🤖 Gemini AI Concierge", src: "images/letsexplore-ai-bot.png" },
-          { label: "📸 Travellers Gallery", src: "images/letsexplore-gallery.png" },
-          { label: "🏛️ Heritage & Domestic Tours", src: "images/letsexplore-heritage.png" }
+          { label: "🌍 Global Travel Portal", src: "images/work-letsexplore.png", desc: "International DMC destination discovery portal." },
+          { label: "🏖️ Holiday Packages", src: "images/letsexplore-packages.png", desc: "Trending holiday tour packages (Dubai, Bali, Europe, Maldives)." },
+          { label: "✨ Custom Dream Itineraries", src: "images/letsexplore-customise.png", desc: "Dynamic multi-day custom group tour quotation builder." },
+          { label: "🤖 Gemini AI Concierge", src: "images/letsexplore-ai-bot.png", desc: "24/7 AI-powered travel concierge and 30-second itinerary generator." },
+          { label: "📸 Travellers Gallery", src: "images/letsexplore-gallery.png", desc: "Real community travel moments and verified customer reviews." },
+          { label: "🏛️ Heritage & Domestic Tours", src: "images/letsexplore-heritage.png", desc: "Rajasthan heritage circuits, wildlife escapes, and domestic tours." }
         ],
         challenges: [
           "Static PDF brochures caused 75%+ drop-offs before travelers requested quotes.",
@@ -550,13 +574,13 @@
         ],
         mainImage: "images/mobilestation-flagship-16pro.png",
         gallery: [
-          { label: "📱 iPhone 16 Pro Flagship", src: "images/mobilestation-flagship-16pro.png" },
-          { label: "⚡ 30-Min Rapid Repair Lab", src: "images/mobilestation-repair.png" },
-          { label: "🎬 3D Commercial & OLED", src: "images/mobilestation-3d-commercial.png" },
-          { label: "💎 Super Retina XDR Display", src: "images/mobilestation-display.png" },
-          { label: "🛡️ Zero Compromise Hero", src: "images/mobilestation-zero-compromise.png" },
-          { label: "💰 Pricing & Specs Breakdown", src: "images/mobilestation-pricing-spec.png" },
-          { label: "🏬 Showroom Overview", src: "images/work-mobilestation.png" }
+          { label: "📱 iPhone 16 Pro Flagship", src: "images/mobilestation-flagship-16pro.png", desc: "Desert Titanium luxury flagship phone showcase." },
+          { label: "⚡ 30-Min Rapid Repair Lab", src: "images/mobilestation-repair.png", desc: "30 Minutes Good As New component engineering lab." },
+          { label: "🎬 3D Commercial & OLED", src: "images/mobilestation-3d-commercial.png", desc: "Interactive 3D commercial scroller and OLED architecture." },
+          { label: "💎 Super Retina XDR Display", src: "images/mobilestation-display.png", desc: "6.9-inch 120Hz ProMotion display feature breakdown." },
+          { label: "🛡️ Zero Compromise Hero", src: "images/mobilestation-zero-compromise.png", desc: "Pristine sealed and Grade A+ certified smartphone editions." },
+          { label: "💰 Pricing & Specs Breakdown", src: "images/mobilestation-pricing-spec.png", desc: "Desert Titanium iPhone 16 Pro Max specifications and WhatsApp quote." },
+          { label: "🏬 Showroom Overview", src: "images/work-mobilestation.png", desc: "Omnichannel showroom footprint and live store inventory." }
         ],
         challenges: [
           "Intense competition from mega e-commerce marketplaces offering steep price discounts.",
@@ -582,10 +606,10 @@
         ],
         mainImage: "images/work-medex.png",
         gallery: [
-          { label: "🏥 Global Sourcing Directory", src: "images/work-medex.png" },
-          { label: "🌐 Global Importers Feedback", src: "images/medex-global-importers.png" },
-          { label: "🏭 Sourcing & Export Infra", src: "images/medex-sourcing-infrastructure.png" },
-          { label: "💊 Formulations Product Catalog", src: "images/medex-formulations-catalog.png" }
+          { label: "🏥 Global Sourcing Directory", src: "images/work-medex.png", desc: "International WHO-GMP formulations B2B catalog." },
+          { label: "🌐 Global Importers Feedback", src: "images/medex-global-importers.png", desc: "Verified testimonials from USA, Germany, and UK healthcare distributors." },
+          { label: "🏭 Sourcing & Export Infra", src: "images/medex-sourcing-infrastructure.png", desc: "Strict quality assurance, trusted partners, and global supply chain." },
+          { label: "💊 Formulations Product Catalog", src: "images/medex-formulations-catalog.png", desc: "Cenforce, Kamagra, and Abhirise tablet directory with instant specs." }
         ],
         challenges: [
           "Overseas institutional buyers required verified WHO-GMP compliance documentation upfront.",
@@ -631,6 +655,24 @@
         gTabs.style.display = 'none';
       }
 
+      // Full Multi-Image Grid Showcase
+      const fullGrid = document.getElementById('cFullGrid');
+      if (fullGrid && data.gallery) {
+        fullGrid.innerHTML = data.gallery.map((g, idx) => `
+          <div class="gallery-item-card" onclick="openLightbox('${g.src}', '${g.label}')">
+            <div class="gallery-item-img-wrap">
+              <img src="${g.src}" alt="${g.label}" loading="lazy">
+              <span class="gallery-item-badge">Asset 0${idx + 1}</span>
+              <div class="gallery-item-zoom-icon">🔍</div>
+            </div>
+            <div class="gallery-item-body">
+              <h4>${g.label}</h4>
+              <p>${g.desc || 'High-converting interactive visual deliverable.'}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+
       // Challenges
       document.getElementById('cChallengeList').innerHTML = data.challenges.map(c => `
         <li><span class="bullet-icon">⚠️</span> <span>${c}</span></li>
@@ -668,6 +710,30 @@
       document.querySelectorAll('.gallery-tab-btn').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
     }
+
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('nrLightbox');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      if (lb && img) {
+        img.src = src;
+        if (cap) cap.textContent = caption || '';
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox(e) {
+      const lb = document.getElementById('nrLightbox');
+      if (lb) {
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
 
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
