@@ -35,6 +35,36 @@
       <div class="nr-loader-percent" id="loaderPercent">0%</div>
     </div>
   </div>
+  <script>
+    (function() {
+      var p = 0;
+      var f = document.getElementById('loaderFill');
+      var t = document.getElementById('loaderPercent');
+      var pl = document.getElementById('nrPreloader');
+      var iv = setInterval(function() {
+        p += Math.floor(Math.random() * 25) + 15;
+        if (p > 100) p = 100;
+        if (f) f.style.width = p + '%';
+        if (t) t.textContent = p + '%';
+        if (p >= 100) {
+          clearInterval(iv);
+          setTimeout(function() {
+            if (pl) {
+              pl.classList.add('fade-out');
+              setTimeout(function() { pl.style.display = 'none'; }, 300);
+            }
+          }, 80);
+        }
+      }, 20);
+      setTimeout(function() {
+        clearInterval(iv);
+        if (pl) {
+          pl.classList.add('fade-out');
+          setTimeout(function() { pl.style.display = 'none'; }, 200);
+        }
+      }, 700);
+    })();
+  </script>
 
   <!-- ==========================================================================
        2. SCROLL PROGRESS BAR & CUSTOM CURSOR
@@ -1977,6 +2007,43 @@
           questionBtn.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             faqItems.forEach(i => i.classList.remove('active'));
+            if (!isActive) {
+              item.classList.add('active');
+            }
+          });
+        }
+      });
+
+      // --- MOBILE DRAWER NAVIGATION ---
+      const mobileBtn = document.getElementById('mobileMenuBtn') || document.querySelector('.mobile-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          navLinks.classList.toggle('mobile-open');
+          const isOpen = navLinks.classList.contains('mobile-open');
+          mobileBtn.innerHTML = isOpen ? '✕' : '☰';
+          mobileBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+            mobileBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+          });
+        });
+      }
+    });
+  </script>
+
   <!-- ==========================================================================
        PROJECT CASE STUDY DETAILS INTERACTIVE MODAL
        ========================================================================== -->
