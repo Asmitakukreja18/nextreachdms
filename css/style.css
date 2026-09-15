@@ -64,6 +64,15 @@
   padding: 0;
 }
 
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
 html {
   font-size: 16px;
 }
@@ -1830,24 +1839,27 @@ button {
 
 .project-thumb-box {
   position: relative;
-  height: 220px;
-  max-height: 230px;
+  height: 250px;
   width: 100%;
   overflow: hidden;
-  background: var(--nr-navy-deep);
+  background: #091220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .project-thumb-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 250px;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover .project-thumb-img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .project-thumb-overlay {
@@ -3187,17 +3199,22 @@ input:checked + .slider-round:before {
 .modal-image-preview {
   position: relative;
   width: 100%;
-  height: 300px;
-  background: var(--nr-navy-deep);
+  height: 380px;
+  max-height: 50vh;
+  background: #091220;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 2px solid var(--border-subtle);
 }
 
 .modal-image-preview img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  max-height: 380px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .modal-image-badge {
