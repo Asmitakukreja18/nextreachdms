@@ -399,7 +399,7 @@ function closeCartDrawer() {
 
 // 9. WhatsApp Order Builder
 function openWhatsAppOrder(customText = "") {
-  const phone = "919322160461";
+  const phone = "917499181193";
   let message = customText;
 
   if (!message) {

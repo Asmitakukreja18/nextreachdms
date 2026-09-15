@@ -1,9 +1,9 @@
 ﻿/**
  * NextReach DMS & WhatsApp Marketing - 100% WhatsApp Direct Lead Engine
- * Directs all form submissions instantly to WhatsApp (+91 93221 60461) with complete formatted details
+ * Directs all form submissions instantly to WhatsApp (+91 74991 81193) with complete formatted details
  */
 
-const WHATSAPP_NUMBER = "919322160461";
+const WHATSAPP_NUMBER = "917499181193";
 
 window.NextReachAPI = {
   
