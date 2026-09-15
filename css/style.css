@@ -3214,6 +3214,40 @@ input:checked + .slider-round:before {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.modal-gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 20px;
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--border-subtle);
+  scrollbar-width: thin;
+}
+
+.modal-thumb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--nr-navy-deep);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.modal-thumb-btn:hover,
+.modal-thumb-btn.active {
+  background: var(--gradient-orange);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
 .modal-content-body {
   padding: 30px clamp(20px, 4vw, 40px);
 }

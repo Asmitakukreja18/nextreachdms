@@ -609,6 +609,9 @@
         <div class="modal-image-badge" id="mProjBadge"></div>
       </div>
 
+      <!-- Live Screenshot Gallery Switcher -->
+      <div class="modal-gallery-thumbs" id="mProjThumbs"></div>
+
       <div class="modal-content-body">
         <h3 class="modal-title" id="mProjTitle"></h3>
         <p class="modal-subtitle" id="mProjDesc"></p>
@@ -668,12 +671,18 @@
   </div>
 
   <script>
-    // --- PROJECT CASE STUDIES DATA & MODAL CONTROLLER ---
+    // --- PROJECT CASE STUDIES DATA & MULTI-SCREENSHOT GALLERY ---
     const projectCaseStudies = {
       marketiqx: {
         title: "Marketiqx: Intelligent WhatsApp Marketing & Meta Cloud API Platform",
         badge: "💼 WhatsApp SaaS • Meta Verified Cloud API",
         image: "images/work-marketiqx.png",
+        gallery: [
+          { label: "🖥️ Platform Home", src: "images/work-marketiqx.png" },
+          { label: "📈 Customer Success (5.2x ROI)", src: "images/marketiqx-stories.png" },
+          { label: "🎁 100 Free Credits Onboarding", src: "images/marketiqx-onboarding.png" },
+          { label: "⚡ SmartQueue™ Architecture", src: "images/marketiqx-smartqueue.png" }
+        ],
         desc: "Engineered high-throughput SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.",
         metrics: [
           { val: "99.4%", lbl: "Verified Inbox Delivery SLA" },
@@ -696,6 +705,14 @@
         title: "Let's Explore DMC: AI Trip Planning Engine & Global Tour Scaling",
         badge: "✈️ Travel & Tourism • AI Trip Planner",
         image: "images/work-letsexplore.png",
+        gallery: [
+          { label: "🌍 Global Travel Portal", src: "images/work-letsexplore.png" },
+          { label: "🏖️ Holiday Packages", src: "images/letsexplore-packages.png" },
+          { label: "✨ Custom Dream Itineraries", src: "images/letsexplore-customise.png" },
+          { label: "🤖 Gemini AI Concierge", src: "images/letsexplore-ai-bot.png" },
+          { label: "📸 Travellers Gallery", src: "images/letsexplore-gallery.png" },
+          { label: "🏛️ Heritage & Domestic Tours", src: "images/letsexplore-heritage.png" }
+        ],
         desc: "Designed high-converting international holiday package portal, interactive AI Trip Planner lead engine, customized group tour workflows, and instant WhatsApp booking concierge.",
         metrics: [
           { val: "+290%", lbl: "Group Tour Enquiries" },
@@ -718,6 +735,11 @@
         title: "Mobile Station: Omnichannel Flagship Smartphone Retail & 30-Min Rapid Repair Hub",
         badge: "📱 Premium Retail & D2C • Apple & Flagship Phones",
         image: "images/work-mobilestation.png",
+        gallery: [
+          { label: "📱 Flagship Storefront", src: "images/work-mobilestation.png" },
+          { label: "⚡ 30-Min Rapid Repair Lab", src: "images/mobilestation-repair.png" },
+          { label: "💎 Super Retina OLED Display", src: "images/mobilestation-display.png" }
+        ],
         desc: "Scaled premium flagship smartphone retail and 30-minute component engineering lab with hyper-local geo-fencing ads, trade-in value funnels, and WhatsApp VIP desk.",
         metrics: [
           { val: "₹2.4 Cr", lbl: "Monthly Turnaround GMV" },
@@ -740,6 +762,9 @@
         title: "MedEx Pharmaceuticals: WHO-GMP Certified Global Sourcing & Bulk Export Hub",
         badge: "🏥 Global B2B Pharma • WHO-GMP Formulations Export",
         image: "images/work-medex.png",
+        gallery: [
+          { label: "🏥 Global B2B Portal", src: "images/work-medex.png" }
+        ],
         desc: "Built an international B2B pharmaceutical sourcing portal, multi-currency RFQ product directory, wholesale WhatsApp desk, and compliance-first overseas lead pipelines.",
         metrics: [
           { val: "14+", lbl: "Export Destination Countries" },
@@ -765,10 +790,24 @@
       if (!data) return;
 
       const modal = document.getElementById('projectDetailModal');
-      document.getElementById('mProjImg').src = data.image;
+      const imgEl = document.getElementById('mProjImg');
+      imgEl.src = data.image;
       document.getElementById('mProjBadge').textContent = data.badge;
       document.getElementById('mProjTitle').textContent = data.title;
       document.getElementById('mProjDesc').textContent = data.desc;
+
+      // Render Gallery Buttons
+      const thumbsContainer = document.getElementById('mProjThumbs');
+      if (thumbsContainer && data.gallery && data.gallery.length > 0) {
+        thumbsContainer.innerHTML = data.gallery.map((g, idx) => `
+          <button type="button" class="modal-thumb-btn ${idx === 0 ? 'active' : ''}" onclick="switchModalImage(this, '${g.src}')">
+            ${g.label}
+          </button>
+        `).join('');
+        thumbsContainer.style.display = 'flex';
+      } else if (thumbsContainer) {
+        thumbsContainer.style.display = 'none';
+      }
 
       document.getElementById('mProjMet1Val').textContent = data.metrics[0].val;
       document.getElementById('mProjMet1Lbl').textContent = data.metrics[0].lbl;
@@ -788,6 +827,12 @@
 
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+    }
+
+    function switchModalImage(btn, src) {
+      document.getElementById('mProjImg').src = src;
+      document.querySelectorAll('.modal-thumb-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
     }
 
     function closeProjectModal() {
