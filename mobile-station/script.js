@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    MOBILE STATION │ INTERACTIVE SHOWROOM LOGIC & 3D STAGE ENGINE
    ========================================================================== */
 
@@ -9,6 +9,7 @@ const SHOWROOM_DEVICES = [
     brand: "apple",
     name: "iPhone 18 Pro Max",
     spanText: "Pro Max",
+    image: "images/Screenshot 2026-09-16 163951.png",
     subtitle: "Aerospace Titanium. Quantum A20 Pro Silicon. Beyond Perception.",
     basePrice: 179900,
     emiText: "₹8,490/mo",
@@ -57,12 +58,13 @@ const SHOWROOM_DEVICES = [
   {
     id: "s26ultra",
     brand: "samsung",
-    name: "Galaxy S26 Ultra",
-    spanText: "S26 Ultra",
-    subtitle: "200MP Quad Telephoto. Built-in S-Pen. Snapdragon 8 Elite Gen 5.",
+    name: "Galaxy Z Fold8 & S26 Series",
+    spanText: "Fold8 & S26",
+    image: "images/Screenshot 2026-09-16 164019.png",
+    subtitle: "200MP Quad Telephoto. Foldable AI FlexCam. Snapdragon 8 Elite Gen 5.",
     basePrice: 139999,
     emiText: "₹6,890/mo",
-    badge: "EXCLUSIVE COLORWAY",
+    badge: "EXCLUSIVE FOLDABLE & S SERIES",
     specs: {
       chip: "SD 8 Elite",
       chipSub: "Galaxy Custom Core",
@@ -106,22 +108,23 @@ const SHOWROOM_DEVICES = [
   },
   {
     id: "pixel11pro",
-    brand: "google",
-    name: "Pixel 11 Pro XL",
-    spanText: "11 Pro XL",
-    subtitle: "Google Tensor G5 AI. Gemini Live Nano Engine. Magic Studio Optics.",
-    basePrice: 124999,
-    emiText: "₹5,990/mo",
-    badge: "GEMINI NANO ON-DEVICE",
+    brand: "apple",
+    name: "Apple Flagship Lineup",
+    spanText: "Series 18 & 17",
+    image: "images/Screenshot 2026-09-16 164102.png",
+    subtitle: "iPhone 18 Pro Max, iPhone 18 Pro, & iPhone 17 Pro Max sealed in stock.",
+    basePrice: 139900,
+    emiText: "₹6,210/mo",
+    badge: "BESTSELLER LINEUP",
     specs: {
-      chip: "Tensor G5",
-      chipSub: "Next-Gen AI TPU",
+      chip: "A20 Bionic",
+      chipSub: "Next-Gen Silicon",
       display: "120Hz",
-      displaySub: "Super Actua OLED",
-      camera: "50MP",
-      cameraSub: "Pro Triple Array AI",
+      displaySub: "Super Retina XDR",
+      camera: "48MP",
+      cameraSub: "Fusion Triple Optics",
       battery: "30+ Hrs",
-      batterySub: "Extreme Battery Saver"
+      batterySub: "All-Day Video Power"
     },
     colors: {
       red: {
@@ -151,6 +154,36 @@ const SHOWROOM_DEVICES = [
         wallGrad: "radial-gradient(circle at 50% 40%, #27272a 0%, #09090b 60%, #000000 100%)",
         haloColor: "rgba(82, 82, 91, 0.45)",
         reflColor: "rgba(82, 82, 91, 0.3)"
+      }
+    }
+  },
+  {
+    id: "showrooms",
+    brand: "store",
+    name: "Flagship Showrooms & BKC Studio",
+    spanText: "Showrooms",
+    image: "images/Screenshot 2026-09-16 164028.png",
+    subtitle: "Amravati Flagship Lounge, Nagpur Experience Lounge, and Mumbai BKC Studio.",
+    basePrice: 0,
+    emiText: "Doorstep Delivery",
+    badge: "VIP EXPERIENCE LOUNGES",
+    specs: {
+      chip: "30 Min",
+      chipSub: "Express Repair Lab",
+      display: "Live Demo",
+      displaySub: "Hands-on Display Tables",
+      camera: "Valet",
+      cameraSub: "Parking & VIP Lounges",
+      battery: "7 Days",
+      batterySub: "Open 10 AM - 10 PM"
+    },
+    colors: {
+      red: {
+        title: "Amravati Flagship Lounge",
+        bodyGrad: "linear-gradient(135deg, #18181b 0%, #3f3f46 45%, #09090b 100%)",
+        wallGrad: "radial-gradient(circle at 50% 40%, #27272a 0%, #09090b 60%, #000000 100%)",
+        haloColor: "rgba(255, 30, 66, 0.45)",
+        reflColor: "rgba(255, 30, 66, 0.3)"
       }
     }
   }
@@ -451,8 +484,8 @@ document.addEventListener("DOMContentLoaded", () => {
       (dev, i) => `
       <article class="product-item-card" data-brand="${dev.brand}">
         <span class="product-tag-chip">${dev.badge}</span>
-        <div class="card-product-stage">
-          <div class="card-mini-phone" style="background: ${dev.colors.red.bodyGrad}"></div>
+        <div class="card-product-stage" style="padding: 12px; background: rgba(0, 0, 0, 0.4); border-radius: var(--radius-lg); height: 210px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+          <img src="${dev.image}" alt="${dev.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md);">
         </div>
         <h3 class="card-item-title">${dev.name}</h3>
         <p class="card-item-desc">${dev.subtitle}</p>
@@ -462,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="spec-mini-pill">${dev.specs.camera}</span>
         </div>
         <div class="card-item-footer">
-          <div class="card-item-price">${formatINR(dev.basePrice)}</div>
+          <div class="card-item-price">${dev.basePrice ? formatINR(dev.basePrice) : "VIP Lounge"}</div>
           <button type="button" class="btn-card-add" onclick="addCatalogDevice(${i})">Add to Bag +</button>
         </div>
       </article>
