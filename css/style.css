@@ -4430,3 +4430,18 @@ input:checked + .slider-round:before {
   line-height: 1;
 }
 
+/* ==========================================================================
+   EXPANDED ABOUT PAGE RESPONSIVE STYLES
+   ========================================================================== */
+@media (max-width: 992px) {
+  .stats-ribbon-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
+  .story-box-grid { grid-template-columns: 1fr !important; gap: 30px !important; padding: 36px 24px !important; }
+  .framework-cards-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 18px !important; }
+  .team-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+
+@media (max-width: 600px) {
+  .stats-ribbon-grid { grid-template-columns: 1fr !important; text-align: center; }
+  .framework-cards-grid { grid-template-columns: 1fr !important; }
+}
+
