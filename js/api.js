@@ -1,4 +1,4 @@
-﻿/**
+/**
  * NextReach DMS & WhatsApp Marketing - 100% WhatsApp Direct Lead Engine
  * Directs all form submissions instantly to WhatsApp (+91 74991 81193) with complete formatted details
  */
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ad_spend: formData.get('ad_spend') || '',
         model: formData.get('model') || '',
         bottleneck: formData.get('bottleneck') || '',
-        service: '90-Day Free Revenue & Pipeline Audit'
+        service: 'Free Revenue & Pipeline Audit'
       };
 
       // Save locally in background
