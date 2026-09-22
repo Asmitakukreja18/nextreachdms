@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initMobileMenu();
   initCaseStudyFilter();
+  initScrollReveal();
+  initNavbarScroll();
+  initCustomCursor();
+  initMagneticButtons();
 });
 
 // 1. Theme Management (Light / Dark)
@@ -125,18 +129,21 @@ function initModal() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       modal.style.display = 'flex';
+      setTimeout(() => modal.classList.add('active'), 10);
     });
   });
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+      modal.classList.remove('active');
+      setTimeout(() => { modal.style.display = 'none'; }, 300);
     });
   }
 
   window.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.style.display = 'none';
+      modal.classList.remove('active');
+      setTimeout(() => { modal.style.display = 'none'; }, 300);
     }
   });
 
@@ -147,7 +154,8 @@ function initModal() {
       const phone = form.querySelector('[name="phone"]').value;
       const service = form.querySelector('[name="service"]').value;
 
-      modal.style.display = 'none';
+      modal.classList.remove('active');
+      setTimeout(() => { modal.style.display = 'none'; }, 300);
       form.reset();
 
       showToast(`🎉 Thank you ${name}! Our Growth Strategist will call you at ${phone} regarding ${service}.`);
@@ -171,8 +179,14 @@ function initCaseStudyFilter() {
       cards.forEach(card => {
         if (filter === 'all' || card.getAttribute('data-category') === filter) {
           card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
         } else {
-          card.style.display = 'none';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => { card.style.display = 'none'; }, 300);
         }
       });
     });
@@ -203,7 +217,117 @@ function initMobileMenu() {
   }
 }
 
-// 7. Global Toast Notification System
+// 7. Adwali-Inspired Hardware Accelerated Scroll Reveal System
+function initScrollReveal() {
+  const autoTargets = document.querySelectorAll('.section-title, .section-header, .service-card, .case-card, .feature-card, .pricing-card, .stat-item, .audit-card, .testimonial-card, .process-step-card, .leadership-card');
+  autoTargets.forEach((el, idx) => {
+    if (!el.classList.contains('nr-reveal')) {
+      el.classList.add('nr-reveal');
+      const delayClass = `delay-${((idx % 4) + 1) * 100}`;
+      el.classList.add(delayClass);
+    }
+  });
+
+  const reveals = document.querySelectorAll('.nr-reveal, .nr-reveal-fade-up, .nr-reveal-scale, .nr-reveal-left, .nr-reveal-right');
+  if (!reveals.length) return;
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  reveals.forEach(el => revealObserver.observe(el));
+}
+
+// 8. Glassmorphic Navbar Scroll Shrink
+function initNavbarScroll() {
+  const navbar = document.getElementById('mainNavbar') || document.querySelector('.header-nav');
+  if (!navbar) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
+// 9. Physics Lerped Custom Cursor Tracker
+function initCustomCursor() {
+  const dot = document.getElementById('cursorDot');
+  const aura = document.getElementById('cursorAura');
+  if (!dot || !aura) return;
+
+  let mouseX = 0, mouseY = 0;
+  let auraX = 0, auraY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+  });
+
+  function renderCursor() {
+    auraX += (mouseX - auraX) * 0.18;
+    auraY += (mouseY - auraY) * 0.18;
+    aura.style.left = `${auraX}px`;
+    aura.style.top = `${auraY}px`;
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+
+  const hoverableSelector = 'a, button, .btn, .btn-orange, .btn-navy-outline, .service-card, .case-card, .theme-toggle-btn';
+  document.querySelectorAll(hoverableSelector).forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      dot.classList.add('hovered');
+      aura.classList.add('hovered');
+    });
+    el.addEventListener('mouseleave', () => {
+      dot.classList.remove('hovered');
+      aura.classList.remove('hovered');
+    });
+  });
+}
+
+// 10. Magnetic Spring Button Physics & Interactive Confetti Feedback
+function initMagneticButtons() {
+  const magneticBtns = document.querySelectorAll('.btn-orange, .btn-navy-outline, .btn-hero, .btn-glow, .magnetic-btn');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.04)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+
+    if (btn.classList.contains('btn-orange')) {
+      btn.addEventListener('click', () => {
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 45,
+            spread: 60,
+            origin: { y: 0.8 },
+            colors: ['#ff6b00', '#002d62', '#ff4500', '#ffffff']
+          });
+        }
+      });
+    }
+  });
+}
+
+// 11. Global Toast Notification System
 function showToast(message) {
   let container = document.querySelector('.toast-container');
   if (!container) {
@@ -224,3 +348,4 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 }
+

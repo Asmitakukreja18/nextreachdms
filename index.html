@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -84,7 +84,91 @@
 
       <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
-        <a href="services.html">Services</a>
+
+        <!-- SERVICES MEGA DROPDOWN (Adwali Style) -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">SEO</div>
+                <a href="services.html#seo">Technical SEO</a>
+                <a href="services.html#seo">On-Page SEO</a>
+                <a href="services.html#seo">Off-Page SEO</a>
+                <a href="services.html#seo">Local & Maps SEO</a>
+                <a href="services.html#seo">Ecommerce SEO</a>
+                <a href="services.html#seo">AEO & AI Search</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA</div>
+                <a href="services.html#paid-media">Google Ads</a>
+                <a href="services.html#paid-media">Meta (FB & IG) Ads</a>
+                <a href="services.html#paid-media">LinkedIn Ads</a>
+                <a href="services.html#paid-media">YouTube Ads</a>
+                <a href="services.html#paid-media">Performance Scale</a>
+                <a href="services.html#paid-media">CAPI Remarketing</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP & AI</div>
+                <a href="whatsapp-business-api.html">Official Meta WhatsApp API</a>
+                <a href="whatsapp-marketing-services.html">WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html">RCS Interactive Messaging</a>
+                <a href="bulk-sms.html">Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">CONTENT & CREATIVE</div>
+                <a href="services.html#content">Content Strategy</a>
+                <a href="services.html#content">Copywriting</a>
+                <a href="services.html#content">SEO Content</a>
+                <a href="services.html#content">UGC Video & Ad Films</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">BRAND & WEB</div>
+                <a href="services.html#web">Conversion Web Design</a>
+                <a href="services.html#branding">Brand Identity & Strategy</a>
+                <a href="services.html" class="mega-link-accent">All services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN (Adwali Style) -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce">E-commerce</a>
+                <a href="case-studies.html?cat=realestate">Real Estate</a>
+                <a href="case-studies.html?cat=healthcare">Healthcare</a>
+                <a href="case-studies.html?cat=education">Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas">SaaS & Tech</a>
+                <a href="case-studies.html?cat=hospitality">Hospitality</a>
+                <a href="case-studies.html?cat=beauty">Fashion & Beauty</a>
+                <a href="case-studies.html?cat=automotive">Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech">Fintech</a>
+                <a href="case-studies.html?cat=fnb">Food & Beverage</a>
+                <a href="case-studies.html?cat=d2c">D2C Brands</a>
+                <a href="case-studies.html?cat=b2b">B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups">Startups</a>
+                <a href="case-studies.html?cat=jewellery">Jewellery</a>
+                <a href="case-studies.html?cat=travel">Travel & Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent">All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="case-studies.html">Case Studies</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="about.html">About</a>
@@ -106,8 +190,11 @@
   <!-- ==========================================================================
        4. HERO SECTION (High-Ticket Awwwards Style)
        ========================================================================== -->
-  <section class="hero-wrapper">
-    <div class="container hero-grid">
+  <section class="hero-wrapper" style="position: relative; overflow: hidden;">
+    <div class="ambient-glow-orb orb-orange" style="top: -100px; right: 5%;"></div>
+    <div class="ambient-glow-orb orb-navy" style="bottom: -150px; left: -10%;"></div>
+
+    <div class="container hero-grid" style="position: relative; z-index: 1;">
       
       <!-- Left Column: Copy & High-Converting Value Proposition -->
       <div class="hero-left">
@@ -118,7 +205,7 @@
 
         <h1 class="hero-heading">
           Scale Brand Revenue with<br>
-          <span class="orange-part dynamic-hero-text" id="dynamicHeroText">Meta Ads &amp; WhatsApp AI</span>
+          <span class="orange-part dynamic-hero-text phl" id="dynamicHeroText">Meta Ads &amp; WhatsApp AI</span>
         </h1>
 
         <p class="hero-description">
@@ -883,112 +970,111 @@
 
     <div class="pricing-grid">
       
-      <!-- Package 1: Starter Pod -->
+      <!-- Package 1: Reels & Flyers Lite -->
       <div class="pricing-card tilt-card" data-tilt data-tilt-max="5" data-tilt-speed="300">
         <div class="pricing-head">
-          <div class="package-name">Starter Growth Pod</div>
-          <div class="package-desc">For growing businesses needing consistent social media presence, reels creation, and paid ad setup.</div>
+          <div class="package-name">Social Lite Pod</div>
+          <div class="package-desc">Ideal for local businesses needing consistent video reels and promotional flyers for active social reach.</div>
           
           <div class="price-original-wrap">
-            <span class="price-original">₹80,000</span>
-            <span class="discount-tag-save">20% Flat OFF</span>
+            <span class="price-original">₹8,500</span>
+            <span class="discount-tag-save">Special Offer</span>
           </div>
           
           <div class="price-display">
             <span class="price-curr">₹</span>
-            <span class="price-amount" data-monthly="64,000" data-quarterly="57,600">64,000</span>
+            <span class="price-amount" data-monthly="6,500" data-quarterly="5,850">6,500</span>
             <span class="price-period">/ month</span>
           </div>
         </div>
 
         <div class="plan-benefits-highlight">
-          <div class="plan-benefits-title">📦 Monthly Inclusions</div>
-          <p class="plan-benefits-summary">8 Edited Reels + 12 Social Media Posts/Pamphlets + Meta Ad Management.</p>
+          <div class="plan-benefits-title">📦 Package Inclusions</div>
+          <p class="plan-benefits-summary">20 Reels + 10 Flyers + Social Media Management.</p>
         </div>
 
         <div class="pricing-features">
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 8 Short Video Reels &amp; Video Ads / mo</strong> (Scripting &amp; Editing)</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 12 Social Media Posts, Pamphlets &amp; Promo Banners</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎯 Meta (Instagram &amp; Facebook) Ad Setup &amp; Targeting</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 💬 WhatsApp Business Greeting &amp; Auto-Reply Setup</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 🛡️ Ad Account Pixel &amp; Lead Tracking Configuration</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 📊 Monthly Performance Review &amp; Growth Report</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 20 Custom Short Reels</strong> (Scripting, Editing &amp; Audio Sync)</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 10 Promotional Flyers &amp; Banners</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎯 Meta (Instagram &amp; FB) Page Optimization</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 💬 WhatsApp Business Setup &amp; Quick Replies</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 📊 Monthly Reach &amp; Engagement Summary</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Choose Starter Pod →</a>
+          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Choose ₹6,500 Plan →</a>
         </div>
       </div>
 
-      <!-- Package 2: Scale Engine (Popular) -->
+      <!-- Package 2: Scale & Web Design (Popular) -->
       <div class="pricing-card popular tilt-card" data-tilt data-tilt-max="5" data-tilt-speed="300">
-        <div class="popular-ribbon">⭐ MOST POPULAR • 20% OFF</div>
+        <div class="popular-ribbon">⭐ MOST POPULAR • BEST VALUE</div>
         <div class="pricing-head">
-          <div class="package-name">Scale Revenue Engine</div>
-          <div class="package-desc">Complete growth package for brands wanting aggressive social media reach, daily content, and ad scaling.</div>
+          <div class="package-name">Growth &amp; Web Engine</div>
+          <div class="package-desc">Complete digital presence bundle with reels, flyers, and full website &amp; SEO designing.</div>
           
           <div class="price-original-wrap">
-            <span class="price-original">₹1,55,000</span>
-            <span class="discount-tag-save">20% Flat OFF</span>
+            <span class="price-original">₹12,500</span>
+            <span class="discount-tag-save">Save ₹3,000</span>
           </div>
 
           <div class="price-display">
             <span class="price-curr">₹</span>
-            <span class="price-amount" data-monthly="1,24,000" data-quarterly="1,11,600">1,24,000</span>
+            <span class="price-amount" data-monthly="9,500" data-quarterly="8,550">9,500</span>
             <span class="price-period">/ month</span>
           </div>
         </div>
 
         <div class="plan-benefits-highlight" style="background: #fff7ed; border-color: var(--nr-orange-main);">
-          <div class="plan-benefits-title" style="color: var(--nr-orange-deep);">🚀 Monthly Inclusions</div>
-          <p class="plan-benefits-summary">16 Edited Reels + 24 Posts/Pamphlets + Meta &amp; Google Ads + WhatsApp Automation.</p>
+          <div class="plan-benefits-title" style="color: var(--nr-orange-deep);">🚀 Package Inclusions</div>
+          <p class="plan-benefits-summary">15 Reels + 15 Flyers + Website &amp; SEO Designing.</p>
         </div>
 
         <div class="pricing-features">
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 16 Short Video Reels, Product Demos &amp; UGC Ads / mo</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 24 Custom Social Posts, Digital Pamphlets &amp; Carousel Creatives</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎯 Full Meta (IG/FB) + Google Search Ad Campaign Management</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 💬 WhatsApp Broadcast &amp; Lead Auto-Nurturing Workflow</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 🚀 Landing Page &amp; Lead Funnel Optimization</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 📈 Bi-Weekly Strategy Calls &amp; Live Tracking Dashboard</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 15 Short Video Reels &amp; Promo Videos</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 15 Social Media Flyers &amp; Graphic Creatives</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🌐 Custom Website &amp; SEO Designing Included</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🛡️ <em>SSL charges &amp; Domain charges extra</em></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🎯 Meta &amp; Google Lead Funnel Setup</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 📈 Bi-Weekly Strategy &amp; Growth Review</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">Choose Scale Engine →</a>
+          <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">Choose ₹9,500 Plan →</a>
         </div>
       </div>
 
-      <!-- Package 3: Enterprise Omnichannel -->
+      <!-- Package 3: Pro Shoot & Video Suite -->
       <div class="pricing-card tilt-card" data-tilt data-tilt-max="5" data-tilt-speed="300">
         <div class="pricing-head">
-          <div class="package-name">Enterprise Omnichannel</div>
-          <div class="package-desc">Full-scale digital marketing department for established businesses and multi-channel brands.</div>
+          <div class="package-name">Pro Shoot &amp; Video Suite</div>
+          <div class="package-desc">Premium on-location photoshoot and professional video shoot for high-end brand storytelling.</div>
           
           <div class="price-original-wrap">
-            <span class="price-original">₹3,00,000</span>
-            <span class="discount-tag-save">20% Flat OFF</span>
+            <span class="price-original">₹19,000</span>
+            <span class="discount-tag-save">Special Offer</span>
           </div>
 
           <div class="price-display">
             <span class="price-curr">₹</span>
-            <span class="price-amount" data-monthly="2,40,000" data-quarterly="2,16,000">2,40,000</span>
-            <span class="price-period">/ month</span>
+            <span class="price-amount" data-monthly="15,000" data-quarterly="13,500">15,000</span>
+            <span class="price-period">/ shoot package</span>
           </div>
         </div>
 
         <div class="plan-benefits-highlight">
-          <div class="plan-benefits-title">👑 Monthly Inclusions</div>
-          <p class="plan-benefits-summary">30+ Video Reels + Full Creative Suite + Omnichannel Ads + Dedicated Account Team.</p>
+          <div class="plan-benefits-title">👑 Package Inclusions</div>
+          <p class="plan-benefits-summary">Photoshoot + Professional Videoshoot (8 Short Shots).</p>
         </div>
 
         <div class="pricing-features">
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 30+ Video Ads, Viral Reels &amp; Story Creatives / mo</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 Complete Graphic Design (All Social Posts, Pamphlets &amp; Catalogues)</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎯 Omnichannel Performance Media (Meta, Google, YouTube, Retargeting)</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 💬 Advanced WhatsApp Cloud API Automation &amp; Broadcast Setup</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 📊 Dedicated Growth Account Manager &amp; Weekly Strategy Reviews</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 👥 Priority Design &amp; Video Turnaround Time (24–48 Hours)</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>📸 Professional Brand &amp; Product Photoshoot</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎥 High-End Video Shoot (8 Professional Short Shots)</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🎬 Professional Editing, Color Grading &amp; Sound Mix</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🎨 Custom Video Covers &amp; High-Res Export</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 👥 Dedicated Production &amp; Lighting Crew</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> ⚡ Fast Turnaround &amp; Full Raw File Access</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Contact for Enterprise →</a>
+          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Book ₹15,000 Shoot →</a>
         </div>
       </div>
 
@@ -996,86 +1082,6 @@
   </section>
 
   <!-- ==========================================================================
-       13. VIDEO & TEXT FOUNDER TESTIMONIALS (Priority ⭐⭐⭐⭐)
-       ========================================================================== -->
-  <section class="container" id="testimonials" style="padding: 40px 24px 80px;">
-    <div class="section-header">
-      <span class="section-tag">Executive Proof</span>
-      <h2 class="section-title">Client Video Breakdowns &amp; Reviews</h2>
-      <p class="section-subtitle">Hear directly from high-growth founders and CMOs who doubled their pipeline with NextReach DMS.</p>
-    </div>
-
-    <div class="video-testimonials-grid">
-      
-      <!-- Video Testimonial 1 -->
-      <div class="video-test-card">
-        <div class="video-poster-box">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=80" alt="Rajesh Sharma Video Breakdown" class="video-poster-img">
-          <div class="video-overlay-gradient"></div>
-          <button class="video-play-pulse-btn" data-video-title="Rajesh Sharma (Aura Wellness) • ₹25L to ₹1.8 Cr/mo Breakdown" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" aria-label="Play Testimonial">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          </button>
-          <span class="video-duration-pill">▶ 1:45 min Case Video</span>
-        </div>
-        <div class="video-card-body">
-          <div class="client-rating-stars">★★★★★</div>
-          <p class="testimonial-quote">
-            "NextReach DMS took our D2C brand from ₹25L to over ₹1.8 Cr monthly revenue in less than 5 months. Their UGC video velocity and WhatsApp cart recovery alone increased our profit margins by 38%."
-          </p>
-          <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces" class="author-pic" alt="Rajesh Sharma">
-            <div class="author-info">
-              <h4>Rajesh Sharma</h4>
-              <p>Founder &amp; CEO, Aura Wellness</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video Testimonial 2 -->
-      <div class="video-test-card">
-        <div class="video-poster-box">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80" alt="Pooja Mehta Video Breakdown" class="video-poster-img">
-          <div class="video-overlay-gradient"></div>
-          <button class="video-play-pulse-btn" data-video-title="Pooja Mehta (CloudScale AI) • High-Ticket B2B Lead Engine" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" aria-label="Play Testimonial">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          </button>
-          <span class="video-duration-pill">▶ 2:10 min Case Video</span>
-        </div>
-        <div class="video-card-body">
-          <div class="client-rating-stars">★★★★★</div>
-          <p class="testimonial-quote">
-            "Our B2B SaaS demo show-up rate doubled within 30 days. The AI video cold email sequences and LinkedIn ABM strategy they set up generate consistent ₹10L+ ACV deals on autopilot."
-          </p>
-          <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces" class="author-pic" alt="Pooja Mehta">
-            <div class="author-info">
-              <h4>Pooja Mehta</h4>
-              <p>VP of Growth, CloudScale Technologies</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video Testimonial 3 -->
-      <div class="video-test-card">
-        <div class="video-poster-box">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80" alt="Vikramaditya Rao Video Breakdown" class="video-poster-img">
-          <div class="video-overlay-gradient"></div>
-          <button class="video-play-pulse-btn" data-video-title="Vikramaditya Rao (Apex Estates) • ₹38 Cr Luxury Sold Out" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" aria-label="Play Testimonial">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          </button>
-          <span class="video-duration-pill">▶ 1:55 min Case Video</span>
-        </div>
-        <div class="video-card-body">
-          <div class="client-rating-stars">★★★★★</div>
-          <p class="testimonial-quote">
-            "Unlike typical agencies that hide behind vanity impressions, NextReach DMS literally acts like our internal revenue department. 100% transparent attribution and relentless focus on pipeline."
-          </p>
-          <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces" class="author-pic" alt="Vikramaditya Rao">
-            <div class="author-info">
-              <h4>Vikramaditya Rao</h4>
               <p>Managing Director, Apex Luxury Spaces</p>
             </div>
           </div>
@@ -1195,7 +1201,7 @@
       <!-- Project 3: Mobile Station (Flagship Retail & Distribution) -->
       <div class="project-card tilt-card" data-tilt data-tilt-max="4" data-tilt-speed="300">
         <div class="project-thumb-box">
-          <img src="images/mobilestation-flagship-16pro.png" alt="Mobile Station Flagship Retail" class="project-thumb-img" id="cardImg-mobilestation">
+          <img src="images/Screenshot 2026-09-16 163951.png" alt="Mobile Station Flagship Retail" class="project-thumb-img" id="cardImg-mobilestation">
           <div class="project-thumb-overlay">
             <span class="project-industry-tag">📱 Flagship Retail &amp; D2C</span>
           </div>
@@ -2181,15 +2187,12 @@
       mobilestation: {
         title: "Mobile Station: Omnichannel Flagship Smartphone Retail & 30-Min Rapid Repair Hub",
         badge: "📱 Premium Retail & D2C • Apple & Flagship Phones",
-        image: "images/mobilestation-flagship-16pro.png",
+        image: "images/Screenshot 2026-09-16 163951.png",
         gallery: [
-          { label: "📱 iPhone 16 Pro Flagship", src: "images/mobilestation-flagship-16pro.png" },
-          { label: "⚡ 30-Min Rapid Repair Lab", src: "images/mobilestation-repair.png" },
-          { label: "🎬 3D Commercial & OLED", src: "images/mobilestation-3d-commercial.png" },
-          { label: "💎 Super Retina XDR Display", src: "images/mobilestation-display.png" },
-          { label: "🛡️ Zero Compromise Hero", src: "images/mobilestation-zero-compromise.png" },
-          { label: "💰 Pricing & Specs Breakdown", src: "images/mobilestation-pricing-spec.png" },
-          { label: "🏬 Showroom Overview", src: "images/work-mobilestation.png" }
+          { label: "📱 iPhone 18 Pro Max 3D Stage", src: "images/Screenshot 2026-09-16 163951.png" },
+          { label: " Apple Flagship Series Showcase", src: "images/Screenshot 2026-09-16 164102.png" },
+          { label: "✦ Samsung Foldables & S Series Showcase", src: "images/Screenshot 2026-09-16 164019.png" },
+          { label: "🏬 Flagship Experience Lounges (Amravati, Nagpur, BKC)", src: "images/Screenshot 2026-09-16 164028.png" }
         ],
         desc: "Scaled premium flagship smartphone retail and 30-minute component engineering lab with hyper-local geo-fencing ads, trade-in value funnels, and WhatsApp VIP desk.",
         metrics: [
