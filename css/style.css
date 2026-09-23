@@ -464,7 +464,8 @@ button {
 }
 
 /* Full-Width Mega Menu Container attached right underneath header */
-.mega-menu {
+.mega-menu,
+.mega-menu-overlay {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -474,20 +475,21 @@ button {
   border-top: 1px solid var(--border-subtle);
   border-bottom: 4px solid var(--nr-orange-main);
   box-shadow: 0 30px 60px -10px rgba(0, 45, 98, 0.18), 0 10px 25px rgba(255, 107, 0, 0.05);
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
   transition: opacity 0.35s var(--ease-out-smooth), transform 0.35s var(--ease-out-smooth), visibility 0.35s ease;
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 9999;
   padding: 38px 0 44px 0;
   text-align: left;
 }
 
-.nav-item-dropdown:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
+.nav-item-dropdown:hover .mega-menu,
+.nav-item-dropdown:hover .mega-menu-overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+  pointer-events: auto !important;
 }
 
 .mega-menu-grid {

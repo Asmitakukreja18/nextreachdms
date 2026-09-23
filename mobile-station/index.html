@@ -14,6 +14,19 @@
   <link rel="stylesheet" href="styles.css" />
 
 <style id="header-clean-override">
+  .mega-menu,
+  .mega-menu-overlay {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+  }
+  .nav-item-dropdown:hover .mega-menu,
+  .nav-item-dropdown:hover .mega-menu-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
   .nav-links a::after,
   .nav-links a:hover::after,
   .nav-links a.active::after,
