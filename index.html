@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NextReach DMS | Revenue Engineering for Ambitious Brands</title>
-  <meta name="description" content="NextReach DMS is an elite performance revenue agency. We engineer predictable acquisition engines, WhatsApp AI automation, high-converting creative, and omnichannel scale for high-growth brands.">
-  
+  <title>NextReach DMS | Digital Marketing, Web Development & Growth Solutions</title>
+  <meta name="description"
+    content="NextReach DMS helps businesses grow through digital marketing, SEO, social media, web development, lead generation and performance-focused growth solutions.">
+  <meta name="keywords"
+    content="Digital Marketing Agency, Digital Marketing Services, SEO Services, Social Media Marketing, Performance Marketing, Website Development, Lead Generation, WhatsApp Marketing, Business Growth, Digital Growth Agency">
+  <link rel="canonical" href="https://nextreachdms.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nextreachdms.com/">
+  <meta property="og:title" content="NextReach DMS | Digital Marketing, Web Development & Growth Solutions">
+  <meta property="og:description"
+    content="NextReach DMS helps businesses grow through digital marketing, SEO, social media, web development, lead generation and performance-focused growth solutions.">
+  <meta property="og:image" content="images/logo.png">
+
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://nextreachdms.com/">
+  <meta property="twitter:title" content="NextReach DMS | Digital Marketing, Web Development & Growth Solutions">
+  <meta property="twitter:description"
+    content="NextReach DMS helps businesses grow through digital marketing, SEO, social media, web development, lead generation and performance-focused growth solutions.">
+  <meta property="twitter:image" content="images/logo.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=7.0">
 
   <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -20,6 +43,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
+
 <body>
 
   <!-- ==========================================================================
@@ -36,33 +60,36 @@
     </div>
   </div>
   <script>
-    (function() {
+    (function () {
       var p = 0;
       var f = document.getElementById('loaderFill');
       var t = document.getElementById('loaderPercent');
       var pl = document.getElementById('nrPreloader');
-      var iv = setInterval(function() {
-        p += Math.floor(Math.random() * 25) + 15;
-        if (p > 100) p = 100;
+      if (!pl) return;
+
+      function dismissLoader() {
+        if (pl && !pl.classList.contains('fade-out')) {
+          pl.classList.add('fade-out');
+          setTimeout(function () { pl.style.display = 'none'; }, 300);
+        }
+      }
+
+      var iv = setInterval(function () {
+        p += Math.floor(Math.random() * 35) + 25;
+        if (p >= 100) p = 100;
         if (f) f.style.width = p + '%';
         if (t) t.textContent = p + '%';
         if (p >= 100) {
           clearInterval(iv);
-          setTimeout(function() {
-            if (pl) {
-              pl.classList.add('fade-out');
-              setTimeout(function() { pl.style.display = 'none'; }, 300);
-            }
-          }, 80);
+          dismissLoader();
         }
-      }, 20);
-      setTimeout(function() {
-        clearInterval(iv);
-        if (pl) {
-          pl.classList.add('fade-out');
-          setTimeout(function() { pl.style.display = 'none'; }, 200);
-        }
-      }, 700);
+      }, 12);
+
+      window.addEventListener('load', dismissLoader);
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(dismissLoader, 100);
+      });
+      setTimeout(dismissLoader, 250);
     })();
   </script>
 
@@ -76,6 +103,7 @@
   <!-- ==========================================================================
        3. TOP NAVIGATION BAR (Glassmorphic)
        ========================================================================== -->
+  <!-- NAVIGATION -->
   <header class="header-nav" id="mainNavbar">
     <div class="container nav-wrapper">
       <a href="index.html" class="brand-link">
@@ -85,92 +113,124 @@
       <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
 
-        <!-- SERVICES MEGA DROPDOWN (Adwali Style) -->
+        <!-- SERVICES MEGA DROPDOWN (Adwali Style 5-Column Full-Width) -->
         <div class="nav-item-dropdown">
           <a href="services.html" class="dropdown-trigger">
             Services <span class="chevron">⌄</span>
           </a>
-          <div class="mega-menu mega-menu-services">
-            <div class="container mega-menu-grid">
-              <div class="mega-column">
+          <div class="mega-menu-overlay">
+            <div class="container mega-grid-5col">
+              <div class="mega-col">
                 <div class="mega-col-title">SEO</div>
-                <a href="services.html#seo">Technical SEO</a>
-                <a href="services.html#seo">On-Page SEO</a>
-                <a href="services.html#seo">Off-Page SEO</a>
-                <a href="services.html#seo">Local & Maps SEO</a>
-                <a href="services.html#seo">Ecommerce SEO</a>
-                <a href="services.html#seo">AEO & AI Search</a>
+                <div class="mega-col-links">
+                  <a href="services.html#seo">Technical SEO</a>
+                  <a href="services.html#seo">On-Page SEO</a>
+                  <a href="services.html#seo">Off-Page SEO</a>
+                  <a href="services.html#seo">Local SEO</a>
+                  <a href="services.html#seo">Ecommerce SEO</a>
+                  <a href="services.html#seo">AI Search (AEO)</a>
+                </div>
               </div>
-              <div class="mega-column">
+              <div class="mega-col">
                 <div class="mega-col-title">PAID MEDIA</div>
-                <a href="services.html#paid-media">Google Ads</a>
-                <a href="services.html#paid-media">Meta (FB & IG) Ads</a>
-                <a href="services.html#paid-media">LinkedIn Ads</a>
-                <a href="services.html#paid-media">YouTube Ads</a>
-                <a href="services.html#paid-media">Performance Scale</a>
-                <a href="services.html#paid-media">CAPI Remarketing</a>
+                <div class="mega-col-links">
+                  <a href="services.html#performance">Google Ads</a>
+                  <a href="services.html#performance">Meta Ads</a>
+                  <a href="services.html#performance">LinkedIn Ads</a>
+                  <a href="services.html#performance">YouTube Ads</a>
+                  <a href="services.html#performance">Performance Media</a>
+                  <a href="services.html#performance">Remarketing</a>
+                </div>
               </div>
-              <div class="mega-column">
-                <div class="mega-col-title">WHATSAPP & AI</div>
-                <a href="whatsapp-business-api.html">Official Meta WhatsApp API</a>
-                <a href="whatsapp-marketing-services.html">WhatsApp AI Automation</a>
-                <a href="rcs-messaging-services.html">RCS Interactive Messaging</a>
-                <a href="bulk-sms.html">Omnichannel Campaigns</a>
+              <div class="mega-col">
+                <div class="mega-col-title">SOCIAL MEDIA</div>
+                <div class="mega-col-links">
+                  <a href="services.html#smm">Organic Social</a>
+                  <a href="services.html#smm">Paid Social</a>
+                  <a href="services.html#smm">Reels & Content</a>
+                  <a href="services.html#smm">Community Growth</a>
+                  <a href="services.html#smm">Social Strategy</a>
+                </div>
               </div>
-              <div class="mega-column">
-                <div class="mega-col-title">CONTENT & CREATIVE</div>
-                <a href="services.html#content">Content Strategy</a>
-                <a href="services.html#content">Copywriting</a>
-                <a href="services.html#content">SEO Content</a>
-                <a href="services.html#content">UGC Video & Ad Films</a>
+              <div class="mega-col">
+                <div class="mega-col-title">CONTENT & WEB</div>
+                <div class="mega-col-links">
+                  <a href="services.html#creative">Content Strategy</a>
+                  <a href="services.html#creative">Copywriting</a>
+                  <a href="services.html#creative">SEO Content</a>
+                  <a href="services.html#creative">Storytelling</a>
+                  <a href="services.html#web">Web Development</a>
+                  <a href="services.html#web">UI/UX Architecture</a>
+                </div>
               </div>
-              <div class="mega-column">
-                <div class="mega-col-title">BRAND & WEB</div>
-                <a href="services.html#web">Conversion Web Design</a>
-                <a href="services.html#branding">Brand Identity & Strategy</a>
-                <a href="services.html" class="mega-link-accent">All services →</a>
+              <div class="mega-col">
+                <div class="mega-col-title">BRANDING & AI</div>
+                <div class="mega-col-links">
+                  <a href="services.html#creative">Identity & Strategy</a>
+                  <a href="services.html#creative">Reels & Ad Films</a>
+                  <a href="services.html#whatsapp">WhatsApp Marketing</a>
+                  <a href="services.html#ai">AI & Automation</a>
+                  <a href="services.html#outbound">Lead Generation</a>
+                  <a href="services.html" class="mega-link-accent">All Services →</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- INDUSTRIES MEGA DROPDOWN (Adwali Style) -->
+        <!-- INDUSTRIES MEGA DROPDOWN (Adwali Style 5-Column Full-Width) -->
         <div class="nav-item-dropdown">
           <a href="about.html#industries" class="dropdown-trigger">
             Industries <span class="chevron">⌄</span>
           </a>
-          <div class="mega-menu mega-menu-industries">
-            <div class="container mega-menu-grid mega-menu-grid-4">
-              <div class="mega-column">
-                <a href="case-studies.html?cat=ecommerce">E-commerce</a>
-                <a href="case-studies.html?cat=realestate">Real Estate</a>
-                <a href="case-studies.html?cat=healthcare">Healthcare</a>
-                <a href="case-studies.html?cat=education">Education</a>
+          <div class="mega-menu-overlay">
+            <div class="container mega-grid-5col">
+              <div class="mega-col">
+                <div class="mega-col-title">TRAVEL & TOURISM</div>
+                <div class="mega-col-links">
+                  <a href="case-studies.html?cat=travel">DMC Holiday Portals</a>
+                  <a href="case-studies.html?cat=travel">AI Trip Planners</a>
+                  <a href="case-studies.html?cat=travel">Group Tour Scaling</a>
+                </div>
               </div>
-              <div class="mega-column">
-                <a href="case-studies.html?cat=saas">SaaS & Tech</a>
-                <a href="case-studies.html?cat=hospitality">Hospitality</a>
-                <a href="case-studies.html?cat=beauty">Fashion & Beauty</a>
-                <a href="case-studies.html?cat=automotive">Automotive</a>
+              <div class="mega-col">
+                <div class="mega-col-title">REAL ESTATE</div>
+                <div class="mega-col-links">
+                  <a href="case-studies.html?cat=realestate">High-Ticket Lead Funnels</a>
+                  <a href="case-studies.html?cat=realestate">Luxury Villa Campaigns</a>
+                  <a href="case-studies.html?cat=realestate">Commercial Leasing</a>
+                </div>
               </div>
-              <div class="mega-column">
-                <a href="case-studies.html?cat=fintech">Fintech</a>
-                <a href="case-studies.html?cat=fnb">Food & Beverage</a>
-                <a href="case-studies.html?cat=d2c">D2C Brands</a>
-                <a href="case-studies.html?cat=b2b">B2B Enterprises</a>
+              <div class="mega-col">
+                <div class="mega-col-title">RETAIL & D2C</div>
+                <div class="mega-col-links">
+                  <a href="case-studies.html?cat=ecommerce">Omnichannel Retail</a>
+                  <a href="case-studies.html?cat=ecommerce">Catalog Ads & ROAS</a>
+                  <a href="case-studies.html?cat=ecommerce">Smartphone Outlets</a>
+                </div>
               </div>
-              <div class="mega-column">
-                <a href="case-studies.html?cat=startups">Startups</a>
-                <a href="case-studies.html?cat=jewellery">Jewellery</a>
-                <a href="case-studies.html?cat=travel">Travel & Tourism</a>
-                <a href="case-studies.html" class="mega-link-accent">All industries →</a>
+              <div class="mega-col">
+                <div class="mega-col-title">HEALTHCARE & EDU</div>
+                <div class="mega-col-links">
+                  <a href="case-studies.html?cat=healthcare">Pharma B2B Exports</a>
+                  <a href="case-studies.html?cat=healthcare">Patient Acquisition</a>
+                  <a href="case-studies.html?cat=education">Admissions Growth</a>
+                </div>
+              </div>
+              <div class="mega-col">
+                <div class="mega-col-title">LOCAL & B2B</div>
+                <div class="mega-col-links">
+                  <a href="case-studies.html?cat=local">Geo-Fenced Store Leads</a>
+                  <a href="case-studies.html?cat=services">Professional Services</a>
+                  <a href="case-studies.html" class="mega-link-accent">All Projects →</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <a href="case-studies.html">Case Studies</a>
-        <a href="index.html#pricing">Pricing</a>
+        <a href="#our-works">Case Studies</a>
+        <a href="#pricing">Pricing</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -195,11 +255,14 @@
     <div class="ambient-glow-orb orb-navy" style="bottom: -150px; left: -10%;"></div>
 
     <div class="container hero-grid" style="position: relative; z-index: 1;">
-      
+
       <!-- Left Column: Copy & High-Converting Value Proposition -->
       <div class="hero-left">
         <div class="partner-pill">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z" />
+          </svg>
           <span>ENTERPRISE REVENUE ENGINE &amp; GROWTH POD</span>
         </div>
 
@@ -209,29 +272,42 @@
         </h1>
 
         <p class="hero-description">
-          We help <strong>D2C, B2B &amp; Service Brands</strong> engineer predictable revenue pipelines. From high-ROAS Meta &amp; Google Ads and direct-response UGC creatives to official <strong>Meta WhatsApp Cloud Automation</strong> and server-side CAPI attribution.
+          We help <strong>D2C, B2B &amp; Service Brands</strong> engineer predictable revenue pipelines. From high-ROAS
+          Meta &amp; Google Ads and direct-response UGC creatives to official <strong>Meta WhatsApp Cloud
+            Automation</strong> and server-side CAPI attribution.
         </p>
 
         <div class="hero-cta-box">
           <a href="audit.html" class="btn-orange magnetic-btn">
             <span>🚀 Book Free Growth Audit</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </a>
           <a href="case-studies.html" class="btn-navy-outline magnetic-btn">
             <span>📈 View Case Studies (4.6x ROAS)</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </a>
         </div>
 
         <div class="client-proof-bar">
           <div class="avatar-stack">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces" alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces"
+              alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces"
+              alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=faces"
+              alt="Client Avatar">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces"
+              alt="Client Avatar">
           </div>
           <div class="proof-text">
-            <strong>Trusted by dozens of enterprise clients</strong> delivering high-impact revenue growth and strong retention rates.
+            <strong>Trusted by dozens of enterprise clients</strong> delivering high-impact revenue growth and strong
+            retention rates.
           </div>
         </div>
       </div>
@@ -239,7 +315,7 @@
       <!-- Right Column: Interactive 3D Tilt Animated "LIVE ENGINE" Card -->
       <div class="hero-right">
         <div class="live-engine-card tilt-card" id="liveEngineCard" data-tilt data-tilt-max="8" data-tilt-speed="400">
-          
+
           <!-- Top Window Header -->
           <div class="engine-top-bar">
             <div class="window-dots">
@@ -255,7 +331,7 @@
 
           <!-- Slides Viewport -->
           <div class="engine-slides-viewport">
-            
+
             <!-- Slide 1: Target Radar & 4.8x ROAS Card -->
             <div class="engine-slide active" data-slide="0">
               <div class="target-radar-layout">
@@ -305,25 +381,31 @@
                 </div>
                 <div class="you-ai-lines">
                   <svg width="100%" height="150" viewBox="0 0 300 150" fill="none" style="overflow: visible;">
-                    <line x1="40" y1="75" x2="160" y2="25" stroke="#ff6b00" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
-                    <line x1="40" y1="75" x2="160" y2="60" stroke="#002d62" stroke-width="2" opacity="0.4"/>
-                    <line x1="40" y1="75" x2="160" y2="95" stroke="#ff6b00" stroke-width="2" opacity="0.6"/>
-                    <line x1="40" y1="75" x2="160" y2="130" stroke="#002d62" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
-                    
-                    <circle cx="160" cy="25" r="7" fill="#ff6b00"/>
-                    <rect x="180" y="16" width="100" height="18" rx="4" fill="#fff4ed" stroke="#ff6b00" stroke-width="1"/>
+                    <line x1="40" y1="75" x2="160" y2="25" stroke="#ff6b00" stroke-width="2" stroke-dasharray="4 4"
+                      opacity="0.6" />
+                    <line x1="40" y1="75" x2="160" y2="60" stroke="#002d62" stroke-width="2" opacity="0.4" />
+                    <line x1="40" y1="75" x2="160" y2="95" stroke="#ff6b00" stroke-width="2" opacity="0.6" />
+                    <line x1="40" y1="75" x2="160" y2="130" stroke="#002d62" stroke-width="2" stroke-dasharray="4 4"
+                      opacity="0.4" />
+
+                    <circle cx="160" cy="25" r="7" fill="#ff6b00" />
+                    <rect x="180" y="16" width="100" height="18" rx="4" fill="#fff4ed" stroke="#ff6b00"
+                      stroke-width="1" />
                     <text x="190" y="29" fill="#e05300" font-size="10" font-weight="700">Meta Hyper-Ads</text>
 
-                    <circle cx="160" cy="60" r="7" fill="#002d62"/>
-                    <rect x="180" y="51" width="100" height="18" rx="4" fill="#e8eef6" stroke="#002d62" stroke-width="1"/>
+                    <circle cx="160" cy="60" r="7" fill="#002d62" />
+                    <rect x="180" y="51" width="100" height="18" rx="4" fill="#e8eef6" stroke="#002d62"
+                      stroke-width="1" />
                     <text x="190" y="64" fill="#002d62" font-size="10" font-weight="700">Google High-Intent</text>
 
-                    <circle cx="160" cy="95" r="7" fill="#ff6b00"/>
-                    <rect x="180" y="86" width="100" height="18" rx="4" fill="#fff4ed" stroke="#ff6b00" stroke-width="1"/>
+                    <circle cx="160" cy="95" r="7" fill="#ff6b00" />
+                    <rect x="180" y="86" width="100" height="18" rx="4" fill="#fff4ed" stroke="#ff6b00"
+                      stroke-width="1" />
                     <text x="190" y="99" fill="#e05300" font-size="10" font-weight="700">LinkedIn Outbound</text>
 
-                    <circle cx="160" cy="130" r="7" fill="#002d62"/>
-                    <rect x="180" y="121" width="100" height="18" rx="4" fill="#e8eef6" stroke="#002d62" stroke-width="1"/>
+                    <circle cx="160" cy="130" r="7" fill="#002d62" />
+                    <rect x="180" y="121" width="100" height="18" rx="4" fill="#e8eef6" stroke="#002d62"
+                      stroke-width="1" />
                     <text x="190" y="134" fill="#002d62" font-size="10" font-weight="700">WhatsApp Nurture</text>
                   </svg>
                 </div>
@@ -440,14 +522,15 @@
     <div class="section-header">
       <span class="section-tag">Interactive Simulation</span>
       <h2 class="section-title">Experience the AI WhatsApp Revenue Engine</h2>
-      <p class="section-subtitle">Click the options below to interact with our live 2-way Conversational Bot simulation and experience automated catalogs, appointment booking, and checkout recovery.</p>
+      <p class="section-subtitle">Click the options below to interact with our live 2-way Conversational Bot simulation
+        and experience automated catalogs, appointment booking, and checkout recovery.</p>
     </div>
 
     <div class="wa-demo-wrapper">
-      
+
       <!-- Interactive Phone Mockup -->
       <div class="wa-demo-phone-frame tilt-card" data-tilt data-tilt-max="5" data-tilt-speed="300">
-        
+
         <!-- Phone Top Header -->
         <div class="phone-top-bar">
           <div style="display: flex; align-items: center; gap: 10px;">
@@ -457,7 +540,8 @@
             </div>
             <div>
               <div class="phone-bot-title">
-                NextReach Growth Bot <span class="phone-verified-tick" title="Official Meta Verified Green Tick">✓</span>
+                NextReach Growth Bot <span class="phone-verified-tick"
+                  title="Official Meta Verified Green Tick">✓</span>
               </div>
               <div class="phone-bot-status">Official Business Account • Online</div>
             </div>
@@ -469,7 +553,7 @@
         <div class="phone-chat-body" id="phoneChatBody">
           <!-- Initial Welcome Message -->
           <div class="chat-date-divider">TODAY</div>
-          
+
           <div class="wa-msg wa-msg-bot">
             <div class="msg-text">
               👋 <strong>Hi there! Welcome to NextReach DMS.</strong><br>
@@ -494,9 +578,13 @@
 
         <!-- Phone Input Bottom Bar -->
         <div class="phone-input-bar">
-          <input type="text" id="phoneUserInput" class="phone-text-input" placeholder="Type 'Hi' or select an option above..." autocomplete="off">
+          <input type="text" id="phoneUserInput" class="phone-text-input"
+            placeholder="Type 'Hi' or select an option above..." autocomplete="off">
           <button class="phone-send-btn" id="btnSendPhoneMsg" aria-label="Send">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
           </button>
         </div>
 
@@ -507,7 +595,8 @@
         <div class="info-pill-tag">⚡ 98% OPEN RATE • 45% CONVERSION RATE</div>
         <h3 class="info-panel-title">Why WhatsApp Cloud API Outperforms Traditional Marketing</h3>
         <p class="info-panel-desc">
-          Emails get lost in spam folders and cold calls get blocked. Our official Meta Cloud API engine delivers instant, interactive buying experiences straight to your customers' WhatsApp with verified green tick trust.
+          Emails get lost in spam folders and cold calls get blocked. Our official Meta Cloud API engine delivers
+          instant, interactive buying experiences straight to your customers' WhatsApp with verified green tick trust.
         </p>
 
         <div class="wa-feature-points">
@@ -515,7 +604,8 @@
             <div class="feat-icon">🚀</div>
             <div>
               <strong>SmartQueue™ Anti-Ban Protection</strong>
-              <p>Distributes 100K+ hourly broadcasts across warmed IPs and tiered message limits with zero spam flags.</p>
+              <p>Distributes 100K+ hourly broadcasts across warmed IPs and tiered message limits with zero spam flags.
+              </p>
             </div>
           </div>
 
@@ -523,7 +613,8 @@
             <div class="feat-icon">🛍️</div>
             <div>
               <strong>1-Click Native Checkout &amp; Catalog</strong>
-              <p>Customers browse dynamic product carousels and complete UPI/Stripe payments directly within WhatsApp.</p>
+              <p>Customers browse dynamic product carousels and complete UPI/Stripe payments directly within WhatsApp.
+              </p>
             </div>
           </div>
 
@@ -531,7 +622,8 @@
             <div class="feat-icon">🤖</div>
             <div>
               <strong>Intelligent 2-Way Conversational AI</strong>
-              <p>Answers complex product queries, handles objections, and automatically books calendar appointments in HubSpot/CRM.</p>
+              <p>Answers complex product queries, handles objections, and automatically books calendar appointments in
+                HubSpot/CRM.</p>
             </div>
           </div>
         </div>
@@ -552,19 +644,20 @@
     <div class="section-header">
       <span class="section-tag">Executive Intelligence</span>
       <h2 class="section-title">Real-Time Campaign Analytics &amp; Attribution</h2>
-      <p class="section-subtitle">No vanity impressions. You get a transparent 24/7 revenue dashboard connecting every single ad rupee to closed client pipeline.</p>
+      <p class="section-subtitle">No vanity impressions. You get a transparent 24/7 revenue dashboard connecting every
+        single ad rupee to closed client pipeline.</p>
     </div>
 
     <!-- Live Dashboard Frame -->
     <div class="dash-preview-frame">
-      
+
       <!-- Dashboard Header & Channel Switcher -->
       <div class="dash-top-header">
         <div class="dash-brand-meta">
           <span class="dash-live-badge"><span class="pulse-orange-dot"></span> LIVE REVENUE STREAM</span>
           <span class="dash-account-name">Client Account: <strong>Apex Omnichannel Engine</strong></span>
         </div>
-        
+
         <div class="dash-tabs-bar">
           <button class="dash-tab active" data-dash="omni">Omnichannel Blended</button>
           <button class="dash-tab" data-dash="meta">Meta Advantage+</button>
@@ -599,7 +692,7 @@
 
       <!-- Main Graph & Real-Time Feed Grid -->
       <div class="dash-body-grid">
-        
+
         <!-- Interactive Multi-Channel Graph -->
         <div class="dash-chart-box">
           <div class="chart-header">
@@ -613,30 +706,34 @@
           <div class="chart-canvas-wrap">
             <svg class="dash-svg-chart" viewBox="0 0 700 240" preserveAspectRatio="none">
               <!-- Grid Lines -->
-              <line x1="0" y1="40" x2="700" y2="40" stroke="#f1f5f9" stroke-width="1"/>
-              <line x1="0" y1="100" x2="700" y2="100" stroke="#f1f5f9" stroke-width="1"/>
-              <line x1="0" y1="160" x2="700" y2="160" stroke="#f1f5f9" stroke-width="1"/>
-              <line x1="0" y1="220" x2="700" y2="220" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="0" y1="40" x2="700" y2="40" stroke="#f1f5f9" stroke-width="1" />
+              <line x1="0" y1="100" x2="700" y2="100" stroke="#f1f5f9" stroke-width="1" />
+              <line x1="0" y1="160" x2="700" y2="160" stroke="#f1f5f9" stroke-width="1" />
+              <line x1="0" y1="220" x2="700" y2="220" stroke="#f1f5f9" stroke-width="1" />
 
               <!-- Area Fill Gradient -->
               <defs>
                 <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#ff6b00" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="#ff6b00" stop-opacity="0.0"/>
+                  <stop offset="0%" stop-color="#ff6b00" stop-opacity="0.3" />
+                  <stop offset="100%" stop-color="#ff6b00" stop-opacity="0.0" />
                 </linearGradient>
               </defs>
 
               <!-- Chart Path Area -->
-              <polygon id="dashChartArea" points="0,200 100,170 200,180 300,120 400,110 500,60 600,70 700,30 700,240 0,240" fill="url(#chartGrad)"/>
-              
+              <polygon id="dashChartArea"
+                points="0,200 100,170 200,180 300,120 400,110 500,60 600,70 700,30 700,240 0,240"
+                fill="url(#chartGrad)" />
+
               <!-- Chart Line -->
-              <path id="dashChartPath" d="M0,200 L100,170 L200,180 L300,120 L400,110 L500,60 L600,70 L700,30" fill="none" stroke="#ff6b00" stroke-width="3.5" stroke-linecap="round"/>
+              <path id="dashChartPath" d="M0,200 L100,170 L200,180 L300,120 L400,110 L500,60 L600,70 L700,30"
+                fill="none" stroke="#ff6b00" stroke-width="3.5" stroke-linecap="round" />
 
               <!-- Glowing Data Points -->
-              <circle cx="100" cy="170" r="5" fill="#002d62" stroke="#ffffff" stroke-width="2"/>
-              <circle cx="300" cy="120" r="5" fill="#002d62" stroke="#ffffff" stroke-width="2"/>
-              <circle cx="500" cy="60" r="5" fill="#002d62" stroke="#ffffff" stroke-width="2"/>
-              <circle cx="700" cy="30" r="7" fill="#ff6b00" stroke="#ffffff" stroke-width="2.5" class="chart-pulse-point"/>
+              <circle cx="100" cy="170" r="5" fill="#002d62" stroke="#ffffff" stroke-width="2" />
+              <circle cx="300" cy="120" r="5" fill="#002d62" stroke="#ffffff" stroke-width="2" />
+              <circle cx="500" cy="60" r="5" fill="#002d62" stroke="#ffffff" stroke-width="2" />
+              <circle cx="700" cy="30" r="7" fill="#ff6b00" stroke="#ffffff" stroke-width="2.5"
+                class="chart-pulse-point" />
             </svg>
             <div class="chart-timeline-labels">
               <span>Week 1 (Audit)</span>
@@ -654,7 +751,7 @@
             <span>⚡ Live Conversion Stream</span>
             <span class="feed-active-badge">Real-Time</span>
           </div>
-          
+
           <div class="feed-items-list" id="dashLiveFeed">
             <div class="feed-item">
               <span class="feed-icon">🛍️</span>
@@ -699,12 +796,13 @@
     <div class="section-header">
       <span class="section-tag">Transformation Matrix</span>
       <h2 class="section-title">The Shift: Stagnant Growth vs Revenue Engine</h2>
-      <p class="section-subtitle">What happens when you replace fragmented ad agencies with a dedicated high-ticket growth partner.</p>
+      <p class="section-subtitle">What happens when you replace fragmented ad agencies with a dedicated high-ticket
+        growth partner.</p>
     </div>
 
     <div class="before-after-container">
       <div class="ba-grid-layout">
-        
+
         <!-- BEFORE: Traditional Agency Problem -->
         <div class="ba-card ba-before">
           <div class="ba-badge before-badge">❌ BEFORE NEXTREACH DMS</div>
@@ -713,25 +811,29 @@
             <li>
               <span class="ba-icon-x">✕</span>
               <div>
-                <strong>Stagnant 1.5x–2.0x ROAS:</strong> Ad accounts bleeding money with exhausted creative and audience fatigue.
+                <strong>Stagnant 1.5x–2.0x ROAS:</strong> Ad accounts bleeding money with exhausted creative and
+                audience fatigue.
               </div>
             </li>
             <li>
               <span class="ba-icon-x">✕</span>
               <div>
-                <strong>30%+ Attribution Blindspot:</strong> iOS privacy &amp; browser blockers distorting conversion data and wasting budget.
+                <strong>30%+ Attribution Blindspot:</strong> iOS privacy &amp; browser blockers distorting conversion
+                data and wasting budget.
               </div>
             </li>
             <li>
               <span class="ba-icon-x">✕</span>
               <div>
-                <strong>Low-Intent Leads &amp; No-Shows:</strong> Sales reps wasting hours chasing cold forms that never answer calls.
+                <strong>Low-Intent Leads &amp; No-Shows:</strong> Sales reps wasting hours chasing cold forms that never
+                answer calls.
               </div>
             </li>
             <li>
               <span class="ba-icon-x">✕</span>
               <div>
-                <strong>Slow Communication:</strong> Junior interns handling your account, answering emails after 48 hours with vague PDFs.
+                <strong>Slow Communication:</strong> Junior interns handling your account, answering emails after 48
+                hours with vague PDFs.
               </div>
             </li>
           </ul>
@@ -745,25 +847,29 @@
             <li>
               <span class="ba-icon-check">✓</span>
               <div>
-                <strong>4.8x+ Blended ROAS:</strong> 15+ fresh UGC video hooks &amp; Advantage+ algorithmic scaling every single week.
+                <strong>4.8x+ Blended ROAS:</strong> 15+ fresh UGC video hooks &amp; Advantage+ algorithmic scaling
+                every single week.
               </div>
             </li>
             <li>
               <span class="ba-icon-check">✓</span>
               <div>
-                <strong>100% Server CAPI Attribution:</strong> Zero data loss attribution connecting ad spend directly to bank revenue.
+                <strong>100% Server CAPI Attribution:</strong> Zero data loss attribution connecting ad spend directly
+                to bank revenue.
               </div>
             </li>
             <li>
               <span class="ba-icon-check">✓</span>
               <div>
-                <strong>98% WhatsApp AI Nurture:</strong> Automatic lead qualification, instant video VSLs, and verified calendar bookings.
+                <strong>98% WhatsApp AI Nurture:</strong> Automatic lead qualification, instant video VSLs, and verified
+                calendar bookings.
               </div>
             </li>
             <li>
               <span class="ba-icon-check">✓</span>
               <div>
-                <strong>Dedicated Senior Growth Pod:</strong> 4–6 senior specialists in your private Slack channel with daily optimization sprints.
+                <strong>Dedicated Senior Growth Pod:</strong> 4–6 senior specialists in your private Slack channel with
+                daily optimization sprints.
               </div>
             </li>
           </ul>
@@ -780,7 +886,8 @@
     <div class="section-header">
       <span class="section-tag">Enterprise Capabilities</span>
       <h2 class="section-title">Growth Services We Deliver &amp; Scale</h2>
-      <p class="section-subtitle">We don't offer generic marketing. Every service is an engineered module designed to unlock predictable pipeline and blended ROAS.</p>
+      <p class="section-subtitle">We don't offer generic marketing. Every service is an engineered module designed to
+        unlock predictable pipeline and blended ROAS.</p>
     </div>
 
     <!-- Category Filter Bar -->
@@ -795,7 +902,7 @@
 
     <!-- 6 Animated Service Cards -->
     <div class="growth-grid" id="servicesGrid">
-      
+
       <!-- Service 1: Paid Media Buying -->
       <div class="growth-card tilt-card" data-cat="paid" data-tilt data-tilt-max="6" data-tilt-speed="300">
         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -803,11 +910,18 @@
           <span class="service-badge-pill">📈 4.8x Blended ROAS</span>
         </div>
         <h3>Performance Paid Ads (Meta, Google, YouTube)</h3>
-        <p>Broad audience Advantage+ algorithms, Google Search intent domination, and Performance Max campaigns backed by server-side CAPI tracking.</p>
+        <p>Broad audience Advantage+ algorithms, Google Search intent domination, and Performance Max campaigns backed
+          by server-side CAPI tracking.</p>
         <ul class="deliverables-list">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero Ad-Waste Predictive Bidding</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-Tier Retargeting Funnels</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Server-Side Conversion API (CAPI)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Zero Ad-Waste Predictive Bidding</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Multi-Tier Retargeting Funnels</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Server-Side Conversion API (CAPI)</li>
         </ul>
         <a href="services.html#performance" class="card-link">Deep-Dive Media Buying →</a>
       </div>
@@ -819,11 +933,18 @@
           <span class="service-badge-pill">🎬 15+ Weekly Video Hooks</span>
         </div>
         <h3>Direct-Response Creative &amp; UGC Studio</h3>
-        <p>Creative velocity is the #1 lever for growth. We script, produce, and edit high-converting UGC video ads, founder VSLs, and scroll-stopping static carousels.</p>
+        <p>Creative velocity is the #1 lever for growth. We script, produce, and edit high-converting UGC video ads,
+          founder VSLs, and scroll-stopping static carousels.</p>
         <ul class="deliverables-list">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Native UGC Creator Talent Network</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> High-Converting VSL Scripts &amp; Edits</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Rapid Iteration Hook Testing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Native UGC Creator Talent Network</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> High-Converting VSL Scripts &amp; Edits</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Rapid Iteration Hook Testing</li>
         </ul>
         <a href="services.html#creative" class="card-link">Explore Creative Lab →</a>
       </div>
@@ -835,11 +956,18 @@
           <span class="service-badge-pill">🤖 65%+ Open Rate AI SDR</span>
         </div>
         <h3>B2B Lead Generation &amp; Outbound Engine</h3>
-        <p>Automated high-ticket enterprise sales pipeline through hyper-personalized LinkedIn outreach, verified domain warming, and direct calendar bookings.</p>
+        <p>Automated high-ticket enterprise sales pipeline through hyper-personalized LinkedIn outreach, verified domain
+          warming, and direct calendar bookings.</p>
         <ul class="deliverables-list">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> ICP Scrapers &amp; Intent Signal Data</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> AI Personalized Cold Email Sequences</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct Demo Bookings in CRM</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> ICP Scrapers &amp; Intent Signal Data</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> AI Personalized Cold Email Sequences</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Direct Demo Bookings in CRM</li>
         </ul>
         <a href="services.html#outbound" class="card-link">Explore B2B Outbound →</a>
       </div>
@@ -851,11 +979,18 @@
           <span class="service-badge-pill">⚡ &lt;1s Load Time &amp; +84% AOV</span>
         </div>
         <h3>Conversion Rate Optimization (CRO) &amp; Funnels</h3>
-        <p>Frictionless landing pages, quiz funnels, frictionless checkout flows, and post-purchase 1-click upsells that double customer conversion rates.</p>
+        <p>Frictionless landing pages, quiz funnels, frictionless checkout flows, and post-purchase 1-click upsells that
+          double customer conversion rates.</p>
         <ul class="deliverables-list">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> High-Converting Quiz &amp; Lead Funnels</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Multivariate Scientific A/B Tests</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 1-Click Upsell &amp; Bundle Architecture</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> High-Converting Quiz &amp; Lead Funnels</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Multivariate Scientific A/B Tests</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> 1-Click Upsell &amp; Bundle Architecture</li>
         </ul>
         <a href="services.html#cro" class="card-link">Explore Funnel Optimization →</a>
       </div>
@@ -867,11 +1002,18 @@
           <span class="service-badge-pill">🔥 98% Open Rate Broadcasts</span>
         </div>
         <h3>WhatsApp Cloud API &amp; Conversational AI</h3>
-        <p>Enterprise WhatsApp marketing broadcasts with SmartQueue™ anti-ban throttling, abandoned checkout recovery, and 2-way AI conversational sales bots.</p>
+        <p>Enterprise WhatsApp marketing broadcasts with SmartQueue™ anti-ban throttling, abandoned checkout recovery,
+          and 2-way AI conversational sales bots.</p>
         <ul class="deliverables-list">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 100K+ Hourly High-Speed Broadcasts</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Instant Cart &amp; Lead Drop Nurturing</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Official Meta Verified Green Badges</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> 100K+ Hourly High-Speed Broadcasts</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Instant Cart &amp; Lead Drop Nurturing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Official Meta Verified Green Badges</li>
         </ul>
         <a href="services.html#whatsapp" class="card-link">Explore WhatsApp Growth →</a>
       </div>
@@ -883,11 +1025,18 @@
           <span class="service-badge-pill">🛡️ Zero Data Loss Attribution</span>
         </div>
         <h3>Full-Funnel Attribution &amp; Revenue Analytics</h3>
-        <p>End-to-end multi-touch attribution dashboards connecting ad dollars directly to closed deals, blended CAC, and customer lifetime value (LTV).</p>
+        <p>End-to-end multi-touch attribution dashboards connecting ad dollars directly to closed deals, blended CAC,
+          and customer lifetime value (LTV).</p>
         <ul class="deliverables-list">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-Touch First/Last Click Models</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Real-Time Slack Revenue Pulse Alerts</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> BigQuery &amp; Looker Studio Executive BI</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Multi-Touch First/Last Click Models</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Real-Time Slack Revenue Pulse Alerts</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> BigQuery &amp; Looker Studio Executive BI</li>
         </ul>
         <a href="services.html#analytics" class="card-link">Explore Analytics Stack →</a>
       </div>
@@ -898,22 +1047,25 @@
   <!-- ==========================================================================
        11. INTERACTIVE ROI & REVENUE CALCULATOR
        ========================================================================== -->
-  <section class="calc-section">
+  <section class="calc-section" id="calculator">
     <div class="container">
       <div class="calc-card">
-        
+
         <!-- Controls -->
         <div>
           <span class="section-tag">Pipeline Simulator</span>
-          <h2 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--nr-navy-deep);">Calculate Your Revenue Unlock</h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Adjust sliders to project your scaled revenue and pipeline potential with NextReach DMS.</p>
+          <h2 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--nr-navy-deep);">Calculate Your Revenue Unlock
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Adjust sliders to project your
+            scaled revenue and pipeline potential with NextReach DMS.</p>
 
           <div class="calc-input-group">
             <div class="calc-input-label">
               <span>Current Monthly Ad / Marketing Spend:</span>
               <strong id="spendVal" style="color: var(--nr-orange-main); font-size: 1.05rem;">₹3,00,000</strong>
             </div>
-            <input type="range" class="calc-slider" id="spendSlider" min="50000" max="2500000" step="25000" value="300000">
+            <input type="range" class="calc-slider" id="spendSlider" min="25000" max="1000000" step="25000"
+              value="300000" oninput="updateCalculator()" onchange="updateCalculator()">
           </div>
 
           <div class="calc-input-group">
@@ -921,15 +1073,17 @@
               <span>Average Customer Value (Deal Size / LTV):</span>
               <strong id="dealVal" style="color: var(--nr-navy-main); font-size: 1.05rem;">₹25,000</strong>
             </div>
-            <input type="range" class="calc-slider" id="dealSlider" min="5000" max="200000" step="5000" value="25000">
+            <input type="range" class="calc-slider" id="dealSlider" min="5000" max="250000" step="5000" value="25000"
+              oninput="updateCalculator()" onchange="updateCalculator()">
           </div>
 
           <div class="calc-input-group">
             <div class="calc-input-label">
-              <span>Target Conversion Growth Multiplier:</span>
+              <span>Target ROAS:</span>
               <strong id="multVal" style="color: var(--nr-orange-main); font-size: 1.05rem;">4.2x ROAS</strong>
             </div>
-            <input type="range" class="calc-slider" id="multSlider" min="2.5" max="6.5" step="0.1" value="4.2">
+            <input type="range" class="calc-slider" id="multSlider" min="1.5" max="6.0" step="0.1" value="4.2"
+              oninput="updateCalculator()" onchange="updateCalculator()">
           </div>
         </div>
 
@@ -937,11 +1091,16 @@
         <div class="calc-result-box">
           <div class="title">PROJECTED MONTHLY REVENUE</div>
           <div class="value" id="projectedRevenue">₹12,60,000</div>
-          <div class="roi-badge" id="netProfitBadge">+₹9,60,000 Monthly Net Value</div>
-          <p style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 20px;">Based on algorithmic optimization, creative iteration, and high-ticket lead qualification.</p>
+          <div id="customersBadge" style="margin-bottom: 8px; font-weight: 700; color: #e2e8f0; font-size: 0.95rem;">≈
+            50 Estimated Customers</div>
+          <div class="roi-badge" id="netProfitBadge">+₹9,60,000 Net After Ad Spend</div>
+          <p style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 16px;">Illustrative projection based on your
+            selected ad spend, customer value and target ROAS.</p>
           <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">
             <span>Claim Your Custom Growth Plan →</span>
           </a>
+          <p style="font-size: 0.74rem; color: #94a3b8; margin-top: 12px; line-height: 1.3;">Estimates are illustrative
+            and not a guarantee of revenue or campaign performance.</p>
         </div>
 
       </div>
@@ -955,32 +1114,36 @@
     <div class="section-header">
       <span class="section-tag">Special Growth Offer • 20% OFF</span>
       <h2 class="section-title">High-Ticket Growth Partner Packages</h2>
-      <p class="section-subtitle">Transparent pricing designed for ambitious brands ready to scale with a dedicated revenue engineering pod. <strong>Special limited-time 20% retainer discount applied below!</strong></p>
-      
+      <p class="section-subtitle">Transparent pricing designed for ambitious brands ready to scale with a dedicated
+        revenue engineering pod. <strong>Special limited-time 20% retainer discount applied below!</strong></p>
+
       <!-- Billing Switcher Toggle -->
       <div class="pricing-switch-toggle">
-        <span class="switch-label active" id="btnBillingMonthly">Monthly Retainer <span class="discount-pill">20% OFF</span></span>
+        <span class="switch-label active" id="btnBillingMonthly">Monthly Retainer <span class="discount-pill">20%
+            OFF</span></span>
         <label class="toggle-slider-wrap">
           <input type="checkbox" id="pricingCycleToggle">
           <span class="slider-round"></span>
         </label>
-        <span class="switch-label" id="btnBillingQuarterly">Quarterly Sprint <span class="discount-pill" style="background:#dcfce7; color:#15803d; border-color:#22c55e;">Save Extra 10%</span></span>
+        <span class="switch-label" id="btnBillingQuarterly">Quarterly Sprint <span class="discount-pill"
+            style="background:#dcfce7; color:#15803d; border-color:#22c55e;">Save Extra 10%</span></span>
       </div>
     </div>
 
     <div class="pricing-grid">
-      
+
       <!-- Package 1: Reels & Flyers Lite -->
       <div class="pricing-card tilt-card" data-tilt data-tilt-max="5" data-tilt-speed="300">
         <div class="pricing-head">
           <div class="package-name">Social Lite Pod</div>
-          <div class="package-desc">Ideal for local businesses needing consistent video reels and promotional flyers for active social reach.</div>
-          
+          <div class="package-desc">Ideal for local businesses needing consistent video reels and promotional flyers for
+            active social reach.</div>
+
           <div class="price-original-wrap">
             <span class="price-original">₹8,500</span>
             <span class="discount-tag-save">Special Offer</span>
           </div>
-          
+
           <div class="price-display">
             <span class="price-curr">₹</span>
             <span class="price-amount" data-monthly="6,500" data-quarterly="5,850">6,500</span>
@@ -994,14 +1157,19 @@
         </div>
 
         <div class="pricing-features">
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 20 Custom Short Reels</strong> (Scripting, Editing &amp; Audio Sync)</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 10 Promotional Flyers &amp; Banners</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎯 Meta (Instagram &amp; FB) Page Optimization</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 💬 WhatsApp Business Setup &amp; Quick Replies</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 20 Custom Short Reels</strong>
+            (Scripting, Editing &amp; Audio Sync)</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 10 Promotional Flyers &amp;
+              Banners</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎯 Meta (Instagram &amp; FB) Page
+              Optimization</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 💬 WhatsApp Business Setup &amp; Quick Replies
+          </div>
           <div class="feat-item-check"><span class="check-icon">✓</span> 📊 Monthly Reach &amp; Engagement Summary</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Choose ₹6,500 Plan →</a>
+          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Choose ₹6,500 Plan
+            →</a>
         </div>
       </div>
 
@@ -1010,8 +1178,9 @@
         <div class="popular-ribbon">⭐ MOST POPULAR • BEST VALUE</div>
         <div class="pricing-head">
           <div class="package-name">Growth &amp; Web Engine</div>
-          <div class="package-desc">Complete digital presence bundle with reels, flyers, and full website &amp; SEO designing.</div>
-          
+          <div class="package-desc">Complete digital presence bundle with reels, flyers, and full website &amp; SEO
+            designing.</div>
+
           <div class="price-original-wrap">
             <span class="price-original">₹12,500</span>
             <span class="discount-tag-save">Save ₹3,000</span>
@@ -1030,10 +1199,14 @@
         </div>
 
         <div class="pricing-features">
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 15 Short Video Reels &amp; Promo Videos</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 15 Social Media Flyers &amp; Graphic Creatives</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🌐 Custom Website &amp; SEO Designing Included</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 🛡️ <em>SSL charges &amp; Domain charges extra</em></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎬 15 Short Video Reels &amp; Promo
+              Videos</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎨 15 Social Media Flyers &amp; Graphic
+              Creatives</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🌐 Custom Website &amp; SEO Designing
+              Included</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🛡️ <em>SSL charges &amp; Domain charges
+              extra</em></div>
           <div class="feat-item-check"><span class="check-icon">✓</span> 🎯 Meta &amp; Google Lead Funnel Setup</div>
           <div class="feat-item-check"><span class="check-icon">✓</span> 📈 Bi-Weekly Strategy &amp; Growth Review</div>
         </div>
@@ -1046,8 +1219,9 @@
       <div class="pricing-card tilt-card" data-tilt data-tilt-max="5" data-tilt-speed="300">
         <div class="pricing-head">
           <div class="package-name">Pro Shoot &amp; Video Suite</div>
-          <div class="package-desc">Premium on-location photoshoot and professional video shoot for high-end brand storytelling.</div>
-          
+          <div class="package-desc">Premium on-location photoshoot and professional video shoot for high-end brand
+            storytelling.</div>
+
           <div class="price-original-wrap">
             <span class="price-original">₹19,000</span>
             <span class="discount-tag-save">Special Offer</span>
@@ -1066,15 +1240,22 @@
         </div>
 
         <div class="pricing-features">
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>📸 Professional Brand &amp; Product Photoshoot</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎥 High-End Video Shoot (8 Professional Short Shots)</strong></div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 🎬 Professional Editing, Color Grading &amp; Sound Mix</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 🎨 Custom Video Covers &amp; High-Res Export</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> 👥 Dedicated Production &amp; Lighting Crew</div>
-          <div class="feat-item-check"><span class="check-icon">✓</span> ⚡ Fast Turnaround &amp; Full Raw File Access</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>📸 Professional Brand &amp; Product
+              Photoshoot</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> <strong>🎥 High-End Video Shoot (8 Professional
+              Short Shots)</strong></div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🎬 Professional Editing, Color Grading &amp;
+            Sound Mix</div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 🎨 Custom Video Covers &amp; High-Res Export
+          </div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> 👥 Dedicated Production &amp; Lighting Crew
+          </div>
+          <div class="feat-item-check"><span class="check-icon">✓</span> ⚡ Fast Turnaround &amp; Full Raw File Access
+          </div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Book ₹15,000 Shoot →</a>
+          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Book ₹15,000 Shoot
+            →</a>
         </div>
       </div>
 
@@ -1099,7 +1280,9 @@
         <button class="video-modal-close" id="btnCloseVideoModal" aria-label="Close Video">✕</button>
       </div>
       <div class="video-iframe-wrap">
-        <iframe id="videoIframe" src="" title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videoIframe" src="" title="Video Player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -1109,50 +1292,39 @@
        ========================================================================== -->
   <section class="container" id="our-works" style="padding: 40px 24px 80px;">
     <div class="section-header">
-      <span class="section-tag">Our Works &amp; Portfolio</span>
-      <h2 class="section-title">Client Projects &amp; Revenue Breakthroughs</h2>
-      <p class="section-subtitle">Real enterprise brands and high-ticket ventures scaled to category leadership with NextReach.</p>
+      <span class="section-tag">Client Projects &amp; Digital Growth Work</span>
+      <h2 class="section-title">Client Projects &amp; Digital Growth Work</h2>
+      <p class="section-subtitle">Explore selected websites, digital platforms and growth projects built for businesses
+        across multiple industries.</p>
     </div>
 
     <div class="project-showcase-grid">
-      
+
       <!-- Project 1: Marketiqx (WhatsApp Cloud & SaaS Platform) -->
       <div class="project-card tilt-card" data-tilt data-tilt-max="4" data-tilt-speed="300">
         <div class="project-thumb-box">
-          <img src="images/work-marketiqx.png" alt="Marketiqx WhatsApp Marketing Platform" class="project-thumb-img" id="cardImg-marketiqx">
+          <img src="images/work-marketiqx.png" alt="Marketiqx WhatsApp Marketing Platform" class="project-thumb-img"
+            id="cardImg-marketiqx">
           <div class="project-thumb-overlay">
-            <span class="project-industry-tag">💼 WhatsApp SaaS &amp; Automation</span>
+            <span class="project-industry-tag">💬 WhatsApp Marketing Platform</span>
           </div>
-          <span class="project-stat-badge">⚡ 99.4% Delivery SLA</span>
+          <span class="project-stat-badge">⚡ Meta Cloud API</span>
         </div>
         <div class="project-body">
-          <h3 class="project-title">Marketiqx: Intelligent WhatsApp Conversations &amp; Cloud API Engine</h3>
+          <h3 class="project-title">Marketiqx — WhatsApp AI Marketing Platform</h3>
           <p class="project-desc">
-            Engineered full-stack SaaS portal, Meta Business API green badge onboarding funnels, high-throughput broadcast infrastructure, and SmartQueue™ anti-drop messaging logic.
+            High-throughput Meta Cloud API broadcast portal, SmartQueue™ anti-ban delivery engine, green badge
+            verification funnels, and 2-way conversational AI.
           </p>
-          <div class="project-metrics-row">
-            <div>
-              <div class="p-metric-val">99.4%</div>
-              <div class="p-metric-lbl">Delivery SLA</div>
-            </div>
-            <div>
-              <div class="p-metric-val">+380%</div>
-              <div class="p-metric-lbl">Engagement</div>
-            </div>
-            <div>
-              <div class="p-metric-val">5.2x</div>
-              <div class="p-metric-lbl">Conversion</div>
-            </div>
-          </div>
           <div class="project-deliverables">
             <span class="deliv-pill">Meta Cloud API</span>
-            <span class="deliv-pill">SmartQueue™ Logic</span>
-            <span class="deliv-pill">SaaS UI/UX</span>
+            <span class="deliv-pill">SmartQueue™ Engine</span>
+            <span class="deliv-pill">SaaS Portal</span>
             <span class="deliv-pill">Omnichannel Bot</span>
           </div>
-          <a href="case-study.html?p=marketiqx" class="project-learn-btn">
-            <span>📖 Learn More &amp; View All 4 Project Images</span>
-            <span>→</span>
+          <a href="https://whatsappmarketing-g1wc.vercel.app/" target="_blank" rel="noopener noreferrer"
+            class="btn-orange" style="margin-top: 18px; justify-content: center; text-decoration: none;">
+            <span>View Live Project →</span>
           </a>
         </div>
       </div>
@@ -1160,122 +1332,115 @@
       <!-- Project 2: Let's Explore DMC (Travel & AI Trip Planner) -->
       <div class="project-card tilt-card" data-tilt data-tilt-max="4" data-tilt-speed="300">
         <div class="project-thumb-box">
-          <img src="images/work-letsexplore.png" alt="Let's Explore DMC Travel Portal" class="project-thumb-img" id="cardImg-letsexplore">
+          <img src="images/work-letsexplore.png" alt="Let's Explore DMC Travel Portal" class="project-thumb-img"
+            id="cardImg-letsexplore">
           <div class="project-thumb-overlay">
             <span class="project-industry-tag">✈️ Travel &amp; AI Trip Planner</span>
           </div>
-          <span class="project-stat-badge">🌍 +290% Group Bookings</span>
+          <span class="project-stat-badge">🌍 Global Tour Platform</span>
         </div>
         <div class="project-body">
-          <h3 class="project-title">Let's Explore DMC: AI Trip Planning Engine &amp; Global Tour Scaling</h3>
+          <h3 class="project-title">Let's Explore DMC — Global Travel &amp; AI Trip Engine</h3>
           <p class="project-desc">
-            Designed and launched high-converting global destination packages, intelligent AI Trip Planner workflow, multi-country tour funnels, and instant WhatsApp inquiry routing.
+            High-converting destination packages, intelligent AI Trip Planner itinerary engine, multi-country tour
+            funnels, and instant WhatsApp booking concierge.
           </p>
-          <div class="project-metrics-row">
-            <div>
-              <div class="p-metric-val">+290%</div>
-              <div class="p-metric-lbl">Tour Inquiries</div>
-            </div>
-            <div>
-              <div class="p-metric-val">4.8x</div>
-              <div class="p-metric-lbl">Blended ROAS</div>
-            </div>
-            <div>
-              <div class="p-metric-val">65%</div>
-              <div class="p-metric-lbl">Lead-to-Call</div>
-            </div>
-          </div>
           <div class="project-deliverables">
             <span class="deliv-pill">AI Trip Planner</span>
             <span class="deliv-pill">Tour Funnels</span>
             <span class="deliv-pill">Meta &amp; Google Ads</span>
             <span class="deliv-pill">WhatsApp Concierge</span>
           </div>
-          <a href="case-study.html?p=letsexplore" class="project-learn-btn">
-            <span>📖 Learn More &amp; View All 6 Project Images</span>
-            <span>→</span>
+          <a href="https://letsexplore-dmc.vercel.app/home" target="_blank" rel="noopener noreferrer" class="btn-orange"
+            style="margin-top: 18px; justify-content: center; text-decoration: none;">
+            <span>View Live Project →</span>
           </a>
         </div>
       </div>
 
-      <!-- Project 3: Mobile Station (Flagship Retail & Distribution) -->
+      <!-- Project 3: Siddhi Marketing (Premium Electronics & Home Appliances) -->
       <div class="project-card tilt-card" data-tilt data-tilt-max="4" data-tilt-speed="300">
         <div class="project-thumb-box">
-          <img src="images/Screenshot 2026-09-16 163951.png" alt="Mobile Station Flagship Retail" class="project-thumb-img" id="cardImg-mobilestation">
+          <img src="images/work-marketiqx.png" alt="Siddhi Marketing Premium Electronics" class="project-thumb-img"
+            id="cardImg-siddhi">
           <div class="project-thumb-overlay">
-            <span class="project-industry-tag">📱 Flagship Retail &amp; D2C</span>
+            <span class="project-industry-tag">🛍️ Retail &amp; Electronics</span>
           </div>
-          <span class="project-stat-badge">📈 ₹2.4 Cr Mo. Volume</span>
+          <span class="project-stat-badge">⚡ Omnichannel Store</span>
         </div>
         <div class="project-body">
-          <h3 class="project-title">Mobile Station: Omnichannel Smartphone Retail &amp; Express Engineering Hub</h3>
+          <h3 class="project-title">Siddhi Marketing — Premium Electronics &amp; Home Appliances</h3>
           <p class="project-desc">
-            Scaled premium flagship smartphone retail and 30-minute component engineering lab with hyper-local geo-fencing ads, trade-in value funnels, and WhatsApp VIP desk.
+            Omnichannel retail web portal for premium consumer electronics, smart home appliances, express store
+            fulfillment, and instant WhatsApp sales desk.
           </p>
-          <div class="project-metrics-row">
-            <div>
-              <div class="p-metric-val">₹2.4 Cr</div>
-              <div class="p-metric-lbl">Monthly GMV</div>
-            </div>
-            <div>
-              <div class="p-metric-val">+185%</div>
-              <div class="p-metric-lbl">Store Walk-ins</div>
-            </div>
-            <div>
-              <div class="p-metric-val">30 Min</div>
-              <div class="p-metric-lbl">Service Turnaround</div>
-            </div>
-          </div>
           <div class="project-deliverables">
-            <span class="deliv-pill">Flagship Web Store</span>
-            <span class="deliv-pill">Meta Catalog Ads</span>
-            <span class="deliv-pill">Trade-In Engine</span>
-            <span class="deliv-pill">WhatsApp VIP Desk</span>
+            <span class="deliv-pill">Omnichannel Web Store</span>
+            <span class="deliv-pill">Consumer Electronics</span>
+            <span class="deliv-pill">Home Appliances</span>
+            <span class="deliv-pill">WhatsApp Desk</span>
           </div>
-          <a href="case-study.html?p=mobilestation" class="project-learn-btn">
-            <span>📖 Learn More &amp; View All 7 Project Images</span>
-            <span>→</span>
+          <a href="https://siddhimarketing-gpig.vercel.app/" target="_blank" rel="noopener noreferrer"
+            class="btn-orange" style="margin-top: 18px; justify-content: center; text-decoration: none;">
+            <span>View Live Website →</span>
           </a>
         </div>
       </div>
 
-      <!-- Project 4: MedEx Demo Pharmaceuticals (Global Pharma Export) -->
+      <!-- Project 4: Mobile Station (Flagship Smartphone Retail & Repairs) -->
       <div class="project-card tilt-card" data-tilt data-tilt-max="4" data-tilt-speed="300">
         <div class="project-thumb-box">
-          <img src="images/work-medex.png" alt="MedEx Demo Pharmaceuticals Export Hub" class="project-thumb-img" id="cardImg-medex">
+          <img src="images/Screenshot 2026-09-16 163951.png" alt="Mobile Station Flagship Retail"
+            class="project-thumb-img" id="cardImg-mobilestation">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">📱 Smartphone Retail &amp; Repairs</span>
+          </div>
+          <span class="project-stat-badge">📱 Flagship Web Store</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Mobile Station — Smartphone Retail &amp; Express Service Hub</h3>
+          <p class="project-desc">
+            Flagship smartphone e-commerce portal, trade-in valuation calculator, local store geo-targeting, and
+            30-minute repair service booking desk.
+          </p>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Flagship Web Store</span>
+            <span class="deliv-pill">Trade-In Engine</span>
+            <span class="deliv-pill">Repair Desk</span>
+            <span class="deliv-pill">WhatsApp VIP Desk</span>
+          </div>
+          <a href="https://mobilestation-mu.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-orange"
+            style="margin-top: 18px; justify-content: center; text-decoration: none;">
+            <span>View Live Project →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5: MedEx Pharmaceuticals (Global B2B Pharma Export) -->
+      <div class="project-card tilt-card" data-tilt data-tilt-max="4" data-tilt-speed="300">
+        <div class="project-thumb-box">
+          <img src="images/work-medex.png" alt="MedEx Pharmaceuticals Global Export Hub" class="project-thumb-img"
+            id="cardImg-medex">
           <div class="project-thumb-overlay">
             <span class="project-industry-tag">🏥 Global B2B Pharma Export</span>
           </div>
-          <span class="project-stat-badge">🌐 14+ Export Countries</span>
+          <span class="project-stat-badge">🌐 Export Sourcing Portal</span>
         </div>
         <div class="project-body">
-          <h3 class="project-title">MedEx Pharmaceuticals: WHO-GMP Certified Global Sourcing &amp; Export Hub</h3>
+          <h3 class="project-title">MedEx Pharmaceuticals — Global Wholesale Export Hub</h3>
           <p class="project-desc">
-            Built an international B2B pharmaceutical sourcing portal, multi-currency RFQ product directory, wholesale WhatsApp desk, and compliance-first overseas lead pipelines.
+            International B2B pharmaceutical sourcing portal, multi-currency RFQ product directory, WHO-GMP certified
+            catalog, and overseas wholesale WhatsApp desk.
           </p>
-          <div class="project-metrics-row">
-            <div>
-              <div class="p-metric-val">14+</div>
-              <div class="p-metric-lbl">Export Countries</div>
-            </div>
-            <div>
-              <div class="p-metric-val">₹5.8 Cr</div>
-              <div class="p-metric-lbl">B2B Pipeline</div>
-            </div>
-            <div>
-              <div class="p-metric-val">+240%</div>
-              <div class="p-metric-lbl">RFQ Volume</div>
-            </div>
-          </div>
           <div class="project-deliverables">
             <span class="deliv-pill">B2B Export Portal</span>
             <span class="deliv-pill">WHO-GMP Directory</span>
             <span class="deliv-pill">WhatsApp Sourcing</span>
-            <span class="deliv-pill">Global Inbound SEO</span>
+            <span class="deliv-pill">Global Inbound</span>
           </div>
-          <a href="case-study.html?p=medex" class="project-learn-btn">
-            <span>📖 Learn More &amp; View All 4 Project Images</span>
-            <span>→</span>
+          <a href="https://growmedex.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-orange"
+            style="margin-top: 18px; justify-content: center; text-decoration: none;">
+            <span>View Live Project →</span>
           </a>
         </div>
       </div>
@@ -1296,18 +1461,22 @@
     <div class="section-header">
       <span class="section-tag">Clarity &amp; Answers</span>
       <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtitle">Straight answers regarding our growth pod model, WhatsApp Cloud API, setup speed, and performance guarantees.</p>
+      <p class="section-subtitle">Straight answers regarding our growth pod model, WhatsApp Cloud API, setup speed, and
+        performance guarantees.</p>
     </div>
 
     <div class="faq-accordion">
-      
+
       <div class="faq-item active">
         <button class="faq-question">
           <span>What is the Official WhatsApp Cloud API and how is it different from normal WhatsApp?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          The Official Meta WhatsApp Cloud API is enterprise-grade infrastructure directly hosted on Meta servers. Unlike regular WhatsApp Business apps (which get banned when sending bulk messages), the Cloud API supports sending 100,000+ verified broadcasts per day, 2-way conversational AI chatbots, multi-agent CRM inboxes, dynamic interactive buttons, and official Green Tick badges.
+          The Official Meta WhatsApp Cloud API is enterprise-grade infrastructure directly hosted on Meta servers.
+          Unlike regular WhatsApp Business apps (which get banned when sending bulk messages), the Cloud API supports
+          sending 100,000+ verified broadcasts per day, 2-way conversational AI chatbots, multi-agent CRM inboxes,
+          dynamic interactive buttons, and official Green Tick badges.
         </div>
       </div>
 
@@ -1317,7 +1486,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          As an official Meta Business Partner, NextReach DMS manages your complete verification application. We verify your Meta Business Manager, submit your corporate incorporation documents, establish brand notability, and set up your Official WhatsApp Business Account (OBA) to secure the coveted Green Tick.
+          As an official Meta Business Partner, NextReach DMS manages your complete verification application. We verify
+          your Meta Business Manager, submit your corporate incorporation documents, establish brand notability, and set
+          up your Official WhatsApp Business Account (OBA) to secure the coveted Green Tick.
         </div>
       </div>
 
@@ -1327,7 +1498,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          During Days 1–7 (Sprint Onboarding), we audit your ad accounts, configure Server-Side CAPI tracking, script 8–15 direct-response UGC hooks, and deploy your WhatsApp bot. Initial high-conviction ad batches go live within 7–10 days, with full algorithmic scaling and ROAS surge occurring within Days 21–45.
+          During Days 1–7 (Sprint Onboarding), we audit your ad accounts, configure Server-Side CAPI tracking, script
+          8–15 direct-response UGC hooks, and deploy your WhatsApp bot. Initial high-conviction ad batches go live
+          within 7–10 days, with full algorithmic scaling and ROAS surge occurring within Days 21–45.
         </div>
       </div>
 
@@ -1337,7 +1510,10 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          We use our proprietary <strong>SmartQueue™ Anti-Ban Engine</strong>. It adheres strictly to Meta's opt-in policies, warms up sender phone numbers across tiered messaging volume limits (Tier 1 to Tier 3), enforces smart pacing intervals, and features 1-click unsubscribe buttons to maintain a flawless "High" Quality Rating on Meta Business Manager.
+          We use our proprietary <strong>SmartQueue™ Anti-Ban Engine</strong>. It adheres strictly to Meta's opt-in
+          policies, warms up sender phone numbers across tiered messaging volume limits (Tier 1 to Tier 3), enforces
+          smart pacing intervals, and features 1-click unsubscribe buttons to maintain a flawless "High" Quality Rating
+          on Meta Business Manager.
         </div>
       </div>
 
@@ -1347,7 +1523,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Meta requires pre-approval for outbound marketing and utility broadcast templates. Our direct-response copy team drafts high-converting templates that comply 100% with Meta's Commercial Terms, achieving automated approval within 5 to 15 minutes.
+          Meta requires pre-approval for outbound marketing and utility broadcast templates. Our direct-response copy
+          team drafts high-converting templates that comply 100% with Meta's Commercial Terms, achieving automated
+          approval within 5 to 15 minutes.
         </div>
       </div>
 
@@ -1357,7 +1535,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Yes. We provide native real-time Webhook &amp; REST API integrations with Shopify, WooCommerce, HubSpot, Salesforce, Zoho, Google Sheets, and custom ERPs. Incoming customer interactions, abandoned carts, and demo bookings sync automatically in real-time.
+          Yes. We provide native real-time Webhook &amp; REST API integrations with Shopify, WooCommerce, HubSpot,
+          Salesforce, Zoho, Google Sheets, and custom ERPs. Incoming customer interactions, abandoned carts, and demo
+          bookings sync automatically in real-time.
         </div>
       </div>
 
@@ -1367,7 +1547,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Depending on your growth pod tier, we produce between 8 to 16+ fresh direct-response creative variations weekly. This includes first-3-second scroll-stopping hooks, native UGC review formats, founder VSLs, and high-CTR carousels.
+          Depending on your growth pod tier, we produce between 8 to 16+ fresh direct-response creative variations
+          weekly. This includes first-3-second scroll-stopping hooks, native UGC review formats, founder VSLs, and
+          high-CTR carousels.
         </div>
       </div>
 
@@ -1377,7 +1559,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          We specialize in high-growth brands and enterprises. We recommend a monthly paid advertising budget of at least ₹1,00,000 to ₹3,00,000+ so that Meta and Google's machine learning algorithms receive sufficient data signals to optimize for maximum blended ROAS.
+          We specialize in high-growth brands and enterprises. We recommend a monthly paid advertising budget of at
+          least ₹1,00,000 to ₹3,00,000+ so that Meta and Google's machine learning algorithms receive sufficient data
+          signals to optimize for maximum blended ROAS.
         </div>
       </div>
 
@@ -1387,7 +1571,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          We install direct Server-Side Conversion API (CAPI) gateways on your domain and cloud servers. This bypasses ad-blockers and browser cookie restrictions, feeding 100% accurate first-party conversion data back to Meta, Google, and your executive dashboard.
+          We install direct Server-Side Conversion API (CAPI) gateways on your domain and cloud servers. This bypasses
+          ad-blockers and browser cookie restrictions, feeding 100% accurate first-party conversion data back to Meta,
+          Google, and your executive dashboard.
         </div>
       </div>
 
@@ -1397,7 +1583,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          You are assigned a dedicated 4 to 6-member senior team: a Senior Media Buyer, Direct-Response Scriptwriter &amp; Creative Director, Full-Stack Funnel &amp; CAPI Developer, and a Dedicated Growth Account Director inside your private Slack channel.
+          You are assigned a dedicated 4 to 6-member senior team: a Senior Media Buyer, Direct-Response Scriptwriter
+          &amp; Creative Director, Full-Stack Funnel &amp; CAPI Developer, and a Dedicated Growth Account Director
+          inside your private Slack channel.
         </div>
       </div>
 
@@ -1407,7 +1595,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          We believe in earning your business month-after-month through verified revenue. We operate on flexible 30-day monthly retainers with zero lock-in contracts, supported by real-time Slack communication and guaranteed sub-2-hour SLA response times.
+          We believe in earning your business month-after-month through verified revenue. We operate on flexible 30-day
+          monthly retainers with zero lock-in contracts, supported by real-time Slack communication and guaranteed
+          sub-2-hour SLA response times.
         </div>
       </div>
 
@@ -1417,7 +1607,9 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Click 'Get Free Growth Audit' anywhere on this page or call us directly at <strong>+91 74991 81193</strong>. Our Senior Growth Directors will audit your current accounts, funnel, and attribution, delivering a tailored 90-day growth blueprint.
+          Click 'Get Free Growth Audit' anywhere on this page or call us directly at <strong>+91 74991 81193</strong>.
+          Our Senior Growth Directors will audit your current accounts, funnel, and attribution, delivering a tailored
+          90-day growth blueprint.
         </div>
       </div>
 
@@ -1430,12 +1622,14 @@
   <section class="container">
     <div class="cta-banner-box">
       <h2>Ready to Build Your Predictable Revenue Engine?</h2>
-      <p>We analyze your ad accounts, landing page funnels, and sales pipeline — delivering a 100% actionable 90-day growth roadmap.</p>
+      <p>We analyze your ad accounts, landing page funnels, and sales pipeline — delivering a 100% actionable 90-day
+        growth roadmap.</p>
       <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
         <a href="audit.html" class="btn-orange magnetic-btn" style="padding: 14px 34px; font-size: 1rem;">
           <span>🚀 Request Free Growth Audit</span>
         </a>
-        <a href="tel:+917499181193" class="btn-navy-outline magnetic-btn" style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
+        <a href="tel:+917499181193" class="btn-navy-outline magnetic-btn"
+          style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
           <span>📞 Call Growth Director: +91 74991 81193</span>
         </a>
       </div>
@@ -1448,13 +1642,16 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        
+
         <div class="footer-col">
           <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
-          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
-            NextReach DMS is an elite performance growth agency &amp; AI revenue engine partnering with B2B, B2C, and D2C brands to build high-ticket pipeline and sustainable market scale.
+          <p
+            style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
+            NextReach DMS is an elite performance growth agency &amp; AI revenue engine partnering with B2B, B2C, and
+            D2C brands to build high-ticket pipeline and sustainable market scale.
           </p>
-          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); background: var(--nr-navy-soft); padding: 6px 14px; border-radius: var(--radius-full);">
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); background: var(--nr-navy-soft); padding: 6px 14px; border-radius: var(--radius-full);">
             <span>🔒 Enterprise NDA Protected</span>
           </div>
         </div>
@@ -1486,11 +1683,14 @@
         <div class="footer-col">
           <h4>Direct Connect</h4>
           <ul>
-            <li style="font-size: 0.88rem; color: var(--text-muted);"><a href="tel:+917499181193" style="color: inherit;">📞 +91 74991 81193</a></li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);"><a href="tel:+917499181193"
+                style="color: inherit;">📞 +91 74991 81193</a></li>
             <li style="font-size: 0.88rem; color: var(--text-muted);">✉️ contact@nextreachdms.com</li>
-            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Sahakar Nagar, Opp. New Cotton Market, Amravati, Maharashtra 444601</li>
-            <li style="font-size: 0.88rem; color: var(--text-dim); margin-top: 4px;">⏱️ Fast Response: Under 4 Hours</li>
-            
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Sahakar Nagar, Opp. New Cotton Market,
+              Amravati, Maharashtra 444601</li>
+            <li style="font-size: 0.88rem; color: var(--text-dim); margin-top: 4px;">⏱️ Fast Response: Under 4 Hours
+            </li>
+
           </ul>
         </div>
 
@@ -1515,9 +1715,13 @@
        18. STICKY STRATEGY CALL CTA BAR & FLOATING WHATSAPP BUTTON
        ========================================================================== -->
   <!-- Floating WhatsApp Support Badge -->
-  <a href="https://wa.me/917499181193?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit." target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
+  <a href="https://wa.me/917499181193?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit."
+    target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
     <div class="wa-pill-icon">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366">
+        <path
+          d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z" />
+      </svg>
     </div>
     <div class="wa-pill-info">
       <div class="wa-pill-label">WHATSAPP SUPPORT</div>
@@ -1526,11 +1730,11 @@
     </div>
   </a>
 
-    <!-- ==========================================================================
+  <!-- ==========================================================================
        19. MASTER JAVASCRIPT ENGINE (Ultra-Fast 60-120 FPS Lag-Free)
        ========================================================================== -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
 
       // --- 1. BRAND PRELOADER (Fast & Crisp) ---
       const preloader = document.getElementById('nrPreloader');
@@ -1955,37 +2159,105 @@
       const dealVal = document.getElementById('dealVal');
       const multVal = document.getElementById('multVal');
       const projectedRevenue = document.getElementById('projectedRevenue');
+      const customersBadge = document.getElementById('customersBadge');
       const netProfitBadge = document.getElementById('netProfitBadge');
 
       function formatINR(val) {
         return '₹' + Math.round(val).toLocaleString('en-IN');
       }
 
-      function updateCalculator() {
+      function updateSliderTrack(slider) {
+        if (!slider) return;
+        const min = parseFloat(slider.min) || 0;
+        const max = parseFloat(slider.max) || 100;
+        const val = parseFloat(slider.value) || 0;
+        const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+        slider.style.setProperty('background', `linear-gradient(90deg, #ff6b00 ${pct}%, #e2e8f0 ${pct}%)`, 'important');
+      }
+
+      window.updateCalculator = function () {
         if (!spendSlider || !dealSlider || !multSlider) return;
         const spend = parseFloat(spendSlider.value);
         const deal = parseFloat(dealSlider.value);
         const mult = parseFloat(multSlider.value);
 
-        spendVal.textContent = formatINR(spend);
-        dealVal.textContent = formatINR(deal);
-        multVal.textContent = mult.toFixed(1) + 'x ROAS';
+        updateSliderTrack(spendSlider);
+        updateSliderTrack(dealSlider);
+        updateSliderTrack(multSlider);
+
+        if (spendVal) spendVal.textContent = formatINR(spend);
+        if (dealVal) dealVal.textContent = formatINR(deal);
+        if (multVal) multVal.textContent = mult.toFixed(1) + 'x ROAS';
 
         const projected = spend * mult;
+        const estimatedCustomers = Math.round(projected / Math.max(deal, 1));
         const netValue = projected - spend;
+        const roiPct = Math.round(((projected - spend) / spend) * 100);
 
-        projectedRevenue.textContent = formatINR(projected);
-        netProfitBadge.textContent = '+' + formatINR(netValue) + ' Monthly Net Value';
-      }
+        if (projectedRevenue) projectedRevenue.textContent = formatINR(projected);
+        if (customersBadge) customersBadge.textContent = '≈ ' + estimatedCustomers.toLocaleString('en-IN') + ' Estimated Customers';
+        if (netProfitBadge) netProfitBadge.textContent = '+' + formatINR(netValue) + ' Net After Ad Spend (' + roiPct + '% ROI)';
+      };
 
       if (spendSlider && dealSlider && multSlider) {
-        spendSlider.addEventListener('input', updateCalculator, { passive: true });
-        dealSlider.addEventListener('input', updateCalculator, { passive: true });
-        multSlider.addEventListener('input', updateCalculator, { passive: true });
-        updateCalculator();
+        ['input', 'change', 'pointermove', 'touchmove', 'mousemove'].forEach(evt => {
+          spendSlider.addEventListener(evt, window.updateCalculator);
+          dealSlider.addEventListener(evt, window.updateCalculator);
+          multSlider.addEventListener(evt, window.updateCalculator);
+        });
+        window.updateCalculator();
+        window.addEventListener('load', window.updateCalculator);
       }
 
-      // --- 11. SERVICES FILTER TABS ---
+      // --- DYNAMIC PRICING TOGGLE ---
+      const pricingToggle = document.getElementById('pricingCycleToggle');
+      const btnMonthly = document.getElementById('btnBillingMonthly');
+      const btnQuarterly = document.getElementById('btnBillingQuarterly');
+      const priceAmounts = document.querySelectorAll('.pricing-card .price-amount');
+
+      function updatePricingDisplay(isQuarterly) {
+        priceAmounts.forEach(el => {
+          const val = isQuarterly ? el.getAttribute('data-quarterly') : el.getAttribute('data-monthly');
+          if (val) el.textContent = val;
+        });
+        if (btnMonthly && btnQuarterly) {
+          if (isQuarterly) {
+            btnMonthly.classList.remove('active');
+            btnQuarterly.classList.add('active');
+          } else {
+            btnMonthly.classList.add('active');
+            btnQuarterly.classList.remove('active');
+          }
+        }
+      }
+
+      if (pricingToggle) {
+        pricingToggle.addEventListener('change', () => {
+          updatePricingDisplay(pricingToggle.checked);
+        });
+      }
+      if (btnMonthly) {
+        btnMonthly.addEventListener('click', () => {
+          if (pricingToggle) pricingToggle.checked = false;
+          updatePricingDisplay(false);
+        });
+      }
+      if (btnQuarterly) {
+        btnQuarterly.addEventListener('click', () => {
+          if (pricingToggle) pricingToggle.checked = true;
+          updatePricingDisplay(true);
+        });
+      }
+
+      // --- MOBILE HAMBURGER MENU TOGGLE ---
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('mobile-open');
+          mobileBtn.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+        });
+      }
       const filterBtns = document.querySelectorAll('.service-filter-btn');
       const serviceCards = document.querySelectorAll('#servicesGrid .growth-card');
 
@@ -2056,7 +2328,7 @@
   <div class="project-modal-backdrop" id="projectDetailModal">
     <div class="project-modal-card">
       <button type="button" class="modal-close-btn" id="btnCloseProjectModal" aria-label="Close Modal">✕</button>
-      
+
       <div class="modal-image-preview">
         <img src="" alt="Project Preview" id="mProjImg">
         <div class="modal-image-badge" id="mProjBadge"></div>
@@ -2106,14 +2378,17 @@
         <!-- Modal CTA Row -->
         <div class="modal-cta-row">
           <div>
-            <div style="font-weight: 800; color: var(--nr-navy-deep); font-size: 0.95rem;">Want Similar Scaling for Your Brand?</div>
-            <div style="font-size: 0.82rem; color: var(--text-muted);">Get a customized 90-day growth roadmap and revenue audit.</div>
+            <div style="font-weight: 800; color: var(--nr-navy-deep); font-size: 0.95rem;">Want Similar Scaling for Your
+              Brand?</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">Get a customized 90-day growth roadmap and
+              revenue audit.</div>
           </div>
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <a href="audit.html" class="btn-orange" style="padding: 10px 22px; font-size: 0.88rem;">
               <span>🚀 Book Growth Audit →</span>
             </a>
-            <a href="https://wa.me/917499181193?text=Hi%20NextReach%20team,%20I%20saw%20your%20case%20studies%20and%20want%20to%20discuss%20a%20similar%20project." target="_blank" rel="noopener" class="btn-navy-outline" style="padding: 10px 18px; font-size: 0.88rem;">
+            <a href="https://wa.me/917499181193?text=Hi%20NextReach%20team,%20I%20saw%20your%20case%20studies%20and%20want%20to%20discuss%20a%20similar%20project."
+              target="_blank" rel="noopener" class="btn-navy-outline" style="padding: 10px 18px; font-size: 0.88rem;">
               <span>💬 Discuss on WhatsApp</span>
             </a>
           </div>
@@ -2316,4 +2591,5 @@
   </script>
   <script src="js/api.js"></script>
 </body>
+
 </html>

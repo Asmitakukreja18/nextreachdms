@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans: WhatsApp, SMS, Voice & RCS │ Marketiqx</title>
+  <meta name="description" content="Transparent, high-volume pricing for Marketiqx WhatsApp Broadcasts, Meta Business API, Bulk SMS, RCS Messaging, and Voice OBD.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: var(--bg-body); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Top Helpline Banner -->
+  <div class="view-switch-banner">
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <span class="brand-badge" style="background: var(--brand-emerald-glow); color: var(--brand-emerald);">Marketiqx Cloud Platform</span>
+      <span style="font-size: 0.8rem; color: var(--text-muted);">Enterprise 24/7 Helpline: <strong>+91 74991 81193</strong></span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <a href="login.html" style="font-size: 0.85rem; color: var(--brand-cyan); font-weight: 700; text-decoration: none;">🔑 Client Portal / Login</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="header-brand">
+      <div class="brand-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      </div>
+      <span class="brand-title">Marketiqx</span>
+    </a>
+
+    <nav class="public-header-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-item-dropdown">
+        <a href="#">Services <span style="font-size: 0.65rem;">▼</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="whatsapp-business-api.html" class="nav-dropdown-item">
+            <span class="dropdown-icon">💬</span>
+            <span>Official Meta WhatsApp API</span>
+          </a>
+          <a href="whatsapp-marketing-services.html" class="nav-dropdown-item">
+            <span class="dropdown-icon">🚀</span>
+            <span>WhatsApp AI Marketing</span>
+          </a>
+          <a href="rcs-messaging-services.html" class="nav-dropdown-item">
+            <span class="dropdown-icon">📱</span>
+            <span>RCS Messaging Services</span>
+          </a>
+          <a href="bulk-sms.html" class="nav-dropdown-item">
+            <span class="dropdown-icon">📩</span>
+            <span>Bulk SMS Services</span>
+          </a>
+          <a href="bulk-voicecall.html" class="nav-dropdown-item">
+            <span class="dropdown-icon">📞</span>
+            <span>Voice OBD & Bulk Voice</span>
+          </a>
+        </div>
+      </div>
+      <a href="pricing-sms-voice-email-wa.html" class="active">Pricing</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about-us.html">About Us</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="contact.html">Contact</a>
+      <a href="demo_regi.html" style="color: #0ea5e9; font-weight: 700;">Free Demo</a>
+    </nav>
+
+    <div class="header-actions-group">
+      <a href="tel:+917499181193" class="header-phone-pill">📞 +91 74991 81193</a>
+      <a href="login.html" class="btn-secondary">🔑 Login</a>
+      <a href="dashboard.html" class="btn-primary">🚀 Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Hero & Volume Calculator -->
+  <section style="padding: 60px 20px; text-align: center; background: radial-gradient(circle at 50% 30%, rgba(8, 145, 178, 0.12) 0%, transparent 65%);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <span class="brand-badge" style="background: var(--brand-cyan-glow); color: var(--brand-cyan); margin-bottom: 14px;">Marketiqx Direct Telecom Tariffs</span>
+      <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px;">
+        Transparent, Volume-Based <span class="gradient-text">CPaaS Pricing</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 28px; line-height: 1.6;">
+        Zero setup fees. Automatic credit refund on non-WhatsApp numbers. Pay only for verified deliveries.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Pricing Body -->
+  <main class="public-section">
+    
+    <!-- Interactive Calculator -->
+    <div class="interactive-form-card" style="margin-bottom: 50px;">
+      <h2 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; text-align: center;">Marketiqx Cost Estimator</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px;">Drag slider to estimate your bulk WhatsApp & SMS cost.</p>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+          <span style="font-size: 1.1rem; font-weight: 700;">Selected Message Volume:</span>
+          <span id="price-slider-label" style="font-size: 1.8rem; font-weight: 800; color: var(--brand-cyan);">5,00,000 Messages</span>
+        </div>
+        
+        <input type="range" min="100000" max="5000000" step="50000" value="500000" oninput="updatePriceEstimate(this.value);" style="width: 100%; accent-color: var(--brand-cyan); height: 8px; cursor: pointer;">
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; padding: 20px; background: var(--bg-card-subtle); border-radius: var(--radius-md);">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-subtle);">Per Message Rate:</div>
+            <strong id="price-rate-val" style="font-size: 1.4rem; color: var(--brand-cyan); font-weight: 800;">₹0.10 / msg</strong>
+          </div>
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-subtle);">Estimated Total Cost:</div>
+            <strong id="price-total-val" style="font-size: 1.6rem; color: var(--brand-emerald); font-weight: 800;">₹50,000</strong>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <a href="demo_regi.html" class="btn-primary" style="width: 100%; justify-content: center; text-decoration: none;">Get Free Demo 🎁</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multichannel Comparison Table -->
+    <div class="public-section-title">
+      <h2>Channel Pricing Breakdown</h2>
+      <p>Compare wholesale tariffs across our entire suite of enterprise messaging channels.</p>
+    </div>
+
+    <div style="overflow-x: auto; margin-bottom: 50px;">
+      <table style="width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);">
+        <thead>
+          <tr style="background: var(--bg-card-subtle); text-align: left; font-size: 0.9rem; color: var(--text-main); border-bottom: 1px solid var(--border-subtle);">
+            <th style="padding: 16px 20px;">Channel / Service</th>
+            <th style="padding: 16px 20px;">Starting Volume</th>
+            <th style="padding: 16px 20px;">Starting Rate</th>
+            <th style="padding: 16px 20px;">Enterprise Rate (50L+)</th>
+            <th style="padding: 16px 20px;">Key Advantage</th>
+            <th style="padding: 16px 20px;">Action</th>
+          </tr>
+        </thead>
+        <tbody style="font-size: 0.88rem; color: var(--text-muted);">
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 16px 20px; font-weight: 700; color: var(--text-main);">💬 Marketiqx WhatsApp Broadcasts</td>
+            <td style="padding: 16px 20px;">1,00,000</td>
+            <td style="padding: 16px 20px; color: var(--brand-cyan); font-weight: 700;">₹0.13 / msg</td>
+            <td style="padding: 16px 20px; color: var(--brand-emerald); font-weight: 700;">₹0.075 / msg</td>
+            <td style="padding: 16px 20px;">100% Refund on non-WA</td>
+            <td style="padding: 16px 20px;"><a href="demo_regi.html" class="btn-secondary" style="font-size: 0.78rem; text-decoration: none;">Book Plan</a></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 16px 20px; font-weight: 700; color: var(--text-main);">🛡️ WhatsApp Business API (Meta Cloud)</td>
+            <td style="padding: 16px 20px;">Official Meta Tier</td>
+            <td style="padding: 16px 20px; color: var(--brand-cyan); font-weight: 700;">₹0.32 / conv</td>
+            <td style="padding: 16px 20px; color: var(--brand-emerald); font-weight: 700;">Meta Cloud Direct</td>
+            <td style="padding: 16px 20px;">Verified Green Tick Included</td>
+            <td style="padding: 16px 20px;"><a href="demo_regi.html" class="btn-secondary" style="font-size: 0.78rem; text-decoration: none;">Apply API</a></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 16px 20px; font-weight: 700; color: var(--text-main);">📱 ReachSMS & 2-Sec OTP</td>
+            <td style="padding: 16px 20px;">50,000</td>
+            <td style="padding: 16px 20px; color: var(--brand-cyan); font-weight: 700;">₹0.12 / sms</td>
+            <td style="padding: 16px 20px; color: var(--brand-emerald); font-weight: 700;">₹0.08 / sms</td>
+            <td style="padding: 16px 20px;">2-Second OTP Fast Pipe</td>
+            <td style="padding: 16px 20px;"><a href="bulk-sms.html" class="btn-secondary" style="font-size: 0.78rem; text-decoration: none;">Book SMS</a></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 16px 20px; font-weight: 700; color: var(--text-main);">✨ Google RCS Rich Messaging</td>
+            <td style="padding: 16px 20px;">50,000</td>
+            <td style="padding: 16px 20px; color: var(--brand-cyan); font-weight: 700;">₹0.19 / rcs</td>
+            <td style="padding: 16px 20px; color: var(--brand-emerald); font-weight: 700;">₹0.13 / rcs</td>
+            <td style="padding: 16px 20px;">Rich Carousels & Video</td>
+            <td style="padding: 16px 20px;"><a href="rcs-messaging-services.html" class="btn-secondary" style="font-size: 0.78rem; text-decoration: none;">Explore</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 20px; font-weight: 700; color: var(--text-main);">📞 Voice OBD Calls & IVR</td>
+            <td style="padding: 16px 20px;">25,000 Calls</td>
+            <td style="padding: 16px 20px; color: var(--brand-cyan); font-weight: 700;">₹0.17 / 30s</td>
+            <td style="padding: 16px 20px; color: var(--brand-emerald); font-weight: 700;">₹0.11 / 30s</td>
+            <td style="padding: 16px 20px;">Automated IVR & DTMF</td>
+            <td style="padding: 16px 20px;"><a href="bulk-voicecall.html" class="btn-secondary" style="font-size: 0.78rem; text-decoration: none;">Book Voice</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer style="background: #0f172a; color: #f8fafc; padding: 60px 40px 30px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'Plus Jakarta Sans', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 40px;">
+      
+      <!-- Col 1: Brand & Bio -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+          <div style="background: #0ea5e9; color: white; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <span style="font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: -0.02em;">Marketiqx</span>
+        </div>
+        <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 16px;">
+          Next-generation CPaaS and official Meta WhatsApp Cloud API platform. High-throughput marketing broadcasts, AI chatbots, and omnichannel customer automation.
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 9999px; color: #10b981; font-size: 0.78rem; font-weight: 700;">
+          ✓ Official Meta Tech Provider • ISO 27001
+        </div>
+      </div>
+
+      <!-- Col 2: Solutions -->
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Enterprise Services</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+          <li><a href="whatsapp-marketing-services.html" style="color: #94a3b8; text-decoration: none;">Bulk WhatsApp Marketing</a></li>
+          <li><a href="whatsapp-business-api.html" style="color: #94a3b8; text-decoration: none;">Meta Business API (Green Badge)</a></li>
+          <li><a href="bulk-sms.html" style="color: #94a3b8; text-decoration: none;">High-Speed Bulk SMS & OTP</a></li>
+          <li><a href="rcs-messaging-services.html" style="color: #94a3b8; text-decoration: none;">Google RCS Interactive Chat</a></li>
+          <li><a href="bulk-voicecall.html" style="color: #94a3b8; text-decoration: none;">Voice OBD & IVR Calling</a></li>
+          <li><a href="dashboard.html" style="color: #0ea5e9; text-decoration: none; font-weight: 600;">🚀 Marketiqx Live Dashboard</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Company & Proof -->
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Company & Proof</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+          <li><a href="about-us.html" style="color: #94a3b8; text-decoration: none;">About Marketiqx</a></li>
+          <li><a href="leadership.html" style="color: #94a3b8; text-decoration: none;">Leadership & Founders</a></li>
+          <li><a href="case-studies.html" style="color: #94a3b8; text-decoration: none;">Customer Case Studies</a></li>
+          <li><a href="pricing-sms-voice-email-wa.html" style="color: #94a3b8; text-decoration: none;">Volume Pricing Plans</a></li>
+          <li><a href="demo_regi.html" style="color: #94a3b8; text-decoration: none;">Free Demo & 100 Credits</a></li>
+          <li><a href="login.html" style="color: #94a3b8; text-decoration: none;">Client Portal Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Tech Hubs & Contact -->
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Global Tech Hubs</h4>
+        <div style="font-size: 0.86rem; color: #94a3b8; line-height: 1.6; margin-bottom: 14px;">
+          📍 <strong>Delhi Hub:</strong> Aggarwal Corporate Height, NSP, Pitampura – 110034<br>
+          📍 <strong>Dubai Hub:</strong> The Binary by Omniyat, Business Bay, UAE
+        </div>
+        <div style="font-size: 0.88rem; color: #94a3b8; line-height: 1.8;">
+          📞 <strong>Helpline:</strong> <a href="tel:+917499181193" style="color: white; text-decoration: none;">+91 74991 81193</a><br>
+          ✉️ <strong>Support:</strong> <a href="mailto:support@marketiqx.com" style="color: white; text-decoration: none;">support@marketiqx.com</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Row -->
+    <div style="max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.82rem; color: #64748b;">
+      <div>&copy; 2026 Marketiqx Platform. All rights reserved. Meta Tech Provider.</div>
+      <div style="display: flex; gap: 20px;">
+        <a href="pricing-sms-voice-email-wa.html" style="color: #64748b; text-decoration: none;">Terms & SLAs</a>
+        <a href="contact.html" style="color: #64748b; text-decoration: none;">Privacy Policy</a>
+        <a href="demo_regi.html" style="color: #0ea5e9; text-decoration: none; font-weight: 600;">Get 100 Free Credits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updatePriceEstimate(val) {
+      const volume = parseInt(val);
+      document.getElementById('price-slider-label').textContent = volume.toLocaleString() + ' Messages';
+      
+      let rate = 0.13;
+      if (volume >= 2000000) rate = 0.075;
+      else if (volume >= 1000000) rate = 0.09;
+      else if (volume >= 500000) rate = 0.10;
+      else if (volume >= 250000) rate = 0.115;
+      
+      const total = Math.round(volume * rate);
+      document.getElementById('price-rate-val').textContent = '₹' + rate.toFixed(2) + ' / msg';
+      document.getElementById('price-total-val').textContent = '₹' + total.toLocaleString();
+    }
+  </script>
+  <script src="js/site.js"></script>
+</body>
+</html>
