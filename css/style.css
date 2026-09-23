@@ -413,7 +413,7 @@ button {
 
 /* Adwali Mega Dropdown Styling */
 .nav-item-dropdown {
-  position: relative;
+  position: static;
   display: inline-flex;
   align-items: center;
   height: 80px;
@@ -440,7 +440,7 @@ button {
 
 .nav-item-dropdown:hover .dropdown-trigger,
 .nav-item-dropdown.active .dropdown-trigger {
-  color: var(--nr-navy-main) !important;
+  color: var(--nr-orange-main) !important;
 }
 
 .nav-item-dropdown:hover .dropdown-trigger .chevron {
@@ -448,29 +448,23 @@ button {
   color: var(--nr-orange-main);
 }
 
-/* Dashed Underline Indicator (Exact Adwali Screenshot Match) */
+/* Underline disabled for clean simple Growth Orange hover */
 .nav-item-dropdown:hover .dropdown-trigger::after,
 .nav-item-dropdown.active .dropdown-trigger::after,
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  content: "";
-  position: absolute;
-  bottom: 16px;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: repeating-linear-gradient(90deg, var(--nr-orange-main) 0 6px, transparent 6px 10px);
-  border-radius: 2px;
+  content: none !important;
+  display: none !important;
 }
 
 /* Full-Width Mega Menu Container attached right underneath header */
 .mega-menu,
 .mega-menu-overlay {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
-  width: 100vw;
+  top: 80px;
+  left: 0;
+  right: 0;
+  width: 100%;
   background: #ffffff;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 4px solid var(--nr-orange-main);
@@ -482,13 +476,14 @@ button {
   z-index: 9999;
   padding: 38px 0 44px 0;
   text-align: left;
+  transform: translateY(-8px);
 }
 
 .nav-item-dropdown:hover .mega-menu,
 .nav-item-dropdown:hover .mega-menu-overlay {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateX(-50%) translateY(0) !important;
+  transform: translateY(0) !important;
   pointer-events: auto !important;
 }
 
