@@ -570,22 +570,76 @@ button {
   }
 }
 
-.mega-column a {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--text-muted) !important;
-  text-decoration: none;
-  padding: 2px 0 !important;
-  transition: color 0.25s var(--ease-out-smooth), transform 0.25s var(--ease-out-smooth) !important;
+/* Mega Menu Enriched Items Styling */
+.mega-item-enriched {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 8px 10px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+  background: transparent !important;
 }
 
-.mega-column a::after {
-  display: none !important;
+.mega-item-enriched:hover {
+  background: rgba(255, 107, 0, 0.06) !important;
+  transform: translateX(4px) !important;
 }
 
-.mega-column a:hover {
-  color: var(--nr-orange-main) !important;
-  transform: translateX(5px);
+.mega-item-icon {
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+.mega-item-info {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.mega-item-title {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: var(--nr-navy-deep, #002d62) !important;
+  line-height: 1.25 !important;
+  transition: color 0.2s ease !important;
+}
+
+.mega-item-enriched:hover .mega-item-title {
+  color: var(--nr-orange-main, #ff6b00) !important;
+}
+
+.mega-item-sub {
+  font-size: 0.74rem !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  margin-top: 2px !important;
+}
+
+.mega-pricing-highlight {
+  border: 1px dashed rgba(255, 107, 0, 0.35) !important;
+  background: rgba(255, 107, 0, 0.04) !important;
+}
+
+/* Mega Menu Overlay Hover Isolation */
+.nav-item-dropdown {
+  position: static !important;
+}
+
+.nav-item-dropdown .mega-menu-overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 99999;
+}
+
+.nav-item-dropdown:hover .mega-menu-overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
 }
 
 .mega-link-accent {
@@ -2713,6 +2767,21 @@ button {
   font-size: 0.95rem;
   border-radius: 99px;
   margin-bottom: 20px;
+}
+
+.calc-result-box .btn-orange,
+.calc-result-box a.btn-orange {
+  display: inline-flex !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 14px 18px !important;
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem) !important;
+  white-space: normal !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  word-break: break-word !important;
 }
 
 /* ==========================================================================
