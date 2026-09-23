@@ -548,8 +548,6 @@ button {
   font-weight: 800 !important;
   margin-top: 8px;
 }
-  font-weight: 500;
-}
 
 @media (max-width: 992px) {
   .dropdown-menu-box {
@@ -5312,31 +5310,41 @@ input:checked+.slider-round:before {
 }
 
 /* Nav Link Hover Underline Slide */
-.nav-links a {
+/* Clean Text Nav Links - NO lines, NO pill backgrounds */
+.nav-links a,
+.dropdown-trigger {
   position: relative;
-  transition: color 0.3s var(--ease-out-smooth);
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+  color: var(--nr-navy-deep, #002d62) !important;
+  transition: color 0.2s ease !important;
+  text-decoration: none !important;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2.5px;
-  background: var(--gradient-orange);
-  border-radius: var(--radius-full);
-  transform: translateX(-50%);
-  transition: width 0.35s var(--ease-out-smooth);
+.nav-links a::before,
+.nav-links a::after,
+.dropdown-trigger::before,
+.dropdown-trigger::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
-
-.nav-links a:hover {
-  color: var(--nr-navy-main);
+.nav-links a:hover,
+.nav-links a.active,
+.dropdown-trigger:hover,
+.dropdown-trigger.active,
+.nav-item-dropdown:hover .dropdown-trigger,
+.nav-item-dropdown.active .dropdown-trigger {
+  color: var(--nr-orange-main, #ff6b00) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-decoration: none !important;
 }
 
 /* 2. Scroll Reveal System (Hardware-Accelerated Fluid Entrance) */
@@ -5445,55 +5453,13 @@ input:checked+.slider-round:before {
   border-color: rgba(255, 107, 0, 0.45) !important;
 }
 
-/* 4. Enhanced Custom Cursor Aura (Physics Lerp) */
-.custom-cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background-color: var(--nr-orange-main);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s linear, width 0.3s var(--ease-out-smooth), height 0.3s var(--ease-out-smooth), background-color 0.3s var(--ease-out-smooth);
-}
-
+/* Custom Cursor Disabled for Crisp Native Pointer */
+.custom-cursor-dot,
 .custom-cursor-aura {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 38px;
-  height: 38px;
-  border: 1.5px solid rgba(255, 107, 0, 0.55);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(1px);
-  transition: width 0.35s var(--ease-out-smooth), height 0.35s var(--ease-out-smooth), border-color 0.35s var(--ease-out-smooth), background-color 0.35s var(--ease-out-smooth);
-}
-
-.custom-cursor-aura.hovered {
-  width: 64px;
-  height: 64px;
-  background-color: rgba(255, 107, 0, 0.12);
-  border-color: var(--nr-orange-main);
-}
-
-.custom-cursor-dot.hovered {
-  width: 6px;
-  height: 6px;
-  background-color: var(--nr-navy-main);
-}
-
-/* Hide custom cursor on mobile/touch devices */
-@media (pointer: coarse) {
-  .custom-cursor-dot,
-  .custom-cursor-aura {
-    display: none !important;
-  }
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* 5. Modal & Lightbox Elastic Scale-In */
