@@ -196,7 +196,7 @@
   </section>
 
   <!-- ==========================================================================
-       3.5 ABOUT NEXTREACH & OUR STORY SECTION (New Screenshots 1, 2, 3)
+       3.5 ABOUT NEXTREACH & OUR STORY SECTION (Screenshots 1, 2, 3)
        ========================================================================== -->
   <section class="adwali-about-sec">
     <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
@@ -381,7 +381,29 @@
 
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 40px;">
         
-        <!-- Case 1: Marketiqx -->
+        <!-- Case 1: Kavita Sarees & Kids Wear -->
+        <div class="adwali-card" onclick="openProjectModal('kavitasarees')" style="cursor: pointer;">
+          <div style="height: 240px; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid #E2E8F0;">
+            <img src="images/Screenshot 2026-09-25 162349.png" alt="Kavita Sarees & Kids Wear" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: #FF6B00; text-transform: uppercase;">🥻 LUXURY RETAIL &amp; BRIDAL • HANDLOOM SILK &amp; KIDS WEAR</span>
+          <h3 class="adwali-card-title" style="margin-top: 6px;">Kavita Sarees &amp; Kids Wear: Premier Bridal &amp; Wholesale Hub</h3>
+          <p class="adwali-card-body">Engineered omnichannel retail &amp; wholesale lead engine for Handloom Paithani, Kanjeevaram, and Bridal Lehengas with WhatsApp Direct Shop.</p>
+          <div style="margin-top: 20px; font-weight: 800; color: #001A3D; font-size: 0.95rem;">Explore Full Case Study →</div>
+        </div>
+
+        <!-- Case 2: Siddhi Marketing -->
+        <div class="adwali-card" onclick="openProjectModal('siddhimarketing')" style="cursor: pointer;">
+          <div style="height: 240px; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid #E2E8F0;">
+            <img src="images/Screenshot 2026-09-25 165625.png" alt="Siddhi Marketing" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 800; color: #FF6B00; text-transform: uppercase;">⚡ RETAIL &amp; CONSUMER TECH • SMART TVS, ACS &amp; GADGETS</span>
+          <h3 class="adwali-card-title" style="margin-top: 6px;">Siddhi Marketing: Authorized Multi-Brand Electronics Showroom</h3>
+          <p class="adwali-card-body">Scaled consumer electronics retail with zero-down payment EMI funnels, local geo-targeted video ads, and digital visiting card lead engine.</p>
+          <div style="margin-top: 20px; font-weight: 800; color: #001A3D; font-size: 0.95rem;">Explore Full Case Study →</div>
+        </div>
+
+        <!-- Case 3: Marketiqx -->
         <div class="adwali-card" onclick="openProjectModal('marketiqx')" style="cursor: pointer;">
           <div style="height: 240px; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid #E2E8F0;">
             <img src="images/work-marketiqx.png" alt="Marketiqx" style="width: 100%; height: 100%; object-fit: cover;">
@@ -392,7 +414,7 @@
           <div style="margin-top: 20px; font-weight: 800; color: #001A3D; font-size: 0.95rem;">Explore Full Case Study →</div>
         </div>
 
-        <!-- Case 2: Let's Explore -->
+        <!-- Case 4: Let's Explore -->
         <div class="adwali-card" onclick="openProjectModal('letsexplore')" style="cursor: pointer;">
           <div style="height: 240px; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid #E2E8F0;">
             <img src="images/work-letsexplore.png" alt="Let's Explore DMC" style="width: 100%; height: 100%; object-fit: cover;">
@@ -403,7 +425,7 @@
           <div style="margin-top: 20px; font-weight: 800; color: #001A3D; font-size: 0.95rem;">Explore Full Case Study →</div>
         </div>
 
-        <!-- Case 3: Mobile Station -->
+        <!-- Case 5: Mobile Station -->
         <div class="adwali-card" onclick="openProjectModal('mobilestation')" style="cursor: pointer;">
           <div style="height: 240px; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid #E2E8F0;">
             <img src="images/Screenshot 2026-09-16 163951.png" alt="Mobile Station" style="width: 100%; height: 100%; object-fit: cover;">
@@ -414,7 +436,7 @@
           <div style="margin-top: 20px; font-weight: 800; color: #001A3D; font-size: 0.95rem;">Explore Full Case Study →</div>
         </div>
 
-        <!-- Case 4: MedEx Pharma -->
+        <!-- Case 6: MedEx Pharma -->
         <div class="adwali-card" onclick="openProjectModal('medex')" style="cursor: pointer;">
           <div style="height: 240px; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 1px solid #E2E8F0;">
             <img src="images/work-medex.png" alt="MedEx Pharma" style="width: 100%; height: 100%; object-fit: cover;">
@@ -747,6 +769,56 @@
 
     // --- PROJECT CASE STUDIES DATA & MULTI-SCREENSHOT GALLERY ---
     const projectCaseStudies = {
+      kavitasarees: {
+        title: "Kavita Sarees & Kids Wear: Premier Bridal Trousseau & Wholesale Silk Showroom",
+        badge: "🥻 Luxury Retail & Bridal • Handloom Silk & Kids Wear",
+        image: "images/Screenshot 2026-09-25 162349.png",
+        gallery: [
+          { label: "🥻 Showroom Header & Shop", src: "images/Screenshot 2026-09-25 162349.png" }
+        ],
+        desc: "Engineered omnichannel retail & wholesale lead engine for Handloom Paithani, Kanjeevaram, Bridal Lehengas, and Kids Wear with WhatsApp Direct Shop.",
+        metrics: [
+          { val: "₹1.8 Cr", lbl: "Monthly Turnaround GMV" },
+          { val: "3.8x", lbl: "Meta Ads Blended ROAS" },
+          { val: "+210%", lbl: "Festive Season Footfall" }
+        ],
+        challenges: [
+          "Fierce competition from regional saree traders in Amravati & Vidarbha region.",
+          "Out-of-station NRI & wedding customers struggling to view live Paithani & Bridal Lehengas catalog.",
+          "Slow inquiry response times during wedding season peak."
+        ],
+        solutions: [
+          "Built a luxury digital storefront with instant WhatsApp 1-click Direct Shop button.",
+          "Deployed Meta Advantage+ video campaigns targeting brides and families across Maharashtra.",
+          "Integrated instant video-call appointment booking for wholesale Aher & wedding trousseau."
+        ],
+        techStack: ["Digital Storefront", "WhatsApp Direct Shop", "Meta Advantage+ Ads", "Video Appointment Booking", "Geo-Fencing Ads"]
+      },
+      siddhimarketing: {
+        title: "Siddhi Marketing: Authorized Multi-Brand Electronics & Appliances Showroom",
+        badge: "⚡ Retail & Consumer Tech • Smart TVs, ACs & Gadgets",
+        image: "images/Screenshot 2026-09-25 165625.png",
+        gallery: [
+          { label: "⚡ Electronics Showroom Stage", src: "images/Screenshot 2026-09-25 165625.png" }
+        ],
+        desc: "Scaled multi-brand consumer electronics & appliances retail with zero-down payment EMI funnels, local geo-targeted video ads, and digital visiting card lead engine.",
+        metrics: [
+          { val: "₹3.2 Cr", lbl: "Festive Season Turnover" },
+          { val: "4.4x", lbl: "Blended Ad ROAS" },
+          { val: "+175%", lbl: "Showroom Walk-ins" }
+        ],
+        challenges: [
+          "Heavy price undercutting by big national e-commerce marketplaces.",
+          "Customers hesitating on high upfront costs for premium 4K Smart TVs and Inverter ACs.",
+          "High ad spend waste without hyper-local geo-fencing targeting."
+        ],
+        solutions: [
+          "Launched zero-down payment EMI calculator lead funnel directly integrated with WhatsApp.",
+          "Executed 15km radius Instagram & YouTube video campaigns around Balaji Mandir Road showroom.",
+          "Implemented 1-click digital visiting card and live stock availability inquiry desk."
+        ],
+        techStack: ["EMI Funnel Engine", "Local Geo-Fencing", "WhatsApp Stock Desk", "Meta Video Ads", "Digital Visiting Card"]
+      },
       marketiqx: {
         title: "Marketiqx: Intelligent WhatsApp Marketing & Meta Cloud API Platform",
         badge: "💼 WhatsApp SaaS • Meta Verified Cloud API",
