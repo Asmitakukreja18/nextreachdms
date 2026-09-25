@@ -1,0 +1,802 @@
+/* ==========================================================================
+   NextReach DMS — Adwali-Inspired High-Impact Agency Redesign
+   Color Theme: Light Warm Cream (#FAF8F5), Deep Navy (#001A3D), Vibrant Orange (#FF6B00)
+   ========================================================================== */
+
+:root {
+  --ad-bg: #FAF8F5;
+  --ad-card-bg: #FFFFFF;
+  --ad-dark: #080E1A;
+  --ad-navy: #001A3D;
+  --ad-navy-light: #0D3B75;
+  --ad-orange: #FF6B00;
+  --ad-orange-soft: #FFF4ED;
+  --ad-yellow: #F59E0B;
+  --ad-border: #001A3D;
+  --ad-border-subtle: #E2E8F0;
+  --ad-text: #0A1128;
+  --ad-muted: #475569;
+  --ad-pink: #FF0055;
+}
+
+body {
+  background-color: var(--ad-bg) !important;
+  color: var(--ad-text);
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER NAVBAR --- */
+.adwali-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--ad-bg);
+  border-bottom: 1.5px solid var(--ad-border);
+  padding: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.adwali-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adwali-brand-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.adwali-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.adwali-nav-links a,
+.adwali-dropdown-trigger {
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--ad-navy);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.adwali-nav-links a:hover,
+.adwali-dropdown-trigger:hover {
+  color: var(--ad-orange);
+}
+
+/* Dropdown styling */
+.adwali-nav-item {
+  position: relative;
+}
+
+.adwali-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--ad-card-bg);
+  border: 1.5px solid var(--ad-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 26, 61, 0.12);
+  min-width: 260px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 1001;
+}
+
+.adwali-nav-item:hover .adwali-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(6px);
+}
+
+.adwali-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ad-navy);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.adwali-dropdown-menu a:hover {
+  background: var(--ad-orange-soft);
+  color: var(--ad-orange);
+}
+
+.adwali-pill-btn {
+  background-color: var(--ad-navy);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 26, 61, 0.15);
+  border: 2px solid var(--ad-navy);
+}
+
+.adwali-pill-btn:hover {
+  background-color: var(--ad-orange);
+  border-color: var(--ad-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
+}
+
+/* --- TEXT HIGHLIGHT PATTERN (adwali style) --- */
+.adwali-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 2px 14px;
+  margin: 0 4px;
+  border-radius: 8px;
+  background-color: #FFC000;
+  color: var(--ad-navy) !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 26, 61, 0.1);
+}
+
+.adwali-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 107, 0, 0.4),
+    rgba(255, 107, 0, 0.4) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: -1;
+}
+
+/* Pink Wavy Underline for "The NextReach" */
+.adwali-underline-pink {
+  position: relative;
+  display: inline-block;
+}
+
+.adwali-underline-pink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 6px;
+  background: #FF0055;
+  border-radius: 4px;
+}
+
+/* --- SECTION LABELS & HEADINGS --- */
+.adwali-sec-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ad-navy);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.adwali-sec-label::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--ad-orange) 0 6px, transparent 6px 12px);
+  margin-top: 6px;
+}
+
+.adwali-sec-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--ad-navy);
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .adwali-sec-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* --- HERO SECTION --- */
+.adwali-hero {
+  padding: 80px 0 60px;
+}
+
+.adwali-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .adwali-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adwali-hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  color: var(--ad-navy);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .adwali-hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+.adwali-hero-sub {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ad-muted);
+  margin-bottom: 36px;
+  max-width: 620px;
+}
+
+.adwali-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.adwali-hero-card {
+  background: var(--ad-card-bg);
+  border: 2px solid var(--ad-border);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 12px 12px 0px var(--ad-navy);
+  position: relative;
+}
+
+/* --- ABOUT & STORY SECTION (Screenshot 1, 2, 3) --- */
+.adwali-about-sec {
+  padding: 80px 0 40px;
+  border-top: 1.5px solid var(--ad-border-subtle);
+}
+
+.adwali-breadcrumbs {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ad-navy);
+  margin-bottom: 24px;
+}
+
+.adwali-breadcrumbs span {
+  color: var(--ad-muted);
+  font-weight: 500;
+}
+
+.adwali-story-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px dashed var(--ad-border-subtle);
+}
+
+@media (max-width: 991px) {
+  .adwali-story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adwali-story-text {
+  font-size: 1.18rem;
+  line-height: 1.75;
+  color: var(--ad-muted);
+}
+
+.adwali-story-text p {
+  margin-bottom: 24px;
+}
+
+.adwali-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .adwali-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adwali-stat-card {
+  background: var(--ad-card-bg);
+  border: 1.5px solid var(--ad-border);
+  border-radius: 20px;
+  padding: 32px 24px;
+}
+
+.adwali-stat-num {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: var(--ad-pink);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.adwali-stat-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ad-navy);
+}
+
+/* --- HOW WE WORK / STAND FOR GRID --- */
+.adwali-work-sec {
+  padding: 80px 0;
+}
+
+.adwali-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+@media (max-width: 991px) {
+  .adwali-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .adwali-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adwali-card {
+  background: var(--ad-card-bg);
+  border: 1.5px solid var(--ad-border);
+  border-radius: 24px;
+  padding: 36px 32px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.adwali-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 26, 61, 0.08);
+  border-color: var(--ad-orange);
+}
+
+.adwali-card-num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--ad-pink);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.adwali-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ad-navy);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.adwali-card-body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ad-muted);
+  margin: 0;
+}
+
+/* --- FOUNDER SECTION (Screenshot 5) --- */
+.adwali-founder-sec {
+  padding: 80px 0;
+}
+
+.adwali-founder-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+@media (max-width: 991px) {
+  .adwali-founder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adwali-founder-photo-card {
+  background: #001A3D;
+  border: 1.5px solid var(--ad-border);
+  border-radius: 28px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.adwali-founder-img-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin-bottom: 20px;
+}
+
+.adwali-founder-circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #FFB800;
+  z-index: 1;
+}
+
+.adwali-founder-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: grayscale(100%) contrast(110%);
+}
+
+.adwali-founder-tag {
+  color: #FAF8F5;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-top: 12px;
+}
+
+.adwali-founder-note-card {
+  background: var(--ad-card-bg);
+  border: 1.5px solid var(--ad-border);
+  border-radius: 28px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.adwali-founder-quote {
+  font-size: 1.18rem;
+  line-height: 1.7;
+  color: var(--ad-muted);
+  margin-bottom: 28px;
+}
+
+.adwali-founder-signature-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid var(--ad-border-subtle);
+  padding-top: 24px;
+}
+
+.adwali-founder-name-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--ad-navy);
+}
+
+.adwali-founder-sub {
+  font-size: 0.92rem;
+  color: var(--ad-muted);
+}
+
+.adwali-signature-font {
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--ad-pink);
+  line-height: 1;
+}
+
+/* --- FAQ SECTION (Screenshot 1 & 4) --- */
+.adwali-faq-sec {
+  padding: 80px 0;
+}
+
+.adwali-faq-container {
+  border-top: 1.5px dashed #CBD5E1;
+  border-bottom: 1.5px dashed #CBD5E1;
+  padding: 20px 0;
+}
+
+.adwali-faq-item {
+  border-bottom: 1px dashed #E2E8F0;
+  padding: 28px 0;
+  transition: all 0.2s ease;
+}
+
+.adwali-faq-item:last-child {
+  border-bottom: none;
+}
+
+.adwali-faq-header {
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.adwali-faq-question-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ad-navy);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .adwali-faq-question-text {
+    font-size: 1.2rem;
+  }
+}
+
+.adwali-faq-toggle-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--ad-pink);
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.adwali-faq-answer-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0;
+}
+
+.adwali-faq-item.active .adwali-faq-answer-box {
+  max-height: 400px;
+  padding-top: 18px;
+}
+
+.adwali-faq-answer-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ad-muted);
+  margin: 0;
+}
+
+/* --- DARK CTA BANNER SECTION (Screenshot 4) --- */
+.adwali-dark-cta-sec {
+  background-color: var(--ad-dark);
+  color: #ffffff;
+  border-radius: 32px;
+  padding: 80px 60px;
+  margin: 60px 0 90px;
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid var(--ad-navy);
+}
+
+@media (max-width: 768px) {
+  .adwali-dark-cta-sec {
+    padding: 48px 24px;
+    border-radius: 20px;
+  }
+}
+
+.adwali-dark-cta-sec h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .adwali-dark-cta-sec h2 {
+    font-size: 2.2rem;
+  }
+}
+
+.adwali-dark-cta-sec p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+
+/* --- DARK FOOTER WITH SKYLINE GRAPHIC (Screenshot 2) --- */
+.adwali-footer {
+  background-color: var(--ad-dark);
+  color: #ffffff;
+  position: relative;
+  padding: 60px 0 40px;
+  border-top: 1.5px solid var(--ad-navy);
+}
+
+.adwali-skyline-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+  opacity: 0.55;
+}
+
+.adwali-skyline-svg {
+  width: 100%;
+  height: 90px;
+  display: block;
+}
+
+.adwali-footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 991px) {
+  .adwali-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .adwali-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adwali-footer-brand-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.adwali-footer-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #94A3B8;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+.adwali-footer-contact {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #E2E8F0;
+  font-weight: 600;
+}
+
+.adwali-footer-contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.adwali-footer-contact a:hover {
+  color: var(--ad-orange);
+}
+
+.adwali-footer-col-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.adwali-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.adwali-footer-links li {
+  margin-bottom: 12px;
+}
+
+.adwali-footer-links a {
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.adwali-footer-links a:hover {
+  color: #ffffff;
+}
+
+.adwali-back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--ad-navy);
+  border: 2px solid var(--ad-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.adwali-back-to-top:hover {
+  background: var(--ad-orange);
+  color: #ffffff;
+  border-color: var(--ad-orange);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(255, 107, 0, 0.35);
+}
