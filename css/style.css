@@ -8095,4 +8095,36 @@ body {
   0% { opacity: 0.7; transform: scale(0.98); }
   100% { opacity: 1; transform: scale(1.02); }
 }
+
+/* Client Project Live Website Action Buttons */
+.project-card-actions {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  margin-top: 18px !important;
+}
+
+.btn-visit-live {
+  background: #FF6B00 !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  font-size: 0.88rem !important;
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3) !important;
+  transition: all 0.25s ease !important;
+  border: 1.8px solid #1A1D20 !important;
+}
+
+.btn-visit-live:hover {
+  background: #FF8526 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.45) !important;
+}
 
