@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Marketiqx Shared Mobile Navigation & Responsive Experience
  * Automatically handles mobile hamburger navigation, responsive drawers,
  * and seamless interactions across all pages.
@@ -150,4 +150,16 @@
   } else {
     initMobileNav();
   }
+
+  // Load Cute Pencil Cursor & Curved Trail automatically across all pages
+  if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+    if (!document.getElementById('pencilCursorScript')) {
+      const s = document.createElement('script');
+      s.id = 'pencilCursorScript';
+      s.src = 'js/pencil-cursor.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+  }
 })();
+
