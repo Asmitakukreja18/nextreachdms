@@ -14,17 +14,17 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=105.0">
 
-  <!-- Native Cute Cartoon Pencil Cursor -->
+  <!-- Native Cute Cartoon Pencil Cursor Fallback -->
   <style>
     html, body {
-      cursor: url('images/cute-pencil-cursor.svg') 0 0, auto !important;
+      cursor: url('images/cute-pencil-cursor.svg') 42 6, auto;
     }
     a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, 
     input[type="submit"], input[type="button"], select, .theme-toggle-btn {
-      cursor: url('images/cute-pencil-cursor-hover.svg') 0 0, pointer !important;
+      cursor: url('images/cute-pencil-cursor-hover.svg') 42 6, pointer;
     }
     input[type="text"], input[type="email"], input[type="tel"], textarea {
-      cursor: url('images/cute-pencil-cursor.svg') 0 0, text !important;
+      cursor: url('images/cute-pencil-cursor.svg') 42 6, text;
     }
   </style>
 
@@ -266,8 +266,34 @@
        2. SCROLL PROGRESS BAR, CUSTOM CURSOR & HAND-DRAWN LIVE WRITING PENCIL
        ========================================================================== -->
   <div class="scroll-progress-bar" id="scrollProgress"></div>
-  <div class="custom-cursor-dot" id="cursorDot"></div>
-  <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
+
+  <!-- Real-Time Hand-Drawn Smooth Curved Pencil Writing Canvas Overlay -->
+  <canvas id="pencilTrailCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999990;"></canvas>
+
+  <!-- Exact Screenshot Hand-Drawn Pencil Cursor (Pink Tip, White Body, Yellow Cap) -->
+  <div id="handDrawnPencil" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none; z-index: 999999; transform: translate3d(-100px, -100px, 0); filter: drop-shadow(2px 4px 6px rgba(23,17,15,0.25)); will-change: transform; transition: opacity 0.2s ease, filter 0.15s ease; opacity: 0;">
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Subtle Pencil Shadow -->
+      <path d="M 8 36 L 27 17 L 33 23 L 14 42 Z" fill="rgba(23, 17, 15, 0.18)" />
+
+      <!-- 1. Back Yellow Eraser Cap -->
+      <polygon points="8,34 13,29 19,35 14,40" fill="#FFB800" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+      <!-- 2. White Barrel Body -->
+      <polygon points="13,29 27,15 33,21 19,35" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <!-- Two Dividing Section Lines -->
+      <line x1="17.7" y1="24.3" x2="23.7" y2="30.3" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="22.3" y1="19.7" x2="28.3" y2="25.7" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Middle Accent Mark -->
+      <circle cx="21" cy="25" r="1.4" fill="#17110F" opacity="0.65"/>
+
+      <!-- 3. Sharpened Wood Section -->
+      <polygon points="27,15 36,9.6 38.4,12 33,21" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+      <!-- 4. Hot Pink Lead Tip (Pointing at 42, 6) -->
+      <polygon points="36,9.6 42,6 38.4,12" fill="#FF2A6D" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+  </div>
 
 
   <!-- ==========================================================================
@@ -3372,109 +3398,15 @@
         if (e.key === 'Escape') closeProjectModal();
       });
 
-      // --- SIGNATURE HAND-DRAWN ANIMATED PENCIL & MOVING GROWTH POD ENGINE ---
-      const pencil = document.getElementById('handDrawnPencil');
+      // --- MOVING GROWTH POD VEHICLE ENGINE (Scroll & Interactive) ---
       const vehicle = document.getElementById('growthPodVehicle');
-      const canvas = document.getElementById('pencilTrailCanvas');
-      const isTouch = window.matchMedia('(pointer: coarse)').matches;
-
-      // Real-time Smooth Curved Pencil Writing Trail Canvas Animation
-      if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let points = [];
-
-        function resizeCanvas() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas, { passive: true });
-
-        function addPoint(x, y) {
-          points.push({ x: x, y: y, life: 1.0 });
-          if (points.length > 50) points.shift();
-        }
-
-        function drawPencilTrail() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          if (points.length > 2) {
-            ctx.beginPath();
-            ctx.moveTo(points[0].x, points[0].y);
-
-            for (let i = 1; i < points.length - 1; i++) {
-              const xc = (points[i].x + points[i + 1].x) / 2;
-              const yc = (points[i].y + points[i + 1].y) / 2;
-              ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
-            }
-
-            ctx.strokeStyle = 'rgba(26, 29, 32, 0.45)';
-            ctx.lineWidth = 2.5;
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-            ctx.stroke();
-
-            // Decay points smoothly
-            for (let i = 0; i < points.length; i++) {
-              points[i].life -= 0.025;
-            }
-            points = points.filter(p => p.life > 0);
-          }
-          requestAnimationFrame(drawPencilTrail);
-        }
-        requestAnimationFrame(drawPencilTrail);
-
-        if (!isTouch) {
-          window.addEventListener('mousemove', (e) => {
-            addPoint(e.clientX, e.clientY);
-          }, { passive: true });
-        }
-      }
-
-      if (pencil) {
-        let mouseX = -100, mouseY = -100;
-        let lastX = -100, lastY = -100;
-        let angle = -45;
-
-        if (!isTouch) {
-          // Desktop Sharp Pencil Tip Tracking (Nok at cursor point)
-          window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX - 4;
-            mouseY = e.clientY - 48;
-
-            const dx = mouseX - lastX;
-            const dy = mouseY - lastY;
-            if (Math.abs(dx) > 1 || Math.abs(dy) > 1) {
-              angle = Math.atan2(dy, dx) * (180 / Math.PI) + 45;
-              lastX = mouseX;
-              lastY = mouseY;
-            }
-
-            pencil.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) rotate(${angle}deg)`;
-          }, { passive: true });
-
-          // Hover Sketch Wobble Interactions on Interactive Elements
-          const hoverSelectors = 'a, button, .growth-card, .pricing-card, .project-card, .calc-card, .dash-tab, .wa-btn-option, .service-filter-btn, .faq-item, .metric-item';
-          document.querySelectorAll(hoverSelectors).forEach(el => {
-            el.addEventListener('mouseenter', () => {
-              document.body.classList.add('pencil-drawing-active');
-            }, { passive: true });
-
-            el.addEventListener('mouseleave', () => {
-              document.body.classList.remove('pencil-drawing-active');
-            }, { passive: true });
-          });
-        }
-
-        // Mobile Scroll-Linked Floating Pencil Animation
+      if (vehicle) {
         window.addEventListener('scroll', () => {
-          if (isTouch) {
-            const scrollPx = window.scrollY;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPct = maxScroll > 0 ? scrollPx / maxScroll : 0;
-            const mobY = 120 + scrollPct * (window.innerHeight - 220);
-            const mobX = window.innerWidth - 60;
-            pencil.style.transform = `translate3d(${mobX}px, ${mobY}px, 0) rotate(${-20 + scrollPct * 60}deg)`;
-          }
+          const scrollPx = window.scrollY;
+          const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPct = maxScroll > 0 ? scrollPx / maxScroll : 0;
+          // Smooth vehicle floating sway
+          vehicle.style.transform = `translate3d(0, ${Math.sin(scrollPx * 0.01) * 6}px, 0)`;
         }, { passive: true });
       }
     });

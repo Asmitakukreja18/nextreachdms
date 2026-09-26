@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Load Cute Pencil Cursor & Curved Trail automatically across all pages
 (function() {
-  if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+  if (typeof window !== 'undefined') {
     if (!document.getElementById('pencilCursorScript')) {
       const s = document.createElement('script');
       s.id = 'pencilCursorScript';

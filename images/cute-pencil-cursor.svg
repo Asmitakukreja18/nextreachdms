@@ -1,37 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-  <!-- Subtle Drop Shadow -->
-  <path d="M 4 7 L 27 30 L 22 35 L 2 12 Z" fill="rgba(0, 23, 54, 0.2)" />
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <!-- Subtle Pencil Shadow -->
+  <path d="M 8 36 L 27 17 L 33 23 L 14 42 Z" fill="rgba(23, 17, 15, 0.18)" />
 
-  <!-- 1. Sharp Graphite Lead Tip at (0, 0) -->
-  <polygon points="0,0 7,2 2,7" fill="#1A1D20" stroke="#1A1D20" stroke-width="0.8" stroke-linejoin="round" />
+  <!-- 1. Back Yellow Eraser Cap -->
+  <polygon points="8,34 13,29 19,35 14,40" fill="#FFB800" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 
-  <!-- 2. Sharpened Cedar Wood Neck -->
-  <polygon points="7,2 14,4 4,14 2,7" fill="#FDE68A" stroke="#1A1D20" stroke-width="1.3" stroke-linejoin="round" />
-  <path d="M 2 7 Q 5.5 5.5 7 2" fill="none" stroke="#D97706" stroke-width="1" />
+  <!-- 2. White Barrel Body -->
+  <polygon points="13,29 27,15 33,21 19,35" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Two Dividing Section Lines -->
+  <line x1="17.7" y1="24.3" x2="23.7" y2="30.3" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="22.3" y1="19.7" x2="28.3" y2="25.7" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Middle Accent Mark -->
+  <circle cx="21" cy="25" r="1.4" fill="#17110F" opacity="0.65"/>
 
-  <!-- 3. Cute Yellow Pencil Body -->
-  <polygon points="14,4 25,15 15,25 4,14" fill="#FFB703" stroke="#1A1D20" stroke-width="1.5" stroke-linejoin="round" />
-  <!-- Shading Facet -->
-  <polygon points="9,9 20,20 15,25 4,14" fill="#FB8500" opacity="0.35" />
-  <line x1="14" y1="4" x2="25" y2="15" stroke="#FFE600" stroke-width="1" stroke-linecap="round" />
-  <line x1="6.5" y1="11.5" x2="17.5" y2="22.5" stroke="#FFA200" stroke-width="1.2" stroke-linecap="round" />
+  <!-- 3. Sharpened Wood Section -->
+  <polygon points="27,15 36,9.6 38.4,12 33,21" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 
-  <!-- 4. Kawaii Cute Eyes & Smile -->
-  <circle cx="12.5" cy="14.5" r="1.1" fill="#1A1D20" />
-  <circle cx="12.2" cy="14.2" r="0.4" fill="#FFFFFF" />
-  <circle cx="15.5" cy="11.5" r="1.1" fill="#1A1D20" />
-  <circle cx="15.2" cy="11.2" r="0.4" fill="#FFFFFF" />
-  <path d="M 13.5 13.5 Q 14.5 14.5 15.2 13" fill="none" stroke="#1A1D20" stroke-width="0.9" stroke-linecap="round" />
-  <!-- Rosy Blushing Cheeks -->
-  <ellipse cx="11.2" cy="15.2" rx="0.9" ry="0.6" fill="#FF477E" opacity="0.8" />
-  <ellipse cx="16.5" cy="11" rx="0.9" ry="0.6" fill="#FF477E" opacity="0.8" />
-
-  <!-- 5. Silver Metal Ferrule (Collar) -->
-  <polygon points="25,15 28,18 18,28 15,25" fill="#E2E8F0" stroke="#1A1D20" stroke-width="1.4" stroke-linejoin="round" />
-  <line x1="26" y1="17" x2="17" y2="26" stroke="#94A3B8" stroke-width="1.2" />
-
-  <!-- 6. Cute Pink Eraser -->
-  <path d="M 28 18 L 30 20 C 33 23 33 26 30 29 C 27 32 24 32 21 29 L 18 28 Z" 
-        fill="#FF758F" stroke="#1A1D20" stroke-width="1.5" stroke-linejoin="round" />
-  <path d="M 27 22 Q 29 24 28 27" stroke="#FFAAB8" stroke-width="1" stroke-linecap="round" />
+  <!-- 4. Hot Pink Lead Tip (Pointing at 42, 6) -->
+  <polygon points="36,9.6 42,6 38.4,12" fill="#FF2A6D" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>

@@ -1,18 +1,17 @@
 /**
- * Cute Hand-Drawn Pencil Cursor with Smooth Curved Sketch Trail
- * NextReach DMS & Marketiqx
+ * Exact Reference Hand-Drawn Pencil Cursor with Smooth Curved Sketch Trail
+ * Designed for NextReach DMS
+ * Reference: Hand-drawn pencil with pink lead tip, white body segments, yellow eraser
  */
 (function () {
   'use strict';
 
-  // Only run on mouse devices (not mobile / touch)
-  if (!window.matchMedia('(pointer: fine)').matches) return;
+  function initPencilSystem() {
+    // Prevent duplicate initializations
+    if (window._pencilSystemInitialized) return;
+    window._pencilSystemInitialized = true;
 
-  function initPencilCursor() {
-    // Prevent duplicate initialization
-    if (document.getElementById('cutePencilCursor')) return;
-
-    // 1. Create Trail Canvas
+    // 1. Inject Canvas for Hand-Drawn Smooth Curved Line Trail
     let canvas = document.getElementById('pencilTrailCanvas');
     if (!canvas) {
       canvas = document.createElement('canvas');
@@ -25,82 +24,81 @@
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    window.addEventListener('resize', () => {
+    function updateSize() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-    }, { passive: true });
+    }
+    window.addEventListener('resize', updateSize, { passive: true });
 
-    // 2. Create Cute Pencil Cursor Element
-    const pencil = document.createElement('div');
-    pencil.id = 'cutePencilCursor';
-    pencil.className = 'cute-pencil-cursor';
-    pencil.setAttribute('aria-hidden', 'true');
-    pencil.innerHTML = `
-      <div class="pencil-anchor">
-        <svg viewBox="0 0 48 48" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg" class="cute-pencil-svg">
-          <!-- Drop Shadow under pencil -->
-          <ellipse cx="24" cy="24" rx="14" ry="5" transform="rotate(-30 24 24)" fill="rgba(0, 23, 54, 0.18)" />
+    // 2. Inject or Reference Exact Hand-Drawn Pencil Cursor Element
+    let pencil = document.getElementById('handDrawnPencil');
+    if (!pencil) {
+      pencil = document.createElement('div');
+      pencil.id = 'handDrawnPencil';
+      pencil.setAttribute('aria-hidden', 'true');
+      pencil.style.cssText = 'position:fixed;top:0;left:0;width:48px;height:48px;pointer-events:none;z-index:999999;transform:translate3d(-100px,-100px,0);filter:drop-shadow(2px 4px 6px rgba(23,17,15,0.25));will-change:transform;transition:opacity 0.2s ease, filter 0.15s ease;opacity:0;';
+      pencil.innerHTML = `
+        <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Subtle Pencil Shadow -->
+          <path d="M 8 36 L 27 17 L 33 23 L 14 42 Z" fill="rgba(23, 17, 15, 0.18)" />
 
-          <!-- 1. Sharp Graphite Tip (Points at 0,0) -->
-          <polygon points="0,0 8,3 3,8" fill="#1A1D20" />
+          <!-- 1. Back Yellow Eraser Cap -->
+          <polygon points="8,34 13,29 19,35 14,40" fill="#FFB800" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 
-          <!-- 2. Sharpened Wood Neck -->
-          <polygon points="8,3 16,6 6,16 3,8" fill="#FDE68A" stroke="#1A1D20" stroke-width="1.6" stroke-linejoin="round" />
-          <path d="M 3 8 Q 6 6 8 3" fill="none" stroke="#D97706" stroke-width="1.3" />
+          <!-- 2. White Barrel Body -->
+          <polygon points="13,29 27,15 33,21 19,35" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- Two Dividing Section Lines -->
+          <line x1="17.7" y1="24.3" x2="23.7" y2="30.3" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="22.3" y1="19.7" x2="28.3" y2="25.7" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Middle Accent Mark -->
+          <circle cx="21" cy="25" r="1.4" fill="#17110F" opacity="0.65"/>
 
-          <!-- 3. Cute Yellow Pencil Body -->
-          <polygon points="16,6 31,21 21,31 6,16" fill="#FFB703" stroke="#1A1D20" stroke-width="1.8" stroke-linejoin="round" />
-          <!-- Shading Facet -->
-          <polygon points="11,11 26,26 21,31 6,16" fill="#FB8500" opacity="0.32" />
-          <line x1="16" y1="6" x2="31" y2="21" stroke="#FFE600" stroke-width="1.5" stroke-linecap="round" />
-          <line x1="8.5" y1="13.5" x2="23.5" y2="28.5" stroke="#FFA200" stroke-width="1.5" stroke-linecap="round" />
+          <!-- 3. Sharpened Wood Section -->
+          <polygon points="27,15 36,9.6 38.4,12 33,21" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 
-          <!-- 4. Kawaii Cute Eyes & Smile -->
-          <!-- Left Eye -->
-          <circle cx="16.5" cy="18.5" r="1.4" fill="#1A1D20" />
-          <circle cx="16" cy="18" r="0.5" fill="#FFFFFF" />
-          <!-- Right Eye -->
-          <circle cx="20.5" cy="14.5" r="1.4" fill="#1A1D20" />
-          <circle cx="20" cy="14" r="0.5" fill="#FFFFFF" />
-          <!-- Tiny Smile -->
-          <path d="M 17.8 17.2 Q 19 18.5 20.2 16.8" fill="none" stroke="#1A1D20" stroke-width="1.2" stroke-linecap="round" />
-          <!-- Blushing Cheeks -->
-          <ellipse cx="14.8" cy="19.5" rx="1.2" ry="0.8" fill="#FF477E" opacity="0.8" />
-          <ellipse cx="21.8" cy="13.8" rx="1.2" ry="0.8" fill="#FF477E" opacity="0.8" />
-
-          <!-- 5. Shiny Silver Ferrule -->
-          <polygon points="31,21 35,25 25,35 21,31" fill="#E2E8F0" stroke="#1A1D20" stroke-width="1.6" stroke-linejoin="round" />
-          <line x1="29.5" y1="23.5" x2="23.5" y2="29.5" stroke="#94A3B8" stroke-width="1.3" />
-          <line x1="32.5" y1="26.5" x2="26.5" y2="32.5" stroke="#CBD5E1" stroke-width="1" />
-
-          <!-- 6. Cute Pink Eraser -->
-          <path d="M 35 25 L 38 28 C 41.5 31.5 41.5 35.5 38 39 C 34.5 42.5 30.5 42.5 27 39 L 25 35 Z" 
-                fill="#FF758F" stroke="#1A1D20" stroke-width="1.8" stroke-linejoin="round" />
-          <ellipse cx="34" cy="34" rx="4" ry="2" transform="rotate(-45 34 34)" fill="#FFAAB8" opacity="0.6" />
+          <!-- 4. Hot Pink Lead Tip (Pointing at 42, 6) -->
+          <polygon points="36,9.6 42,6 38.4,12" fill="#FF2A6D" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
         </svg>
-      </div>
-    `;
-    document.body.appendChild(pencil);
-    document.body.classList.add('cute-pencil-enabled');
+      `;
+      document.body.appendChild(pencil);
+    }
 
-    // 3. Trail Points & Rendering
+    // 3. Hide OS Cursor only when mouse is active and on desktop/laptop
+    let cursorStyle = document.getElementById('pencilCursorHideStyle');
+    function enablePencilCursor() {
+      if (!cursorStyle) {
+        cursorStyle = document.createElement('style');
+        cursorStyle.id = 'pencilCursorHideStyle';
+        cursorStyle.textContent = `
+          @media (hover: hover) and (pointer: fine), (min-width: 992px) {
+            *, html, body, a, button, input, select, textarea, [role="button"] {
+              cursor: none !important;
+            }
+          }
+        `;
+        document.head.appendChild(cursorStyle);
+      }
+      pencil.style.opacity = '1';
+    }
+
+    // 4. Smooth Curved Trail Architecture
     const points = [];
     const maxPoints = 28;
-    const maxAge = 580; // milliseconds
+    const maxAge = 550; // milliseconds line stays on screen
     let mouseX = -100, mouseY = -100;
-    let isDrawingLoopActive = false;
+    let isDrawing = false;
+    let isHovering = false;
 
     window.addEventListener('mousemove', (e) => {
+      enablePencilCursor();
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Position pencil tip directly at mouse coordinates
-      pencil.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-      if (!pencil.classList.contains('active')) {
-        pencil.classList.add('active');
-      }
+      // Position pencil so the pink tip at (42, 6) aligns EXACTLY with mouse cursor
+      const scale = isHovering ? 1.15 : 1;
+      const rot = isHovering ? '-6deg' : '0deg';
+      pencil.style.transform = `translate3d(${mouseX - 42}px, ${mouseY - 6}px, 0) scale(${scale}) rotate(${rot})`;
 
-      // Add point for curved line trail
       points.push({
         x: mouseX,
         y: mouseY,
@@ -111,35 +109,49 @@
         points.shift();
       }
 
-      if (!isDrawingLoopActive) {
-        isDrawingLoopActive = true;
+      if (!isDrawing) {
+        isDrawing = true;
         requestAnimationFrame(renderCurvedTrail);
       }
     }, { passive: true });
 
-    // Press down effect on mouse click
-    window.addEventListener('mousedown', () => {
-      pencil.classList.add('pencil-pressing');
-    });
-    window.addEventListener('mouseup', () => {
-      pencil.classList.remove('pencil-pressing');
+    document.addEventListener('mouseleave', () => {
+      pencil.style.opacity = '0';
     });
 
-    // Hover effect over buttons, links, cards
-    const hoverQuery = 'a, button, .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, input, select, textarea, [role="button"], .theme-toggle-btn';
+    document.addEventListener('mouseenter', () => {
+      pencil.style.opacity = '1';
+    });
+
+    // Click press animation (pencil writes down slightly)
+    document.addEventListener('mousedown', () => {
+      pencil.style.transform = `translate3d(${mouseX - 42}px, ${mouseY - 4}px, 0) scale(0.92) rotate(-3deg)`;
+    });
+    document.addEventListener('mouseup', () => {
+      const scale = isHovering ? 1.15 : 1;
+      const rot = isHovering ? '-6deg' : '0deg';
+      pencil.style.transform = `translate3d(${mouseX - 42}px, ${mouseY - 6}px, 0) scale(${scale}) rotate(${rot})`;
+    });
+
+    // Interactive Hover Effects on buttons, links, cards
+    const hoverSelectors = 'a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, input, select, textarea, .theme-toggle-btn';
     document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(hoverQuery)) {
-        pencil.classList.add('pencil-hover');
+      if (e.target.closest(hoverSelectors)) {
+        isHovering = true;
+        pencil.style.filter = 'drop-shadow(0 0 10px rgba(255, 42, 109, 0.8)) drop-shadow(2px 4px 6px rgba(23,17,15,0.3))';
+        pencil.style.transform = `translate3d(${mouseX - 42}px, ${mouseY - 6}px, 0) scale(1.15) rotate(-6deg)`;
       }
     }, { passive: true });
 
     document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(hoverQuery)) {
-        pencil.classList.remove('pencil-hover');
+      if (e.target.closest(hoverSelectors)) {
+        isHovering = false;
+        pencil.style.filter = 'drop-shadow(2px 4px 6px rgba(23,17,15,0.25))';
+        pencil.style.transform = `translate3d(${mouseX - 42}px, ${mouseY - 6}px, 0) scale(1) rotate(0deg)`;
       }
     }, { passive: true });
 
-    // Render Smooth Curved Pencil Trail
+    // 5. Draw Smooth Curved Sketch Line with Quadratic Spline
     function renderCurvedTrail(timestamp) {
       ctx.clearRect(0, 0, width, height);
 
@@ -149,7 +161,6 @@
       }
 
       if (points.length >= 2) {
-        // Draw smooth curved segments through midpoints
         for (let i = 0; i < points.length - 1; i++) {
           const p0 = points[i];
           const p1 = points[i + 1];
@@ -159,22 +170,22 @@
           const midX = (p0.x + p1.x) / 2;
           const midY = (p0.y + p1.y) / 2;
 
-          // Outer orange pencil lead glow
+          // 1. Vibrant Pink Sketch Trail (Matches Pink Tip)
           ctx.beginPath();
           ctx.moveTo(p0.x, p0.y);
           ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
-          ctx.strokeStyle = `rgba(255, 107, 0, ${progress * 0.75})`;
-          ctx.lineWidth = Math.max(1, progress * 3.4);
+          ctx.strokeStyle = `rgba(255, 42, 109, ${progress * 0.75})`;
+          ctx.lineWidth = Math.max(1.2, progress * 3.5);
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
           ctx.stroke();
 
-          // Inner dark graphite sketch core
+          // 2. Fine Charcoal Hand-Drawn Core
           ctx.beginPath();
           ctx.moveTo(p0.x, p0.y);
           ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
-          ctx.strokeStyle = `rgba(26, 29, 32, ${progress * 0.85})`;
-          ctx.lineWidth = Math.max(0.7, progress * 1.8);
+          ctx.strokeStyle = `rgba(23, 17, 15, ${progress * 0.85})`;
+          ctx.lineWidth = Math.max(0.8, progress * 1.6);
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
           ctx.stroke();
@@ -182,15 +193,15 @@
 
         requestAnimationFrame(renderCurvedTrail);
       } else {
-        isDrawingLoopActive = false;
+        isDrawing = false;
         ctx.clearRect(0, 0, width, height);
       }
     }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPencilCursor);
+    document.addEventListener('DOMContentLoaded', initPencilSystem);
   } else {
-    initPencilCursor();
+    initPencilSystem();
   }
 })();
