@@ -8371,21 +8371,28 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
 .scroll-pencil-rider {
   position: absolute !important;
-  right: -15px !important;
-  top: -13px !important;
-  width: 30px !important;
-  height: 30px !important;
+  right: -14px !important;
+  top: -18px !important;
+  width: 24px !important;
+  height: 38px !important;
   pointer-events: none !important;
-  transform-origin: 26px 4px !important;
+  transform-origin: 16px 36px !important;
   will-change: transform;
-  filter: drop-shadow(1px 2px 5px rgba(23, 17, 15, 0.35)) !important;
+  filter: drop-shadow(1px 3px 6px rgba(0, 45, 98, 0.4)) !important;
   transition: transform 0.06s ease-out;
+}
+
+.rider-pencil-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .scroll-pencil-rider svg {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 38px;
 }
 
 .scroll-track-arrow {
