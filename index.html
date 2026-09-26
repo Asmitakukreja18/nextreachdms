@@ -265,15 +265,8 @@
   <!-- ==========================================================================
        2. SCROLL PROGRESS BAR, CUSTOM CURSOR & HAND-DRAWN LIVE WRITING PENCIL
        ========================================================================== -->
-  <!-- Top Responsive Scroll Progress Bar with Waving Pencil Rider & Guide Arrow -->
-  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
-    <div class="scroll-progress-fill" id="scrollProgress">
-      <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling...">
-        <img src="images/kawaii-navy-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">
-      </div>
-    </div>
-    <div class="scroll-track-arrow">►</div>
-  </div>
+  <!-- Minimal Clean Scroll Progress Line -->
+  <div class="scroll-progress-bar" id="scrollProgress" style="position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #ff6b00, #ff2a6d); z-index: 99999; width: 0; pointer-events: none;"></div>
 
   <!-- Real-Time Hand-Drawn Smooth Curved Pencil Writing Canvas Overlay -->
   <canvas id="pencilTrailCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999990;"></canvas>

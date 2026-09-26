@@ -1,5 +1,5 @@
 /**
- * NextReach DMS — Kawaii Navy Pencil Character & Scroll Waving Engine
+ * NextReach DMS — Kawaii Navy Pencil Cursor with Scroll-Linked Waving Motion
  * Reference: ChatGPT Image Sep 27, 2026 (Navy blue pencil with kawaii eyes, smile, orange cap, waving hands)
  */
 (function () {
@@ -11,32 +11,7 @@
 
     const isTouchDevice = () => window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 992;
 
-    // =========================================================================
-    // 1. TOP RESPONSIVE PROGRESS TRACK WITH KAWAII PENCIL RIDER
-    // =========================================================================
-    let progressTrack = document.getElementById('scrollProgressTrack');
-    if (!progressTrack) {
-      progressTrack = document.createElement('div');
-      progressTrack.id = 'scrollProgressTrack';
-      progressTrack.className = 'scroll-progress-track';
-      progressTrack.setAttribute('aria-hidden', 'true');
-      progressTrack.innerHTML = `
-        <div class="scroll-progress-fill" id="scrollProgress">
-          <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling...">
-            <img src="images/kawaii-navy-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">
-          </div>
-        </div>
-        <div class="scroll-track-arrow">►</div>
-      `;
-      document.body.prepend(progressTrack);
-    }
-
-    const progressBar = document.getElementById('scrollProgress');
-    const pencilRider = document.getElementById('scrollPencilRider');
-
-    // =========================================================================
-    // 2. DESKTOP KAWAII PENCIL CURSOR & REAL-TIME CURVED CANVAS TRAIL
-    // =========================================================================
+    // 1. Overlay Canvas for Smooth Curved Sketch Trail
     let canvas = document.getElementById('pencilTrailCanvas');
     if (!canvas) {
       canvas = document.createElement('canvas');
@@ -54,6 +29,7 @@
       height = canvas.height = window.innerHeight;
     }, { passive: true });
 
+    // 2. Kawaii Navy Pencil Cursor Element
     let pencil = document.getElementById('handDrawnPencil');
     if (!pencil) {
       pencil = document.createElement('div');
@@ -85,18 +61,16 @@
       pencil.style.opacity = '1';
     }
 
-    // =========================================================================
-    // 3. MOUSE TRACKING & INTERACTIVE HOVER
-    // =========================================================================
+    // 3. Mouse Tracking & Coordinates
     const points = [];
-    const maxPoints = 28;
-    const maxAge = 550; // milliseconds
+    const maxPoints = 26;
+    const maxAge = 500; // milliseconds
     let mouseX = -100, mouseY = -100;
     let isDrawing = false;
     let isHovering = false;
     let isMouseDown = false;
 
-    // Wave Motion State Variables
+    // Scroll Wave Physics
     let scrollVelocity = 0;
     let wavePhase = 0;
     let isScrolling = false;
@@ -104,7 +78,7 @@
     let lastScrollY = window.scrollY;
     let isWaveAnimationRunning = false;
 
-    // Lead tip offset (44x68 box -> tip at 30, 67)
+    // Tip coordinates for 44x68px display
     const TIP_X = 30;
     const TIP_Y = 67;
 
@@ -115,7 +89,7 @@
       }
       if (mouseX < 0 || mouseY < 0) return;
 
-      const scale = isMouseDown ? 0.92 : (isHovering ? 1.16 : 1);
+      const scale = isMouseDown ? 0.92 : (isHovering ? 1.15 : 1);
       const baseRot = isHovering ? -6 : 0;
       const totalRot = baseRot + waveAngle;
 
@@ -180,23 +154,23 @@
       }
     }, { passive: true });
 
-    // =========================================================================
-    // 4. SCROLL WAVING PHYSICS ENGINE ("pencil should wave like small waves")
-    // =========================================================================
+    // 4. Scroll Wave Motion ("pencil should wave like small waves")
     window.addEventListener('scroll', () => {
       const currentY = window.scrollY;
       const dy = Math.abs(currentY - lastScrollY);
       lastScrollY = currentY;
 
-      // Update Top Progress Bar
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPct = maxScroll > 0 ? (currentY / maxScroll) * 100 : 0;
-      if (progressBar) {
-        progressBar.style.width = scrollPct + '%';
+      // Update minimal progress bar if exists
+      const pBar = document.getElementById('scrollProgress');
+      if (pBar) {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPct = maxScroll > 0 ? (currentY / maxScroll) * 100 : 0;
+        pBar.style.width = scrollPct + '%';
       }
 
-      // Smooth scroll velocity kick
-      scrollVelocity = Math.min(1.6, scrollVelocity * 0.75 + Math.min(dy, 40) * 0.04 + 0.35);
+      if (isTouchDevice()) return;
+
+      scrollVelocity = Math.min(1.5, scrollVelocity * 0.75 + Math.min(dy, 40) * 0.04 + 0.35);
       isScrolling = true;
 
       clearTimeout(scrollStopTimer);
@@ -212,57 +186,28 @@
 
     function renderScrollWaveMotion() {
       if (isScrolling) {
-        wavePhase += 0.24; // Small playful wave frequency
+        wavePhase += 0.22; // Small pleasant wave frequency
       } else {
-        // Natural gentle spring dampening
-        scrollVelocity *= 0.88;
+        scrollVelocity *= 0.86;
         if (scrollVelocity < 0.015) {
           scrollVelocity = 0;
           isWaveAnimationRunning = false;
           updatePencilPosition(0, 0, 0);
-          if (pencilRider) {
-            pencilRider.style.transform = 'translateY(0px) rotate(0deg)';
-            pencilRider.classList.remove('pencil-waving');
-          }
           return;
         }
       }
 
-      // Cute small wave calculations
-      const waveAngle = Math.sin(wavePhase) * (14 * scrollVelocity); // Tilt wave: ±14 deg
-      const waveY = Math.cos(wavePhase * 0.8) * (5 * scrollVelocity); // Vertical wave: ±5px
-      const waveX = Math.sin(wavePhase * 0.6) * (3 * scrollVelocity); // Lateral sway: ±3px
+      // Small wave oscillations
+      const waveAngle = Math.sin(wavePhase) * (12 * scrollVelocity); // tilt wave: ±12 deg
+      const waveY = Math.cos(wavePhase * 0.8) * (4 * scrollVelocity); // small vertical wave: ±4px
+      const waveX = Math.sin(wavePhase * 0.6) * (3 * scrollVelocity); // small lateral sway: ±3px
 
-      // 1. Apply waving motion to desktop cursor pencil
       updatePencilPosition(waveX, waveY, waveAngle);
-
-      // 2. Apply waving motion to top rider pencil (both mobile and desktop)
-      if (pencilRider) {
-        const riderY = Math.sin(wavePhase * 1.2) * (5 * Math.min(1, scrollVelocity));
-        const riderRot = Math.sin(wavePhase) * (14 * Math.min(1, scrollVelocity));
-        pencilRider.style.transform = `translateY(${riderY}px) rotate(${riderRot}deg)`;
-        pencilRider.classList.add('pencil-waving');
-      }
-
-      // 3. Add wave sketch trail points while scrolling
-      if (scrollVelocity > 0.3 && mouseX > 0 && mouseY > 0 && !isTouchDevice()) {
-        points.push({
-          x: mouseX + waveX * 0.7,
-          y: mouseY + waveY * 0.7,
-          time: performance.now()
-        });
-        if (!isDrawing) {
-          isDrawing = true;
-          requestAnimationFrame(renderCurvedTrail);
-        }
-      }
 
       requestAnimationFrame(renderScrollWaveMotion);
     }
 
-    // =========================================================================
-    // 5. SMOOTH CURVED TRAIL RENDERING (Brand Navy & Orange Spline)
-    // =========================================================================
+    // 5. Curved Canvas Trail (Brand Navy & Orange Spline)
     function renderCurvedTrail(timestamp) {
       ctx.clearRect(0, 0, width, height);
 
@@ -280,22 +225,22 @@
           const midX = (p0.x + p1.x) / 2;
           const midY = (p0.y + p1.y) / 2;
 
-          // 1. Vibrant Orange Glow Line (matches pencil eraser)
+          // Orange glow line
           ctx.beginPath();
           ctx.moveTo(p0.x, p0.y);
           ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
           ctx.strokeStyle = `rgba(255, 107, 0, ${progress * 0.75})`;
-          ctx.lineWidth = Math.max(1.2, progress * 3.4);
+          ctx.lineWidth = Math.max(1.2, progress * 3.2);
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
           ctx.stroke();
 
-          // 2. Royal Navy Ink Core (matches pencil body)
+          // Navy ink core
           ctx.beginPath();
           ctx.moveTo(p0.x, p0.y);
           ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
           ctx.strokeStyle = `rgba(0, 45, 98, ${progress * 0.85})`;
-          ctx.lineWidth = Math.max(0.8, progress * 1.6);
+          ctx.lineWidth = Math.max(0.8, progress * 1.5);
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
           ctx.stroke();
