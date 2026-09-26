@@ -6809,6 +6809,105 @@ body {
   display: block !important;
 }
 
+/* Animated Hand-Drawn Hero Scene Elements */
+.vehicle-chassis-bounce {
+  animation: chassisBounce 0.45s ease-in-out infinite alternate !important;
+  transform-origin: center bottom !important;
+}
+
+@keyframes chassisBounce {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-3.5px) rotate(-0.5deg); }
+}
+
+.wheel-spokes {
+  animation: spokesSpin 0.35s linear infinite !important;
+  transform-origin: 0px 0px !important;
+}
+
+@keyframes spokesSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.vehicle-roof-flag {
+  animation: roofFlagFlutter 0.5s ease-in-out infinite alternate !important;
+  transform-origin: 68px 25px !important;
+}
+
+@keyframes roofFlagFlutter {
+  0% { transform: scaleX(1) skewY(0deg); }
+  100% { transform: scaleX(0.85) skewY(-5deg); }
+}
+
+.vehicle-headlight {
+  animation: headlightFlicker 1.8s ease-in-out infinite alternate !important;
+}
+
+@keyframes headlightFlicker {
+  0% { fill: #FFE600; filter: drop-shadow(0 0 2px #FFE600); }
+  50% { fill: #FFFDF9; filter: drop-shadow(0 0 8px #FF6B00); }
+  100% { fill: #FFE600; filter: drop-shadow(0 0 4px #FFE600); }
+}
+
+.headlight-rays {
+  animation: raysPulse 0.9s ease-in-out infinite alternate !important;
+}
+
+@keyframes raysPulse {
+  0% { opacity: 0.4; transform: scaleX(0.9); }
+  100% { opacity: 1; transform: scaleX(1.15); }
+}
+
+/* Exhaust Smoke Bubbles Puffs */
+.exhaust-b1 {
+  animation: exhaustPuff 0.9s ease-out infinite !important;
+}
+.exhaust-b2 {
+  animation: exhaustPuff 0.9s ease-out 0.3s infinite !important;
+}
+.exhaust-b3 {
+  animation: exhaustPuff 0.9s ease-out 0.6s infinite !important;
+}
+
+@keyframes exhaustPuff {
+  0% { transform: translate(0, 0) scale(0.6); opacity: 0.9; }
+  100% { transform: translate(16px, -8px) scale(1.6); opacity: 0; }
+}
+
+/* Flying Birds in Sky */
+.mahal-main-svg path[d*="Q 378"] {
+  animation: birdsGlide 3.5s ease-in-out infinite alternate !important;
+}
+.mahal-main-svg path[d*="Q 406"] {
+  animation: birdsGlide 4s ease-in-out 0.6s infinite alternate !important;
+}
+
+@keyframes birdsGlide {
+  0% { transform: translate(0px, 0px); }
+  100% { transform: translate(-12px, -6px); }
+}
+
+/* Signature Pencil Badge Wiggle */
+.signature-pencil-badge {
+  animation: pencilBadgeWiggle 3.2s ease-in-out infinite alternate !important;
+}
+
+@keyframes pencilBadgeWiggle {
+  0% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(1deg) translateY(-4px); }
+  100% { transform: rotate(-2deg) translateY(0); }
+}
+
+/* Partner Pill Subtle Glow Pulse */
+.partner-pill {
+  animation: pillPulse 2.8s ease-in-out infinite alternate !important;
+}
+@keyframes pillPulse {
+  0% { box-shadow: 2px 2px 0px #1A1D20; transform: translateY(0); }
+  100% { box-shadow: 3px 5px 0px #FF6B00; transform: translateY(-2px); }
+}
+
 /* Scene Caption Bar */
 .mahal-scene-caption {
   display: flex !important;
@@ -8006,74 +8105,182 @@ body {
    HAND-SKETCHED PENCIL CURSOR & PENCIL PRELOADER ANIMATION
    ========================================================================== */
 /* ==========================================================================
-   HAND-DRAWN KAWAII PENCIL CURSOR & CURVED SKETCH TRAIL
+   NATIVE CUTE PENCIL CURSOR REPLACEMENT ACROSS ALL ELEMENTS
    ========================================================================== */
-@media (pointer: fine) {
-  body.cute-pencil-enabled,
-  body.cute-pencil-enabled a,
-  body.cute-pencil-enabled button,
-  body.cute-pencil-enabled input,
-  body.cute-pencil-enabled select,
-  body.cute-pencil-enabled textarea,
-  body.cute-pencil-enabled [role="button"],
-  body.cute-pencil-enabled label {
-    cursor: none !important;
-  }
+html, body {
+  cursor: url('../images/cute-pencil-cursor.svg') 0 0, auto !important;
 }
 
-.cute-pencil-cursor {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 44px !important;
-  height: 44px !important;
-  pointer-events: none !important;
-  z-index: 9999999 !important;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  will-change: transform;
+a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, 
+input[type="submit"], input[type="button"], select, .theme-toggle-btn, .project-filter-btn {
+  cursor: url('../images/cute-pencil-cursor-hover.svg') 0 0, pointer !important;
 }
 
-.cute-pencil-cursor.active {
-  opacity: 1 !important;
-}
-
-.pencil-anchor {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 38px !important;
-  height: 38px !important;
-  transform-origin: 0px 0px !important;
-  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
-
-.cute-pencil-cursor.pencil-hover .pencil-anchor {
-  transform: scale(1.25) rotate(-14deg) translateY(-2px) !important;
-  filter: drop-shadow(0 4px 12px rgba(255, 107, 0, 0.45)) !important;
-}
-
-.cute-pencil-cursor.pencil-pressing .pencil-anchor {
-  transform: scale(0.92) translate(1px, 2px) rotate(6deg) !important;
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  cursor: url('../images/cute-pencil-cursor.svg') 0 0, text !important;
 }
 
 .custom-cursor-dot,
-.custom-cursor-aura {
+.custom-cursor-aura,
+.cute-pencil-cursor {
   display: none !important;
 }
 
 @media (max-width: 991px), (hover: none), (pointer: coarse) {
-  .cute-pencil-cursor,
-  #pencilTrailCanvas,
-  .custom-cursor-dot,
-  .custom-cursor-aura {
-    display: none !important;
-  }
-  body.cute-pencil-enabled,
-  body.cute-pencil-enabled a,
-  body.cute-pencil-enabled button {
+  html, body, a, button, input, select, textarea {
     cursor: auto !important;
   }
+  #pencilTrailCanvas {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   SUPER DYNAMIC ANIMATIONS SUITE ("Har Ik Chiz Mai Mast Animation")
+   ========================================================================== */
+
+/* 1. Grand Mahal Hero Scene Floating & Palace Breathing */
+.grand-mahal-hero-scene {
+  animation: mahalPalaceFloat 4.8s ease-in-out infinite alternate !important;
+}
+
+@keyframes mahalPalaceFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 2. Flag Wind Wave / Flutter on Palace Dome */
+.mahal-scene-canvas svg line[stroke*="white"] ~ polygon,
+.footer-skyline-divider {
+  transition: all 0.3s ease;
+}
+
+@keyframes flagFlutter {
+  0% { transform: scaleX(1) skewY(0deg); }
+  50% { transform: scaleX(0.92) skewY(-4deg); }
+  100% { transform: scaleX(1.05) skewY(3deg); }
+}
+
+/* 3. Golden Sun Radiant Pulse */
+.mahal-sun-element {
+  animation: sunGoldenPulse 3.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes sunGoldenPulse {
+  0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 8px rgba(255, 107, 0, 0.3)); }
+  100% { transform: scale(1.12) rotate(14deg); filter: drop-shadow(0 0 20px rgba(255, 42, 109, 0.55)); }
+}
+
+/* 4. Floating Mahal Metric Badges */
+.badge-top-right {
+  animation: badgeFloatTop 3.8s ease-in-out infinite alternate !important;
+}
+@keyframes badgeFloatTop {
+  0% { transform: rotate(2deg) translateY(0px); }
+  100% { transform: rotate(0.5deg) translateY(-8px); }
+}
+
+.badge-bottom-right {
+  animation: badgeFloatBottom 4.4s ease-in-out infinite alternate !important;
+}
+@keyframes badgeFloatBottom {
+  0% { transform: rotate(-1.5deg) translateY(0px); }
+  100% { transform: rotate(-3deg) translateY(-6px); }
+}
+
+/* 5. Project Card Light Sheen & Interactive Lift */
+.project-thumb-box {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.project-thumb-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+  transform: skewX(-24deg);
+  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.project-card:hover .project-thumb-box::after {
+  left: 150%;
+}
+
+.project-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 8px 12px 0px #1A1D20 !important;
+}
+
+.project-card:hover .p-metric-val {
+  color: #FF6B00 !important;
+  transform: scale(1.1);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* 6. Glowing Live Website Button ("🌐 Launch Live Website") */
+@keyframes liveBtnGlow {
+  0% { box-shadow: 4px 4px 0px #1A1D20, 0 0 0px rgba(255, 107, 0, 0); }
+  50% { box-shadow: 4px 4px 0px #1A1D20, 0 0 16px rgba(255, 107, 0, 0.55); }
+  100% { box-shadow: 4px 4px 0px #1A1D20, 0 0 0px rgba(255, 107, 0, 0); }
+}
+
+.btn-visit-live {
+  animation: liveBtnGlow 2.4s ease-in-out infinite !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-visit-live:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 6px 6px 0px #1A1D20, 0 0 20px rgba(255, 107, 0, 0.7) !important;
+}
+
+.btn-visit-live:active {
+  transform: translateY(2px) scale(0.97) !important;
+  box-shadow: 2px 2px 0px #1A1D20 !important;
+}
+
+/* 7. Button Spring Feedback */
+.btn-orange:hover, .btn-solid-orange:hover, .btn-navy-outline:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 6px 6px 0px #1A1D20 !important;
+}
+
+.btn-orange:active, .btn-solid-orange:active, .btn-navy-outline:active {
+  transform: translateY(1px) scale(0.98) !important;
+  box-shadow: 2px 2px 0px #1A1D20 !important;
+}
+
+/* 8. Text Shimmer Highlight */
+@keyframes textShimmerWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-shimmer-text,
+.hero-tagline-badge {
+  transition: all 0.3s ease;
+}
+
+/* 9. Paper Sketch Badges Gentle Float */
+@keyframes paperBadgeFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(1.2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.paper-sketch-badge, .badge-mh27-express {
+  animation: paperBadgeFloat 3.4s ease-in-out infinite !important;
 }
 
 /* Pencil Preloader Doodle Animation */

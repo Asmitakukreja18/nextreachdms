@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <!-- Subtle Drop Shadow with Glow -->
+  <path d="M 4 7 L 27 30 L 22 35 L 2 12 Z" fill="rgba(255, 107, 0, 0.25)" />
+
+  <!-- Sparkle Star at tip -->
+  <path d="M 4 0 L 5 3 L 8 4 L 5 5 L 4 8 L 3 5 L 0 4 L 3 3 Z" fill="#FFB703" />
+
+  <!-- 1. Sharp Graphite Lead Tip at (0, 0) -->
+  <polygon points="0,0 7,2 2,7" fill="#1A1D20" stroke="#1A1D20" stroke-width="0.8" stroke-linejoin="round" />
+
+  <!-- 2. Sharpened Cedar Wood Neck -->
+  <polygon points="7,2 14,4 4,14 2,7" fill="#FDE68A" stroke="#1A1D20" stroke-width="1.3" stroke-linejoin="round" />
+  <path d="M 2 7 Q 5.5 5.5 7 2" fill="none" stroke="#D97706" stroke-width="1" />
+
+  <!-- 3. Cute Yellow Pencil Body -->
+  <polygon points="14,4 25,15 15,25 4,14" fill="#FFB703" stroke="#1A1D20" stroke-width="1.5" stroke-linejoin="round" />
+  <!-- Shading Facet -->
+  <polygon points="9,9 20,20 15,25 4,14" fill="#FB8500" opacity="0.4" />
+  <line x1="14" y1="4" x2="25" y2="15" stroke="#FFE600" stroke-width="1" stroke-linecap="round" />
+  <line x1="6.5" y1="11.5" x2="17.5" y2="22.5" stroke="#FFA200" stroke-width="1.2" stroke-linecap="round" />
+
+  <!-- 4. Kawaii Cute Eyes (Winking / Starry) & Big Smile -->
+  <path d="M 11.5 14 Q 13 13 14 14" stroke="#1A1D20" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  <circle cx="16" cy="11" r="1.2" fill="#1A1D20" />
+  <circle cx="15.7" cy="10.7" r="0.4" fill="#FFFFFF" />
+  <path d="M 13 13.8 Q 14.5 15.5 15.8 13.5" fill="none" stroke="#1A1D20" stroke-width="1" stroke-linecap="round" />
+  <!-- Rosy Blushing Cheeks -->
+  <ellipse cx="10.8" cy="15" rx="1.1" ry="0.7" fill="#FF2A6D" opacity="0.9" />
+  <ellipse cx="17.2" cy="10.8" rx="1.1" ry="0.7" fill="#FF2A6D" opacity="0.9" />
+
+  <!-- 5. Silver Metal Ferrule (Collar) -->
+  <polygon points="25,15 28,18 18,28 15,25" fill="#E2E8F0" stroke="#1A1D20" stroke-width="1.4" stroke-linejoin="round" />
+  <line x1="26" y1="17" x2="17" y2="26" stroke="#94A3B8" stroke-width="1.2" />
+
+  <!-- 6. Cute Pink Eraser -->
+  <path d="M 28 18 L 30 20 C 33 23 33 26 30 29 C 27 32 24 32 21 29 L 18 28 Z" 
+        fill="#FF758F" stroke="#1A1D20" stroke-width="1.5" stroke-linejoin="round" />
+  <path d="M 27 22 Q 29 24 28 27" stroke="#FFAAB8" stroke-width="1" stroke-linecap="round" />
+</svg>
