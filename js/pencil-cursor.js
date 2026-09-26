@@ -1,7 +1,8 @@
 /**
- * NextReach DMS — Kawaii Orange Pencil Cursor & Mobile Floating Mascot System
+ * NextReach DMS — Touch-Sensing Kawaii Orange Pencil Cursor & Trail
  * Reference: ChatGPT Image Sep 27, 2026, 02_22_14 AM (Orange pencil with blue cap, anime eyes, smile, blue tip)
- * Fully Responsive: Desktop Cursor + Mobile Floating Interactive Mascot Companion & Touch Sketching
+ * Mobile Touch: Appears exactly where the user touches & scrolls, waving softly and drawing curves
+ * Desktop Mouse: Smooth cursor tracking with gentle scroll waving
  */
 (function () {
   'use strict';
@@ -10,7 +11,7 @@
     if (window._pencilSystemInitialized) return;
     window._pencilSystemInitialized = true;
 
-    const isMobile = () => window.innerWidth < 992 || window.matchMedia('(pointer: coarse)').matches;
+    const isTouchDevice = () => window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 992;
 
     // 1. Overlay Canvas for Smooth Curved Sketch Trail
     let canvas = document.getElementById('pencilTrailCanvas');
@@ -30,73 +31,23 @@
       height = canvas.height = window.innerHeight;
     }, { passive: true });
 
-    // 2. Kawaii Orange Pencil Cursor Element (Desktop & Touch Active Follower)
+    // 2. Kawaii Orange Pencil Element
     let pencil = document.getElementById('handDrawnPencil');
     if (!pencil) {
       pencil = document.createElement('div');
       pencil.id = 'handDrawnPencil';
       pencil.setAttribute('aria-hidden', 'true');
-      pencil.style.cssText = 'position:fixed;top:0;left:0;width:46px;height:66px;pointer-events:none;z-index:999999;transform:translate3d(-100px,-100px,0);filter:drop-shadow(2px 6px 12px rgba(255,107,0,0.35));will-change:transform;transition:opacity 0.2s ease, filter 0.15s ease;opacity:0;';
+      pencil.style.cssText = 'position:fixed;top:0;left:0;width:44px;height:64px;pointer-events:none;z-index:999999;transform:translate3d(-100px,-100px,0);filter:drop-shadow(2px 6px 12px rgba(255,107,0,0.35));will-change:transform;transition:opacity 0.22s ease, filter 0.15s ease;opacity:0;';
       pencil.innerHTML = `
         <img src="images/kawaii-orange-pencil.png" alt="Kawaii Orange Pencil" style="width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;display:block;">
       `;
       document.body.appendChild(pencil);
     }
 
-    // 3. Kawaii Orange Pencil Mobile Mascot Companion (Always Visible on Mobile Screens)
-    let mobileBuddy = document.getElementById('mobilePencilBuddy');
-    if (!mobileBuddy) {
-      mobileBuddy = document.createElement('div');
-      mobileBuddy.id = 'mobilePencilBuddy';
-      mobileBuddy.className = 'mobile-pencil-buddy is-idle';
-      mobileBuddy.setAttribute('role', 'button');
-      mobileBuddy.setAttribute('tabindex', '0');
-      mobileBuddy.setAttribute('aria-label', 'NextReach DMS Kawaii Pencil Mascot');
-      mobileBuddy.innerHTML = `
-        <img src="images/kawaii-orange-pencil.png" alt="Kawaii Orange Pencil Mascot" class="mobile-pencil-buddy-img">
-        <div id="mobilePencilSpeech" class="mobile-pencil-speech" aria-hidden="true">Hand-crafted with precision! ✨</div>
-      `;
-      document.body.appendChild(mobileBuddy);
-    }
-
-    const mobileSpeech = document.getElementById('mobilePencilSpeech');
-
-    // Mobile Mascot Interactive Tap Hop & Celebration
-    if (mobileBuddy) {
-      mobileBuddy.addEventListener('click', (e) => {
-        e.stopPropagation();
-        mobileBuddy.classList.add('tap-hop');
-
-        if (mobileSpeech) {
-          mobileSpeech.classList.add('visible');
-          setTimeout(() => {
-            mobileSpeech.classList.remove('visible');
-          }, 2400);
-        }
-
-        if (typeof window.confetti === 'function') {
-          const rect = mobileBuddy.getBoundingClientRect();
-          window.confetti({
-            particleCount: 22,
-            spread: 60,
-            origin: {
-              x: (rect.left + rect.width / 2) / window.innerWidth,
-              y: (rect.top + rect.height / 2) / window.innerHeight
-            },
-            colors: ['#ff6b00', '#002d62', '#ffd166', '#06d6a0']
-          });
-        }
-
-        setTimeout(() => {
-          mobileBuddy.classList.remove('tap-hop');
-        }, 700);
-      });
-    }
-
-    // Desktop Native Cursor Hide Style (only active on large screens)
+    // Hide native cursor only on desktop when mouse is active
     let cursorStyle = document.getElementById('pencilCursorHideStyle');
-    function enablePencilCursor() {
-      if (isMobile()) return;
+    function enableDesktopCursor() {
+      if (isTouchDevice()) return;
       if (!cursorStyle) {
         cursorStyle = document.createElement('style');
         cursorStyle.id = 'pencilCursorHideStyle';
@@ -112,49 +63,53 @@
       pencil.style.opacity = '1';
     }
 
-    // 4. Coordinate & Motion State Tracking
+    // 3. Coordinate & Trail Points
     const points = [];
     const maxPoints = 26;
     const maxAge = 500; // milliseconds
-    let mouseX = -100, mouseY = -100;
+    let posX = -100, posY = -100;
     let isDrawing = false;
     let isHovering = false;
     let isMouseDown = false;
+    let isTouching = false;
+    let touchFadeTimer = null;
 
-    // Scroll Wave Physics
-    let scrollVelocity = 0;
+    // Scroll & Touch Wave Dynamics
+    let waveVelocity = 0;
     let wavePhase = 0;
-    let isScrolling = false;
-    let scrollStopTimer = null;
+    let isWaving = false;
+    let waveStopTimer = null;
     let lastScrollY = window.scrollY;
-    let isWaveAnimationRunning = false;
 
-    // Tip coordinates for 46x66px display
-    const TIP_X = 31;
-    const TIP_Y = 64;
+    // Pencil tip calibrated offset
+    const TIP_X = 30;
+    const TIP_Y = 62;
 
-    function updatePencilPosition(waveX = 0, waveY = 0, waveAngle = 0) {
-      if (mouseX < 0 || mouseY < 0) return;
+    function renderPencilPosition(extraX = 0, extraY = 0, extraAngle = 0) {
+      if (posX < 0 || posY < 0) return;
 
-      const scale = isMouseDown ? 0.92 : (isHovering ? 1.15 : 1);
+      const scale = isMouseDown || isTouching ? 0.95 : (isHovering ? 1.14 : 1.0);
       const baseRot = isHovering ? -6 : 0;
-      const totalRot = baseRot + waveAngle;
+      const totalRot = baseRot + extraAngle;
 
-      pencil.style.transform = `translate3d(${mouseX - TIP_X + waveX}px, ${mouseY - TIP_Y + waveY}px, 0) scale(${scale}) rotate(${totalRot}deg)`;
+      // On touch, offset slightly upward (-12px) so the user's finger does not cover the cute pencil face
+      const touchOffsetY = isTouching ? -14 : 0;
+
+      pencil.style.transform = `translate3d(${posX - TIP_X + extraX}px, ${posY - TIP_Y + touchOffsetY + extraY}px, 0) scale(${scale}) rotate(${totalRot}deg)`;
     }
 
-    // --- DESKTOP MOUSE EVENTS ---
+    // --- DESKTOP MOUSE INTERACTION ---
     window.addEventListener('mousemove', (e) => {
-      if (isMobile()) return;
-      enablePencilCursor();
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+      if (isTouchDevice()) return;
+      enableDesktopCursor();
+      posX = e.clientX;
+      posY = e.clientY;
 
-      updatePencilPosition();
+      renderPencilPosition();
 
       points.push({
-        x: mouseX,
-        y: mouseY,
+        x: posX,
+        y: posY,
         time: performance.now()
       });
 
@@ -169,60 +124,59 @@
     }, { passive: true });
 
     document.addEventListener('mouseleave', () => {
-      if (!isMobile()) pencil.style.opacity = '0';
+      if (!isTouchDevice()) pencil.style.opacity = '0';
     });
 
     document.addEventListener('mouseenter', () => {
-      if (!isMobile()) pencil.style.opacity = '1';
+      if (!isTouchDevice()) pencil.style.opacity = '1';
     });
 
     document.addEventListener('mousedown', () => {
-      if (isMobile()) return;
+      if (isTouchDevice()) return;
       isMouseDown = true;
-      updatePencilPosition(0, 2, -4);
+      renderPencilPosition(0, 2, -4);
     });
 
     document.addEventListener('mouseup', () => {
-      if (isMobile()) return;
+      if (isTouchDevice()) return;
       isMouseDown = false;
-      updatePencilPosition();
+      renderPencilPosition();
     });
 
     const hoverSelectors = 'a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, input, select, textarea, .theme-toggle-btn';
     document.addEventListener('mouseover', (e) => {
-      if (isMobile()) return;
+      if (isTouchDevice()) return;
       if (e.target.closest(hoverSelectors)) {
         isHovering = true;
         pencil.style.filter = 'drop-shadow(0 0 14px rgba(255, 107, 0, 0.85)) drop-shadow(2px 6px 10px rgba(0,45,98,0.4))';
-        updatePencilPosition();
+        renderPencilPosition();
       }
     }, { passive: true });
 
     document.addEventListener('mouseout', (e) => {
-      if (isMobile()) return;
+      if (isTouchDevice()) return;
       if (e.target.closest(hoverSelectors)) {
         isHovering = false;
         pencil.style.filter = 'drop-shadow(2px 6px 12px rgba(255,107,0,0.35))';
-        updatePencilPosition();
+        renderPencilPosition();
       }
     }, { passive: true });
 
-    // --- MOBILE TOUCH EVENTS (Touch Drawing & Finger Tip Pencil) ---
-    let touchFadeTimer = null;
+    // --- MOBILE TOUCH SENSING (Pencil appears exactly where user touches/swipes) ---
     window.addEventListener('touchstart', (e) => {
-      if (e.touches.length > 0) {
-        const t = e.touches[0];
-        mouseX = t.clientX;
-        mouseY = t.clientY;
-        isMouseDown = true;
-
+      if (e.touches && e.touches.length > 0) {
         clearTimeout(touchFadeTimer);
+        const touch = e.touches[0];
+        posX = touch.clientX;
+        posY = touch.clientY;
+        isTouching = true;
+
         pencil.style.opacity = '1';
-        updatePencilPosition(0, -6, 0);
+        renderPencilPosition(0, 0, 4);
 
         points.push({
-          x: mouseX,
-          y: mouseY,
+          x: posX,
+          y: posY,
           time: performance.now()
         });
 
@@ -234,18 +188,27 @@
     }, { passive: true });
 
     window.addEventListener('touchmove', (e) => {
-      if (e.touches.length > 0) {
-        const t = e.touches[0];
-        mouseX = t.clientX;
-        mouseY = t.clientY;
-
+      if (e.touches && e.touches.length > 0) {
         clearTimeout(touchFadeTimer);
+        const touch = e.touches[0];
+        const dx = touch.clientX - posX;
+        const dy = touch.clientY - posY;
+        posX = touch.clientX;
+        posY = touch.clientY;
+        isTouching = true;
+
+        // Subtle dynamic tilt while dragging
+        waveVelocity = Math.min(1.4, waveVelocity * 0.7 + Math.sqrt(dx * dx + dy * dy) * 0.04 + 0.2);
+        wavePhase += 0.24;
+        const touchWaveAngle = Math.sin(wavePhase) * (10 * waveVelocity);
+        const touchWaveY = Math.cos(wavePhase) * (3 * waveVelocity);
+
         pencil.style.opacity = '1';
-        updatePencilPosition(0, -6, 0);
+        renderPencilPosition(0, touchWaveY, touchWaveAngle);
 
         points.push({
-          x: mouseX,
-          y: mouseY,
+          x: posX,
+          y: posY,
           time: performance.now()
         });
 
@@ -260,22 +223,27 @@
       }
     }, { passive: true });
 
-    window.addEventListener('touchend', () => {
-      isMouseDown = false;
+    function handleTouchRelease() {
+      isTouching = false;
+      clearTimeout(touchFadeTimer);
+      // Smoothly fade out after brief pause so user can see what was drawn
       touchFadeTimer = setTimeout(() => {
-        if (isMobile()) {
+        if (isTouchDevice() && !isTouching) {
           pencil.style.opacity = '0';
         }
-      }, 700);
-    }, { passive: true });
+      }, 450);
+    }
 
-    // --- 5. RESPONSIVE SCROLL WAVE ENGINE (Desktop + Mobile) ---
+    window.addEventListener('touchend', handleTouchRelease, { passive: true });
+    window.addEventListener('touchcancel', handleTouchRelease, { passive: true });
+
+    // --- 4. SCROLL PROGRESS & WAVE DYNAMICS ---
     window.addEventListener('scroll', () => {
       const currentY = window.scrollY;
       const dy = Math.abs(currentY - lastScrollY);
       lastScrollY = currentY;
 
-      // Update minimal progress bar if exists
+      // Update minimal progress bar
       const pBar = document.getElementById('scrollProgress');
       if (pBar) {
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -283,71 +251,48 @@
         pBar.style.width = scrollPct + '%';
       }
 
-      // If desktop mouse hasn't moved yet, set a sensible default position
-      if (!isMobile() && (mouseX < 0 || mouseY < 0)) {
-        mouseX = Math.min(window.innerWidth - 120, 600);
-        mouseY = Math.min(window.innerHeight - 150, 450);
-        pencil.style.opacity = '1';
-      }
+      // Scroll wave dynamics for currently visible pencil
+      if (posX > 0 && posY > 0) {
+        waveVelocity = Math.min(1.5, waveVelocity * 0.78 + Math.min(dy, 45) * 0.04 + 0.3);
+        isWaving = true;
 
-      // Dynamic velocity kick
-      scrollVelocity = Math.min(2.0, scrollVelocity * 0.82 + Math.min(dy, 50) * 0.05 + 0.45);
-      isScrolling = true;
+        clearTimeout(waveStopTimer);
+        waveStopTimer = setTimeout(() => {
+          isWaving = false;
+        }, 180);
 
-      clearTimeout(scrollStopTimer);
-      scrollStopTimer = setTimeout(() => {
-        isScrolling = false;
-      }, 260);
-
-      if (!isWaveAnimationRunning) {
-        isWaveAnimationRunning = true;
-        requestAnimationFrame(renderScrollWaveMotion);
+        if (!isWaveAnimationRunning) {
+          isWaveAnimationRunning = true;
+          requestAnimationFrame(renderScrollWaveMotion);
+        }
       }
     }, { passive: true });
 
+    let isWaveAnimationRunning = false;
     function renderScrollWaveMotion() {
-      if (isScrolling) {
-        wavePhase += 0.28; // Active wavy tempo
+      if (isWaving) {
+        wavePhase += 0.22;
       } else {
-        scrollVelocity *= 0.91; // Smooth gradual dampening
-        if (scrollVelocity < 0.015) {
-          scrollVelocity = 0;
+        waveVelocity *= 0.88;
+        if (waveVelocity < 0.015) {
+          waveVelocity = 0;
           isWaveAnimationRunning = false;
-          if (!isMobile()) {
-            updatePencilPosition(0, 0, 0);
-          }
-          if (mobileBuddy) {
-            mobileBuddy.style.transform = '';
-            mobileBuddy.classList.remove('is-waving');
-            mobileBuddy.classList.add('is-idle');
-          }
+          renderPencilPosition(0, 0, 0);
           return;
         }
       }
 
-      // Vivid, playful wave oscillations
-      const intensity = Math.min(1.8, Math.max(0.4, scrollVelocity));
-      const waveAngle = Math.sin(wavePhase) * (20 * intensity); // tilt wave: ±20 deg
-      const waveY = Math.sin(wavePhase * 1.3) * (12 * intensity); // vertical wave bob: ±12px
-      const waveX = Math.cos(wavePhase * 0.9) * (8 * intensity); // lateral sway: ±8px
-      const waveScale = 1 + Math.sin(wavePhase * 2) * 0.06;
+      // Gentle, pleasant sinusoidal wave
+      const waveAngle = Math.sin(wavePhase) * (11 * waveVelocity);
+      const waveY = Math.cos(wavePhase * 0.9) * (4 * waveVelocity);
+      const waveX = Math.sin(wavePhase * 0.7) * (3 * waveVelocity);
 
-      // A) Desktop Cursor Wave
-      if (!isMobile()) {
-        updatePencilPosition(waveX, waveY, waveAngle);
-      }
-
-      // B) Mobile Mascot Buddy Wave ("like wave krte hue when we scroll")
-      if (mobileBuddy && isMobile()) {
-        mobileBuddy.classList.remove('is-idle');
-        mobileBuddy.classList.add('is-waving');
-        mobileBuddy.style.transform = `translate3d(${waveX}px, ${waveY}px, 0) rotate(${waveAngle}deg) scale(${waveScale})`;
-      }
+      renderPencilPosition(waveX, waveY, waveAngle);
 
       requestAnimationFrame(renderScrollWaveMotion);
     }
 
-    // --- 6. CURVED CANVAS SKETCH TRAIL (Brand Navy & Orange Spline) ---
+    // --- 5. CURVED CANVAS SKETCH TRAIL ---
     function renderCurvedTrail(timestamp) {
       ctx.clearRect(0, 0, width, height);
 
