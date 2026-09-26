@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Services & Performance Pillars │ NextReach DMS</title>
+  <meta name="description" content="Explore NextReach DMS full-spectrum growth services: Meta & Google Performance Ads, Creative Strategy & UGC, B2B Outbound Funnels, and Omnichannel Scale.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=105.0?v=12.0">
+  <style>
+    .service-block {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 44px);
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+    .service-block:hover {
+      border-color: var(--nr-orange-main);
+      box-shadow: 0 16px 36px -8px rgba(255, 107, 0, 0.12);
+    }
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .service-icon-lg {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--nr-navy-soft);
+      color: var(--nr-navy-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .feature-tri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .feature-mini-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+    .feature-mini-box h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+      margin-bottom: 6px;
+    }
+    .feature-mini-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 860px) {
+      .feature-tri-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<style id="header-clean-override">
+  .header-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-item-dropdown {
+    position: static !important;
+  }
+  .mega-menu, .mega-menu-overlay {
+    position: absolute !important;
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    box-shadow: 0 20px 50px rgba(0, 45, 98, 0.15) !important;
+    border-bottom: 4px solid #ff6b00 !important;
+    z-index: 99999 !important;
+  }
+  .nav-item-dropdown:hover .mega-menu,
+  .nav-item-dropdown:hover .mega-menu-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .nav-links a::after,
+  .nav-links a:hover::after,
+  .nav-links a.active::after,
+  .dropdown-trigger::after,
+  .dropdown-trigger:hover::after,
+  .dropdown-trigger.active::after,
+  .nav-item-dropdown::after,
+  .nav-item-dropdown:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: none !important;
+  }
+  .nav-links a,
+  .dropdown-trigger {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-links a:hover,
+  .nav-links a.active,
+  .dropdown-trigger:hover,
+  .dropdown-trigger.active {
+    color: #ff6b00 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-phone-btn {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-phone-btn span {
+    font-size: 1.1rem !important;
+  }
+  .mega-column a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .custom-cursor-dot,
+  .custom-cursor-aura {
+    display: none !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. BRAND PRELOADER
+       ========================================================================== -->
+  <div class="nr-preloader" id="nrPreloader">
+    <div class="nr-loader-brand">
+      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
+      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
+      <div class="nr-loader-bar">
+        <div class="nr-loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var p = 0;
+      var f = document.getElementById('loaderFill');
+      var t = document.getElementById('loaderPercent');
+      var pl = document.getElementById('nrPreloader');
+      var iv = setInterval(function() {
+        p += Math.floor(Math.random() * 25) + 15;
+        if (p > 100) p = 100;
+        if (f) f.style.width = p + '%';
+        if (t) t.textContent = p + '%';
+        if (p >= 100) {
+          clearInterval(iv);
+          setTimeout(function() {
+            if (pl) {
+              pl.classList.add('fade-out');
+              setTimeout(function() { pl.style.display = 'none'; }, 300);
+            }
+          }, 80);
+        }
+      }, 20);
+      setTimeout(function() {
+        clearInterval(iv);
+        if (pl) {
+          pl.classList.add('fade-out');
+          setTimeout(function() { pl.style.display = 'none'; }, 200);
+        }
+      }, 700);
+    })();
+  </script>
+
+  <!-- ==========================================================================
+       2. SCROLL PROGRESS BAR & CUSTOM CURSOR
+       ========================================================================== -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
+
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainNavbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
+      </a>
+
+            <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <!-- SERVICES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">SEO & SEARCH</div>
+                <a href="services.html#seo"><span>🔍</span> Technical SEO</a>
+                <a href="services.html#seo"><span>📄</span> On-Page SEO</a>
+                <a href="services.html#seo"><span>🌐</span> Off-Page SEO</a>
+                <a href="services.html#seo"><span>📍</span> Local & Maps SEO</a>
+                <a href="services.html#seo"><span>🛒</span> Ecommerce SEO</a>
+                <a href="services.html#seo"><span>🤖</span> AEO & AI Search</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA</div>
+                <a href="services.html#paid-media"><span>🎯</span> Google Ads</a>
+                <a href="services.html#paid-media"><span>⚡</span> Meta (FB & IG) Ads</a>
+                <a href="services.html#paid-media"><span>💼</span> LinkedIn Ads</a>
+                <a href="services.html#paid-media"><span>🎬</span> YouTube Ads</a>
+                <a href="services.html#paid-media"><span>📈</span> Performance Scale</a>
+                <a href="services.html#paid-media"><span>🔄</span> CAPI Remarketing</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP & AI</div>
+                <a href="whatsapp-business-api.html"><span>💬</span> Official Meta WhatsApp API</a>
+                <a href="whatsapp-marketing-services.html"><span>🤖</span> WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html"><span>📱</span> RCS Interactive Messaging</a>
+                <a href="bulk-sms.html"><span>🚀</span> Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">CONTENT & CREATIVE</div>
+                <a href="services.html#content"><span>📝</span> Content Strategy</a>
+                <a href="services.html#content"><span>✍️</span> Copywriting</a>
+                <a href="services.html#content"><span>🔎</span> SEO Content</a>
+                <a href="services.html#content"><span>🎥</span> UGC Video & Ad Films</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">BRAND & WEB</div>
+                <a href="services.html#web"><span>🖥️</span> Conversion Web Design</a>
+                <a href="services.html#branding"><span>💎</span> Brand Identity & Strategy</a>
+                <a href="services.html" class="mega-link-accent"><span>🚀</span> All services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce"><span>🛒</span> E-commerce</a>
+                <a href="case-studies.html?cat=realestate"><span>🏰</span> Real Estate</a>
+                <a href="case-studies.html?cat=healthcare"><span>🩺</span> Healthcare</a>
+                <a href="case-studies.html?cat=education"><span>🎓</span> Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas"><span>💻</span> SaaS & Tech</a>
+                <a href="case-studies.html?cat=hospitality"><span>🏨</span> Hospitality</a>
+                <a href="case-studies.html?cat=beauty"><span>💄</span> Fashion & Beauty</a>
+                <a href="case-studies.html?cat=automotive"><span>🚗</span> Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech"><span>💳</span> Fintech</a>
+                <a href="case-studies.html?cat=fnb"><span>🍽️</span> Food & Beverage</a>
+                <a href="case-studies.html?cat=d2c"><span>📦</span> D2C Brands</a>
+                <a href="case-studies.html?cat=b2b"><span>💼</span> B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups"><span>🚀</span> Startups</a>
+                <a href="case-studies.html?cat=jewellery"><span>💎</span> Jewellery</a>
+                <a href="case-studies.html?cat=travel"><span>✈️</span> Travel & Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent"><span>🌟</span> All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+            <div class="nav-actions">
+        <a href="tel:+917499181193" class="nav-phone-btn" title="Call NextReach Growth Director: +91 74991 81193">
+          <span>📞</span>
+        </a>
+        <a href="audit.html" class="nav-cta-btn">
+          <span>Get Free Audit →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      </div></div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="container" style="padding: 60px 24px 30px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="section-tag">Full-Spectrum Growth Capabilities</span>
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px; color: var(--nr-navy-deep);">
+        End-to-End <span class="gradient-orange-text">Revenue & Growth Solutions</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">
+        Every channel, every touchpoint — synchronized for maximum qualified pipeline and sustainable customer acquisition.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES LIST -->
+  <main class="container" style="padding: 30px 24px 80px;">
+    
+    <!-- 1. Performance Media Buying -->
+    <div class="service-block tilt-card" id="performance">
+      <div class="service-header">
+        <div class="service-icon-lg">🎯</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Paid Media & ROAS Engine</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Performance Marketing (Meta, Google & Performance Max)</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        We manage multi-crore ad campaigns across Meta Ads, Google Search, Performance Max, YouTube, and LinkedIn Ads. Our data-driven methodology combines predictive algorithmic bidding, dynamic audience clustering, and server-side CAPI tracking for sustained 4x to 7x ROAS.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>📈 Meta Advantage+ Scaling</h4>
+          <p>Broad targeting algorithms and dynamic catalog sales tailored for maximum conversion efficiency.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🔍 Google High-Intent Search</h4>
+          <p>Exact match domination capturing ready-to-buy customers at the lowest Cost-Per-Click (CPC).</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🧪 Creative Velocity Lab</h4>
+          <p>15+ fresh video hooks and statics tested weekly to beat ad fatigue and maintain low CPA.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Social Media Marketing -->
+    <div class="service-block tilt-card" id="smm">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-navy-soft); color: var(--nr-navy-main);">📱</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Organic Reach & Authority</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Social Media Marketing & Brand Building</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Turn social channels into active client acquisition funnels. We curate high-aesthetic Instagram reels, LinkedIn authority posts, Twitter/X threads, and community engagement systems that convert followers into high-ticket clients.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🎥 Viral Short-Form Reels</h4>
+          <p>Hook-driven short video scripts and editing optimized for Instagram Reels & YouTube Shorts.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>👔 Executive LinkedIn Growth</h4>
+          <p>Founder-led thought leadership positioning for B2B brand credibility and inbound dealflow.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>💬 Community & DM Funnels</h4>
+          <p>Automated direct message keyword triggers converting social engagement into booked sales calls.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SEO Services -->
+    <div class="service-block tilt-card" id="seo">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-orange-soft); color: var(--nr-orange-main);">🔍</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Organic Search Rankings</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">SEO Services (Technical, On-Page & Local SEO)</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Dominate Page 1 Google search results for commercial intent keywords. Our full-stack SEO framework covers technical website audits, Core Web Vitals optimization, high-DA backlink building, and local Google Business Profile ranking.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🚀 Technical Core Web Vitals</h4>
+          <p>Blazing fast page speed optimization, clean schema markup, and crawl error elimination.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>✍️ Commercial Keyword Content</h4>
+          <p>Search-intent content silos capturing ready-to-convert organic buyers in your industry.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📍 Local Geo-Map SEO</h4>
+          <p>Top 3 Google Local Pack positioning driving inbound calls and walk-in foot traffic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Website Development -->
+    <div class="service-block tilt-card" id="web">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-navy-soft); color: var(--nr-navy-main);">💻</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">High-Converting Web Architecture</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Website Development & E-Commerce Engineering</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        We design and engineer ultra-modern, responsive agency and e-commerce websites. Built with clean code, sub-second loading speed, intuitive UX, and built-in conversion rate optimization (CRO) elements.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>⚡ Mobile-First UX Architecture</h4>
+          <p>Custom mobile navigation and sub-second touch response for maximum visitor retention.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🛍️ High-Ticket Store Design</h4>
+          <p>Frictionless checkout, Shopify/Custom web engines, and automated order recovery.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🛡️ Enterprise Security & SSL</h4>
+          <p>Compliance-first backend architecture with daily cloud backups and 99.9% uptime SLA.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. B2B Lead Generation -->
+    <div class="service-block tilt-card" id="outbound">
+      <div class="service-header">
+        <div class="service-icon-lg">💼</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">High-Ticket B2B Pipeline</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">B2B Lead Generation & Outbound Automation</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Generate predictable enterprise sales pipeline through hyper-personalized outbound email sequences, verified LinkedIn prospecting, automated calendar booking, and AI lead scoring.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🎯 Verified Prospect Prospecting</h4>
+          <p>Granular lead lists filtered by company headcount, revenue tier, intent signals, and tech stack.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🤖 Multi-Domain Email Engines</h4>
+          <p>High deliverability secondary domains with customized icebreakers achieving 65%+ open rates.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📅 Direct Sales Calendar Bookings</h4>
+          <p>Inbound and outbound qualified meetings delivered straight into your sales team's calendar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. WhatsApp Marketing -->
+    <div class="service-block tilt-card" id="whatsapp">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-orange-soft); color: var(--nr-orange-main);">💬</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Meta Cloud API Integration</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">WhatsApp Marketing & Official Green Badge API</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Scale high-throughput broadcast campaigns with official Meta WhatsApp Business API. Featuring zero-drop SmartQueue delivery, multi-agent live chat inbox, and automated abandoned cart recovery.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>✅ Green Badge Verified API</h4>
+          <p>Official Meta Business verification establishing instant trust with green badge branding.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>⚡ SmartQueue Pacing Engine</h4>
+          <p>Zero-ban anti-drop broadcast infrastructure dispatching 50,000+ messages seamlessly.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🛒 Automated WhatsApp Checkout</h4>
+          <p>Instant WhatsApp catalog, product links, and 1-click COD/UPI checkout flows.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Creative & Content Studio -->
+    <div class="service-block tilt-card" id="creative">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-orange-soft); color: var(--nr-orange-main);">🎬</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">High-Impact Production</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Creative & Content (UGC Videos & VSL Scripts)</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Creative is the primary lever of performance media buying. We script, edit, and produce direct-response Video Sales Letters (VSLs), native UGC creator videos, and high-CTR carousel graphics.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🎬 Direct-Response VSLs</h4>
+          <p>Scriptwriting and video production engineered specifically to educate and convert high-ticket leads.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📱 UGC Creator Network</h4>
+          <p>Vetted native content creators producing authentic product demonstrations and unboxing reviews.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🎨 High-CTR Static Graphics</h4>
+          <p>Scroll-stopping design with psychological hook angles tailored for Instagram and LinkedIn feeds.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. AI & Automation -->
+    <div class="service-block tilt-card" id="ai">
+      <div class="service-header">
+        <div class="service-icon-lg" style="background: var(--nr-navy-soft); color: var(--nr-navy-main);">🤖</div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Conversational Sales Bots</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">AI & Automation (CRM & Conversational Bots)</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Deploy intelligent AI sales agents that handle lead qualification, instantly answer FAQs 24/7, trigger automated CRM follow-ups, and schedule sales calls without human intervention.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>🧠 24/7 Conversational AI</h4>
+          <p>Trained custom AI agents responding to lead inquiries within 5 seconds across web and WhatsApp.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>⚡ CRM Workflow Pipelines</h4>
+          <p>Seamless integrations with Hubspot, Salesforce, Zoho, and custom webhook architectures.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📊 Real-Time Lead Scoring</h4>
+          <p>Automated intent scoring routing high-value prospects directly to senior closing team.</p>
+        </div>
+      </div>
+    </div>
+        <div>
+          <span class="section-tag" style="margin-bottom: 4px;">Revenue Multiplication</span>
+          <h2 style="font-size: 1.6rem; color: var(--nr-navy-deep);">Conversion Rate Optimization & Funnel Architecture</h2>
+        </div>
+      </div>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.65;">
+        Doubling your conversion rate cuts your customer acquisition cost in half. We build blazing-fast landing pages, quiz funnels, frictionless checkout flows, and multivariate A/B testing infrastructure.
+      </p>
+      <div class="feature-tri-grid">
+        <div class="feature-mini-box">
+          <h4>⚡ Blazing Fast Landing Pages</h4>
+          <p>Mobile-first pages loading under 1 second with sub-pixel visual hierarchy.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>📊 Multivariate A/B Testing</h4>
+          <p>Scientific headline, copy, and offer variations tested rigorously with statistical significance.</p>
+        </div>
+        <div class="feature-mini-box">
+          <h4>🛒 AOV Expansion Bundles</h4>
+          <p>Post-purchase 1-click upsells, tiered volume discounts, and average order value maximizers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-banner-box" style="margin-top: 50px;">
+      <h2>Ready to Supercharge Your Growth Engine?</h2>
+      <p>Let's map out your custom 90-day multi-channel roadmap with our senior growth strategists.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="audit.html" class="btn-orange" style="padding: 14px 34px;">
+          <span>Request Free Growth Audit →</span>
+        </a>
+        <a href="tel:+917499181193" class="btn-navy-outline" style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
+          <span>📞 Call Us: +91 74991 81193</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
+            NextReach DMS is an elite performance growth agency & AI revenue engine partnering with B2B, B2C, and D2C brands to build high-ticket pipeline and sustainable market scale.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); background: var(--nr-navy-soft); padding: 6px 14px; border-radius: var(--radius-full);">
+            <span>🔒 Enterprise NDA Protected</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Growth Solutions</h4>
+          <ul>
+            <li><a href="services.html">Performance Paid Media</a></li>
+            <li><a href="services.html">Creative Strategy &amp; UGC</a></li>
+            <li><a href="services.html">B2B Outbound Lead Gen</a></li>
+            <li><a href="services.html">Conversion Rate Optimization</a></li>
+            <li><a href="services.html">Full-Funnel Attribution</a></li>
+            <li><a href="services.html">WhatsApp AI Retargeting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Framework</h4>
+          <ul>
+            <li><a href="index.html">Growth Engine</a></li>
+            <li><a href="process.html">4-Stage Framework</a></li>
+            <li><a href="case-studies.html">Case Studies &amp; Proof</a></li>
+            <li><a href="about.html">About NextReach DMS</a></li>
+            <li><a href="audit.html">90-Day Free Audit</a></li>
+            <li><a href="contact.html">Contact Growth Directors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul>
+            <li style="font-size: 0.88rem; color: var(--text-muted);"><a href="tel:+917499181193" style="color: inherit;">📞 +91 74991 81193</a></li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">✉️ contact@nextreachdms.com</li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Sahakar Nagar, Opp. New Cotton Market, Amravati, Maharashtra 444601</li>
+            <li style="font-size: 0.88rem; color: var(--text-dim); margin-top: 4px;">⏱️ Fast Response: Under 4 Hours</li>
+            
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Framework</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="audit.html">Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Support Badge (Exact Design Match) -->
+
+  <!-- ==========================================================================
+       STICKY STRATEGY CALL CTA BAR & FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <!-- Floating WhatsApp Support Badge -->
+  <a href="https://wa.me/917499181193?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit." target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
+    <div class="wa-pill-icon">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z"/></svg>
+    </div>
+    <div class="wa-pill-info">
+      <div class="wa-pill-label">WHATSAPP SUPPORT</div>
+      <div class="wa-pill-number">+91 74991 81193</div>
+      <div class="wa-pill-status">Instant reply</div>
+    </div>
+  </a>
+
+    <!-- ==========================================================================
+       MASTER JAVASCRIPT ENGINE (Ultra-Fast 60-120 FPS Lag-Free)
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // --- 1. BRAND PRELOADER ---
+      const preloader = document.getElementById('nrPreloader');
+      const loaderFill = document.getElementById('loaderFill');
+      const loaderPercent = document.getElementById('loaderPercent');
+      let progress = 0;
+
+      const loaderInterval = setInterval(() => {
+        progress += Math.floor(Math.random() * 20) + 15;
+        if (progress > 100) progress = 100;
+        if (loaderFill) loaderFill.style.width = progress + '%';
+        if (loaderPercent) loaderPercent.textContent = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(loaderInterval);
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('fade-out');
+              setTimeout(() => preloader.style.display = 'none', 400);
+            }
+          }, 150);
+        }
+      }, 25);
+
+      // --- 2. SCROLL PROGRESS BAR (Passive & RAF Optimized) ---
+      const progressBar = document.getElementById('scrollProgress');
+      let isScrolling = false;
+      window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(() => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (progressBar && height > 0) progressBar.style.width = ((winScroll / height) * 100) + '%';
+            isScrolling = false;
+          });
+        }
+      }, { passive: true });
+
+      // --- 3. CUSTOM MAGNETIC CURSOR (GPU Hardware-Accelerated) ---
+      const cursorDot = document.getElementById('cursorDot');
+      const cursorAura = document.getElementById('cursorAura');
+      const cursorText = document.getElementById('cursorText');
+
+      if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
+        let mouseX = -100, mouseY = -100, currentX = -100, currentY = -100;
+        let isMoving = false;
+        let isInitialized = false;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isInitialized) {
+            isInitialized = true;
+            cursorDot.classList.add('visible');
+            cursorAura.classList.add('visible');
+            currentX = mouseX;
+            currentY = mouseY;
+          }
+          if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(renderCursor);
+          }
+        }, { passive: true });
+
+        function renderCursor() {
+          currentX += (mouseX - currentX) * 0.3;
+          currentY += (mouseY - currentY) * 0.3;
+          cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          cursorAura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+          if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
+            requestAnimationFrame(renderCursor);
+          } else {
+            isMoving = false;
+          }
+        }
+
+        document.querySelectorAll('a, button, .service-block, .project-card, .timeline-card, .team-card').forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorAura.classList.add('cursor-hover');
+            if (el.classList.contains('project-card') || el.classList.contains('service-block')) {
+              if (cursorText) cursorText.textContent = 'EXPLORE';
+            }
+          }, { passive: true });
+
+          el.addEventListener('mouseleave', () => {
+            cursorAura.classList.remove('cursor-hover');
+            if (cursorText) cursorText.textContent = '';
+          }, { passive: true });
+        });
+      }
+
+      // --- 4. MOBILE MENU TOGGLE ---
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          const isFlex = navLinks.style.display === 'flex';
+          navLinks.style.display = isFlex ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+      }
+
+    });
+  
+
+      // --- MOBILE DRAWER NAVIGATION ---
+      const mobileBtn = document.getElementById('mobileMenuBtn') || document.querySelector('.mobile-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          navLinks.classList.toggle('mobile-open');
+          const isOpen = navLinks.classList.contains('mobile-open');
+          mobileBtn.innerHTML = isOpen ? '✕' : '☰';
+          mobileBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+            mobileBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+          });
+        });
+      }
+
+</script>
+  <script src="js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Client Case Study Breakdown │ NextReach DMS</title>
+  <meta name="description" content="In-depth breakdown of how NextReach engineered enterprise scale, automated funnels, and massive revenue growth for leading brands.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=105.0">
+  <style>
+    .case-hero-section {
+      padding: clamp(120px, 14vw, 160px) 24px 60px;
+      background: linear-gradient(180deg, var(--nr-navy-soft) 0%, #ffffff 100%);
+      position: relative;
+    }
+    .project-switcher-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .p-switch-btn {
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .p-switch-btn:hover, .p-switch-btn.active {
+      background: var(--nr-orange-main);
+      color: #ffffff;
+      border-color: var(--nr-orange-main);
+      box-shadow: 0 8px 20px -4px rgba(255, 107, 0, 0.35);
+      transform: translateY(-2px);
+    }
+    .case-detail-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .case-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 107, 0, 0.1);
+      color: var(--nr-orange-main);
+      border: 1px solid rgba(255, 107, 0, 0.25);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .case-hero-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--nr-navy-deep);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .case-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 840px;
+      margin-bottom: 36px;
+    }
+    .kpi-banner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 48px;
+    }
+    .kpi-box {
+      text-align: center;
+      padding: 10px;
+    }
+    .kpi-box .val {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--nr-orange-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .kpi-box .lbl {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 768px) {
+      .kpi-banner-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    .case-gallery-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 48px;
+    }
+    .case-main-img-wrap {
+      width: 100%;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 380px;
+      max-height: 600px;
+      overflow: hidden;
+    }
+    .case-main-img-wrap img {
+      width: 100%;
+      height: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      transition: opacity 0.25s ease;
+    }
+    .gallery-tab-buttons {
+      display: flex;
+      gap: 8px;
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border-subtle);
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .gallery-tab-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .gallery-tab-btn.active, .gallery-tab-btn:hover {
+      background: var(--nr-navy-main);
+      color: #ffffff;
+      border-color: var(--nr-navy-main);
+    }
+    .case-breakdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 840px) {
+      .case-breakdown-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .case-panel {
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+    }
+    .case-panel h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--nr-navy-deep);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .case-list-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .case-list-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--text-dark);
+    }
+    .case-list-items li:last-child {
+      margin-bottom: 0;
+    }
+    .case-list-items .bullet-icon {
+      font-size: 1.1rem;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+    .stack-pill-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .stack-pill {
+      background: var(--nr-navy-soft);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+    }
+    .case-cta-banner {
+      background: linear-gradient(135deg, var(--nr-navy-main) 0%, var(--nr-navy-deep) 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: clamp(32px, 5vw, 48px);
+      text-align: center;
+      box-shadow: var(--shadow-glow-navy);
+      margin-top: 40px;
+    }
+  </style>
+
+<style id="header-clean-override">
+  .header-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-item-dropdown {
+    position: static !important;
+  }
+  .mega-menu, .mega-menu-overlay {
+    position: absolute !important;
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    box-shadow: 0 20px 50px rgba(0, 45, 98, 0.15) !important;
+    border-bottom: 4px solid #ff6b00 !important;
+    z-index: 99999 !important;
+  }
+  .nav-item-dropdown:hover .mega-menu,
+  .nav-item-dropdown:hover .mega-menu-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .nav-links a::after,
+  .nav-links a:hover::after,
+  .nav-links a.active::after,
+  .dropdown-trigger::after,
+  .dropdown-trigger:hover::after,
+  .dropdown-trigger.active::after,
+  .nav-item-dropdown::after,
+  .nav-item-dropdown:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: none !important;
+  }
+  .nav-links a,
+  .dropdown-trigger {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-links a:hover,
+  .nav-links a.active,
+  .dropdown-trigger:hover,
+  .dropdown-trigger.active {
+    color: #ff6b00 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-phone-btn {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-phone-btn span {
+    font-size: 1.1rem !important;
+  }
+  .mega-column a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .custom-cursor-dot,
+  .custom-cursor-aura {
+    display: none !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. BRAND PRELOADER
+       ========================================================================== -->
+  <div class="nr-preloader" id="nrPreloader">
+    <div class="nr-loader-brand">
+      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
+      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
+      <div class="nr-loader-bar">
+        <div class="nr-loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var p = 0;
+      var f = document.getElementById('loaderFill');
+      var t = document.getElementById('loaderPercent');
+      var pl = document.getElementById('nrPreloader');
+      var iv = setInterval(function() {
+        p += Math.floor(Math.random() * 25) + 15;
+        if (p > 100) p = 100;
+        if (f) f.style.width = p + '%';
+        if (t) t.textContent = p + '%';
+        if (p >= 100) {
+          clearInterval(iv);
+          setTimeout(function() {
+            if (pl) {
+              pl.classList.add('fade-out');
+              setTimeout(function() { pl.style.display = 'none'; }, 300);
+            }
+          }, 80);
+        }
+      }, 20);
+      setTimeout(function() {
+        clearInterval(iv);
+        if (pl) {
+          pl.classList.add('fade-out');
+          setTimeout(function() { pl.style.display = 'none'; }, 200);
+        }
+      }, 700);
+    })();
+  </script>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainNavbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
+      </a>
+
+            <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <!-- SERVICES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">SEO & SEARCH</div>
+                <a href="services.html#seo"><span>🔍</span> Technical SEO</a>
+                <a href="services.html#seo"><span>📄</span> On-Page SEO</a>
+                <a href="services.html#seo"><span>🌐</span> Off-Page SEO</a>
+                <a href="services.html#seo"><span>📍</span> Local & Maps SEO</a>
+                <a href="services.html#seo"><span>🛒</span> Ecommerce SEO</a>
+                <a href="services.html#seo"><span>🤖</span> AEO & AI Search</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA</div>
+                <a href="services.html#paid-media"><span>🎯</span> Google Ads</a>
+                <a href="services.html#paid-media"><span>⚡</span> Meta (FB & IG) Ads</a>
+                <a href="services.html#paid-media"><span>💼</span> LinkedIn Ads</a>
+                <a href="services.html#paid-media"><span>🎬</span> YouTube Ads</a>
+                <a href="services.html#paid-media"><span>📈</span> Performance Scale</a>
+                <a href="services.html#paid-media"><span>🔄</span> CAPI Remarketing</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP & AI</div>
+                <a href="whatsapp-business-api.html"><span>💬</span> Official Meta WhatsApp API</a>
+                <a href="whatsapp-marketing-services.html"><span>🤖</span> WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html"><span>📱</span> RCS Interactive Messaging</a>
+                <a href="bulk-sms.html"><span>🚀</span> Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">CONTENT & CREATIVE</div>
+                <a href="services.html#content"><span>📝</span> Content Strategy</a>
+                <a href="services.html#content"><span>✍️</span> Copywriting</a>
+                <a href="services.html#content"><span>🔎</span> SEO Content</a>
+                <a href="services.html#content"><span>🎥</span> UGC Video & Ad Films</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">BRAND & WEB</div>
+                <a href="services.html#web"><span>🖥️</span> Conversion Web Design</a>
+                <a href="services.html#branding"><span>💎</span> Brand Identity & Strategy</a>
+                <a href="services.html" class="mega-link-accent"><span>🚀</span> All services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce"><span>🛒</span> E-commerce</a>
+                <a href="case-studies.html?cat=realestate"><span>🏰</span> Real Estate</a>
+                <a href="case-studies.html?cat=healthcare"><span>🩺</span> Healthcare</a>
+                <a href="case-studies.html?cat=education"><span>🎓</span> Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas"><span>💻</span> SaaS & Tech</a>
+                <a href="case-studies.html?cat=hospitality"><span>🏨</span> Hospitality</a>
+                <a href="case-studies.html?cat=beauty"><span>💄</span> Fashion & Beauty</a>
+                <a href="case-studies.html?cat=automotive"><span>🚗</span> Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech"><span>💳</span> Fintech</a>
+                <a href="case-studies.html?cat=fnb"><span>🍽️</span> Food & Beverage</a>
+                <a href="case-studies.html?cat=d2c"><span>📦</span> D2C Brands</a>
+                <a href="case-studies.html?cat=b2b"><span>💼</span> B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups"><span>🚀</span> Startups</a>
+                <a href="case-studies.html?cat=jewellery"><span>💎</span> Jewellery</a>
+                <a href="case-studies.html?cat=travel"><span>✈️</span> Travel & Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent"><span>🌟</span> All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+            <div class="nav-actions">
+        <a href="tel:+917499181193" class="nav-phone-btn" title="Call NextReach Growth Director: +91 74991 81193">
+          <span>📞</span>
+        </a>
+        <a href="audit.html" class="nav-cta-btn">
+          <span>Get Free Audit →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      </div></div>
+  </header>
+
+  <!-- MAIN CASE STUDY HERO -->
+  <main class="case-hero-section">
+    <div class="case-detail-container">
+      
+      <!-- Top Quick Switcher -->
+      <div class="project-switcher-bar">
+        <button type="button" class="p-switch-btn active" id="btn-tab-marketiqx" onclick="loadCaseStudy('marketiqx')">
+          💼 Marketiqx (WhatsApp SaaS)
+        </button>
+        <button type="button" class="p-switch-btn" id="btn-tab-letsexplore" onclick="loadCaseStudy('letsexplore')">
+          ✈️ Let's Explore (AI Travel)
+        </button>
+        <button type="button" class="p-switch-btn" id="btn-tab-mobilestation" onclick="loadCaseStudy('mobilestation')">
+          📱 Mobile Station (Retail &amp; Lab)
+        </button>
+        <button type="button" class="p-switch-btn" id="btn-tab-medex" onclick="loadCaseStudy('medex')">
+          🏥 MedEx (Global Pharma)
+        </button>
+      </div>
+
+      <!-- Case Study Header -->
+      <div style="text-align: center; margin-bottom: 32px;">
+        <span class="case-hero-badge" id="cBadge">💼 WhatsApp SaaS • Meta Verified Cloud API</span>
+        <h1 class="case-hero-title" id="cTitle">Marketiqx: Intelligent WhatsApp Conversations &amp; Meta Cloud API Engine</h1>
+        <p class="case-hero-sub" style="margin: 0 auto 28px;" id="cSubtitle">
+          Engineered high-throughput SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.
+        </p>
+      </div>
+
+      <!-- 3-KPI Outcome Banner -->
+      <div class="kpi-banner-grid">
+        <div class="kpi-box">
+          <div class="val" id="cMet1Val">99.4%</div>
+          <div class="lbl" id="cMet1Lbl">Verified Inbox Delivery SLA</div>
+        </div>
+        <div class="kpi-box" style="border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle);">
+          <div class="val" id="cMet2Val">+380%</div>
+          <div class="lbl" id="cMet2Lbl">Broadcast Engagement Surge</div>
+        </div>
+        <div class="kpi-box">
+          <div class="val" id="cMet3Val">5.2x</div>
+          <div class="lbl" id="cMet3Lbl">Trial-to-Paid Conversion</div>
+        </div>
+      </div>
+
+      <!-- Multi-Screenshot Interactive Showcase -->
+      <div class="case-gallery-card">
+        <div class="case-main-img-wrap">
+          <img src="images/work-marketiqx.png" alt="Case Study Screenshot" id="cMainImg">
+        </div>
+        <div class="gallery-tab-buttons" id="cGalleryTabs">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 2-Column Challenge vs Solution Breakdown -->
+      <div class="case-breakdown-grid">
+        <div class="case-panel">
+          <h3><span>⚠️</span> The Challenge &amp; Bottlenecks</h3>
+          <ul class="case-list-items" id="cChallengeList">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+        <div class="case-panel">
+          <h3><span>💡</span> How NextReach Engineered It</h3>
+          <ul class="case-list-items" id="cSolutionList">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tech Stack & Deployed Architecture -->
+      <div class="case-panel" style="margin-bottom: 48px;">
+        <h3><span>🚀</span> Growth Stack &amp; Infrastructure Deployed</h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 12px;" id="cTechDesc">
+          Full-stack custom modules and high-concurrency cloud architecture built to handle millions of interactions with zero latency.
+        </p>
+        <div class="stack-pill-box" id="cStackPills">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Comprehensive Multi-Image Visual Gallery Showcase -->
+      <div class="full-gallery-section">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span class="section-tag">Visual Assets &amp; Deliverables</span>
+          <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--nr-navy-deep); margin-top: 8px;">Full Interface &amp; Campaign Gallery</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Explore all high-definition screenshots, landing funnels, and workflows. Click any picture to enlarge in full-screen lightbox.</p>
+        </div>
+        
+        <div class="full-gallery-grid" id="cFullGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Final CTA Banner -->
+      <div class="case-cta-banner">
+        <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800; margin-bottom: 12px;">Want Similar Breakthrough Revenue for Your Brand?</h2>
+        <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.85); max-width: 650px; margin: 0 auto 28px;">
+          Book a 1-on-1 growth audit with NextReach Directors. We audit your ad accounts, funnel bottlenecks, and deliver a tailored 90-day execution roadmap.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="audit.html" class="btn-orange" style="padding: 14px 32px; font-size: 0.95rem;">
+            <span>🚀 Request Free Growth Audit →</span>
+          </a>
+          <a href="https://wa.me/917499181193?text=Hi%20NextReach%20team,%20I%20reviewed%20your%20case%20study%20and%20want%20to%20discuss%20scaling%20my%20brand." target="_blank" rel="noopener" class="btn-navy-outline" style="background: rgba(255, 255, 255, 0.15); color: #ffffff !important; border-color: rgba(255, 255, 255, 0.3); padding: 14px 28px; font-size: 0.95rem;">
+            <span>💬 Discuss on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="nr-lightbox" id="nrLightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="Enlarged View" id="lightboxImg">
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
+            NextReach DMS is an elite performance growth agency &amp; AI revenue engine partnering with B2B, B2C, and D2C brands to build high-ticket pipeline and sustainable market scale.
+          </p>
+          <div style="font-weight: 700; color: var(--nr-navy-deep); font-size: 0.9rem;">
+            📞 Helpline: <a href="tel:+917499181193" style="color: var(--nr-orange-main);">+91 74991 81193</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Growth Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#performance">Performance Media Buying</a></li>
+            <li><a href="services.html#creative">Direct-Response Creative Studio</a></li>
+            <li><a href="services.html#outbound">B2B Outbound Lead Engine</a></li>
+            <li><a href="services.html#cro">CRO &amp; Funnel Architecture</a></li>
+            <li><a href="services.html#whatsapp">WhatsApp Cloud API Automation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Case Studies</h4>
+          <ul class="footer-links">
+            <li><a href="case-study.html?p=marketiqx">Marketiqx (WhatsApp SaaS)</a></li>
+            <li><a href="case-study.html?p=letsexplore">Let's Explore DMC (Travel)</a></li>
+            <li><a href="case-study.html?p=mobilestation">Mobile Station (Retail)</a></li>
+            <li><a href="case-study.html?p=medex">MedEx Pharma (Global Export)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Speak directly with a Senior Growth Partner.</p>
+          <a href="https://wa.me/917499181193" target="_blank" rel="noopener" class="btn-navy-outline" style="display: inline-block; padding: 8px 18px; font-size: 0.85rem; margin-bottom: 10px;">
+            <span>💬 WhatsApp Growth Desk</span>
+          </a>
+          <br>
+          <a href="audit.html" class="btn-orange" style="display: inline-block; padding: 8px 18px; font-size: 0.85rem;">
+            <span>🚀 Request Growth Audit</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 NextReach DMS. All rights reserved. Official Meta Business &amp; Google Partner.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="privacy.html" style="color: var(--text-muted);">Privacy Policy</a>
+          <a href="terms.html" style="color: var(--text-muted);">Terms of Engagement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DATA & DYNAMIC CONTROLLER SCRIPT -->
+  <script>
+    const caseStudiesData = {
+      marketiqx: {
+        pageTitle: "Case Study: Marketiqx WhatsApp SaaS & Cloud API Platform │ NextReach",
+        badge: "💼 WhatsApp SaaS • Meta Verified Cloud API",
+        title: "Marketiqx: Intelligent WhatsApp Conversations & Meta Cloud API Engine",
+        subtitle: "Engineered high-throughput SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.",
+        metrics: [
+          { val: "99.4%", lbl: "Verified Inbox Delivery SLA" },
+          { val: "+380%", lbl: "Broadcast Engagement Surge" },
+          { val: "5.2x", lbl: "Trial-to-Paid Conversion" }
+        ],
+        mainImage: "images/work-marketiqx.png",
+        gallery: [
+          { label: "🖥️ Platform Home", src: "images/work-marketiqx.png", desc: "Main landing interface and Meta Cloud API dashboard." },
+          { label: "📈 Customer Success (5.2x ROI)", src: "images/marketiqx-stories.png", desc: "Real case studies: Nova Luxe Apparel & UrbanBlend Direct." },
+          { label: "🎁 100 Free Credits Onboarding", src: "images/marketiqx-onboarding.png", desc: "Instant frictionless self-serve onboarding form." },
+          { label: "⚡ SmartQueue™ Architecture", src: "images/marketiqx-smartqueue.png", desc: "High-speed telecom routing and anti-ban protection." }
+        ],
+        challenges: [
+          "Legacy broadcast tools suffered from frequent phone number bans and 20%+ message drop rates during peak sale periods.",
+          "High friction in Meta Green Badge verification caused over 60% of trial signups to abandon onboarding.",
+          "Lack of multi-agent routing caused delayed customer query responses and lost high-intent prospects."
+        ],
+        solutions: [
+          "Integrated official Meta WhatsApp Cloud API directly with SmartQueue™ anti-ban pacing algorithms.",
+          "Engineered a friction-free 3-step green badge onboarding wizard with 100 free instant broadcast credits.",
+          "Constructed a multi-agent collaborative live chat inbox with AI bot fallback and automated webhook triggers."
+        ],
+        techStack: ["Meta Cloud API", "SmartQueue™ Engine", "Redis / WebSockets", "Multi-Agent Inbox", "Automated Billing & Credits", "Server-Side CAPI Tracking"]
+      },
+      letsexplore: {
+        pageTitle: "Case Study: Let's Explore DMC Global Travel & AI Engine │ NextReach",
+        badge: "✈️ Travel & Tourism • AI Trip Planner",
+        title: "Let's Explore DMC: AI Trip Planning Engine & Global Tour Scaling",
+        subtitle: "Designed high-converting international holiday package portal, interactive AI Trip Planner lead engine, customized group tour workflows, and instant WhatsApp booking concierge.",
+        metrics: [
+          { val: "+290%", lbl: "Group Tour Enquiries" },
+          { val: "4.8x", lbl: "Blended Meta & Google ROAS" },
+          { val: "65%", lbl: "Lead-to-Call Conversion" }
+        ],
+        mainImage: "images/work-letsexplore.png",
+        gallery: [
+          { label: "🌍 Global Travel Portal", src: "images/work-letsexplore.png", desc: "International DMC destination discovery portal." },
+          { label: "🏖️ Holiday Packages", src: "images/letsexplore-packages.png", desc: "Trending holiday tour packages (Dubai, Bali, Europe, Maldives)." },
+          { label: "✨ Custom Dream Itineraries", src: "images/letsexplore-customise.png", desc: "Dynamic multi-day custom group tour quotation builder." },
+          { label: "🤖 Gemini AI Concierge", src: "images/letsexplore-ai-bot.png", desc: "24/7 AI-powered travel concierge and 30-second itinerary generator." },
+          { label: "📸 Travellers Gallery", src: "images/letsexplore-gallery.png", desc: "Real community travel moments and verified customer reviews." },
+          { label: "🏛️ Heritage & Domestic Tours", src: "images/letsexplore-heritage.png", desc: "Rajasthan heritage circuits, wildlife escapes, and domestic tours." }
+        ],
+        challenges: [
+          "Static PDF brochures caused 75%+ drop-offs before travelers requested quotes.",
+          "Broad-targeting Meta ad spend yielded unqualified budget inquiries with high cost-per-lead.",
+          "Slow manual follow-ups by sales agents resulted in lost travel bookings during holiday surges."
+        ],
+        solutions: [
+          "Developed an interactive 'Gemini AI Trip Planner' generating personalized multi-country itineraries in under 30 seconds.",
+          "Launched high-intent Google Search campaigns for direct DMC wholesale pricing packages.",
+          "Connected instant WhatsApp concierge desk with automated itinerary delivery within 5 seconds."
+        ],
+        techStack: ["Gemini AI Trip Planner", "Meta Advantage+ Ads", "Google Search Exact", "WhatsApp Concierge Bot", "CRM Booking Sync", "Multi-Currency Engine"]
+      },
+      mobilestation: {
+        pageTitle: "Case Study: Mobile Station Flagship Retail & Express Lab │ NextReach",
+        badge: "📱 Premium Retail & D2C • Apple & Flagship Phones",
+        title: "Mobile Station: Omnichannel Flagship Smartphone Retail & 30-Min Rapid Repair Hub",
+        subtitle: "Scaled premium flagship smartphone retail and 30-minute component engineering lab with hyper-local geo-fencing ads, trade-in value funnels, and WhatsApp VIP desk.",
+        metrics: [
+          { val: "₹2.4 Cr", lbl: "Monthly Turnaround GMV" },
+          { val: "+185%", lbl: "Store Footfall & Walk-ins" },
+          { val: "30 Min", lbl: "Component Engineering Speed" }
+        ],
+        mainImage: "images/Screenshot 2026-09-16 163951.png",
+        gallery: [
+          { label: "📱 iPhone 18 Pro Max 3D Stage", src: "images/Screenshot 2026-09-16 163951.png", desc: "Interactive 3D phone stage & spec card." },
+          { label: " Apple Flagship Series Showcase", src: "images/Screenshot 2026-09-16 164102.png", desc: "iPhone 18 Pro Max, iPhone 18 Pro, & iPhone 17 Pro Max sealed units." },
+          { label: "✦ Samsung Foldables & S Series Showcase", src: "images/Screenshot 2026-09-16 164019.png", desc: "Galaxy Z Fold8, Z Flip8, and S26 FE with trade-in bonuses." },
+          { label: "🏬 Flagship Experience Lounges", src: "images/Screenshot 2026-09-16 164028.png", desc: "Amravati Lounge, Nagpur Lounge, and BKC Studio Mumbai." }
+        ],
+        challenges: [
+          "Intense competition from mega e-commerce marketplaces offering steep price discounts.",
+          "Customer hesitation and trust barrier regarding certified pre-owned Grade A+ devices.",
+          "Low local discovery for fast 30-minute on-spot hardware component replacements."
+        ],
+        solutions: [
+          "Built a luxury Apple & flagship storefront with interactive trade-in valuation estimators.",
+          "Deployed 10km geo-fenced Instagram video ads targeting tech enthusiasts and professionals.",
+          "Implemented 1-click WhatsApp VIP concierge for live stock check and express repair booking."
+        ],
+        techStack: ["D2C Web Store", "Meta Dynamic Catalog Ads", "Trade-In Estimator", "WhatsApp VIP Concierge", "Local Geo-Fencing", "Grade-A+ Verification"]
+      },
+      medex: {
+        pageTitle: "Case Study: MedEx Pharmaceuticals WHO-GMP Export Hub │ NextReach",
+        badge: "🏥 Global B2B Pharma • WHO-GMP Formulations Export",
+        title: "MedEx Pharmaceuticals: WHO-GMP Certified Global Sourcing & Bulk Export Hub",
+        subtitle: "Built an international B2B pharmaceutical sourcing portal, multi-currency RFQ product directory, wholesale WhatsApp desk, and compliance-first overseas lead pipelines.",
+        metrics: [
+          { val: "14+", lbl: "Export Destination Countries" },
+          { val: "₹5.8 Cr", lbl: "B2B Export Pipeline ARR" },
+          { val: "+240%", lbl: "Wholesale RFQ Volume" }
+        ],
+        mainImage: "images/work-medex.png",
+        gallery: [
+          { label: "🏥 Global Sourcing Directory", src: "images/work-medex.png", desc: "International WHO-GMP formulations B2B catalog." },
+          { label: "🌐 Global Importers Feedback", src: "images/medex-global-importers.png", desc: "Verified testimonials from USA, Germany, and UK healthcare distributors." },
+          { label: "🏭 Sourcing & Export Infra", src: "images/medex-sourcing-infrastructure.png", desc: "Strict quality assurance, trusted partners, and global supply chain." },
+          { label: "💊 Formulations Product Catalog", src: "images/medex-formulations-catalog.png", desc: "Cenforce, Kamagra, and Abhirise tablet directory with instant specs." }
+        ],
+        challenges: [
+          "Overseas institutional buyers required verified WHO-GMP compliance documentation upfront.",
+          "Manual email-based RFQ processes created 4-day delays in bulk order quotes.",
+          "Low international search visibility for high-demand pharmaceutical formulation lines."
+        ],
+        solutions: [
+          "Engineered an international B2B directory with instant dossier previews and WHO-GMP badges.",
+          "Built an automated multi-currency RFQ quotation builder with instant WhatsApp alert desk.",
+          "Executed global B2B inbound search SEO and high-trust LinkedIn export funnels."
+        ],
+        techStack: ["International B2B Portal", "WHO-GMP Product Directory", "Multi-Currency RFQ Engine", "WhatsApp Export Desk", "Global Inbound SEO", "Compliance Dossiers"]
+      }
+    };
+
+    function loadCaseStudy(key) {
+      const data = caseStudiesData[key] || caseStudiesData.marketiqx;
+      
+      document.title = data.pageTitle;
+      document.getElementById('cBadge').textContent = data.badge;
+      document.getElementById('cTitle').textContent = data.title;
+      document.getElementById('cSubtitle').textContent = data.subtitle;
+
+      document.getElementById('cMet1Val').textContent = data.metrics[0].val;
+      document.getElementById('cMet1Lbl').textContent = data.metrics[0].lbl;
+      document.getElementById('cMet2Val').textContent = data.metrics[1].val;
+      document.getElementById('cMet2Lbl').textContent = data.metrics[1].lbl;
+      document.getElementById('cMet3Val').textContent = data.metrics[2].val;
+      document.getElementById('cMet3Lbl').textContent = data.metrics[2].lbl;
+
+      document.getElementById('cMainImg').src = data.mainImage;
+
+      // Gallery Tabs
+      const gTabs = document.getElementById('cGalleryTabs');
+      if (data.gallery && data.gallery.length > 0) {
+        gTabs.innerHTML = data.gallery.map((g, idx) => `
+          <button type="button" class="gallery-tab-btn ${idx === 0 ? 'active' : ''}" onclick="switchHeroImage(this, '${g.src}')">
+            ${g.label}
+          </button>
+        `).join('');
+        gTabs.style.display = 'flex';
+      } else {
+        gTabs.style.display = 'none';
+      }
+
+      // Full Multi-Image Grid Showcase
+      const fullGrid = document.getElementById('cFullGrid');
+      if (fullGrid && data.gallery) {
+        fullGrid.innerHTML = data.gallery.map((g, idx) => `
+          <div class="gallery-item-card" onclick="openLightbox('${g.src}', '${g.label}')">
+            <div class="gallery-item-img-wrap">
+              <img src="${g.src}" alt="${g.label}" loading="lazy">
+              <span class="gallery-item-badge">Asset 0${idx + 1}</span>
+              <div class="gallery-item-zoom-icon">🔍</div>
+            </div>
+            <div class="gallery-item-body">
+              <h4>${g.label}</h4>
+              <p>${g.desc || 'High-converting interactive visual deliverable.'}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Challenges
+      document.getElementById('cChallengeList').innerHTML = data.challenges.map(c => `
+        <li><span class="bullet-icon">⚠️</span> <span>${c}</span></li>
+      `).join('');
+
+      // Solutions
+      document.getElementById('cSolutionList').innerHTML = data.solutions.map(s => `
+        <li><span class="bullet-icon">✓</span> <span>${s}</span></li>
+      `).join('');
+
+      // Stack Pills
+      document.getElementById('cStackPills').innerHTML = data.techStack.map(t => `
+        <span class="stack-pill">${t}</span>
+      `).join('');
+
+      // Update Top Tabs
+      document.querySelectorAll('.p-switch-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-tab-' + key);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Update URL without reload
+      if (history.pushState) {
+        const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?p=' + key;
+        window.history.pushState({path:newurl}, '', newurl);
+      }
+    }
+
+    function switchHeroImage(btn, src) {
+      const img = document.getElementById('cMainImg');
+      img.style.opacity = '0.3';
+      setTimeout(() => {
+        img.src = src;
+        img.style.opacity = '1';
+      }, 150);
+      document.querySelectorAll('.gallery-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('nrLightbox');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      if (lb && img) {
+        img.src = src;
+        if (cap) cap.textContent = caption || '';
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox(e) {
+      const lb = document.getElementById('nrLightbox');
+      if (lb) {
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const proj = params.get('p') || params.get('project') || 'marketiqx';
+      loadCaseStudy(proj);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Breakthroughs & Case Studies │ NextReach DMS</title>
+  <meta name="description" content="Explore verified case studies and real revenue outcomes generated for B2B, D2C, SaaS, and high-ticket brands scaled with NextReach DMS.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=105.0">
+  <style>
+    .case-detailed-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 40px);
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+    .case-detailed-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--nr-orange-main), var(--nr-navy-main));
+    }
+    .case-detailed-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--nr-orange-main);
+      box-shadow: 0 20px 40px -10px rgba(255, 107, 0, 0.2);
+    }
+    .case-metric-triple {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+      background: var(--nr-navy-soft);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+    .metric-mini-item {
+      text-align: center;
+    }
+    .metric-mini-item .val {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--nr-orange-main);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .metric-mini-item .lbl {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--nr-navy-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 768px) {
+      .case-metric-triple {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<style id="header-clean-override">
+  .header-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-item-dropdown {
+    position: static !important;
+  }
+  .mega-menu, .mega-menu-overlay {
+    position: absolute !important;
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    box-shadow: 0 20px 50px rgba(0, 45, 98, 0.15) !important;
+    border-bottom: 4px solid #ff6b00 !important;
+    z-index: 99999 !important;
+  }
+  .nav-item-dropdown:hover .mega-menu,
+  .nav-item-dropdown:hover .mega-menu-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .nav-links a::after,
+  .nav-links a:hover::after,
+  .nav-links a.active::after,
+  .dropdown-trigger::after,
+  .dropdown-trigger:hover::after,
+  .dropdown-trigger.active::after,
+  .nav-item-dropdown::after,
+  .nav-item-dropdown:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: none !important;
+  }
+  .nav-links a,
+  .dropdown-trigger {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-links a:hover,
+  .nav-links a.active,
+  .dropdown-trigger:hover,
+  .dropdown-trigger.active {
+    color: #ff6b00 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-phone-btn {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-phone-btn span {
+    font-size: 1.1rem !important;
+  }
+  .mega-column a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .custom-cursor-dot,
+  .custom-cursor-aura {
+    display: none !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. BRAND PRELOADER
+       ========================================================================== -->
+  <div class="nr-preloader" id="nrPreloader">
+    <div class="nr-loader-brand">
+      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
+      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
+      <div class="nr-loader-bar">
+        <div class="nr-loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var p = 0;
+      var f = document.getElementById('loaderFill');
+      var t = document.getElementById('loaderPercent');
+      var pl = document.getElementById('nrPreloader');
+      var iv = setInterval(function() {
+        p += Math.floor(Math.random() * 25) + 15;
+        if (p > 100) p = 100;
+        if (f) f.style.width = p + '%';
+        if (t) t.textContent = p + '%';
+        if (p >= 100) {
+          clearInterval(iv);
+          setTimeout(function() {
+            if (pl) {
+              pl.classList.add('fade-out');
+              setTimeout(function() { pl.style.display = 'none'; }, 300);
+            }
+          }, 80);
+        }
+      }, 20);
+      setTimeout(function() {
+        clearInterval(iv);
+        if (pl) {
+          pl.classList.add('fade-out');
+          setTimeout(function() { pl.style.display = 'none'; }, 200);
+        }
+      }, 700);
+    })();
+  </script>
+
+  <!-- ==========================================================================
+       2. SCROLL PROGRESS BAR & CUSTOM CURSOR
+       ========================================================================== -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
+
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainNavbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
+      </a>
+
+            <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <!-- SERVICES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">SEO & SEARCH</div>
+                <a href="services.html#seo"><span>🔍</span> Technical SEO</a>
+                <a href="services.html#seo"><span>📄</span> On-Page SEO</a>
+                <a href="services.html#seo"><span>🌐</span> Off-Page SEO</a>
+                <a href="services.html#seo"><span>📍</span> Local & Maps SEO</a>
+                <a href="services.html#seo"><span>🛒</span> Ecommerce SEO</a>
+                <a href="services.html#seo"><span>🤖</span> AEO & AI Search</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA</div>
+                <a href="services.html#paid-media"><span>🎯</span> Google Ads</a>
+                <a href="services.html#paid-media"><span>⚡</span> Meta (FB & IG) Ads</a>
+                <a href="services.html#paid-media"><span>💼</span> LinkedIn Ads</a>
+                <a href="services.html#paid-media"><span>🎬</span> YouTube Ads</a>
+                <a href="services.html#paid-media"><span>📈</span> Performance Scale</a>
+                <a href="services.html#paid-media"><span>🔄</span> CAPI Remarketing</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP & AI</div>
+                <a href="whatsapp-business-api.html"><span>💬</span> Official Meta WhatsApp API</a>
+                <a href="whatsapp-marketing-services.html"><span>🤖</span> WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html"><span>📱</span> RCS Interactive Messaging</a>
+                <a href="bulk-sms.html"><span>🚀</span> Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">CONTENT & CREATIVE</div>
+                <a href="services.html#content"><span>📝</span> Content Strategy</a>
+                <a href="services.html#content"><span>✍️</span> Copywriting</a>
+                <a href="services.html#content"><span>🔎</span> SEO Content</a>
+                <a href="services.html#content"><span>🎥</span> UGC Video & Ad Films</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">BRAND & WEB</div>
+                <a href="services.html#web"><span>🖥️</span> Conversion Web Design</a>
+                <a href="services.html#branding"><span>💎</span> Brand Identity & Strategy</a>
+                <a href="services.html" class="mega-link-accent"><span>🚀</span> All services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce"><span>🛒</span> E-commerce</a>
+                <a href="case-studies.html?cat=realestate"><span>🏰</span> Real Estate</a>
+                <a href="case-studies.html?cat=healthcare"><span>🩺</span> Healthcare</a>
+                <a href="case-studies.html?cat=education"><span>🎓</span> Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas"><span>💻</span> SaaS & Tech</a>
+                <a href="case-studies.html?cat=hospitality"><span>🏨</span> Hospitality</a>
+                <a href="case-studies.html?cat=beauty"><span>💄</span> Fashion & Beauty</a>
+                <a href="case-studies.html?cat=automotive"><span>🚗</span> Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech"><span>💳</span> Fintech</a>
+                <a href="case-studies.html?cat=fnb"><span>🍽️</span> Food & Beverage</a>
+                <a href="case-studies.html?cat=d2c"><span>📦</span> D2C Brands</a>
+                <a href="case-studies.html?cat=b2b"><span>💼</span> B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups"><span>🚀</span> Startups</a>
+                <a href="case-studies.html?cat=jewellery"><span>💎</span> Jewellery</a>
+                <a href="case-studies.html?cat=travel"><span>✈️</span> Travel & Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent"><span>🌟</span> All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+            <div class="nav-actions">
+        <a href="tel:+917499181193" class="nav-phone-btn" title="Call NextReach Growth Director: +91 74991 81193">
+          <span>📞</span>
+        </a>
+        <a href="audit.html" class="nav-cta-btn">
+          <span>Get Free Audit →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      </div></div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="container" style="padding: 60px 24px 30px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="section-tag">Verified Revenue Breakthroughs</span>
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px; color: var(--nr-navy-deep);">
+        Real Brands. <span class="gradient-orange-text">Measurable Scaling.</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">
+        Detailed breakdowns of how our AI growth engine, creative testing, and multi-channel media buying produced breakout results.
+      </p>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES & PROJECTS SHOWCASE -->
+  <main class="container" style="padding: 20px 24px 80px;">
+    
+    <!-- Filter Bar -->
+    <div class="project-filter-bar">
+      <button class="project-filter-btn active" data-filter="all">⚡ All Client Works (4)</button>
+      <button class="project-filter-btn" data-filter="saas">💬 WhatsApp SaaS (Marketiqx)</button>
+      <button class="project-filter-btn" data-filter="travel">✈️ Travel &amp; AI (Let's Explore)</button>
+      <button class="project-filter-btn" data-filter="retail">📱 Retail &amp; Devices (Mobile Station)</button>
+      <button class="project-filter-btn" data-filter="pharma">🏥 Global Pharma (MedEx)</button>
+    </div>
+
+    <!-- 4 Flagship Visual Project Cards Grid -->
+    <div class="project-showcase-grid" id="projectGrid">
+      
+      <!-- Project 1: Marketiqx (WhatsApp SaaS & Cloud Platform) -->
+      <div class="project-card tilt-card" data-category="saas">
+        <div class="project-thumb-box">
+          <img src="images/work-marketiqx.png" alt="Marketiqx Cloud Platform" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">💬 WhatsApp SaaS &amp; Automation</span>
+          </div>
+          <span class="project-stat-badge">⚡ 99.4% Delivery SLA</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Marketiqx: High-Throughput Meta API Platform &amp; SmartQueue™ Automation</h2>
+          <p class="project-desc">
+            Architected full-cycle cloud SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">99.4%</div>
+              <div class="p-metric-lbl">Delivery SLA</div>
+            </div>
+            <div>
+              <div class="p-metric-val">+380%</div>
+              <div class="p-metric-lbl">Broadcast Reach</div>
+            </div>
+            <div>
+              <div class="p-metric-val">5.2x</div>
+              <div class="p-metric-lbl">Trial Conversion</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Meta Cloud API</span>
+            <span class="deliv-pill">SmartQueue™ Logic</span>
+            <span class="deliv-pill">SaaS Platform UI/UX</span>
+            <span class="deliv-pill">Multi-Agent Chat</span>
+            <span class="deliv-pill">Live Broadcast Hub</span>
+          </div>
+          <a href="case-study.html?p=marketiqx" class="project-learn-btn">
+            <span>📖 Learn More &amp; Case Study Breakdown</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Let's Explore DMC (Travel & AI Trip Planner) -->
+      <div class="project-card tilt-card" data-category="travel">
+        <div class="project-thumb-box">
+          <img src="images/work-letsexplore.png" alt="Let's Explore DMC" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">✈️ Travel &amp; AI Trip Planner</span>
+          </div>
+          <span class="project-stat-badge">🌍 +290% Group Bookings</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Let's Explore DMC: AI Trip Planning Engine &amp; High-Ticket Global Tourism</h2>
+          <p class="project-desc">
+            Designed high-converting international holiday package portal, interactive AI Trip Planner lead engine, customized group tour workflows, and instant WhatsApp booking concierge.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">+290%</div>
+              <div class="p-metric-lbl">Tour Inquiries</div>
+            </div>
+            <div>
+              <div class="p-metric-val">4.8x</div>
+              <div class="p-metric-lbl">Blended ROAS</div>
+            </div>
+            <div>
+              <div class="p-metric-val">65%</div>
+              <div class="p-metric-lbl">Lead-to-Call</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">AI Trip Planner</span>
+            <span class="deliv-pill">Tour Package Funnels</span>
+            <span class="deliv-pill">Meta &amp; Google Ads</span>
+            <span class="deliv-pill">WhatsApp Concierge</span>
+            <span class="deliv-pill">CRM Booking Sync</span>
+          </div>
+          <a href="case-study.html?p=letsexplore" class="project-learn-btn">
+            <span>📖 Learn More &amp; Case Study Breakdown</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Mobile Station (Flagship Retail & Distribution) -->
+      <div class="project-card tilt-card" data-category="retail">
+        <div class="project-thumb-box">
+          <img src="images/Screenshot 2026-09-16 163951.png" alt="Mobile Station Flagship Store" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">📱 Premium Retail &amp; D2C</span>
+          </div>
+          <span class="project-stat-badge">📈 ₹2.4 Cr Mo. Volume</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Mobile Station: Flagship Smartphone Retail &amp; 30-Min Rapid Repair Lab</h2>
+          <p class="project-desc">
+            Built an omnichannel premium retail presence for Apple and flagship smartphones, combined with instant trade-in estimators, geo-fenced footfall ads, and VIP WhatsApp concierge desk.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">₹2.4 Cr</div>
+              <div class="p-metric-lbl">Monthly Turnaround</div>
+            </div>
+            <div>
+              <div class="p-metric-val">+185%</div>
+              <div class="p-metric-lbl">Store Walk-ins</div>
+            </div>
+            <div>
+              <div class="p-metric-val">30 Min</div>
+              <div class="p-metric-lbl">Service Speed</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">D2C E-Commerce Store</span>
+            <span class="deliv-pill">Meta Catalog Ads</span>
+            <span class="deliv-pill">Trade-In Value Funnel</span>
+            <span class="deliv-pill">WhatsApp VIP Desk</span>
+            <span class="deliv-pill">Local Store Geo-Targeting</span>
+          </div>
+          <a href="case-study.html?p=mobilestation" class="project-learn-btn">
+            <span>📖 Learn More &amp; Case Study Breakdown</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: MedEx Demo Pharmaceuticals (Global Pharma Export) -->
+      <div class="project-card tilt-card" data-category="pharma">
+        <div class="project-thumb-box">
+          <img src="images/work-medex.png" alt="MedEx Demo Pharmaceuticals" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">🏥 Global B2B Pharma Export</span>
+          </div>
+          <span class="project-stat-badge">🌐 14+ Export Countries</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">MedEx Pharmaceuticals: WHO-GMP Certified Sourcing &amp; Export Directory</h2>
+          <p class="project-desc">
+            Engineered compliance-first international pharmaceutical catalog with multi-currency RFQ bulk quotation engine, wholesale WhatsApp buyer desk, and high-trust B2B search visibility.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">14+</div>
+              <div class="p-metric-lbl">Export Countries</div>
+            </div>
+            <div>
+              <div class="p-metric-val">₹5.8 Cr</div>
+              <div class="p-metric-lbl">B2B Pipeline</div>
+            </div>
+            <div>
+              <div class="p-metric-val">+240%</div>
+              <div class="p-metric-lbl">RFQ Volume</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">B2B Sourcing Portal</span>
+            <span class="deliv-pill">WHO-GMP Directory</span>
+            <span class="deliv-pill">Bulk RFQ Engine</span>
+            <span class="deliv-pill">WhatsApp Export Desk</span>
+            <span class="deliv-pill">Global Inbound SEO</span>
+          </div>
+          <a href="case-study.html?p=medex" class="project-learn-btn">
+            <span>📖 Learn More &amp; Case Study Breakdown</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-banner-box" style="margin-top: 60px;">
+      <h2>Ready to Scale Your Brand to Category Leadership?</h2>
+      <p>Let's conduct a 100% complimentary growth audit of your marketing, creative, and pipeline funnels.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="audit.html" class="btn-orange" style="padding: 14px 34px;">
+          <span>Request Free Growth Audit →</span>
+        </a>
+        <a href="tel:+917499181193" class="btn-navy-outline" style="background: white; color: var(--nr-navy-main) !important; padding: 14px 28px;">
+          <span>📞 Call Us: +91 74991 81193</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Interactive Project Filtering Script -->
+  <script>
+    (function() {
+      const filterBtns = document.querySelectorAll('.project-filter-btn');
+      const projectCards = document.querySelectorAll('#projectGrid .project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
+            NextReach DMS is an elite performance growth agency & AI revenue engine partnering with B2B, B2C, and D2C brands to build high-ticket pipeline and sustainable market scale.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); background: var(--nr-navy-soft); padding: 6px 14px; border-radius: var(--radius-full);">
+            <span>🔒 Enterprise NDA Protected</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Growth Solutions</h4>
+          <ul>
+            <li><a href="services.html">Performance Paid Media</a></li>
+            <li><a href="services.html">Creative Strategy &amp; UGC</a></li>
+            <li><a href="services.html">B2B Outbound Lead Gen</a></li>
+            <li><a href="services.html">Conversion Rate Optimization</a></li>
+            <li><a href="services.html">Full-Funnel Attribution</a></li>
+            <li><a href="services.html">WhatsApp AI Retargeting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Framework</h4>
+          <ul>
+            <li><a href="index.html">Growth Engine</a></li>
+            <li><a href="process.html">4-Stage Framework</a></li>
+            <li><a href="case-studies.html">Case Studies &amp; Proof</a></li>
+            <li><a href="about.html">About NextReach DMS</a></li>
+            <li><a href="audit.html">90-Day Free Audit</a></li>
+            <li><a href="contact.html">Contact Growth Directors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul>
+            <li style="font-size: 0.88rem; color: var(--text-muted);"><a href="tel:+917499181193" style="color: inherit;">📞 +91 74991 81193</a></li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">✉️ contact@nextreachdms.com</li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Sahakar Nagar, Opp. New Cotton Market, Amravati, Maharashtra 444601</li>
+            <li style="font-size: 0.88rem; color: var(--text-dim); margin-top: 4px;">⏱️ Fast Response: Under 4 Hours</li>
+            
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Framework</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="audit.html">Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Support Badge (Exact Design Match) -->
+
+  <!-- ==========================================================================
+       STICKY STRATEGY CALL CTA BAR & FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <!-- Floating WhatsApp Support Badge -->
+  <a href="https://wa.me/917499181193?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit." target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
+    <div class="wa-pill-icon">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z"/></svg>
+    </div>
+    <div class="wa-pill-info">
+      <div class="wa-pill-label">WHATSAPP SUPPORT</div>
+      <div class="wa-pill-number">+91 74991 81193</div>
+      <div class="wa-pill-status">Instant reply</div>
+    </div>
+  </a>
+
+    <!-- ==========================================================================
+       MASTER JAVASCRIPT ENGINE (Ultra-Fast 60-120 FPS Lag-Free)
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // --- 1. BRAND PRELOADER ---
+      const preloader = document.getElementById('nrPreloader');
+      const loaderFill = document.getElementById('loaderFill');
+      const loaderPercent = document.getElementById('loaderPercent');
+      let progress = 0;
+
+      const loaderInterval = setInterval(() => {
+        progress += Math.floor(Math.random() * 20) + 15;
+        if (progress > 100) progress = 100;
+        if (loaderFill) loaderFill.style.width = progress + '%';
+        if (loaderPercent) loaderPercent.textContent = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(loaderInterval);
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('fade-out');
+              setTimeout(() => preloader.style.display = 'none', 400);
+            }
+          }, 150);
+        }
+      }, 25);
+
+      // --- 2. SCROLL PROGRESS BAR (Passive & RAF Optimized) ---
+      const progressBar = document.getElementById('scrollProgress');
+      let isScrolling = false;
+      window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(() => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (progressBar && height > 0) progressBar.style.width = ((winScroll / height) * 100) + '%';
+            isScrolling = false;
+          });
+        }
+      }, { passive: true });
+
+      // --- 3. CUSTOM MAGNETIC CURSOR (GPU Hardware-Accelerated) ---
+      const cursorDot = document.getElementById('cursorDot');
+      const cursorAura = document.getElementById('cursorAura');
+      const cursorText = document.getElementById('cursorText');
+
+      if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
+        let mouseX = -100, mouseY = -100, currentX = -100, currentY = -100;
+        let isMoving = false;
+        let isInitialized = false;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isInitialized) {
+            isInitialized = true;
+            cursorDot.classList.add('visible');
+            cursorAura.classList.add('visible');
+            currentX = mouseX;
+            currentY = mouseY;
+          }
+          if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(renderCursor);
+          }
+        }, { passive: true });
+
+        function renderCursor() {
+          currentX += (mouseX - currentX) * 0.3;
+          currentY += (mouseY - currentY) * 0.3;
+          cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          cursorAura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+          if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
+            requestAnimationFrame(renderCursor);
+          } else {
+            isMoving = false;
+          }
+        }
+
+        document.querySelectorAll('a, button, .service-block, .project-card, .timeline-card, .team-card').forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorAura.classList.add('cursor-hover');
+            if (el.classList.contains('project-card') || el.classList.contains('service-block')) {
+              if (cursorText) cursorText.textContent = 'EXPLORE';
+            }
+          }, { passive: true });
+
+          el.addEventListener('mouseleave', () => {
+            cursorAura.classList.remove('cursor-hover');
+            if (cursorText) cursorText.textContent = '';
+          }, { passive: true });
+        });
+      }
+
+      // --- 4. MOBILE MENU TOGGLE ---
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          const isFlex = navLinks.style.display === 'flex';
+          navLinks.style.display = isFlex ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+      }
+    });
+  </script>
+
+  <!-- ==========================================================================
+       PROJECT CASE STUDY DETAILS INTERACTIVE MODAL
+       ========================================================================== -->
+  <div class="project-modal-backdrop" id="projectDetailModal">
+    <div class="project-modal-card">
+      <button type="button" class="modal-close-btn" id="btnCloseProjectModal" aria-label="Close Modal">✕</button>
+      
+      <div class="modal-image-preview">
+        <img src="" alt="Project Preview" id="mProjImg">
+        <div class="modal-image-badge" id="mProjBadge"></div>
+      </div>
+
+      <!-- Live Screenshot Gallery Switcher -->
+      <div class="modal-gallery-thumbs" id="mProjThumbs"></div>
+
+      <div class="modal-content-body">
+        <h3 class="modal-title" id="mProjTitle"></h3>
+        <p class="modal-subtitle" id="mProjDesc"></p>
+
+        <!-- 3-Metric Banner -->
+        <div class="modal-results-banner">
+          <div class="modal-res-item">
+            <div class="num" id="mProjMet1Val"></div>
+            <div class="lbl" id="mProjMet1Lbl"></div>
+          </div>
+          <div class="modal-res-item">
+            <div class="num" id="mProjMet2Val"></div>
+            <div class="lbl" id="mProjMet2Lbl"></div>
+          </div>
+          <div class="modal-res-item">
+            <div class="num" id="mProjMet3Val"></div>
+            <div class="lbl" id="mProjMet3Lbl"></div>
+          </div>
+        </div>
+
+        <!-- 2 Column Breakdown: Challenge & Solution -->
+        <div class="modal-grid-2col">
+          <div class="modal-info-box">
+            <h4>⚠️ The Challenge &amp; Problem Solved</h4>
+            <ul id="mProjChallengeList"></ul>
+          </div>
+          <div class="modal-info-box">
+            <h4>💡 How NextReach Engineered It</h4>
+            <ul id="mProjSolutionList"></ul>
+          </div>
+        </div>
+
+        <!-- Innovations & Tech Stack -->
+        <div class="modal-info-box" style="margin-bottom: 24px;">
+          <h4>🚀 Key Innovations &amp; Tech Stack Deployed</h4>
+          <div class="project-deliverables" id="mProjTechStack" style="padding-top: 8px; border-top: none;"></div>
+        </div>
+
+        <!-- Modal CTA Row -->
+        <div class="modal-cta-row">
+          <div>
+            <div style="font-weight: 800; color: var(--nr-navy-deep); font-size: 0.95rem;">Want Similar Scaling for Your Brand?</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">Get a customized 90-day growth roadmap and revenue audit.</div>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="audit.html" class="btn-orange" style="padding: 10px 22px; font-size: 0.88rem;">
+              <span>🚀 Book Growth Audit →</span>
+            </a>
+            <a href="https://wa.me/917499181193?text=Hi%20NextReach%20team,%20I%20saw%20your%20case%20studies%20and%20want%20to%20discuss%20a%20similar%20project." target="_blank" rel="noopener" class="btn-navy-outline" style="padding: 10px 18px; font-size: 0.88rem;">
+              <span>💬 Discuss on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- PROJECT CASE STUDIES DATA & MULTI-SCREENSHOT GALLERY ---
+    const projectCaseStudies = {
+      marketiqx: {
+        title: "Marketiqx: Intelligent WhatsApp Marketing & Meta Cloud API Platform",
+        badge: "💼 WhatsApp SaaS • Meta Verified Cloud API",
+        image: "images/work-marketiqx.png",
+        gallery: [
+          { label: "🖥️ Platform Home", src: "images/work-marketiqx.png" },
+          { label: "📈 Customer Success (5.2x ROI)", src: "images/marketiqx-stories.png" },
+          { label: "🎁 100 Free Credits Onboarding", src: "images/marketiqx-onboarding.png" },
+          { label: "⚡ SmartQueue™ Architecture", src: "images/marketiqx-smartqueue.png" }
+        ],
+        desc: "Engineered high-throughput SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.",
+        metrics: [
+          { val: "99.4%", lbl: "Verified Inbox Delivery SLA" },
+          { val: "+380%", lbl: "Broadcast Engagement Surge" },
+          { val: "5.2x", lbl: "Trial-to-Paid Conversion" }
+        ],
+        challenges: [
+          "Legacy broadcast tools had high number-ban risk and 20%+ message drop rates.",
+          "Complex Meta Green Badge onboarding caused users to drop off during setup.",
+          "Lack of multi-agent routing led to slow customer response times."
+        ],
+        solutions: [
+          "Integrated official Meta WhatsApp Cloud API with SmartQueue™ anti-drop logic.",
+          "Built a streamlined 3-step green badge onboarding wizard and free demo credits.",
+          "Engineered unified multi-agent collaborative live chat inbox with AI bot fallback."
+        ],
+        techStack: ["Meta Cloud API", "SmartQueue™ Engine", "Redis / WebSockets", "Multi-Agent Inbox", "Automated Billing", "CAPI Tracking"]
+      },
+      letsexplore: {
+        title: "Let's Explore DMC: AI Trip Planning Engine & Global Tour Scaling",
+        badge: "✈️ Travel & Tourism • AI Trip Planner",
+        image: "images/work-letsexplore.png",
+        gallery: [
+          { label: "🌍 Global Travel Portal", src: "images/work-letsexplore.png" },
+          { label: "🏖️ Holiday Packages", src: "images/letsexplore-packages.png" },
+          { label: "✨ Custom Dream Itineraries", src: "images/letsexplore-customise.png" },
+          { label: "🤖 Gemini AI Concierge", src: "images/letsexplore-ai-bot.png" },
+          { label: "📸 Travellers Gallery", src: "images/letsexplore-gallery.png" },
+          { label: "🏛️ Heritage & Domestic Tours", src: "images/letsexplore-heritage.png" }
+        ],
+        desc: "Designed high-converting international holiday package portal, interactive AI Trip Planner lead engine, customized group tour workflows, and instant WhatsApp booking concierge.",
+        metrics: [
+          { val: "+290%", lbl: "Group Tour Enquiries" },
+          { val: "4.8x", lbl: "Blended Meta & Google ROAS" },
+          { val: "65%", lbl: "Lead-to-Call Conversion" }
+        ],
+        challenges: [
+          "Static PDF brochures caused 75%+ drop-offs before travelers requested quotes.",
+          "High ad spend on Meta with broad targeting yielded unqualified budget inquiries.",
+          "Slow manual follow-ups by sales reps resulted in lost travel bookings."
+        ],
+        solutions: [
+          "Developed an interactive 'AI Trip Planner' generating custom itineraries in 30 seconds.",
+          "Launched high-intent Google Search campaigns for international destination packages.",
+          "Connected instant WhatsApp concierge desk with automated itinerary delivery."
+        ],
+        techStack: ["AI Trip Planner Funnel", "Meta Advantage+ Ads", "Google Search Exact", "WhatsApp Concierge Bot", "CRM Booking Sync", "Multi-Currency Engine"]
+      },
+      mobilestation: {
+        title: "Mobile Station: Omnichannel Flagship Smartphone Retail & 30-Min Rapid Repair Hub",
+        badge: "📱 Premium Retail & D2C • Apple & Flagship Phones",
+        image: "images/Screenshot 2026-09-16 163951.png",
+        gallery: [
+          { label: "📱 iPhone 18 Pro Max 3D Stage", src: "images/Screenshot 2026-09-16 163951.png" },
+          { label: " Apple Flagship Series Showcase", src: "images/Screenshot 2026-09-16 164102.png" },
+          { label: "✦ Samsung Foldables & S Series Showcase", src: "images/Screenshot 2026-09-16 164019.png" },
+          { label: "🏬 Flagship Experience Lounges (Amravati, Nagpur, BKC)", src: "images/Screenshot 2026-09-16 164028.png" }
+        ],
+        desc: "Scaled premium flagship smartphone retail and 30-minute component engineering lab with hyper-local geo-fencing ads, trade-in value funnels, and WhatsApp VIP desk.",
+        metrics: [
+          { val: "₹2.4 Cr", lbl: "Monthly Turnaround GMV" },
+          { val: "+185%", lbl: "Store Footfall & Walk-ins" },
+          { val: "30 Min", lbl: "Component Engineering Speed" }
+        ],
+        challenges: [
+          "Fierce competition from big e-commerce platforms offering heavy price discounts.",
+          "Customer hesitation and trust barrier regarding open-box/certified grade A+ devices.",
+          "Slow local discovery for fast 30-minute on-spot hardware repairs."
+        ],
+        solutions: [
+          "Built a luxury Apple & flagship storefront with interactive trade-in price estimators.",
+          "Deployed 10km geo-fenced Instagram video ads targeting tech enthusiasts and professionals.",
+          "Implemented 1-click WhatsApp VIP concierge for live stock check and express repair booking."
+        ],
+        techStack: ["D2C Web Store", "Meta Dynamic Catalog Ads", "Trade-In Estimator", "WhatsApp VIP Concierge", "Local Geo-Fencing", "Grade-A+ Verification"]
+      },
+      medex: {
+        title: "MedEx Pharmaceuticals: WHO-GMP Certified Global Sourcing & Bulk Export Hub",
+        badge: "🏥 Global B2B Pharma • WHO-GMP Formulations Export",
+        image: "images/work-medex.png",
+        gallery: [
+          { label: "🏥 Global Sourcing Directory", src: "images/work-medex.png" },
+          { label: "🌐 Global Importers Feedback", src: "images/medex-global-importers.png" },
+          { label: "🏭 Sourcing & Export Infra", src: "images/medex-sourcing-infrastructure.png" },
+          { label: "💊 Formulations Product Catalog", src: "images/medex-formulations-catalog.png" }
+        ],
+        desc: "Built an international B2B pharmaceutical sourcing portal, multi-currency RFQ product directory, wholesale WhatsApp desk, and compliance-first overseas lead pipelines.",
+        metrics: [
+          { val: "14+", lbl: "Export Destination Countries" },
+          { val: "₹5.8 Cr", lbl: "B2B Export Pipeline ARR" },
+          { val: "+240%", lbl: "Wholesale RFQ Volume" }
+        ],
+        challenges: [
+          "Overseas institutional buyers required verified WHO-GMP compliance documentation upfront.",
+          "Manual email-based RFQ processes created 4-day delays in bulk order quotes.",
+          "Low international search visibility for high-demand pharmaceutical formulation lines."
+        ],
+        solutions: [
+          "Engineered an international B2B directory with instant dossier previews and WHO-GMP badges.",
+          "Built an automated multi-currency RFQ quotation builder with instant WhatsApp alert desk.",
+          "Executed global B2B inbound search SEO and high-trust LinkedIn export funnels."
+        ],
+        techStack: ["International B2B Portal", "WHO-GMP Product Directory", "Multi-Currency RFQ Engine", "WhatsApp Export Desk", "Global Inbound SEO", "Compliance Dossiers"]
+      }
+    };
+
+    function openProjectModal(projKey) {
+      const data = projectCaseStudies[projKey];
+      if (!data) return;
+
+      const modal = document.getElementById('projectDetailModal');
+      const imgEl = document.getElementById('mProjImg');
+      imgEl.src = data.image;
+      document.getElementById('mProjBadge').textContent = data.badge;
+      document.getElementById('mProjTitle').textContent = data.title;
+      document.getElementById('mProjDesc').textContent = data.desc;
+
+      // Render Gallery Buttons
+      const thumbsContainer = document.getElementById('mProjThumbs');
+      if (thumbsContainer && data.gallery && data.gallery.length > 0) {
+        thumbsContainer.innerHTML = data.gallery.map((g, idx) => `
+          <button type="button" class="modal-thumb-btn ${idx === 0 ? 'active' : ''}" onclick="switchModalImage(this, '${g.src}')">
+            ${g.label}
+          </button>
+        `).join('');
+        thumbsContainer.style.display = 'flex';
+      } else if (thumbsContainer) {
+        thumbsContainer.style.display = 'none';
+      }
+
+      document.getElementById('mProjMet1Val').textContent = data.metrics[0].val;
+      document.getElementById('mProjMet1Lbl').textContent = data.metrics[0].lbl;
+      document.getElementById('mProjMet2Val').textContent = data.metrics[1].val;
+      document.getElementById('mProjMet2Lbl').textContent = data.metrics[1].lbl;
+      document.getElementById('mProjMet3Val').textContent = data.metrics[2].val;
+      document.getElementById('mProjMet3Lbl').textContent = data.metrics[2].lbl;
+
+      const chList = document.getElementById('mProjChallengeList');
+      chList.innerHTML = data.challenges.map(c => `<li><span class="bullet">⚠️</span> <span>${c}</span></li>`).join('');
+
+      const solList = document.getElementById('mProjSolutionList');
+      solList.innerHTML = data.solutions.map(s => `<li><span class="bullet">✓</span> <span>${s}</span></li>`).join('');
+
+      const stackBox = document.getElementById('mProjTechStack');
+      stackBox.innerHTML = data.techStack.map(t => `<span class="deliv-pill" style="background: white; border: 1px solid var(--border-subtle);">${t}</span>`).join('');
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function switchModalImage(btn, src) {
+      document.getElementById('mProjImg').src = src;
+      document.querySelectorAll('.modal-thumb-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('projectDetailModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const closeBtn = document.getElementById('btnCloseProjectModal');
+      const modal = document.getElementById('projectDetailModal');
+      if (closeBtn) closeBtn.addEventListener('click', closeProjectModal);
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeProjectModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeProjectModal();
+      });
+    });
+  </script>
+  <script src="js/api.js"></script>
+</body>
+</html>

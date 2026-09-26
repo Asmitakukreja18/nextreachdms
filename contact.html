@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Growth Directors │ NextReach DMS</title>
+  <meta name="description" content="Connect with NextReach DMS performance growth specialists for enterprise partnerships, ad management, and pipeline expansion.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=105.0">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 36px;
+      margin: 40px auto 80px;
+      max-width: 1100px;
+    }
+    .contact-info-card {
+      background: var(--nr-navy-deep);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: clamp(28px, 4vw, 44px);
+      box-shadow: var(--shadow-navy-glow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-item-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 107, 0, 0.2);
+      border: 1px solid var(--nr-orange-main);
+      color: var(--nr-orange-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .contact-form-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: var(--shadow-card);
+    }
+    .form-group-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .form-input-c {
+      padding: 12px 16px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color var(--transition-fast);
+      background: #fbfcfd;
+    }
+    .form-input-c:focus {
+      border-color: var(--nr-orange-main);
+      background: #ffffff;
+    }
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<style id="header-clean-override">
+  .header-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-item-dropdown {
+    position: static !important;
+  }
+  .mega-menu, .mega-menu-overlay {
+    position: absolute !important;
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    box-shadow: 0 20px 50px rgba(0, 45, 98, 0.15) !important;
+    border-bottom: 4px solid #ff6b00 !important;
+    z-index: 99999 !important;
+  }
+  .nav-item-dropdown:hover .mega-menu,
+  .nav-item-dropdown:hover .mega-menu-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .nav-links a::after,
+  .nav-links a:hover::after,
+  .nav-links a.active::after,
+  .dropdown-trigger::after,
+  .dropdown-trigger:hover::after,
+  .dropdown-trigger.active::after,
+  .nav-item-dropdown::after,
+  .nav-item-dropdown:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: none !important;
+  }
+  .nav-links a,
+  .dropdown-trigger {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-links a:hover,
+  .nav-links a.active,
+  .dropdown-trigger:hover,
+  .dropdown-trigger.active {
+    color: #ff6b00 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-phone-btn {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-phone-btn span {
+    font-size: 1.1rem !important;
+  }
+  .mega-column a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .custom-cursor-dot,
+  .custom-cursor-aura {
+    display: none !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. BRAND PRELOADER
+       ========================================================================== -->
+  <div class="nr-preloader" id="nrPreloader">
+    <div class="nr-loader-brand">
+      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
+      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
+      <div class="nr-loader-bar">
+        <div class="nr-loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var p = 0;
+      var f = document.getElementById('loaderFill');
+      var t = document.getElementById('loaderPercent');
+      var pl = document.getElementById('nrPreloader');
+      var iv = setInterval(function() {
+        p += Math.floor(Math.random() * 25) + 15;
+        if (p > 100) p = 100;
+        if (f) f.style.width = p + '%';
+        if (t) t.textContent = p + '%';
+        if (p >= 100) {
+          clearInterval(iv);
+          setTimeout(function() {
+            if (pl) {
+              pl.classList.add('fade-out');
+              setTimeout(function() { pl.style.display = 'none'; }, 300);
+            }
+          }, 80);
+        }
+      }, 20);
+      setTimeout(function() {
+        clearInterval(iv);
+        if (pl) {
+          pl.classList.add('fade-out');
+          setTimeout(function() { pl.style.display = 'none'; }, 200);
+        }
+      }, 700);
+    })();
+  </script>
+
+  <!-- ==========================================================================
+       2. SCROLL PROGRESS BAR & CUSTOM CURSOR
+       ========================================================================== -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
+
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainNavbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
+      </a>
+
+            <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <!-- SERVICES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">SEO & SEARCH</div>
+                <a href="services.html#seo"><span>🔍</span> Technical SEO</a>
+                <a href="services.html#seo"><span>📄</span> On-Page SEO</a>
+                <a href="services.html#seo"><span>🌐</span> Off-Page SEO</a>
+                <a href="services.html#seo"><span>📍</span> Local & Maps SEO</a>
+                <a href="services.html#seo"><span>🛒</span> Ecommerce SEO</a>
+                <a href="services.html#seo"><span>🤖</span> AEO & AI Search</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA</div>
+                <a href="services.html#paid-media"><span>🎯</span> Google Ads</a>
+                <a href="services.html#paid-media"><span>⚡</span> Meta (FB & IG) Ads</a>
+                <a href="services.html#paid-media"><span>💼</span> LinkedIn Ads</a>
+                <a href="services.html#paid-media"><span>🎬</span> YouTube Ads</a>
+                <a href="services.html#paid-media"><span>📈</span> Performance Scale</a>
+                <a href="services.html#paid-media"><span>🔄</span> CAPI Remarketing</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP & AI</div>
+                <a href="whatsapp-business-api.html"><span>💬</span> Official Meta WhatsApp API</a>
+                <a href="whatsapp-marketing-services.html"><span>🤖</span> WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html"><span>📱</span> RCS Interactive Messaging</a>
+                <a href="bulk-sms.html"><span>🚀</span> Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">CONTENT & CREATIVE</div>
+                <a href="services.html#content"><span>📝</span> Content Strategy</a>
+                <a href="services.html#content"><span>✍️</span> Copywriting</a>
+                <a href="services.html#content"><span>🔎</span> SEO Content</a>
+                <a href="services.html#content"><span>🎥</span> UGC Video & Ad Films</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">BRAND & WEB</div>
+                <a href="services.html#web"><span>🖥️</span> Conversion Web Design</a>
+                <a href="services.html#branding"><span>💎</span> Brand Identity & Strategy</a>
+                <a href="services.html" class="mega-link-accent"><span>🚀</span> All services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce"><span>🛒</span> E-commerce</a>
+                <a href="case-studies.html?cat=realestate"><span>🏰</span> Real Estate</a>
+                <a href="case-studies.html?cat=healthcare"><span>🩺</span> Healthcare</a>
+                <a href="case-studies.html?cat=education"><span>🎓</span> Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas"><span>💻</span> SaaS & Tech</a>
+                <a href="case-studies.html?cat=hospitality"><span>🏨</span> Hospitality</a>
+                <a href="case-studies.html?cat=beauty"><span>💄</span> Fashion & Beauty</a>
+                <a href="case-studies.html?cat=automotive"><span>🚗</span> Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech"><span>💳</span> Fintech</a>
+                <a href="case-studies.html?cat=fnb"><span>🍽️</span> Food & Beverage</a>
+                <a href="case-studies.html?cat=d2c"><span>📦</span> D2C Brands</a>
+                <a href="case-studies.html?cat=b2b"><span>💼</span> B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups"><span>🚀</span> Startups</a>
+                <a href="case-studies.html?cat=jewellery"><span>💎</span> Jewellery</a>
+                <a href="case-studies.html?cat=travel"><span>✈️</span> Travel & Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent"><span>🌟</span> All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+            <div class="nav-actions">
+        <a href="tel:+917499181193" class="nav-phone-btn" title="Call NextReach Growth Director: +91 74991 81193">
+          <span>📞</span>
+        </a>
+        <a href="audit.html" class="nav-cta-btn">
+          <span>Get Free Audit →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      </div></div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="container" style="padding: 60px 24px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="section-tag">Direct Access</span>
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px; color: var(--nr-navy-deep);">
+        Let's Talk <span class="gradient-orange-text">Revenue Growth.</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">
+        Have a question or ready to discuss your brand's growth roadmap? Connect directly with our Senior Partners.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <main class="container">
+    <div class="contact-grid">
+      
+      <!-- Info Card -->
+      <div class="contact-info-card">
+        <div>
+          <span class="section-tag" style="background: rgba(255, 107, 0, 0.2); color: var(--nr-orange-bright); border: 1px solid var(--nr-orange-main); margin-bottom: 20px;">Fast Response SLA</span>
+          <h2 style="font-size: 1.8rem; color: #ffffff; margin-bottom: 24px;">Growth Headquarters</h2>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Direct Phone / WhatsApp</div>
+              <a href="tel:+917499181193" style="font-size: 1.1rem; font-weight: 700; color: #ffffff;">+91 74991 81193</a>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Partnership Inquiries</div>
+              <a href="mailto:contact@nextreachdms.com" style="font-size: 1.05rem; font-weight: 700; color: #ffffff;">contact@nextreachdms.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div style="font-size: 0.78rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Office Locations</div>
+              <div style="font-size: 0.95rem; color: #e2e8f0; font-weight: 600;">Sahakar Nagar, Opp. New Cotton Market, Shiv Krupa Residence, Amravati, Maharashtra 444601</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; font-size: 0.85rem; color: #94a3b8;">
+          ⚡ All inquiries answered within 4 business hours by a dedicated Growth Director.
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="contact-form-card">
+        <h3 style="font-size: 1.4rem; color: var(--nr-navy-deep); margin-bottom: 8px;">Send a Direct Message</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">Fill out this quick form and we'll reach out promptly.</p>
+
+        <form id="contactForm">
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">Your Name *</label>
+            <input type="text" name="name" required class="form-input-c" placeholder="e.g. Ananya Patel">
+          </div>
+
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">Email Address *</label>
+            <input type="email" name="email" required class="form-input-c" placeholder="ananya@brand.com">
+          </div>
+
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">Phone / WhatsApp *</label>
+            <input type="tel" name="phone" required class="form-input-c" placeholder="+91 74991 81193">
+          </div>
+
+          <div class="form-group-contact">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--nr-navy-deep);">How Can We Help Your Business?</label>
+            <textarea name="message" rows="3" class="form-input-c" placeholder="Tell us about your brand, current ad spend, or pipeline goals..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-orange" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; margin-top: 10px; cursor: pointer;">
+            <span>Send Message →</span>
+          </button>
+        </form>
+
+        <div id="contactSent" style="display: none; text-align: center; padding: 30px 10px;">
+          <div style="font-size: 2.5rem; margin-bottom: 10px;">✅</div>
+          <h4 style="font-size: 1.3rem; color: var(--nr-navy-deep); margin-bottom: 6px;">Message Sent Successfully!</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">A Senior Partner will get back to you shortly.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
+            NextReach DMS is an elite performance growth agency & AI revenue engine partnering with B2B, B2C, and D2C brands to build high-ticket pipeline and sustainable market scale.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); background: var(--nr-navy-soft); padding: 6px 14px; border-radius: var(--radius-full);">
+            <span>🔒 Enterprise NDA Protected</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Growth Solutions</h4>
+          <ul>
+            <li><a href="services.html">Performance Paid Media</a></li>
+            <li><a href="services.html">Creative Strategy &amp; UGC</a></li>
+            <li><a href="services.html">B2B Outbound Lead Gen</a></li>
+            <li><a href="services.html">Conversion Rate Optimization</a></li>
+            <li><a href="services.html">Full-Funnel Attribution</a></li>
+            <li><a href="services.html">WhatsApp AI Retargeting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Framework</h4>
+          <ul>
+            <li><a href="index.html">Growth Engine</a></li>
+            <li><a href="process.html">4-Stage Framework</a></li>
+            <li><a href="case-studies.html">Case Studies &amp; Proof</a></li>
+            <li><a href="about.html">About NextReach DMS</a></li>
+            <li><a href="audit.html">90-Day Free Audit</a></li>
+            <li><a href="contact.html">Contact Growth Directors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul>
+            <li style="font-size: 0.88rem; color: var(--text-muted);"><a href="tel:+917499181193" style="color: inherit;">📞 +91 74991 81193</a></li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">✉️ contact@nextreachdms.com</li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Sahakar Nagar, Opp. New Cotton Market, Amravati, Maharashtra 444601</li>
+            <li style="font-size: 0.88rem; color: var(--text-dim); margin-top: 4px;">⏱️ Fast Response: Under 4 Hours</li>
+            
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Framework</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="audit.html">Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Support Badge (Exact Design Match) -->
+
+  <!-- ==========================================================================
+       STICKY STRATEGY CALL CTA BAR & FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <!-- Floating WhatsApp Support Badge -->
+  <a href="https://wa.me/917499181193?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit." target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
+    <div class="wa-pill-icon">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z"/></svg>
+    </div>
+    <div class="wa-pill-info">
+      <div class="wa-pill-label">WHATSAPP SUPPORT</div>
+      <div class="wa-pill-number">+91 74991 81193</div>
+      <div class="wa-pill-status">Instant reply</div>
+    </div>
+  </a>
+
+    <!-- ==========================================================================
+       MASTER JAVASCRIPT ENGINE (Ultra-Fast 60-120 FPS Lag-Free)
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // --- 1. BRAND PRELOADER ---
+      const preloader = document.getElementById('nrPreloader');
+      const loaderFill = document.getElementById('loaderFill');
+      const loaderPercent = document.getElementById('loaderPercent');
+      let progress = 0;
+
+      const loaderInterval = setInterval(() => {
+        progress += Math.floor(Math.random() * 20) + 15;
+        if (progress > 100) progress = 100;
+        if (loaderFill) loaderFill.style.width = progress + '%';
+        if (loaderPercent) loaderPercent.textContent = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(loaderInterval);
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('fade-out');
+              setTimeout(() => preloader.style.display = 'none', 400);
+            }
+          }, 150);
+        }
+      }, 25);
+
+      // --- 2. SCROLL PROGRESS BAR (Passive & RAF Optimized) ---
+      const progressBar = document.getElementById('scrollProgress');
+      let isScrolling = false;
+      window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(() => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (progressBar && height > 0) progressBar.style.width = ((winScroll / height) * 100) + '%';
+            isScrolling = false;
+          });
+        }
+      }, { passive: true });
+
+      // --- 3. CUSTOM MAGNETIC CURSOR (GPU Hardware-Accelerated) ---
+      const cursorDot = document.getElementById('cursorDot');
+      const cursorAura = document.getElementById('cursorAura');
+      const cursorText = document.getElementById('cursorText');
+
+      if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
+        let mouseX = -100, mouseY = -100, currentX = -100, currentY = -100;
+        let isMoving = false;
+        let isInitialized = false;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isInitialized) {
+            isInitialized = true;
+            cursorDot.classList.add('visible');
+            cursorAura.classList.add('visible');
+            currentX = mouseX;
+            currentY = mouseY;
+          }
+          if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(renderCursor);
+          }
+        }, { passive: true });
+
+        function renderCursor() {
+          currentX += (mouseX - currentX) * 0.3;
+          currentY += (mouseY - currentY) * 0.3;
+          cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          cursorAura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+          if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
+            requestAnimationFrame(renderCursor);
+          } else {
+            isMoving = false;
+          }
+        }
+
+        document.querySelectorAll('a, button, .service-block, .project-card, .timeline-card, .team-card').forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorAura.classList.add('cursor-hover');
+            if (el.classList.contains('project-card') || el.classList.contains('service-block')) {
+              if (cursorText) cursorText.textContent = 'EXPLORE';
+            }
+          }, { passive: true });
+
+          el.addEventListener('mouseleave', () => {
+            cursorAura.classList.remove('cursor-hover');
+            if (cursorText) cursorText.textContent = '';
+          }, { passive: true });
+        });
+      }
+
+      // --- 4. MOBILE MENU TOGGLE ---
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          const isFlex = navLinks.style.display === 'flex';
+          navLinks.style.display = isFlex ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+      }
+
+    });
+  
+
+      // --- MOBILE DRAWER NAVIGATION ---
+      const mobileBtn = document.getElementById('mobileMenuBtn') || document.querySelector('.mobile-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          navLinks.classList.toggle('mobile-open');
+          const isOpen = navLinks.classList.contains('mobile-open');
+          mobileBtn.innerHTML = isOpen ? '✕' : '☰';
+          mobileBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+            mobileBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+          });
+        });
+      }
+
+</script>
+  <script src="js/api.js"></script>
+</body>
+</html>

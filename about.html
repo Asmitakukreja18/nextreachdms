@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us │ NextReach DMS</title>
+  <meta name="description" content="Learn about NextReach DMS — our revenue-first philosophy, senior growth team, and track record scaling 400+ enterprise & D2C brands.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=105.0">
+  <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<style id="header-clean-override">
+  .header-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-item-dropdown {
+    position: static !important;
+  }
+  .mega-menu, .mega-menu-overlay {
+    position: absolute !important;
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    box-shadow: 0 20px 50px rgba(0, 45, 98, 0.15) !important;
+    border-bottom: 4px solid #ff6b00 !important;
+    z-index: 99999 !important;
+  }
+  .nav-item-dropdown:hover .mega-menu,
+  .nav-item-dropdown:hover .mega-menu-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .nav-links a::after,
+  .nav-links a:hover::after,
+  .nav-links a.active::after,
+  .dropdown-trigger::after,
+  .dropdown-trigger:hover::after,
+  .dropdown-trigger.active::after,
+  .nav-item-dropdown::after,
+  .nav-item-dropdown:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: none !important;
+  }
+  .nav-links a,
+  .dropdown-trigger {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-links a:hover,
+  .nav-links a.active,
+  .dropdown-trigger:hover,
+  .dropdown-trigger.active {
+    color: #ff6b00 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .nav-phone-btn {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-phone-btn span {
+    font-size: 1.1rem !important;
+  }
+  .mega-column a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .custom-cursor-dot,
+  .custom-cursor-aura {
+    display: none !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. BRAND PRELOADER
+       ========================================================================== -->
+  <div class="nr-preloader" id="nrPreloader">
+    <div class="nr-loader-brand">
+      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
+      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
+      <div class="nr-loader-bar">
+        <div class="nr-loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var p = 0;
+      var f = document.getElementById('loaderFill');
+      var t = document.getElementById('loaderPercent');
+      var pl = document.getElementById('nrPreloader');
+      var iv = setInterval(function() {
+        p += Math.floor(Math.random() * 25) + 15;
+        if (p > 100) p = 100;
+        if (f) f.style.width = p + '%';
+        if (t) t.textContent = p + '%';
+        if (p >= 100) {
+          clearInterval(iv);
+          setTimeout(function() {
+            if (pl) {
+              pl.classList.add('fade-out');
+              setTimeout(function() { pl.style.display = 'none'; }, 300);
+            }
+          }, 80);
+        }
+      }, 20);
+      setTimeout(function() {
+        clearInterval(iv);
+        if (pl) {
+          pl.classList.add('fade-out');
+          setTimeout(function() { pl.style.display = 'none'; }, 200);
+        }
+      }, 700);
+    })();
+  </script>
+
+  <!-- ==========================================================================
+       2. SCROLL PROGRESS BAR & CUSTOM CURSOR
+       ========================================================================== -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
+
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainNavbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
+      </a>
+
+            <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+
+        <!-- SERVICES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">SEO & SEARCH</div>
+                <a href="services.html#seo"><span>🔍</span> Technical SEO</a>
+                <a href="services.html#seo"><span>📄</span> On-Page SEO</a>
+                <a href="services.html#seo"><span>🌐</span> Off-Page SEO</a>
+                <a href="services.html#seo"><span>📍</span> Local & Maps SEO</a>
+                <a href="services.html#seo"><span>🛒</span> Ecommerce SEO</a>
+                <a href="services.html#seo"><span>🤖</span> AEO & AI Search</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA</div>
+                <a href="services.html#paid-media"><span>🎯</span> Google Ads</a>
+                <a href="services.html#paid-media"><span>⚡</span> Meta (FB & IG) Ads</a>
+                <a href="services.html#paid-media"><span>💼</span> LinkedIn Ads</a>
+                <a href="services.html#paid-media"><span>🎬</span> YouTube Ads</a>
+                <a href="services.html#paid-media"><span>📈</span> Performance Scale</a>
+                <a href="services.html#paid-media"><span>🔄</span> CAPI Remarketing</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP & AI</div>
+                <a href="whatsapp-business-api.html"><span>💬</span> Official Meta WhatsApp API</a>
+                <a href="whatsapp-marketing-services.html"><span>🤖</span> WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html"><span>📱</span> RCS Interactive Messaging</a>
+                <a href="bulk-sms.html"><span>🚀</span> Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">CONTENT & CREATIVE</div>
+                <a href="services.html#content"><span>📝</span> Content Strategy</a>
+                <a href="services.html#content"><span>✍️</span> Copywriting</a>
+                <a href="services.html#content"><span>🔎</span> SEO Content</a>
+                <a href="services.html#content"><span>🎥</span> UGC Video & Ad Films</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">BRAND & WEB</div>
+                <a href="services.html#web"><span>🖥️</span> Conversion Web Design</a>
+                <a href="services.html#branding"><span>💎</span> Brand Identity & Strategy</a>
+                <a href="services.html" class="mega-link-accent"><span>🚀</span> All services →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce"><span>🛒</span> E-commerce</a>
+                <a href="case-studies.html?cat=realestate"><span>🏰</span> Real Estate</a>
+                <a href="case-studies.html?cat=healthcare"><span>🩺</span> Healthcare</a>
+                <a href="case-studies.html?cat=education"><span>🎓</span> Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas"><span>💻</span> SaaS & Tech</a>
+                <a href="case-studies.html?cat=hospitality"><span>🏨</span> Hospitality</a>
+                <a href="case-studies.html?cat=beauty"><span>💄</span> Fashion & Beauty</a>
+                <a href="case-studies.html?cat=automotive"><span>🚗</span> Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech"><span>💳</span> Fintech</a>
+                <a href="case-studies.html?cat=fnb"><span>🍽️</span> Food & Beverage</a>
+                <a href="case-studies.html?cat=d2c"><span>📦</span> D2C Brands</a>
+                <a href="case-studies.html?cat=b2b"><span>💼</span> B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups"><span>🚀</span> Startups</a>
+                <a href="case-studies.html?cat=jewellery"><span>💎</span> Jewellery</a>
+                <a href="case-studies.html?cat=travel"><span>✈️</span> Travel & Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent"><span>🌟</span> All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+            <div class="nav-actions">
+        <a href="tel:+917499181193" class="nav-phone-btn" title="Call NextReach Growth Director: +91 74991 81193">
+          <span>📞</span>
+        </a>
+        <a href="audit.html" class="nav-cta-btn">
+          <span>Get Free Audit →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      </div></div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="container" style="padding: 70px 24px 50px; text-align: center;">
+    <div style="max-width: 880px; margin: 0 auto;">
+      <span class="section-tag" style="background: rgba(255, 107, 0, 0.1); color: var(--nr-orange-main); font-weight: 800; padding: 6px 18px; border-radius: 999px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.08em; display: inline-block; margin-bottom: 16px;">Who We Are • Revenue Engineering Pod</span>
+      <h1 style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-bottom: 20px; color: var(--nr-navy-deep); font-weight: 800; line-height: 1.15;">
+        We Don't Sell Services. <br><span class="gradient-orange-text">We Engineer Growth.</span>
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; max-width: 760px; margin: 0 auto 30px;">
+        NextReach DMS was founded on a simple principle: traditional agency retainers are broken. We eliminate guesswork, vanity metrics, and bloated retainer fees by aligning our success directly with your net pipeline and revenue expansion.
+      </p>
+      
+      <!-- Key Stats Counter Ribbon -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; background: linear-gradient(135deg, var(--nr-navy-deep) 0%, var(--nr-navy-main) 100%); color: #ffffff; border-radius: var(--radius-xl); padding: 30px 20px; margin-top: 40px; box-shadow: 0 20px 40px rgba(0,26,61,0.15);" class="stats-ribbon-grid">
+        <div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--nr-orange-main);">400+</div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Brands Scaled</div>
+        </div>
+        <div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--nr-orange-main);">₹150+ Cr</div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Ad Spend Managed</div>
+        </div>
+        <div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--nr-orange-main);">4.8x</div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Avg Blended ROAS</div>
+        </div>
+        <div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--nr-orange-main);">98.4%</div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Client Retention Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES & MISSION -->
+  <main class="container" style="padding: 40px 24px 80px;">
+    
+    <!-- Section 1: Core Pillars -->
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="section-tag">Our Core Pillars</span>
+      <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--nr-navy-deep);">Built Different. Engineered To Scale.</h2>
+    </div>
+
+    <div class="growth-grid" style="margin-bottom: 70px;">
+      <div class="growth-card" style="padding: 36px 30px;">
+        <div class="card-icon-box">🏆</div>
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">1. Relentless Accountability</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">No vanity metrics (impressions, clicks, reach). We measure our value strictly on qualified pipeline, lower customer acquisition cost (CAC), and max blended ROAS across all channels.</p>
+      </div>
+
+      <div class="growth-card" style="padding: 36px 30px;">
+        <div class="card-icon-box" style="background: var(--nr-orange-soft); color: var(--nr-orange-main);">⚡</div>
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">2. Creative Velocity</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">In modern paid media, creative testing velocity determines market winners. We script, produce, and deploy 15+ fresh UGC video reels &amp; ad variations weekly for every brand partner.</p>
+      </div>
+
+      <div class="growth-card" style="padding: 36px 30px;">
+        <div class="card-icon-box">🧠</div>
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">3. AI &amp; Data Intelligence</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Proprietary predictive bidding algorithms, server-side CAPI tracking, automated lead enrichment, and WhatsApp Cloud API auto-nurture workflows that outperform traditional media buying.</p>
+      </div>
+    </div>
+
+    <!-- Section 2: Our Story & Evolution -->
+    <div style="background: #f8fafc; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 50px 40px; margin-bottom: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;" class="story-box-grid">
+      <div>
+        <span class="section-tag">Our Origin Story</span>
+        <h2 style="font-size: 2.1rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 16px;">Why We Built NextReach DMS</h2>
+        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+          After managing over ₹150 Crore in ad spend across top D2C, B2B SaaS, and Enterprise retail accounts, our founders noticed a recurring flaw in the marketing industry: <strong>agencies collect monthly retainers regardless of whether the business grows or stagnates.</strong>
+        </p>
+        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7;">
+          NextReach DMS was created to disrupt this model. We operate as your internal revenue engineering pod — combining high-velocity video production, algorithmic media buying, and automated WhatsApp nurturing to deliver 100% transparent and attributable pipeline growth.
+        </p>
+      </div>
+      <div style="background: #001a3d; border-radius: var(--radius-lg); padding: 36px; color: #ffffff; box-shadow: 0 16px 36px rgba(0,26,61,0.2);">
+        <h3 style="color: var(--nr-orange-main); font-size: 1.4rem; font-weight: 800; margin-bottom: 16px;">Our 4-Point Promise To Partners</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--nr-orange-main); font-weight: 900;">✓</span>
+            <span><strong>Zero Junior Intern Hand-offs:</strong> Experienced Senior Growth Leads manage your account directly.</span>
+          </li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--nr-orange-main); font-weight: 900;">✓</span>
+            <span><strong>24-48 HR Creative Speed:</strong> Rapid video script-to-publish execution cycle.</span>
+          </li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--nr-orange-main); font-weight: 900;">✓</span>
+            <span><strong>Live Real-time Dashboard:</strong> 100% transparent revenue &amp; ROAS reporting.</span>
+          </li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: var(--nr-orange-main); font-weight: 900;">✓</span>
+            <span><strong>No Lock-in Contracts:</strong> We earn your partnership month after month through results.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 3: Revenue Engineering Framework (4 Stages) -->
+    <div style="margin-bottom: 70px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag">Proven Methodology</span>
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--nr-navy-deep);">Our 4-Stage Growth Framework</h2>
+        <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 640px; margin: 8px auto 0;">A systematic, repeatable methodology that turns ad spend into predictable revenue.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;" class="framework-cards-grid">
+        <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px 22px; box-shadow: var(--shadow-sm);">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--nr-orange-main); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">STAGE 01</div>
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 10px;">Funnel Audit &amp; Data Setup</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Comprehensive CAPI pixel tracking, conversion bottleneck diagnostics, and audience profiling.</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px 22px; box-shadow: var(--shadow-sm);">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--nr-orange-main); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">STAGE 02</div>
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 10px;">High-Velocity Content</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Producing high-hook video reels, flyers, UGC ads, and landing page creatives that command attention.</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px 22px; box-shadow: var(--shadow-sm);">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--nr-orange-main); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">STAGE 03</div>
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 10px;">Algorithmic Media Scaling</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Deploying Meta &amp; Google ad campaigns with predictive bidding to scale profitable ad spend smoothly.</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px 22px; box-shadow: var(--shadow-sm);">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--nr-orange-main); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">STAGE 04</div>
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 10px;">WhatsApp &amp; Retention AI</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Automated lead nurturing, cart recovery broadcasts, and LTV maximization via WhatsApp Cloud API.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Section 5: Frequently Asked Questions -->
+    <div style="background: #ffffff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 40px; margin-bottom: 60px;">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <span class="section-tag">Got Questions?</span>
+        <h2 style="font-size: 2rem; font-weight: 800; color: var(--nr-navy-deep);">Frequently Asked Questions</h2>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto;">
+        <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 6px;">Q: How quickly can NextReach DMS launch our campaigns?</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin: 0;">Our average onboarding-to-live timeline is 5 to 7 business days, including technical audit, pixel setup, and first batch video script creation.</p>
+        </div>
+
+        <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 6px;">Q: Do you work with local businesses or only large brands?</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin: 0;">We offer tailored packages for growing local businesses starting at ₹6,500/mo as well as enterprise omnichannel pods for multi-city brands.</p>
+        </div>
+
+        <div style="padding-bottom: 10px;">
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--nr-navy-deep); margin-bottom: 6px;">Q: Who handles video creation and graphic flyers?</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin: 0;">Our in-house production crew handles everything end-to-end: scripting, video editing, audio sync, and graphic flyer design.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA BANNER -->
+    <div class="cta-banner-box">
+      <h2>Ready To Engineer 10x Pipeline Growth?</h2>
+      <p>Schedule a 1-on-1 strategy call with our Senior Growth Directors or claim your free 90-day performance audit today.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 20px;">
+        <a href="audit.html" class="btn-orange" style="padding: 14px 34px;">
+          <span>Request 90-Day Growth Audit →</span>
+        </a>
+        <a href="tel:+917499181193" class="btn-navy-outline" style="padding: 14px 28px; background: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.3);">
+          <span>📞 Call +91 74991 81193</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin-bottom: 16px;">
+            NextReach DMS is an elite performance growth agency & AI revenue engine partnering with B2B, B2C, and D2C brands to build high-ticket pipeline and sustainable market scale.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--nr-navy-main); background: var(--nr-navy-soft); padding: 6px 14px; border-radius: var(--radius-full);">
+            <span>🔒 Enterprise NDA Protected</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Growth Solutions</h4>
+          <ul>
+            <li><a href="services.html">Performance Paid Media</a></li>
+            <li><a href="services.html">Creative Strategy &amp; UGC</a></li>
+            <li><a href="services.html">B2B Outbound Lead Gen</a></li>
+            <li><a href="services.html">Conversion Rate Optimization</a></li>
+            <li><a href="services.html">Full-Funnel Attribution</a></li>
+            <li><a href="services.html">WhatsApp AI Retargeting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company &amp; Framework</h4>
+          <ul>
+            <li><a href="index.html">Growth Engine</a></li>
+            <li><a href="process.html">4-Stage Framework</a></li>
+            <li><a href="case-studies.html">Case Studies &amp; Proof</a></li>
+            <li><a href="about.html">About NextReach DMS</a></li>
+            <li><a href="audit.html">90-Day Free Audit</a></li>
+            <li><a href="contact.html">Contact Growth Directors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul>
+            <li style="font-size: 0.88rem; color: var(--text-muted);"><a href="tel:+917499181193" style="color: inherit;">📞 +91 74991 81193</a></li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">✉️ contact@nextreachdms.com</li>
+            <li style="font-size: 0.88rem; color: var(--text-muted);">📍 Sahakar Nagar, Opp. New Cotton Market, Amravati, Maharashtra 444601</li>
+            <li style="font-size: 0.88rem; color: var(--text-dim); margin-top: 4px;">⏱️ Fast Response: Under 4 Hours</li>
+            
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>NextReach DMS &copy; 2026. All rights reserved. Enterprise Performance Growth Partner.</div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Framework</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="audit.html">Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Support Badge (Exact Design Match) -->
+
+  <!-- ==========================================================================
+       STICKY STRATEGY CALL CTA BAR & FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <!-- Floating WhatsApp Support Badge -->
+  <a href="https://wa.me/917499181193?text=Hi%20NextReach%20DMS%20team,%20I%20would%20like%20to%20request%20a%20growth%20audit." target="_blank" rel="noopener noreferrer" class="whatsapp-support-pill" title="Chat with WhatsApp Support">
+    <div class="wa-pill-icon">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.28-1.92 1.35-.49.07-1.12.1-3.23-.78-2.69-1.12-4.43-3.86-4.57-4.04-.13-.19-1.09-1.45-1.09-2.77s.69-1.96.94-2.23c.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.07.61.57.24.57.81 1.98.88 2.12.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.14-.3.3-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.14.48.12.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.71-.15.29.11 1.84.87 2.16 1.02.31.16.52.24.6.38.07.14.07.82-.17 1.5z"/></svg>
+    </div>
+    <div class="wa-pill-info">
+      <div class="wa-pill-label">WHATSAPP SUPPORT</div>
+      <div class="wa-pill-number">+91 74991 81193</div>
+      <div class="wa-pill-status">Instant reply</div>
+    </div>
+  </a>
+
+    <!-- ==========================================================================
+       MASTER JAVASCRIPT ENGINE (Ultra-Fast 60-120 FPS Lag-Free)
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // --- 1. BRAND PRELOADER ---
+      const preloader = document.getElementById('nrPreloader');
+      const loaderFill = document.getElementById('loaderFill');
+      const loaderPercent = document.getElementById('loaderPercent');
+      let progress = 0;
+
+      const loaderInterval = setInterval(() => {
+        progress += Math.floor(Math.random() * 20) + 15;
+        if (progress > 100) progress = 100;
+        if (loaderFill) loaderFill.style.width = progress + '%';
+        if (loaderPercent) loaderPercent.textContent = progress + '%';
+
+        if (progress >= 100) {
+          clearInterval(loaderInterval);
+          setTimeout(() => {
+            if (preloader) {
+              preloader.classList.add('fade-out');
+              setTimeout(() => preloader.style.display = 'none', 400);
+            }
+          }, 150);
+        }
+      }, 25);
+
+      // --- 2. SCROLL PROGRESS BAR (Passive & RAF Optimized) ---
+      const progressBar = document.getElementById('scrollProgress');
+      let isScrolling = false;
+      window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+          isScrolling = true;
+          requestAnimationFrame(() => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (progressBar && height > 0) progressBar.style.width = ((winScroll / height) * 100) + '%';
+            isScrolling = false;
+          });
+        }
+      }, { passive: true });
+
+      // --- 3. CUSTOM MAGNETIC CURSOR (GPU Hardware-Accelerated) ---
+      const cursorDot = document.getElementById('cursorDot');
+      const cursorAura = document.getElementById('cursorAura');
+      const cursorText = document.getElementById('cursorText');
+
+      if (cursorDot && cursorAura && window.matchMedia('(pointer: fine)').matches) {
+        let mouseX = -100, mouseY = -100, currentX = -100, currentY = -100;
+        let isMoving = false;
+        let isInitialized = false;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isInitialized) {
+            isInitialized = true;
+            cursorDot.classList.add('visible');
+            cursorAura.classList.add('visible');
+            currentX = mouseX;
+            currentY = mouseY;
+          }
+          if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(renderCursor);
+          }
+        }, { passive: true });
+
+        function renderCursor() {
+          currentX += (mouseX - currentX) * 0.3;
+          currentY += (mouseY - currentY) * 0.3;
+          cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          cursorAura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+          if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
+            requestAnimationFrame(renderCursor);
+          } else {
+            isMoving = false;
+          }
+        }
+
+        document.querySelectorAll('a, button, .service-block, .project-card, .timeline-card, .team-card').forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorAura.classList.add('cursor-hover');
+            if (el.classList.contains('project-card') || el.classList.contains('service-block')) {
+              if (cursorText) cursorText.textContent = 'EXPLORE';
+            }
+          }, { passive: true });
+
+          el.addEventListener('mouseleave', () => {
+            cursorAura.classList.remove('cursor-hover');
+            if (cursorText) cursorText.textContent = '';
+          }, { passive: true });
+        });
+      }
+
+      // --- 4. MOBILE MENU TOGGLE ---
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+          const isFlex = navLinks.style.display === 'flex';
+          navLinks.style.display = isFlex ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        });
+      }
+
+    });
+  
+
+      // --- MOBILE DRAWER NAVIGATION ---
+      const mobileBtn = document.getElementById('mobileMenuBtn') || document.querySelector('.mobile-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          navLinks.classList.toggle('mobile-open');
+          const isOpen = navLinks.classList.contains('mobile-open');
+          mobileBtn.innerHTML = isOpen ? '✕' : '☰';
+          mobileBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+            mobileBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            mobileBtn.innerHTML = '☰';
+          });
+        });
+      }
+
+</script>
+  <script src="js/api.js"></script>
+</body>
+</html>
