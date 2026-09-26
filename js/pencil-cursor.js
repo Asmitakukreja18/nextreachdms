@@ -283,13 +283,21 @@
         pBar.style.width = scrollPct + '%';
       }
 
-      scrollVelocity = Math.min(1.6, scrollVelocity * 0.75 + Math.min(dy, 45) * 0.045 + 0.35);
+      // If desktop mouse hasn't moved yet, set a sensible default position
+      if (!isMobile() && (mouseX < 0 || mouseY < 0)) {
+        mouseX = Math.min(window.innerWidth - 120, 600);
+        mouseY = Math.min(window.innerHeight - 150, 450);
+        pencil.style.opacity = '1';
+      }
+
+      // Dynamic velocity kick
+      scrollVelocity = Math.min(2.0, scrollVelocity * 0.82 + Math.min(dy, 50) * 0.05 + 0.45);
       isScrolling = true;
 
       clearTimeout(scrollStopTimer);
       scrollStopTimer = setTimeout(() => {
         isScrolling = false;
-      }, 140);
+      }, 260);
 
       if (!isWaveAnimationRunning) {
         isWaveAnimationRunning = true;
@@ -299,9 +307,9 @@
 
     function renderScrollWaveMotion() {
       if (isScrolling) {
-        wavePhase += 0.22; // Small pleasant wave frequency
+        wavePhase += 0.28; // Active wavy tempo
       } else {
-        scrollVelocity *= 0.86;
+        scrollVelocity *= 0.91; // Smooth gradual dampening
         if (scrollVelocity < 0.015) {
           scrollVelocity = 0;
           isWaveAnimationRunning = false;
@@ -310,26 +318,30 @@
           }
           if (mobileBuddy) {
             mobileBuddy.style.transform = '';
+            mobileBuddy.classList.remove('is-waving');
             mobileBuddy.classList.add('is-idle');
           }
           return;
         }
       }
 
-      // Small wave oscillations
-      const waveAngle = Math.sin(wavePhase) * (13 * scrollVelocity); // tilt wave: ±13 deg
-      const waveY = Math.cos(wavePhase * 0.8) * (4.5 * scrollVelocity); // small vertical wave: ±4.5px
-      const waveX = Math.sin(wavePhase * 0.6) * (3.5 * scrollVelocity); // small lateral sway: ±3.5px
+      // Vivid, playful wave oscillations
+      const intensity = Math.min(1.8, Math.max(0.4, scrollVelocity));
+      const waveAngle = Math.sin(wavePhase) * (20 * intensity); // tilt wave: ±20 deg
+      const waveY = Math.sin(wavePhase * 1.3) * (12 * intensity); // vertical wave bob: ±12px
+      const waveX = Math.cos(wavePhase * 0.9) * (8 * intensity); // lateral sway: ±8px
+      const waveScale = 1 + Math.sin(wavePhase * 2) * 0.06;
 
       // A) Desktop Cursor Wave
       if (!isMobile()) {
         updatePencilPosition(waveX, waveY, waveAngle);
       }
 
-      // B) Mobile Mascot Buddy Wave ("pencil should wave like small waves")
+      // B) Mobile Mascot Buddy Wave ("like wave krte hue when we scroll")
       if (mobileBuddy && isMobile()) {
         mobileBuddy.classList.remove('is-idle');
-        mobileBuddy.style.transform = `translate3d(${waveX}px, ${waveY * 1.4}px, 0) rotate(${waveAngle * 1.1}deg) scale(1.04)`;
+        mobileBuddy.classList.add('is-waving');
+        mobileBuddy.style.transform = `translate3d(${waveX}px, ${waveY}px, 0) rotate(${waveAngle}deg) scale(${waveScale})`;
       }
 
       requestAnimationFrame(renderScrollWaveMotion);
