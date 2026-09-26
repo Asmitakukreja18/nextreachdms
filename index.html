@@ -113,7 +113,7 @@
   <div class="bg-watermark-text" aria-hidden="true">nextreach</div>
 
   <!-- ==========================================================================
-       1. BRAND PRELOADER (Exact Adwali Reference Match - Hand-Drawn Oval Loop)
+       1. BRAND PRELOADER (NextReach DMS Logo & Glowing Orange Spinner Ring)
        ========================================================================== -->
   <style id="nr-preloader-style">
     .nr-preloader {
@@ -134,70 +134,83 @@
       transform: translateY(-20px);
       pointer-events: none;
     }
-    .nr-loader-container {
-      position: relative;
-      display: inline-flex;
+    .nr-loader-brand-card {
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 30px 65px;
+      gap: 16px;
+      text-align: center;
     }
-    .nr-loader-brand-text {
-      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 3.8rem;
-      letter-spacing: -0.055em;
-      color: #111111;
+    .nr-loader-spinner-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nr-loader-spinner-svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: spinOrangeRing 1.3s linear infinite;
+    }
+    @keyframes spinOrangeRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .nr-spinner-ring {
+      stroke-dasharray: 314;
+      stroke-dashoffset: 100;
+      animation: dashOrangeRing 1.6s ease-in-out infinite alternate;
+    }
+    @keyframes dashOrangeRing {
+      0% { stroke-dashoffset: 240; }
+      100% { stroke-dashoffset: 40; }
+    }
+    .nr-loader-logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
       position: relative;
       z-index: 2;
-      user-select: none;
-      line-height: 1;
+      filter: drop-shadow(0 4px 12px rgba(255, 107, 0, 0.15));
     }
-    .nr-loader-dot {
-      color: #FF2A6D;
-      display: inline-block;
-      animation: loaderDotPulse 1s ease-in-out infinite alternate;
+    .nr-loader-tagline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      color: #0F172A;
+      margin-top: 4px;
     }
-    @keyframes loaderDotPulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.25); }
-    }
-    .nr-loader-oval-svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 122%;
-      height: 155%;
-      overflow: visible;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .nr-loader-oval-path {
-      stroke-dasharray: 1200;
-      stroke-dashoffset: 1200;
-      animation: drawLoaderOval 0.95s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.05s;
-    }
-    @keyframes drawLoaderOval {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-    @media (max-width: 768px) {
-      .nr-loader-brand-text {
-        font-size: 2.8rem;
-      }
+    .nr-loader-status-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #FF6B00;
+      letter-spacing: 0.08em;
     }
   </style>
   <div class="nr-preloader" id="nrPreloader">
-    <div class="nr-loader-container">
-      <div class="nr-loader-brand-text">
-        nextreach<span class="nr-loader-dot">.</span>
+    <div class="nr-loader-brand-card">
+      <div class="nr-loader-spinner-wrapper">
+        <svg class="nr-loader-spinner-svg" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="50" stroke="rgba(255, 107, 0, 0.15)" stroke-width="6" />
+          <circle cx="60" cy="60" r="50" stroke="url(#orangeSpinGrad)" stroke-width="6" stroke-linecap="round" class="nr-spinner-ring" />
+          <defs>
+            <linearGradient id="orangeSpinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6B00" />
+              <stop offset="50%" stop-color="#FF2A6D" />
+              <stop offset="100%" stop-color="#FFB800" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <img src="images/logo.png" alt="NextReach DMS Logo" class="nr-loader-logo-img">
       </div>
-      <svg class="nr-loader-oval-svg" viewBox="0 0 380 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="nr-loader-oval-path" 
-              d="M 60 125 C 20 100, 15 50, 70 30 C 130 10, 260 12, 330 35 C 370 50, 375 95, 320 120 C 250 145, 120 148, 40 128 C 15 120, 25 90, 60 65" 
-              stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+      <div class="nr-loader-tagline">NEXTREACH DMS • REVENUE ENGINE</div>
+      <div class="nr-loader-status-text">INITIALIZING GROWTH POD...</div>
     </div>
   </div>
   <script>
@@ -206,13 +219,12 @@
       function hidePreloader() {
         if (pl && !pl.classList.contains('fade-out')) {
           pl.classList.add('fade-out');
-          setTimeout(function() { pl.style.display = 'none'; }, 550);
+          setTimeout(function() { pl.style.display = 'none'; }, 500);
         }
       }
-      // Wait for oval animation (0.95s) + slight hold
-      setTimeout(hidePreloader, 1100);
+      setTimeout(hidePreloader, 1200);
       window.addEventListener('load', function() {
-        setTimeout(hidePreloader, 1000);
+        setTimeout(hidePreloader, 900);
       });
     })();
   </script>
@@ -2175,7 +2187,7 @@
         <div class="footer-col footer-col-brand">
           <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
           <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; max-width: 320px; margin-bottom: 18px;">
-            Full-service performance growth agency &amp; AI revenue engine partnering with B2B, B2C &amp; D2C brands to build high-ticket pipeline. Har brand ki NextReach baat.
+            Full-service performance growth agency &amp; AI revenue engine partnering with B2B, B2C &amp; D2C brands to build high-ticket pipeline. Har brand ki <span style="color: #FF6B00; font-weight: 800; background: rgba(255,107,0,0.18); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(255,107,0,0.4);">NextReach</span> baat.
           </p>
           <div class="footer-nda-pill">
             <span>🔒 Enterprise NDA Protected</span>

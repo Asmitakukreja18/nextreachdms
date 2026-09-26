@@ -6547,11 +6547,11 @@ body {
    20. EXACT ADWALI FOOTER REFERENCE MATCH & COMPACT DETAILED CARDS SYSTEM
    ========================================================================== */
 
-/* A. Dark Charcoal Footer Container & Hand-Drawn Amravati Skyline Divider */
+/* A. Deep Royal Navy Blue Footer Container & Hand-Drawn Amravati Skyline Divider */
 .site-footer {
-  background: #111315 !important;
+  background: #001736 !important;
   color: #FFFFFF !important;
-  border-top: 2.5px solid #1A1D20 !important;
+  border-top: 3.5px solid #FF6B00 !important;
   padding: 0 0 30px 0 !important;
   margin-top: 60px !important;
   position: relative !important;
@@ -6559,8 +6559,8 @@ body {
 
 .footer-skyline-divider {
   width: 100% !important;
-  height: 75px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 75' preserveAspectRatio='none'%3E%3Cline x1='0' y1='73' x2='1200' y2='73' stroke='rgba(255,255,255,0.25)' stroke-width='1.5'/%3E%3Cpath d='M 0 73 L 40 73 L 40 50 L 80 50 L 80 73 L 120 73 L 120 38 L 135 38 A 15 15 0 0 1 165 38 L 180 38 L 180 73 L 220 73 L 220 52 L 260 52 L 260 73 L 300 73 L 300 32 L 320 32 A 20 20 0 0 1 360 32 L 380 32 L 380 73 L 420 73 L 420 46 L 460 46 L 460 73 L 500 73 L 500 28 L 525 28 A 25 25 0 0 1 575 28 L 600 28 L 600 73 L 640 73 L 640 50 L 680 50 L 680 73 L 720 73 L 720 35 L 740 35 A 20 20 0 0 1 780 35 L 800 35 L 800 73 L 840 73 L 840 50 L 880 50 L 880 73 L 920 73 L 920 38 L 935 38 A 15 15 0 0 1 965 38 L 980 38 L 980 73 L 1020 73 L 1020 50 L 1060 50 L 1060 73 L 1100 73 L 1100 40 L 1140 40 L 1140 73 L 1200 73' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolygon points='550,6 578,14 550,22' fill='%23FF2A6D' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Cline x1='550' y1='6' x2='550' y2='28' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M 138 73 L 138 54 A 12 12 0 0 1 162 54 L 162 73 M 322 73 L 322 48 A 18 18 0 0 1 358 48 L 358 73 M 530 73 L 530 42 A 20 20 0 0 1 570 42 L 570 73 M 738 73 L 738 50 A 12 12 0 0 1 762 50 L 762 73 M 938 73 L 938 54 A 12 12 0 0 1 962 54 L 962 73' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='1.4'/%3E%3C/svg%3E") !important;
+  height: 95px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 95' preserveAspectRatio='none'%3E%3Cline x1='0' y1='93' x2='1200' y2='93' stroke='rgba(255,255,255,0.35)' stroke-width='2'/%3E%3Cpath d='M 0 93 L 40 93 L 40 60 L 80 60 L 80 93 L 120 93 L 120 45 L 135 45 A 15 15 0 0 1 165 45 L 180 45 L 180 93 L 220 93 L 220 65 L 260 65 L 260 93 L 300 93 L 300 38 L 320 38 A 20 20 0 0 1 360 38 L 380 38 L 380 93 L 420 93 L 420 56 L 460 56 L 460 93 L 500 93 L 500 32 L 525 32 A 25 25 0 0 1 575 32 L 600 32 L 600 93 L 640 93 L 640 60 L 680 60 L 680 93 L 720 93 L 720 42 L 740 42 A 20 20 0 0 1 780 42 L 800 42 L 800 93 L 840 93 L 840 60 L 880 60 L 880 93 L 920 93 L 920 45 L 935 45 A 15 15 0 0 1 965 45 L 980 45 L 980 93 L 1020 93 L 1020 60 L 1060 60 L 1060 93 L 1100 93 L 1100 48 L 1140 48 L 1140 93 L 1200 93' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolygon points='550,6 584,17 550,28' fill='%23FF2A6D' stroke='%23FFFFFF' stroke-width='1.8'/%3E%3Cline x1='550' y1='6' x2='550' y2='34' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M 138 93 L 138 68 A 12 12 0 0 1 162 68 L 162 93 M 322 93 L 322 60 A 18 18 0 0 1 358 60 L 358 93 M 530 93 L 530 52 A 20 20 0 0 1 570 52 L 570 93 M 738 93 L 738 62 A 12 12 0 0 1 762 62 L 762 93 M 938 93 L 938 68 A 12 12 0 0 1 962 68 L 962 93' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.6'/%3E%3C/svg%3E") !important;
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   margin-bottom: 30px !important;
@@ -6782,7 +6782,7 @@ body {
 }
 
 .badge-bottom-right {
-  bottom: 34px !important;
+  bottom: 56px !important;
   right: 14px !important;
   transform: rotate(-1.5deg) !important;
 }
@@ -6814,14 +6814,16 @@ body {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding-top: 10px !important;
-  margin-top: 8px !important;
-  border-top: 1.5px dashed rgba(26, 29, 32, 0.2) !important;
+  padding-top: 14px !important;
+  margin-top: 18px !important;
+  border-top: 1.5px dashed rgba(26, 29, 32, 0.25) !important;
   font-size: 0.75rem !important;
   font-weight: 800 !important;
   color: #1A1D20 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 /* ==========================================================================
@@ -7884,12 +7886,52 @@ body {
     display: inline-block !important;
     margin: 6px 4px !important;
   }
-  .mahal-scene-caption {
-    font-size: 0.65rem !important;
-    flex-direction: column !important;
-    gap: 4px !important;
-    text-align: center !important;
-  }
+/* Explicit Proof Bar Layout (Prevent Avatar Text Overlap) */
+.client-proof-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin-top: 28px !important;
+  flex-wrap: wrap !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.avatar-stack {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.avatar-stack img {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 2.5px solid #FFFFFF !important;
+  margin-left: -14px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12) !important;
+  object-fit: cover !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.avatar-stack img:first-child {
+  margin-left: 0 !important;
+}
+
+.proof-text {
+  font-size: 0.9rem !important;
+  color: #475569 !important;
+  line-height: 1.5 !important;
+  margin-left: 4px !important;
+  max-width: 380px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.proof-text strong {
+  color: #0F172A !important;
+  font-weight: 800 !important;
 }
 
 
