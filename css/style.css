@@ -7383,6 +7383,357 @@ body {
   }
 }
 
+/* ==========================================================================
+   23. PROCESS SINE PATH, NOTEBOOK MENU SHEET, DARK MANIFESTO & SPECIALS
+   ========================================================================== */
+
+/* A. 5-Stage Curved Sine Wave Process Path */
+.curved-path-wrapper {
+  position: relative !important;
+  padding: 40px 0 !important;
+  margin-top: 20px !important;
+}
+
+.process-sine-svg {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.process-steps-staggered {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 16px !important;
+  position: relative !important;
+  margin-top: -120px !important;
+  z-index: 2 !important;
+}
+
+.process-card-step {
+  background: #FFFFFF !important;
+  border: 2px solid #1A1D20 !important;
+  box-shadow: 4px 4px 0px #1A1D20 !important;
+  padding: 16px 14px !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  transition: transform 0.2s ease !important;
+}
+
+.process-card-step:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 6px 6px 0px #FF6B00 !important;
+}
+
+.step-num-badge {
+  width: 32px !important;
+  height: 32px !important;
+  border: 2px solid #1A1D20 !important;
+  border-radius: 50% !important;
+  background: #FFE600 !important;
+  color: #1A1D20 !important;
+  font-weight: 900 !important;
+  font-size: 0.95rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important;
+}
+
+.badge-pink {
+  background: #FF2A6D !important;
+  color: #FFFFFF !important;
+}
+
+.process-card-step h4 {
+  font-size: 1.05rem !important;
+  font-weight: 900 !important;
+  color: #1A1D20 !important;
+  margin-bottom: 6px !important;
+}
+
+.process-card-step p {
+  font-size: 0.8rem !important;
+  color: #475569 !important;
+  line-height: 1.45 !important;
+  font-weight: 600 !important;
+}
+
+/* B. Drawn To Order Notebook Paper Menu Sheet */
+.notebook-menu-sheet {
+  background: #FFFDF9 !important;
+  border: 2.2px solid #1A1D20 !important;
+  box-shadow: 6px 6px 0px #1A1D20 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  display: flex !important;
+  gap: 20px !important;
+  margin-bottom: 40px !important;
+  position: relative !important;
+}
+
+.notebook-holes-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  font-size: 1.2rem !important;
+  color: #94A3B8 !important;
+  border-right: 1.5px dashed #CBD5E1 !important;
+  padding-right: 14px !important;
+}
+
+.notebook-sheet-body {
+  flex: 1 !important;
+}
+
+.sheet-sub-head {
+  font-size: 0.72rem !important;
+  font-weight: 900 !important;
+  color: #94A3B8 !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 18px !important;
+  border-bottom: 2px solid #1A1D20 !important;
+  padding-bottom: 8px !important;
+}
+
+.notebook-menu-rows {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.menu-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1.5px dotted #CBD5E1 !important;
+  padding-bottom: 10px !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.m-num {
+  font-size: 0.88rem !important;
+  font-weight: 900 !important;
+  color: #FF2A6D !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  width: 28px !important;
+}
+
+.m-name {
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  color: #1A1D20 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.m-badge-hot {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  color: #FF2A6D !important;
+  background: #FFE4E6 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  text-transform: lowercase !important;
+}
+
+.m-badge-pink {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  color: #1A1D20 !important;
+  background: #FFE600 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  text-transform: lowercase !important;
+}
+
+.m-desc {
+  font-size: 0.85rem !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+/* C. Dark Brand Manifesto Section & Moving Bus Road */
+.manifesto-dark-section {
+  background: #111315 !important;
+  color: #FFFFFF !important;
+  border-top: 2.5px solid #1A1D20 !important;
+  border-bottom: 2.5px solid #1A1D20 !important;
+  padding: 80px 0 40px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.relative-z {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.manifesto-pencil-doodle {
+  position: absolute !important;
+  top: -40px !important;
+  left: 20px !important;
+  font-size: 2rem !important;
+  transform: rotate(-25deg) !important;
+}
+
+.manifesto-star-badge {
+  position: absolute !important;
+  top: -40px !important;
+  right: 20px !important;
+  background: #1A1D20 !important;
+  border: 1.8px stroke #FFFFFF !important;
+  color: #FFE600 !important;
+  font-weight: 900 !important;
+  font-size: 0.82rem !important;
+  padding: 6px 14px !important;
+  border-radius: 30px !important;
+  box-shadow: 2px 2px 0px #FF6B00 !important;
+  transform: rotate(8deg) !important;
+}
+
+.manifesto-giant-title {
+  font-size: 3rem !important;
+  font-weight: 900 !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 24px !important;
+}
+
+.white-highlight {
+  color: #FFFFFF !important;
+  border-bottom: 4px solid #FF6B00 !important;
+}
+
+.manifesto-paragraph {
+  font-size: 1.15rem !important;
+  line-height: 1.7 !important;
+  color: #CBD5E1 !important;
+  max-width: 780px !important;
+  margin: 0 auto 30px auto !important;
+  font-weight: 500 !important;
+}
+
+.yellow-text-bg {
+  color: #1A1D20 !important;
+  background: #FFE600 !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-weight: 800 !important;
+}
+
+.manifesto-divider-line {
+  width: 240px !important;
+  height: 2px !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  margin: 0 auto 16px auto !important;
+}
+
+.manifesto-sub-tagline {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.85rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  letter-spacing: 0.05em !important;
+}
+
+.dashed-road-line-wrap {
+  width: 100% !important;
+  position: relative !important;
+  margin-top: 50px !important;
+  padding-top: 20px !important;
+}
+
+.dashed-road-line {
+  width: 100% !important;
+  height: 2px !important;
+  border-top: 2px dashed rgba(255, 255, 255, 0.35) !important;
+}
+
+.moving-road-bus {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 60px !important;
+  animation: roadBusMove 18s linear infinite !important;
+}
+
+@keyframes roadBusMove {
+  0% { transform: translateX(100px); }
+  100% { transform: translateX(-1000px); }
+}
+
+/* D. Brand Values & Today's Specials Section */
+.specials-quote-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr !important;
+  gap: 36px !important;
+  align-items: center !important;
+  margin-top: 30px !important;
+}
+
+.specials-quote-card {
+  background: #FFFDF9 !important;
+  border: 2.2px solid #1A1D20 !important;
+  box-shadow: 6px 6px 0px #1A1D20 !important;
+  padding: 30px !important;
+  border-radius: 18px !important;
+  position: relative !important;
+}
+
+.quote-mark-icon {
+  font-size: 3.5rem !important;
+  font-family: Georgia, serif !important;
+  color: #CBD5E1 !important;
+  line-height: 0.8 !important;
+  margin-bottom: 10px !important;
+}
+
+.specials-quote-text {
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #1A1D20 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 16px !important;
+}
+
+.quote-page-sub {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #64748B !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+@media (max-width: 992px) {
+  .process-steps-staggered {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin-top: 0 !important;
+  }
+
+  .process-sine-svg {
+    display: none !important;
+  }
+
+  .specials-quote-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .manifesto-giant-title {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-steps-staggered {
+    grid-template-columns: 1fr !important;
+  }
+
+  .manifesto-giant-title {
+    font-size: 1.85rem !important;
+  }
+}
+
+
 
 
 
