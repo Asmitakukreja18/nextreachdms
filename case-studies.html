@@ -164,49 +164,7 @@
 </head>
 <body>
 
-  <!-- ==========================================================================
-       1. BRAND PRELOADER
-       ========================================================================== -->
-  <div class="nr-preloader" id="nrPreloader">
-    <div class="nr-loader-brand">
-      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
-      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
-      <div class="nr-loader-bar">
-        <div class="nr-loader-fill" id="loaderFill"></div>
-      </div>
-      <div class="nr-loader-percent" id="loaderPercent">0%</div>
-    </div>
-  </div>
-  <script>
-    (function() {
-      var p = 0;
-      var f = document.getElementById('loaderFill');
-      var t = document.getElementById('loaderPercent');
-      var pl = document.getElementById('nrPreloader');
-      var iv = setInterval(function() {
-        p += Math.floor(Math.random() * 25) + 15;
-        if (p > 100) p = 100;
-        if (f) f.style.width = p + '%';
-        if (t) t.textContent = p + '%';
-        if (p >= 100) {
-          clearInterval(iv);
-          setTimeout(function() {
-            if (pl) {
-              pl.classList.add('fade-out');
-              setTimeout(function() { pl.style.display = 'none'; }, 300);
-            }
-          }, 80);
-        }
-      }, 20);
-      setTimeout(function() {
-        clearInterval(iv);
-        if (pl) {
-          pl.classList.add('fade-out');
-          setTimeout(function() { pl.style.display = 'none'; }, 200);
-        }
-      }, 700);
-    })();
-  </script>
+
 
   <!-- ==========================================================================
        2. SCROLL PROGRESS BAR & CUSTOM CURSOR
@@ -383,15 +341,16 @@
     
     <!-- Filter Bar -->
     <div class="project-filter-bar">
-      <button class="project-filter-btn active" data-filter="all">⚡ All Client Projects (7)</button>
+      <button class="project-filter-btn active" data-filter="all">⚡ All Client Projects (8)</button>
       <button class="project-filter-btn" data-filter="retail">📱 Retail &amp; Devices</button>
       <button class="project-filter-btn" data-filter="fashion">👗 Ethnic Fashion</button>
       <button class="project-filter-btn" data-filter="automotive">🚗 Automotive Detailing</button>
       <button class="project-filter-btn" data-filter="travel">✈️ Travel &amp; AI</button>
       <button class="project-filter-btn" data-filter="pharma">🏥 Global Pharma</button>
+      <button class="project-filter-btn" data-filter="cpaas">💬 WhatsApp &amp; CPaaS</button>
     </div>
 
-    <!-- 7 Flagship Client Projects Grid -->
+    <!-- 8 Flagship Client Projects Grid -->
     <div class="project-showcase-grid" id="projectGrid">
       
       <!-- 1. Siddhi Marketing -->
@@ -709,7 +668,6 @@
           <div class="project-deliverables">
             <span class="deliv-pill">B2B Sourcing Portal</span>
             <span class="deliv-pill">WHO-GMP Directory</span>
-            <span class="deliv-pill">Bulk RFQ Engine</span>
             <span class="deliv-pill">WhatsApp Export Desk</span>
             <span class="deliv-pill">Global Inbound SEO</span>
           </div>
@@ -719,6 +677,54 @@
               <span>↗</span>
             </a>
             <a href="case-study.html?p=medex" class="project-learn-btn" style="margin-top: 0;">
+              <span>📖 Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Marketiqx WhatsApp Automation -->
+      <div class="project-card tilt-card" data-category="cpaas">
+        <div class="project-thumb-box">
+          <img src="images/work-marketiqx.png" alt="Marketiqx WhatsApp Marketing and CPaaS" class="project-thumb-img">
+          <div class="project-thumb-overlay">
+            <span class="project-industry-tag">💬 WhatsApp Cloud API &amp; CPaaS</span>
+          </div>
+          <span class="project-stat-badge">⚡ 100k+ Messages/Hour</span>
+        </div>
+        <div class="project-body">
+          <h2 class="project-title">Marketiqx: Enterprise WhatsApp Marketing &amp; Meta Business Automation</h2>
+          <p class="project-desc">
+            High-throughput WhatsApp Meta Business API automation platform with SmartQueue anti-drop delivery, bulk campaigns, dynamic interactive lists, and real-time CRM webhooks.
+          </p>
+          <div class="project-metrics-row">
+            <div>
+              <div class="p-metric-val">+420%</div>
+              <div class="p-metric-lbl">Delivery Rate</div>
+            </div>
+            <div>
+              <div class="p-metric-val">100k+</div>
+              <div class="p-metric-lbl">Msgs / Hour</div>
+            </div>
+            <div>
+              <div class="p-metric-val">99.2%</div>
+              <div class="p-metric-lbl">Inbox Success</div>
+            </div>
+          </div>
+          <div class="project-deliverables">
+            <span class="deliv-pill">Cloud API Hub</span>
+            <span class="deliv-pill">SmartQueue Engine</span>
+            <span class="deliv-pill">CRM Webhooks</span>
+            <span class="deliv-pill">Bulk Broadcasts</span>
+            <span class="deliv-pill">Meta Verified</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://whatsappmarketing-g1wc.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-visit-live">
+              <span>🌐 Launch Live Website</span>
+              <span>↗</span>
+            </a>
+            <a href="whatsapp-marketing-services.html" class="project-learn-btn" style="margin-top: 0;">
               <span>📖 Case Study</span>
               <span>→</span>
             </a>
