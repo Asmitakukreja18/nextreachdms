@@ -8345,4 +8345,112 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 20px rgba(255, 107, 0, 0.45) !important;
 }
+
+/* ==========================================================================
+   23. TOP RESPONSIVE SCROLL PROGRESS TRACK & WAVING PENCIL RIDER
+   ========================================================================== */
+.scroll-progress-track {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 4px !important;
+  background: rgba(26, 29, 32, 0.08) !important;
+  border-bottom: 1px solid rgba(26, 29, 32, 0.12) !important;
+  z-index: 999995 !important;
+  pointer-events: none !important;
+}
+
+.scroll-progress-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: #17110F !important;
+  position: relative !important;
+  will-change: width;
+}
+
+.scroll-pencil-rider {
+  position: absolute !important;
+  right: -15px !important;
+  top: -13px !important;
+  width: 30px !important;
+  height: 30px !important;
+  pointer-events: none !important;
+  transform-origin: 26px 4px !important;
+  will-change: transform;
+  filter: drop-shadow(1px 2px 5px rgba(23, 17, 15, 0.35)) !important;
+  transition: transform 0.06s ease-out;
+}
+
+.scroll-pencil-rider svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.scroll-track-arrow {
+  position: absolute !important;
+  right: 0 !important;
+  top: -6px !important;
+  font-size: 11px !important;
+  color: #17110F !important;
+  line-height: 1 !important;
+  opacity: 0.65 !important;
+}
+
+/* Responsive mobile & tablet layout enhancements */
+@media (max-width: 991px) {
+  #handDrawnPencil,
+  #pencilTrailCanvas {
+    display: none !important;
+  }
+
+  .scroll-progress-track {
+    height: 3px !important;
+  }
+
+  .scroll-pencil-rider {
+    width: 24px !important;
+    height: 24px !important;
+    right: -12px !important;
+    top: -10px !important;
+  }
+
+  .scroll-pencil-rider svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .scroll-track-arrow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-description {
+    font-size: 0.95rem !important;
+  }
+
+  .client-proof-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .project-card-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .btn-visit-live {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
 

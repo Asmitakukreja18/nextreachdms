@@ -12,19 +12,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=106.0">
+  <link rel="stylesheet" href="css/style.css?v=107.0">
 
   <!-- Native Cute Cartoon Pencil Cursor Fallback -->
   <style>
     html, body {
-      cursor: url('images/cute-pencil-cursor.svg?v=106.0') 42 6, auto;
+      cursor: url('images/cute-pencil-cursor.svg?v=107.0') 42 6, auto;
     }
     a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, 
     input[type="submit"], input[type="button"], select, .theme-toggle-btn {
-      cursor: url('images/cute-pencil-cursor-hover.svg?v=106.0') 42 6, pointer;
+      cursor: url('images/cute-pencil-cursor-hover.svg?v=107.0') 42 6, pointer;
     }
     input[type="text"], input[type="email"], input[type="tel"], textarea {
-      cursor: url('images/cute-pencil-cursor.svg?v=106.0') 42 6, text;
+      cursor: url('images/cute-pencil-cursor.svg?v=107.0') 42 6, text;
     }
   </style>
 
@@ -265,7 +265,24 @@
   <!-- ==========================================================================
        2. SCROLL PROGRESS BAR, CUSTOM CURSOR & HAND-DRAWN LIVE WRITING PENCIL
        ========================================================================== -->
-  <div class="scroll-progress-bar" id="scrollProgress"></div>
+  <!-- Top Responsive Scroll Progress Bar with Waving Pencil Rider & Guide Arrow -->
+  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
+    <div class="scroll-progress-fill" id="scrollProgress">
+      <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling...">
+        <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 8 36 L 27 17 L 33 23 L 14 42 Z" fill="rgba(23, 17, 15, 0.18)" />
+          <polygon points="8,34 13,29 19,35 14,40" fill="#FFB800" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <polygon points="13,29 27,15 33,21 19,35" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="17.7" y1="24.3" x2="23.7" y2="30.3" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="22.3" y1="19.7" x2="28.3" y2="25.7" stroke="#17110F" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="21" cy="25" r="1.4" fill="#17110F" opacity="0.65"/>
+          <polygon points="27,15 36,9.6 38.4,12 33,21" fill="#FFFFFF" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <polygon points="36,9.6 42,6 38.4,12" fill="#FF2A6D" stroke="#17110F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+    <div class="scroll-track-arrow">►</div>
+  </div>
 
   <!-- Real-Time Hand-Drawn Smooth Curved Pencil Writing Canvas Overlay -->
   <canvas id="pencilTrailCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999990;"></canvas>
@@ -3411,7 +3428,7 @@
       }
     });
   </script>
-  <script src="js/api.js?v=106.0"></script>
-  <script src="js/pencil-cursor.js?v=106.0"></script>
+  <script src="js/api.js?v=107.0"></script>
+  <script src="js/pencil-cursor.js?v=107.0"></script>
 </body>
 </html>
