@@ -6559,8 +6559,8 @@ body {
 
 .footer-skyline-divider {
   width: 100% !important;
-  height: 55px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cline x1='0' y1='58' x2='1200' y2='58' stroke='rgba(255,255,255,0.25)' stroke-width='1.5'/%3E%3Cpath d='M 0 58 L 40 58 L 40 38 L 80 38 L 80 58 L 120 58 L 120 28 L 135 28 A 15 15 0 0 1 165 28 L 180 28 L 180 58 L 220 58 L 220 42 L 260 42 L 260 58 L 300 58 L 300 24 L 320 24 A 20 20 0 0 1 360 24 L 380 24 L 380 58 L 420 58 L 420 36 L 460 36 L 460 58 L 500 58 L 500 20 L 525 20 A 25 25 0 0 1 575 20 L 600 20 L 600 58 L 640 58 L 640 38 L 680 38 L 680 58 L 720 58 L 720 25 L 740 25 A 20 20 0 0 1 780 25 L 800 25 L 800 58 L 840 58 L 840 40 L 880 40 L 880 58 L 920 58 L 920 28 L 935 28 A 15 15 0 0 1 965 28 L 980 28 L 980 58 L 1020 58 L 1020 38 L 1060 38 L 1060 58 L 1100 58 L 1100 30 L 1140 30 L 1140 58 L 1200 58' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M 550 20 L 550 5 L 565 10 L 550 15' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='1.5'/%3E%3Cpath d='M 138 58 L 138 42 A 12 12 0 0 1 162 42 L 162 58 M 322 58 L 322 38 A 18 18 0 0 1 358 38 L 358 58 M 530 58 L 530 32 A 20 20 0 0 1 570 32 L 570 58 M 738 58 L 738 40 A 12 12 0 0 1 762 40 L 762 58 M 938 58 L 938 42 A 12 12 0 0 1 962 42 L 962 58' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='1.4'/%3E%3C/svg%3E") !important;
+  height: 75px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 75' preserveAspectRatio='none'%3E%3Cline x1='0' y1='73' x2='1200' y2='73' stroke='rgba(255,255,255,0.25)' stroke-width='1.5'/%3E%3Cpath d='M 0 73 L 40 73 L 40 50 L 80 50 L 80 73 L 120 73 L 120 38 L 135 38 A 15 15 0 0 1 165 38 L 180 38 L 180 73 L 220 73 L 220 52 L 260 52 L 260 73 L 300 73 L 300 32 L 320 32 A 20 20 0 0 1 360 32 L 380 32 L 380 73 L 420 73 L 420 46 L 460 46 L 460 73 L 500 73 L 500 28 L 525 28 A 25 25 0 0 1 575 28 L 600 28 L 600 73 L 640 73 L 640 50 L 680 50 L 680 73 L 720 73 L 720 35 L 740 35 A 20 20 0 0 1 780 35 L 800 35 L 800 73 L 840 73 L 840 50 L 880 50 L 880 73 L 920 73 L 920 38 L 935 38 A 15 15 0 0 1 965 38 L 980 38 L 980 73 L 1020 73 L 1020 50 L 1060 50 L 1060 73 L 1100 73 L 1100 40 L 1140 40 L 1140 73 L 1200 73' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolygon points='550,6 578,14 550,22' fill='%23FF2A6D' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Cline x1='550' y1='6' x2='550' y2='28' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M 138 73 L 138 54 A 12 12 0 0 1 162 54 L 162 73 M 322 73 L 322 48 A 18 18 0 0 1 358 48 L 358 73 M 530 73 L 530 42 A 20 20 0 0 1 570 42 L 570 73 M 738 73 L 738 50 A 12 12 0 0 1 762 50 L 762 73 M 938 73 L 938 54 A 12 12 0 0 1 962 54 L 962 73' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='1.4'/%3E%3C/svg%3E") !important;
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   margin-bottom: 30px !important;
@@ -7820,9 +7820,76 @@ body {
   animation: driverHeadNod 1.2s ease-in-out infinite alternate;
 }
 
-@keyframes driverHeadNod {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-1.2px); }
+/* Signature Hand-Drawn Animated Pencil Badge */
+.signature-pencil-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #FFFDF9 !important;
+  border: 2px solid #1A1D20 !important;
+  box-shadow: 3.5px 3.5px 0px #1A1D20 !important;
+  padding: 6px 16px !important;
+  border-radius: 30px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #1A1D20 !important;
+  margin-bottom: 14px !important;
+  animation: pencilWiggleBadge 3.2s infinite ease-in-out alternate !important;
+}
+
+@keyframes pencilWiggleBadge {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(-1.8deg); }
+  100% { transform: translateY(1px) rotate(1.2deg); }
+}
+
+/* Mobile & Tablet Responsiveness Enhancements */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .grand-mahal-hero-scene {
+    margin-top: 16px !important;
+    width: 100% !important;
+  }
+  .mahal-metric-badge {
+    padding: 6px 10px !important;
+  }
+  .mahal-metric-badge .badge-number {
+    font-size: 0.92rem !important;
+  }
+  .mahal-metric-badge .badge-label {
+    font-size: 0.64rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .footer-skyline-divider {
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mahal-metric-badge {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: inline-block !important;
+    margin: 6px 4px !important;
+  }
+  .mahal-scene-caption {
+    font-size: 0.65rem !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    text-align: center !important;
+  }
 }
 
 
