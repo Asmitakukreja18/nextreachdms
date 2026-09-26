@@ -113,46 +113,107 @@
   <div class="bg-watermark-text" aria-hidden="true">nextreach</div>
 
   <!-- ==========================================================================
-       1. BRAND PRELOADER
+       1. BRAND PRELOADER (Exact Adwali Reference Match - Hand-Drawn Oval Loop)
        ========================================================================== -->
+  <style id="nr-preloader-style">
+    .nr-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #FFFDF9;
+      z-index: 9999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nr-preloader.fade-out {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+    }
+    .nr-loader-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 65px;
+    }
+    .nr-loader-brand-text {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 3.8rem;
+      letter-spacing: -0.055em;
+      color: #111111;
+      position: relative;
+      z-index: 2;
+      user-select: none;
+      line-height: 1;
+    }
+    .nr-loader-dot {
+      color: #FF2A6D;
+      display: inline-block;
+      animation: loaderDotPulse 1s ease-in-out infinite alternate;
+    }
+    @keyframes loaderDotPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.25); }
+    }
+    .nr-loader-oval-svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 122%;
+      height: 155%;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .nr-loader-oval-path {
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      animation: drawLoaderOval 0.95s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.05s;
+    }
+    @keyframes drawLoaderOval {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      .nr-loader-brand-text {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
   <div class="nr-preloader" id="nrPreloader">
-    <div class="nr-loader-brand">
-      <img src="images/logo.png" alt="NextReach Logo" style="height: 60px; margin-bottom: 20px;">
-      <div class="nr-loader-title">INITIALIZING REVENUE ENGINE</div>
-      <div class="nr-loader-bar">
-        <div class="nr-loader-fill" id="loaderFill"></div>
+    <div class="nr-loader-container">
+      <div class="nr-loader-brand-text">
+        nextreach<span class="nr-loader-dot">.</span>
       </div>
-      <div class="nr-loader-percent" id="loaderPercent">0%</div>
+      <svg class="nr-loader-oval-svg" viewBox="0 0 380 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="nr-loader-oval-path" 
+              d="M 60 125 C 20 100, 15 50, 70 30 C 130 10, 260 12, 330 35 C 370 50, 375 95, 320 120 C 250 145, 120 148, 40 128 C 15 120, 25 90, 60 65" 
+              stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
     </div>
   </div>
   <script>
     (function() {
-      var p = 0;
-      var f = document.getElementById('loaderFill');
-      var t = document.getElementById('loaderPercent');
       var pl = document.getElementById('nrPreloader');
-      var iv = setInterval(function() {
-        p += Math.floor(Math.random() * 25) + 15;
-        if (p > 100) p = 100;
-        if (f) f.style.width = p + '%';
-        if (t) t.textContent = p + '%';
-        if (p >= 100) {
-          clearInterval(iv);
-          setTimeout(function() {
-            if (pl) {
-              pl.classList.add('fade-out');
-              setTimeout(function() { pl.style.display = 'none'; }, 300);
-            }
-          }, 80);
-        }
-      }, 20);
-      setTimeout(function() {
-        clearInterval(iv);
-        if (pl) {
+      function hidePreloader() {
+        if (pl && !pl.classList.contains('fade-out')) {
           pl.classList.add('fade-out');
-          setTimeout(function() { pl.style.display = 'none'; }, 200);
+          setTimeout(function() { pl.style.display = 'none'; }, 550);
         }
-      }, 700);
+      }
+      // Wait for oval animation (0.95s) + slight hold
+      setTimeout(hidePreloader, 1100);
+      window.addEventListener('load', function() {
+        setTimeout(hidePreloader, 1000);
+      });
     })();
   </script>
 
