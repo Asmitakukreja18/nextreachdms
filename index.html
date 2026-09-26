@@ -997,8 +997,38 @@
     <!-- Hand-Drawn Wavy Sine Wave Path Container -->
     <div class="curved-path-wrapper">
       <svg viewBox="0 0 1100 240" fill="none" class="process-sine-svg">
-        <path d="M 50 180 Q 200 40, 320 180 T 600 180 T 880 180 T 1050 120" stroke="#1A1D20" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M 50 180 Q 200 40, 320 180 T 600 180 T 880 180 T 1050 120" stroke="#1A1D20" stroke-width="3.5" stroke-dasharray="8 6" stroke-linecap="round" fill="none"/>
       </svg>
+
+      <!-- Animated Growth Vehicle Driving Along Process Path -->
+      <div class="process-driving-bus-wrap">
+        <svg width="68" height="42" viewBox="0 0 145 90" fill="none" class="process-bus-svg">
+          <g class="vehicle-chassis-bounce">
+            <rect x="20" y="25" width="115" height="48" rx="10" fill="#FFFDF9" stroke="#1A1D20" stroke-width="2.8"/>
+            <rect x="52" y="31" width="55" height="22" rx="3" fill="#FFFFFF" stroke="#1A1D20" stroke-width="2"/>
+            <circle cx="80" cy="40" r="5.5" stroke="#1A1D20" stroke-width="1.5" fill="#FFFDF9"/>
+            <path d="M 77 43 Q 80 45, 83 43" stroke="#1A1D20" stroke-width="1.2" fill="none"/>
+            <circle cx="20" cy="48" r="4.5" fill="#FFE600" stroke="#1A1D20" stroke-width="1.8"/>
+            <text x="36" y="64" fill="#1A1D20" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="900">NextReach • MH 27</text>
+            <polygon points="56,16 68,19 56,22" fill="#FF2A6D" stroke="#1A1D20" stroke-width="1"/>
+            <line x1="56" y1="16" x2="56" y2="25" stroke="#1A1D20" stroke-width="1.5"/>
+          </g>
+          <g class="vehicle-wheel front-wheel" transform="translate(42, 73)">
+            <circle cx="0" cy="0" r="13" fill="#FFFDF9" stroke="#1A1D20" stroke-width="2.5"/>
+            <g class="wheel-spokes">
+              <line x1="-13" y1="0" x2="13" y2="0" stroke="#1A1D20" stroke-width="1.2"/>
+              <line x1="0" y1="-13" x2="0" y2="13" stroke="#1A1D20" stroke-width="1.2"/>
+            </g>
+          </g>
+          <g class="vehicle-wheel back-wheel" transform="translate(108, 73)">
+            <circle cx="0" cy="0" r="13" fill="#FFFDF9" stroke="#1A1D20" stroke-width="2.5"/>
+            <g class="wheel-spokes">
+              <line x1="-13" y1="0" x2="13" y2="0" stroke="#1A1D20" stroke-width="1.2"/>
+              <line x1="0" y1="-13" x2="0" y2="13" stroke="#1A1D20" stroke-width="1.2"/>
+            </g>
+          </g>
+        </svg>
+      </div>
 
       <div class="process-steps-staggered">
         <!-- Step 1 -->
@@ -1440,15 +1470,65 @@
       <div class="dashed-road-line-wrap">
         <div class="dashed-road-line"></div>
         <div class="moving-road-bus">
-          <svg width="70" height="40" viewBox="0 0 70 40" fill="none">
-            <rect x="8" y="8" width="54" height="22" rx="5" fill="#FFFDF9" stroke="#FFFFFF" stroke-width="1.8"/>
-            <rect x="22" y="11" width="28" height="10" rx="2" fill="#111315" stroke="#FFFFFF" stroke-width="1"/>
-            <circle cx="10" cy="18" r="2.5" fill="#FFE600" stroke="#FFFFFF" stroke-width="1"/>
-            <circle cx="20" cy="30" r="5" fill="#FFFDF9" stroke="#FFFFFF" stroke-width="1.8"/>
-            <circle cx="50" cy="30" r="5" fill="#FFFDF9" stroke="#FFFFFF" stroke-width="1.8"/>
-            <polygon points="26,4 32,6 26,8" fill="#FF2A6D"/>
-            <line x1="26" y1="4" x2="26" y2="8" stroke="#FFFFFF" stroke-width="1"/>
-            <text x="24" y="26" fill="#FFFFFF" font-size="5" font-weight="900">NextReach</text>
+          <svg width="90" height="52" viewBox="0 0 145 90" fill="none">
+            <!-- Chassis driving bounce -->
+            <g class="vehicle-chassis-bounce">
+              <!-- Vehicle Body (Cream body with crisp graphite outline) -->
+              <rect x="20" y="25" width="115" height="48" rx="10" fill="#FFFDF9" stroke="#1A1D20" stroke-width="2.8"/>
+              <!-- Windshield Window (Dark Slate Tint) -->
+              <rect x="52" y="31" width="55" height="22" rx="3" fill="#0F172A" stroke="#1A1D20" stroke-width="2"/>
+              <!-- Driver Figure inside -->
+              <g class="driver-figure">
+                <circle cx="80" cy="40" r="5.5" stroke="#FFFFFF" stroke-width="1.5" fill="#FFFDF9"/>
+                <circle cx="78" cy="38" r="0.8" fill="#1A1D20"/>
+                <circle cx="82" cy="38" r="0.8" fill="#1A1D20"/>
+                <path d="M 77 43 Q 80 45, 83 43" stroke="#1A1D20" stroke-width="1.2" fill="none"/>
+              </g>
+
+              <!-- Front Yellow Headlight & Beam Rays -->
+              <circle cx="20" cy="48" r="4.5" fill="#FFE600" stroke="#1A1D20" stroke-width="1.8" class="vehicle-headlight"/>
+              <g class="headlight-rays">
+                <line x1="14" y1="44" x2="4" y2="41" stroke="#FF6B00" stroke-width="1.8" stroke-dasharray="2 2"/>
+                <line x1="12" y1="48" x2="2" y2="48" stroke="#FF6B00" stroke-width="1.8" stroke-dasharray="2 2"/>
+                <line x1="14" y1="52" x2="4" y2="55" stroke="#FF6B00" stroke-width="1.8" stroke-dasharray="2 2"/>
+              </g>
+
+              <!-- Vehicle Text Branding -->
+              <text x="36" y="64" fill="#0F172A" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="900">NextReach • MH 27</text>
+
+              <!-- Roof Pink Flag -->
+              <g class="vehicle-roof-flag">
+                <polygon points="56,16 70,19 56,22" fill="#FF2A6D" stroke="#1A1D20" stroke-width="1"/>
+                <line x1="56" y1="16" x2="56" y2="25" stroke="#1A1D20" stroke-width="1.5"/>
+              </g>
+            </g>
+
+            <!-- Exhaust Smoke Bubbles -->
+            <g class="vehicle-exhaust">
+              <circle cx="138" cy="50" r="2.5" stroke="#FF2A6D" stroke-width="1.2" fill="none" class="exhaust-b1"/>
+              <circle cx="142" cy="53" r="3.5" stroke="#FF2A6D" stroke-width="1.2" fill="none" class="exhaust-b2"/>
+              <circle cx="148" cy="56" r="5" stroke="#FF2A6D" stroke-width="1.2" fill="none" class="exhaust-b3"/>
+            </g>
+
+            <!-- Wheels with Spinning Spokes -->
+            <g class="vehicle-wheel front-wheel" transform="translate(42, 73)">
+              <circle cx="0" cy="0" r="13" fill="#FFFDF9" stroke="#1A1D20" stroke-width="2.5"/>
+              <g class="wheel-spokes">
+                <line x1="-13" y1="0" x2="13" y2="0" stroke="#1A1D20" stroke-width="1.2"/>
+                <line x1="0" y1="-13" x2="0" y2="13" stroke="#1A1D20" stroke-width="1.2"/>
+                <line x1="-9" y1="-9" x2="9" y2="9" stroke="#1A1D20" stroke-width="1.2"/>
+                <line x1="-9" y1="9" x2="9" y2="-9" stroke="#1A1D20" stroke-width="1.2"/>
+              </g>
+            </g>
+            <g class="vehicle-wheel back-wheel" transform="translate(108, 73)">
+              <circle cx="0" cy="0" r="13" fill="#FFFDF9" stroke="#1A1D20" stroke-width="2.5"/>
+              <g class="wheel-spokes">
+                <line x1="-13" y1="0" x2="13" y2="0" stroke="#1A1D20" stroke-width="1.2"/>
+                <line x1="0" y1="-13" x2="0" y2="13" stroke="#1A1D20" stroke-width="1.2"/>
+                <line x1="-9" y1="-9" x2="9" y2="9" stroke="#1A1D20" stroke-width="1.2"/>
+                <line x1="-9" y1="9" x2="9" y2="-9" stroke="#1A1D20" stroke-width="1.2"/>
+              </g>
+            </g>
           </svg>
         </div>
       </div>
