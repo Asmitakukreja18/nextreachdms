@@ -6730,13 +6730,13 @@ body {
    ========================================================================== */
 
 .grand-mahal-hero-scene {
-  background: #FFFDF9 !important;
-  border: 2.5px solid #1A1D20 !important;
-  box-shadow: 7px 7px 0px #1A1D20 !important;
-  border-radius: 20px 12px 24px 14px / 14px 24px 12px 20px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
   position: relative !important;
-  padding: 16px !important;
-  overflow: hidden !important;
+  padding: 0 !important;
+  overflow: visible !important;
 }
 
 .mahal-scene-canvas {
