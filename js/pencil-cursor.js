@@ -1,6 +1,6 @@
 /**
- * NextReach DMS — Kawaii Navy Pencil Cursor with Scroll-Linked Waving Motion
- * Reference: ChatGPT Image Sep 27, 2026 (Navy blue pencil with kawaii eyes, smile, orange cap, waving hands)
+ * NextReach DMS — Kawaii Orange Pencil Cursor with Scroll-Linked Waving Motion
+ * Reference: ChatGPT Image Sep 27, 2026, 02_22_14 AM (Orange pencil with blue cap, anime eyes, smile, blue tip)
  */
 (function () {
   'use strict';
@@ -29,15 +29,15 @@
       height = canvas.height = window.innerHeight;
     }, { passive: true });
 
-    // 2. Kawaii Navy Pencil Cursor Element
+    // 2. Kawaii Orange Pencil Cursor Element
     let pencil = document.getElementById('handDrawnPencil');
     if (!pencil) {
       pencil = document.createElement('div');
       pencil.id = 'handDrawnPencil';
       pencil.setAttribute('aria-hidden', 'true');
-      pencil.style.cssText = 'position:fixed;top:0;left:0;width:44px;height:68px;pointer-events:none;z-index:999999;transform:translate3d(-100px,-100px,0);filter:drop-shadow(2px 6px 10px rgba(0,45,98,0.3));will-change:transform;transition:opacity 0.2s ease, filter 0.15s ease;opacity:0;';
+      pencil.style.cssText = 'position:fixed;top:0;left:0;width:46px;height:66px;pointer-events:none;z-index:999999;transform:translate3d(-100px,-100px,0);filter:drop-shadow(2px 6px 12px rgba(255,107,0,0.35));will-change:transform;transition:opacity 0.2s ease, filter 0.15s ease;opacity:0;';
       pencil.innerHTML = `
-        <img src="images/kawaii-navy-pencil.png" alt="Kawaii Navy Pencil" style="width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;display:block;">
+        <img src="images/kawaii-orange-pencil.png" alt="Kawaii Orange Pencil" style="width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;display:block;">
       `;
       document.body.appendChild(pencil);
     }
@@ -78,9 +78,9 @@
     let lastScrollY = window.scrollY;
     let isWaveAnimationRunning = false;
 
-    // Tip coordinates for 44x68px display
-    const TIP_X = 30;
-    const TIP_Y = 67;
+    // Tip coordinates for 46x66px display
+    const TIP_X = 31;
+    const TIP_Y = 64;
 
     function updatePencilPosition(waveX = 0, waveY = 0, waveAngle = 0) {
       if (isTouchDevice()) {
