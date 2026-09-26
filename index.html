@@ -163,24 +163,6 @@
   <div class="custom-cursor-dot" id="cursorDot"></div>
   <div class="custom-cursor-aura" id="cursorAura"><span id="cursorText"></span></div>
 
-  <!-- Real-Time Hand-Drawn Smooth Curved Pencil Writing Canvas Overlay -->
-  <canvas id="pencilTrailCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99990;"></canvas>
-
-  <!-- Sharp Hand-Drawn Pencil Cursor with Graphite Tip (Nok) at Tip Position -->
-  <div id="handDrawnPencil" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 50px; height: 50px; pointer-events: none; z-index: 99999; transform: translate3d(-100px, -100px, 0); filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.25)); transition: transform 0.04s linear;">
-    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Yellow Hexagonal Pencil Body -->
-      <path d="M16 42 L42 16 C45 13, 49 13, 52 16 C55 19, 55 23, 52 26 L26 52 Z" fill="#FFE600" stroke="#1A1D20" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- Sharpened Wooden Cone -->
-      <path d="M16 42 L4 54 L26 52 Z" fill="#F5E6CA" stroke="#1A1D20" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- Sharp Lead Tip / Nok (Black Graphite Point touching screen at 4, 54) -->
-      <path d="M7 51 L4 54 L11 53 Z" fill="#1A1D20"/>
-      <!-- Pink Eraser Cap -->
-      <path d="M48 8 L52 12 C54 10, 54 6, 50 2 C46 -2, 42 2, 46 6 Z" fill="#FF2A6D" stroke="#1A1D20" stroke-width="2"/>
-      <!-- Metal Ferrule Ring -->
-      <path d="M42 14 L48 20" stroke="#1A1D20" stroke-width="3"/>
-    </svg>
-  </div>
 
   <!-- ==========================================================================
        3. TOP NAVIGATION BAR (Glassmorphic)
