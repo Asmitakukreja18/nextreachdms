@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=120.0">
+  <link rel="stylesheet" href="css/style.css?v=122.0">
 
   <!-- Native Cute Cartoon Pencil Cursor Fallback -->
   <style>
@@ -219,6 +219,65 @@
       }
       .nr-loader-status-text {
         font-size: 0.68rem;
+      }
+    }
+
+    /* Mobile Responsive Pricing Switcher Tabs */
+    @media (max-width: 768px) {
+      .pricing-switch-toggle {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        max-width: 100% !important;
+      }
+      .pricing-switch-segmented {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 18px auto 32px !important;
+        padding: 4px !important;
+        border-radius: 20px !important;
+        gap: 4px !important;
+        box-sizing: border-box !important;
+      }
+      .billing-segment-btn {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        padding: 8px 4px !important;
+        border-radius: 16px !important;
+        gap: 4px !important;
+        font-size: 0.78rem !important;
+        text-align: center !important;
+        justify-content: center !important;
+      }
+      .billing-segment-btn span:first-child {
+        font-weight: 800 !important;
+        font-size: 0.78rem !important;
+        white-space: nowrap !important;
+      }
+      .discount-pill {
+        font-size: 0.65rem !important;
+        padding: 2px 6px !important;
+        letter-spacing: 0.02em !important;
+        max-width: 100% !important;
+        line-height: 1.1 !important;
+      }
+    }
+    @media (max-width: 370px) {
+      .pricing-switch-segmented {
+        padding: 3px !important;
+        gap: 2px !important;
+      }
+      .billing-segment-btn {
+        padding: 6px 2px !important;
+      }
+      .billing-segment-btn span:first-child {
+        font-size: 0.72rem !important;
+      }
+      .discount-pill {
+        font-size: 0.60rem !important;
+        padding: 1px 4px !important;
       }
     }
   </style>
