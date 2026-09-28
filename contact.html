@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=105.0">
+  <link rel="stylesheet" href="css/style.css?v=121.0">
   <style>
     .contact-grid {
       display: grid;
@@ -78,6 +78,11 @@
     @media (max-width: 860px) {
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 991px) {
+      .hero-pencil-doodle {
+        display: none !important;
       }
     }
   </style>
@@ -298,18 +303,21 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="container" style="padding: 60px 24px 20px; text-align: center; position: relative;">
+  <section class="container" style="padding: clamp(32px, 5vw, 60px) 18px 20px; text-align: center; position: relative;">
     
-    <!-- Floating Hand-Drawn Pencil & Fast Response Sticker -->
-    <div style="position: absolute; top: 10px; left: 6%; font-size: 2rem; transform: rotate(-22deg); opacity: 0.85;" title="Hand-Drawn Pencil Doodle">✏️</div>
-    <div style="position: absolute; top: 15px; right: 6%; background: #FFFDF9; border: 2px solid #1A1D20; color: #1A1D20; font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 30px; box-shadow: 3px 3px 0px #FF6B00; transform: rotate(6deg);">
-      ⏱️ Fast Response: Under 4 Hours
-    </div>
+    <!-- Floating Hand-Drawn Pencil Doodle (Desktop Only) -->
+    <div class="hero-pencil-doodle" style="position: absolute; top: 15px; left: 4%; font-size: 2rem; transform: rotate(-22deg); opacity: 0.85;" title="Hand-Drawn Pencil Doodle">✏️</div>
 
     <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2;">
-      <span class="section-tag" style="background: rgba(255, 107, 0, 0.12); color: var(--nr-orange-main); font-weight: 800; padding: 6px 18px; border-radius: 999px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.08em; display: inline-block; margin-bottom: 16px; border: 1px dashed rgba(255,107,0,0.4);">
-        Direct Access • Growth Desk
-      </span>
+      <!-- Hero Top Badges (Responsive Flex Container) -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-bottom: 18px;">
+        <span class="section-tag" style="background: rgba(255, 107, 0, 0.12); color: var(--nr-orange-main); font-weight: 800; padding: 6px 18px; border-radius: 999px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.08em; display: inline-flex; align-items: center; border: 1px dashed rgba(255,107,0,0.4); margin: 0;">
+          Direct Access • Growth Desk
+        </span>
+        <span style="background: #FFFDF9; border: 2px solid #1A1D20; color: #1A1D20; font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 30px; box-shadow: 2.5px 2.5px 0px #FF6B00; display: inline-flex; align-items: center; gap: 6px;">
+          ⏱️ Fast Response: Under 4 Hours
+        </span>
+      </div>
       
       <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px; color: var(--nr-navy-deep); font-weight: 800; line-height: 1.2;">
         Let's Talk <span class="dual-marker-box" style="background: rgba(255, 107, 0, 0.15); color: #FF6B00; border: 1.5px dashed #FF6B00; padding: 2px 14px; border-radius: 8px; display: inline-block;">Revenue Growth.</span>

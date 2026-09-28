@@ -8704,4 +8704,15 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   }
 }
 
+/* Hero Section Pencil Doodle Responsive */
+.hero-pencil-doodle {
+  display: block;
+}
+@media (max-width: 991px) {
+  .hero-pencil-doodle {
+    display: none !important;
+  }
+}
+
+
 
