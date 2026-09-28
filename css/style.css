@@ -7510,6 +7510,34 @@ body {
   .proof-sketch-grid-4 {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
+  .booking-left-col {
+    text-align: center !important;
+  }
+
+  .booking-left-col .section-index-badge {
+    margin: 0 auto 12px auto !important;
+  }
+
+  .booking-left-col .section-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 540px !important;
+  }
+
+  .booking-left-col .section-subtitle {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 520px !important;
+  }
+
+  .contact-pills-list {
+    max-width: 440px !important;
+    margin: 0 auto 28px auto !important;
+    text-align: left !important;
+  }
 }
 
 @media (max-width: 576px) {
