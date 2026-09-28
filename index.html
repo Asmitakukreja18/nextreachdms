@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=118.0">
+  <link rel="stylesheet" href="css/style.css?v=119.0">
 
   <!-- Native Cute Cartoon Pencil Cursor Fallback -->
   <style>
@@ -1282,14 +1282,13 @@
         <!-- Controls -->
         <div>
           <div class="section-index-badge">06 / REVENUE SIMULATOR</div>
-          <span class="section-tag">Pricing-Based Revenue Simulator</span>
-          <h2 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--nr-navy-deep);">Calculate Your <span class="dual-marker-box">Projected Revenue</span></h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Project your estimated recurring revenue based on our actual service package pricing and client volume.</p>
+          <h2 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--nr-navy-deep); margin-top: 10px;">Calculate Your <span class="dual-marker-box">Revenue Potential</span></h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Project your estimated recurring revenue based on your selected service package and client count.</p>
 
           <!-- 1. Service Package Selection -->
           <div class="calc-input-group">
             <div class="calc-input-label">
-              <span>Select Service Package:</span>
+              <span>Select Package:</span>
               <strong id="packagePriceBadge" style="color: var(--nr-orange-main); font-size: 1.05rem;">₹9,500 / mo</strong>
             </div>
             <select id="calcPackageSelect" class="calc-select" style="width: 100%; padding: 12px 16px; border: 2px solid #1A1D20; border-radius: 12px; font-weight: 700; font-size: 0.95rem; background: #FFFDF9; color: #1A1D20; cursor: pointer; box-shadow: 2px 2px 0px #1A1D20; outline: none;">
@@ -1299,28 +1298,32 @@
             </select>
           </div>
 
-          <!-- 2. Number of Clients Slider -->
+          <!-- 2. Number of Clients Slider (1-30) -->
           <div class="calc-input-group">
             <div class="calc-input-label">
-              <span>Number of Clients:</span>
+              <span>Expected Active Clients / Month:</span>
               <strong id="clientCountVal" style="color: var(--nr-navy-main); font-size: 1.05rem;">10 Clients</strong>
             </div>
-            <input type="range" class="calc-slider" id="clientSlider" min="1" max="50" step="1" value="10">
+            <input type="range" class="calc-slider" id="clientSlider" min="1" max="30" step="1" value="10">
             <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748B; font-weight: 700; margin-top: 6px; font-family: 'JetBrains Mono', monospace;">
               <span>1 Client</span>
               <span>10 Clients</span>
-              <span>25 Clients</span>
-              <span>50 Clients</span>
+              <span>20 Clients</span>
+              <span>30 Clients</span>
             </div>
           </div>
 
-          <!-- 3. Optional Informational Marketing Budget (Non-multiplier) -->
+          <!-- 3. Optional Informational Marketing Budget & Ratio -->
           <div class="calc-input-group" style="margin-bottom: 0;">
             <div class="calc-input-label">
-              <span>Estimated Ad Spend Budget <em style="font-weight: 500; font-size: 0.8rem; color: #64748B;">(Optional Reference)</em>:</span>
-              <strong id="adSpendVal" style="color: #64748B; font-size: 0.95rem;">₹1,00,000 / mo</strong>
+              <span>Estimated Monthly Marketing Cost <em style="font-weight: 500; font-size: 0.8rem; color: #64748B;">(Optional)</em>:</span>
+              <strong id="adSpendVal" style="color: #64748B; font-size: 0.95rem;">₹3,00,000 / mo</strong>
             </div>
-            <input type="range" class="calc-slider" id="adSpendSlider" min="25000" max="1000000" step="25000" value="100000" style="opacity: 0.85;">
+            <input type="range" class="calc-slider" id="adSpendSlider" min="50000" max="1000000" step="25000" value="300000" style="opacity: 0.85;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; font-size: 0.8rem; color: #64748B; font-family: 'JetBrains Mono', monospace; font-weight: 600;">
+              <span>Revenue-to-Marketing Ratio:</span>
+              <strong id="ratioVal" style="color: #FF6B00; font-weight: 800;">0.32×</strong>
+            </div>
           </div>
         </div>
 
@@ -1329,29 +1332,23 @@
           <div class="title" style="font-size: 0.82rem; letter-spacing: 0.08em; color: #94a3b8;">PROJECTED MONTHLY REVENUE</div>
           <div class="value" id="projectedRevenue" style="font-size: clamp(2.2rem, 3.8vw, 3.2rem); font-weight: 800; color: var(--nr-orange-bright); margin-bottom: 6px;">₹95,000</div>
           
-          <div class="roi-badge" id="clientBadge" style="margin-bottom: 16px; font-weight: 800; font-size: 0.85rem; background: rgba(255,107,0,0.18); border: 1.5px solid var(--nr-orange-main); color: var(--nr-orange-bright);">
+          <div class="roi-badge" id="clientBadge" style="margin-bottom: 14px; font-weight: 800; font-size: 0.85rem; background: rgba(255,107,0,0.18); border: 1.5px solid var(--nr-orange-main); color: var(--nr-orange-bright);">
             10 ACTIVE CLIENTS
           </div>
 
-          <!-- Package Details Card -->
-          <div style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; text-align: left;">
-            <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Selected Package</div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 2px;">
-              <span id="resPackageName" style="font-size: 0.98rem; font-weight: 800; color: #FFFFFF;">Growth &amp; Web Engine</span>
-              <span id="resPackageRate" style="font-size: 0.85rem; font-weight: 700; color: #FFE600; font-family: 'JetBrains Mono', monospace;">₹9,500 / client / month</span>
-            </div>
+          <!-- Calculation Line -->
+          <div id="calcFormulaLine" style="font-size: 0.85rem; color: #E2E8F0; font-weight: 700; margin-bottom: 16px; font-family: 'JetBrains Mono', monospace; background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 8px;">
+            10 clients × ₹9,500/month = ₹95,000/month
           </div>
 
           <!-- Annual Projected Revenue -->
-          <div style="border-top: 1px dashed rgba(255, 255, 255, 0.2); padding-top: 14px; margin-bottom: 14px;">
+          <div style="border-top: 1px dashed rgba(255, 255, 255, 0.2); padding-top: 14px; margin-bottom: 10px;">
             <div style="font-size: 0.75rem; text-transform: uppercase; color: #94A3B8; font-weight: 700; letter-spacing: 0.05em;">PROJECTED ANNUAL REVENUE</div>
             <div id="projectedAnnualRevenue" style="font-size: 1.45rem; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">₹11,40,000 <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 600;">/ year</span></div>
           </div>
 
-          <!-- Calculation Line -->
-          <div id="calcFormulaLine" style="font-size: 0.82rem; color: #E2E8F0; font-weight: 600; margin-bottom: 18px; font-family: 'JetBrains Mono', monospace; background: rgba(0,0,0,0.25); padding: 8px 10px; border-radius: 6px;">
-            10 clients × ₹9,500/month = ₹95,000/month
-          </div>
+          <!-- Subtitle Disclaimer -->
+          <p style="font-size: 0.76rem; color: #94A3B8; margin-bottom: 18px; font-style: italic;">*Illustrative projection based on selected package and client count.*</p>
 
           <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">
             <span>Claim Your Custom Growth Plan →</span>
@@ -3114,10 +3111,9 @@
       const packagePriceBadge = document.getElementById('packagePriceBadge');
       const clientCountVal = document.getElementById('clientCountVal');
       const adSpendVal = document.getElementById('adSpendVal');
+      const ratioVal = document.getElementById('ratioVal');
       const projectedRevenue = document.getElementById('projectedRevenue');
       const clientBadge = document.getElementById('clientBadge');
-      const resPackageName = document.getElementById('resPackageName');
-      const resPackageRate = document.getElementById('resPackageRate');
       const projectedAnnualRevenue = document.getElementById('projectedAnnualRevenue');
       const calcFormulaLine = document.getElementById('calcFormulaLine');
 
@@ -3128,25 +3124,23 @@
       function updateCalculator() {
         if (!calcPackageSelect || !clientSlider) return;
         const pkgPrice = parseInt(calcPackageSelect.value, 10) || 9500;
-        const selectedOpt = calcPackageSelect.options[calcPackageSelect.selectedIndex];
-        const pkgName = selectedOpt ? (selectedOpt.getAttribute('data-name') || selectedOpt.text) : 'Growth & Web Engine';
         const clientCount = parseInt(clientSlider.value, 10) || 10;
-
-        if (adSpendSlider && adSpendVal) {
-          const spend = parseInt(adSpendSlider.value, 10) || 100000;
-          adSpendVal.textContent = formatINR(spend) + ' / mo';
-        }
+        const spend = adSpendSlider ? (parseInt(adSpendSlider.value, 10) || 300000) : 300000;
 
         if (packagePriceBadge) packagePriceBadge.textContent = formatINR(pkgPrice) + ' / mo';
         if (clientCountVal) clientCountVal.textContent = clientCount + (clientCount === 1 ? ' Client' : ' Clients');
+        if (adSpendVal) adSpendVal.textContent = formatINR(spend) + ' / mo';
 
         const monthlyRevenue = clientCount * pkgPrice;
         const annualRevenue = monthlyRevenue * 12;
 
+        if (ratioVal && spend > 0) {
+          const ratio = (monthlyRevenue / spend).toFixed(2);
+          ratioVal.textContent = ratio + '×';
+        }
+
         if (projectedRevenue) projectedRevenue.textContent = formatINR(monthlyRevenue);
         if (clientBadge) clientBadge.textContent = clientCount + (clientCount === 1 ? ' ACTIVE CLIENT' : ' ACTIVE CLIENTS');
-        if (resPackageName) resPackageName.textContent = pkgName;
-        if (resPackageRate) resPackageRate.textContent = formatINR(pkgPrice) + ' / client / month';
         if (projectedAnnualRevenue) {
           projectedAnnualRevenue.innerHTML = formatINR(annualRevenue) + ' <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 600;">/ year</span>';
         }
