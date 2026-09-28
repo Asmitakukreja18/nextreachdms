@@ -6985,7 +6985,22 @@ body {
 }
 
 .striped-ribbon-tag {
-  display: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2px 8px !important;
+  background: repeating-linear-gradient(45deg, #FF2A6D, #FF2A6D 4px, #FFFDF9 4px, #FFFDF9 8px) !important;
+  border: 1.5px solid #1A1D20 !important;
+  border-radius: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 900 !important;
+  color: #1A1D20 !important;
+  box-shadow: 2px 2px 0px #1A1D20 !important;
+  margin-left: 8px !important;
+  vertical-align: middle !important;
+  transform: rotate(-3deg) !important;
+  line-height: 1 !important;
+  letter-spacing: 1px !important;
 }
 
 .dashed-underline {
@@ -7642,12 +7657,21 @@ body {
 .notebook-holes-col {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
-  font-size: 1.2rem !important;
-  color: #94A3B8 !important;
+  justify-content: space-around !important;
   border-right: 1.5px dashed #CBD5E1 !important;
-  padding-right: 14px !important;
+  padding-right: 16px !important;
   user-select: none !important;
+}
+
+.notebook-hole {
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 50% !important;
+  background: #E2E8F0 !important;
+  border: 1.5px solid #94A3B8 !important;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.15) !important;
+  display: block !important;
+  margin: 6px 0 !important;
 }
 
 @media (max-width: 768px) {
