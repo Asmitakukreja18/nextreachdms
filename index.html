@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=115.0">
+  <link rel="stylesheet" href="css/style.css?v=116.0">
 
   <!-- Native Cute Cartoon Pencil Cursor Fallback -->
   <style>
@@ -1336,14 +1336,22 @@
       <h2 class="section-title">High-Ticket <span class="dual-marker-box">Growth Partner Packages</span></h2>
       <p class="section-subtitle">Transparent pricing designed for ambitious brands ready to scale with a dedicated revenue engineering pod. <strong>Special limited-time 20% retainer discount applied below!</strong></p>
       
-      <!-- Billing Switcher Toggle -->
-      <div class="pricing-switch-toggle">
-        <span class="switch-label active" id="btnBillingMonthly">Monthly Retainer <span class="discount-pill">20% OFF</span></span>
-        <label class="toggle-slider-wrap">
-          <input type="checkbox" id="pricingCycleToggle">
-          <span class="slider-round"></span>
-        </label>
-        <span class="switch-label" id="btnBillingQuarterly">Quarterly Sprint <span class="discount-pill" style="background:#dcfce7; color:#15803d; border-color:#22c55e;">Save Extra 10%</span></span>
+      <!-- Billing Switcher 3-Way Segmented Tabs (Monthly, Quarterly, Yearly) -->
+      <div style="text-align: center;">
+        <div class="pricing-switch-segmented" role="tablist">
+          <button type="button" class="billing-segment-btn active" data-cycle="monthly" id="btnBillingMonthly">
+            <span>Monthly Retainer</span>
+            <span class="discount-pill">20% OFF</span>
+          </button>
+          <button type="button" class="billing-segment-btn" data-cycle="quarterly" id="btnBillingQuarterly">
+            <span>Quarterly Sprint</span>
+            <span class="discount-pill discount-pill-green">Save Extra 10%</span>
+          </button>
+          <button type="button" class="billing-segment-btn" data-cycle="yearly" id="btnBillingYearly">
+            <span>Yearly Growth 🔥</span>
+            <span class="discount-pill discount-pill-fire">Save 25% • 2.5 Mo. FREE</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -1356,15 +1364,16 @@
           <div class="package-desc">Ideal for local businesses needing consistent video reels and promotional flyers for active social reach.</div>
           
           <div class="price-original-wrap">
-            <span class="price-original">₹8,500</span>
-            <span class="discount-tag-save">Special Offer</span>
+            <span class="price-original" data-orig-monthly="₹8,500" data-orig-quarterly="₹8,500" data-orig-yearly="₹8,500">₹8,500</span>
+            <span class="discount-tag-save" data-save-monthly="Special Offer" data-save-quarterly="Save 10%" data-save-yearly="Save 25% • ₹19,500">Special Offer</span>
           </div>
           
           <div class="price-display">
             <span class="price-curr">₹</span>
-            <span class="price-amount" data-monthly="6,500" data-quarterly="5,850">6,500</span>
-            <span class="price-period">/ month</span>
+            <span class="price-amount" data-monthly="6,500" data-quarterly="5,850" data-yearly="4,875">6,500</span>
+            <span class="price-period" data-period-monthly="/ month" data-period-quarterly="/ month (quarterly)" data-period-yearly="/ month (yearly)">/ month</span>
           </div>
+          <div class="price-billing-calc" data-calc-monthly="Billed monthly • Cancel anytime" data-calc-quarterly="Billed ₹17,550 quarterly • Save ₹1,950" data-calc-yearly="Billed ₹58,500 annually • Save ₹19,500/yr (2.5 Mo. FREE!)">Billed monthly • Cancel anytime</div>
         </div>
 
         <div class="plan-benefits-highlight">
@@ -1380,7 +1389,7 @@
           <div class="feat-item-check"><span class="check-icon">✓</span> 📊 Monthly Reach &amp; Engagement Summary</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Choose ₹6,500 Plan →</a>
+          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;" data-cta-monthly="Choose ₹6,500 Plan →" data-cta-quarterly="Choose ₹5,850/mo Plan →" data-cta-yearly="Choose ₹4,875/mo (Yearly) →">Choose ₹6,500 Plan →</a>
         </div>
       </div>
 
@@ -1392,15 +1401,16 @@
           <div class="package-desc">Complete digital presence bundle with reels, flyers, and full website &amp; SEO designing.</div>
           
           <div class="price-original-wrap">
-            <span class="price-original">₹12,500</span>
-            <span class="discount-tag-save">Save ₹3,000</span>
+            <span class="price-original" data-orig-monthly="₹12,500" data-orig-quarterly="₹12,500" data-orig-yearly="₹12,500">₹12,500</span>
+            <span class="discount-tag-save" data-save-monthly="Save ₹3,000" data-save-quarterly="Save ₹3,950" data-save-yearly="Save 25% • ₹28,500">Save ₹3,000</span>
           </div>
 
           <div class="price-display">
             <span class="price-curr">₹</span>
-            <span class="price-amount" data-monthly="9,500" data-quarterly="8,550">9,500</span>
-            <span class="price-period">/ month</span>
+            <span class="price-amount" data-monthly="9,500" data-quarterly="8,550" data-yearly="7,125">9,500</span>
+            <span class="price-period" data-period-monthly="/ month" data-period-quarterly="/ month (quarterly)" data-period-yearly="/ month (yearly)">/ month</span>
           </div>
+          <div class="price-billing-calc" data-calc-monthly="Billed monthly • Cancel anytime" data-calc-quarterly="Billed ₹25,650 quarterly • Save ₹2,850" data-calc-yearly="Billed ₹85,500 annually • Save ₹28,500/yr (2.5 Mo. FREE!)">Billed monthly • Cancel anytime</div>
         </div>
 
         <div class="plan-benefits-highlight" style="background: #fff7ed; border-color: var(--nr-orange-main);">
@@ -1417,7 +1427,7 @@
           <div class="feat-item-check"><span class="check-icon">✓</span> 📈 Bi-Weekly Strategy &amp; Growth Review</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">Choose ₹9,500 Plan →</a>
+          <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;" data-cta-monthly="Choose ₹9,500 Plan →" data-cta-quarterly="Choose ₹8,550/mo Plan →" data-cta-yearly="Choose ₹7,125/mo (Yearly) →">Choose ₹9,500 Plan →</a>
         </div>
       </div>
 
@@ -1428,15 +1438,16 @@
           <div class="package-desc">Premium on-location photoshoot and professional video shoot for high-end brand storytelling.</div>
           
           <div class="price-original-wrap">
-            <span class="price-original">₹19,000</span>
-            <span class="discount-tag-save">Special Offer</span>
+            <span class="price-original" data-orig-monthly="₹19,000" data-orig-quarterly="₹19,000" data-orig-yearly="₹19,000">₹19,000</span>
+            <span class="discount-tag-save" data-save-monthly="Special Offer" data-save-quarterly="Save ₹5,500" data-save-yearly="Save 25% • ₹45,000">Special Offer</span>
           </div>
 
           <div class="price-display">
             <span class="price-curr">₹</span>
-            <span class="price-amount" data-monthly="15,000" data-quarterly="13,500">15,000</span>
-            <span class="price-period">/ shoot package</span>
+            <span class="price-amount" data-monthly="15,000" data-quarterly="13,500" data-yearly="11,250">15,000</span>
+            <span class="price-period" data-period-monthly="/ shoot package" data-period-quarterly="/ shoot (quarterly)" data-period-yearly="/ shoot (annual 12 shoots)">/ shoot package</span>
           </div>
+          <div class="price-billing-calc" data-calc-monthly="Per shoot package • Full production crew" data-calc-quarterly="Billed ₹40,500 for 3 seasonal shoots • Save ₹4,500" data-calc-yearly="Billed ₹1,35,000 for 12 shoots • Save ₹45,000/yr">Per shoot package • Full production crew</div>
         </div>
 
         <div class="plan-benefits-highlight">
@@ -1453,7 +1464,7 @@
           <div class="feat-item-check"><span class="check-icon">✓</span> ⚡ Fast Turnaround &amp; Full Raw File Access</div>
         </div>
         <div class="pricing-cta-wrap">
-          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;">Book ₹15,000 Shoot →</a>
+          <a href="audit.html" class="btn-navy-outline" style="width: 100%; justify-content: center;" data-cta-monthly="Book ₹15,000 Shoot →" data-cta-quarterly="Book ₹13,500/mo Shoot →" data-cta-yearly="Book ₹11,250/mo (Annual) →">Book ₹15,000 Shoot →</a>
         </div>
       </div>
 
@@ -2968,43 +2979,67 @@
         });
       });
 
-      // --- 8. PRICING MONTHLY / QUARTERLY SWITCHER ---
-      const pricingToggle = document.getElementById('pricingCycleToggle');
-      const monthlyLabel = document.getElementById('btnBillingMonthly');
-      const quarterlyLabel = document.getElementById('btnBillingQuarterly');
+      // --- 8. PRICING MONTHLY / QUARTERLY / YEARLY SWITCHER ---
+      const segmentBtns = document.querySelectorAll('.billing-segment-btn');
       const priceAmounts = document.querySelectorAll('.price-amount');
+      const pricePeriods = document.querySelectorAll('.price-period');
+      const priceCalcs = document.querySelectorAll('.price-billing-calc');
+      const priceOriginals = document.querySelectorAll('.price-original');
+      const discountSaves = document.querySelectorAll('.discount-tag-save');
+      const pricingCtas = document.querySelectorAll('.pricing-cta-wrap a');
 
-      function updatePricing(isQuarterly) {
-        priceAmounts.forEach(el => {
-          const m = el.getAttribute('data-monthly');
-          const q = el.getAttribute('data-quarterly');
-          el.textContent = isQuarterly ? q : m;
+      function updatePricingCycle(cycle) {
+        segmentBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-cycle') === cycle);
         });
 
-        if (monthlyLabel && quarterlyLabel) {
-          if (isQuarterly) {
-            monthlyLabel.classList.remove('active');
-            quarterlyLabel.classList.add('active');
-            if (typeof confetti === 'function') {
-              confetti({ particleCount: 40, spread: 60, origin: { y: 0.7 } });
-            }
-          } else {
-            monthlyLabel.classList.add('active');
-            quarterlyLabel.classList.remove('active');
+        priceAmounts.forEach(el => {
+          const val = el.getAttribute('data-' + cycle);
+          if (val) el.textContent = val;
+        });
+
+        pricePeriods.forEach(el => {
+          const p = el.getAttribute('data-period-' + cycle);
+          if (p) el.textContent = p;
+        });
+
+        priceCalcs.forEach(el => {
+          const c = el.getAttribute('data-calc-' + cycle);
+          if (c) {
+            el.textContent = c;
+            el.classList.toggle('highlight-save', cycle === 'yearly' || cycle === 'quarterly');
           }
+        });
+
+        priceOriginals.forEach(el => {
+          const o = el.getAttribute('data-orig-' + cycle);
+          if (o) el.textContent = o;
+        });
+
+        discountSaves.forEach(el => {
+          const s = el.getAttribute('data-save-' + cycle);
+          if (s) el.textContent = s;
+        });
+
+        pricingCtas.forEach(el => {
+          const cta = el.getAttribute('data-cta-' + cycle);
+          if (cta) el.textContent = cta;
+        });
+
+        if ((cycle === 'quarterly' || cycle === 'yearly') && typeof confetti === 'function') {
+          confetti({
+            particleCount: cycle === 'yearly' ? 70 : 40,
+            spread: cycle === 'yearly' ? 70 : 55,
+            origin: { y: 0.65 }
+          });
         }
       }
 
-      if (pricingToggle) {
-        pricingToggle.addEventListener('change', (e) => updatePricing(e.target.checked));
-      }
-      if (monthlyLabel) monthlyLabel.addEventListener('click', () => {
-        if (pricingToggle) pricingToggle.checked = false;
-        updatePricing(false);
-      });
-      if (quarterlyLabel) quarterlyLabel.addEventListener('click', () => {
-        if (pricingToggle) pricingToggle.checked = true;
-        updatePricing(true);
+      segmentBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cycle = btn.getAttribute('data-cycle');
+          if (cycle) updatePricingCycle(cycle);
+        });
       });
 
       // --- 9. VIDEO TESTIMONIALS MODAL ---

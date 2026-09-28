@@ -3370,6 +3370,104 @@ button {
   margin: 24px auto 40px;
 }
 
+/* 3-Way Segmented Billing Switcher (Monthly, Quarterly, Yearly) */
+.pricing-switch-segmented {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFDF9;
+  border: 2px solid #1A1D20;
+  border-radius: 40px;
+  padding: 4px;
+  box-shadow: 4px 4px 0px #1A1D20;
+  margin: 24px auto 40px;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.billing-segment-btn {
+  background: transparent;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #64748B;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.billing-segment-btn:hover {
+  color: #1A1D20;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.billing-segment-btn.active {
+  background: #1A1D20;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.discount-pill-green {
+  background: #DCFCE7 !important;
+  color: #15803D !important;
+  border: 1px solid #22C55E !important;
+}
+
+.discount-pill-fire {
+  background: #FFE4E6 !important;
+  color: #E11D48 !important;
+  border: 1px solid #FB7185 !important;
+}
+
+.billing-segment-btn.active .discount-pill-fire {
+  background: #FF2A6D !important;
+  color: #FFFFFF !important;
+  border-color: #FF2A6D !important;
+}
+
+.billing-segment-btn.active .discount-pill-green {
+  background: #22C55E !important;
+  color: #FFFFFF !important;
+  border-color: #22C55E !important;
+}
+
+.price-billing-calc {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748B;
+  margin-top: 6px;
+  min-height: 22px;
+  transition: all 0.2s ease;
+}
+
+.price-billing-calc.highlight-save {
+  color: #15803D;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .pricing-switch-segmented {
+    border-radius: 18px;
+    padding: 6px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    gap: 6px;
+  }
+  .billing-segment-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+}
+
 .switch-label {
   font-size: 0.95rem;
   font-weight: 700;
