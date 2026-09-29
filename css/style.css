@@ -6259,24 +6259,14 @@ body {
   z-index: 10 !important;
 }
 
-/* G. Ticket Stub Style Receipts with Side Notch Holes */
+/* G. Ticket Stub Style Receipts (Disabled pseudo-text overlap) */
 .ticket-stub-card {
   position: relative !important;
-  border-left: 28px solid #1A1D20 !important;
 }
 
 .ticket-stub-card::after {
-  content: 'ADMIT • NEXTREACH' !important;
-  position: absolute !important;
-  left: -24px !important;
-  top: 50% !important;
-  transform: translateY(-50%) rotate(-90deg) !important;
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.62rem !important;
-  font-weight: 800 !important;
-  color: #FFFFFF !important;
-  letter-spacing: 0.15em !important;
-  white-space: nowrap !important;
+  display: none !important;
+  content: '' !important;
 }
 
 /* H. Notebook Page Binder Holes Margin */
