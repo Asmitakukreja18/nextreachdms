@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=124.0">
+  <link rel="stylesheet" href="css/style.css?v=125.0">
 
   <!-- Native Cute Cartoon Pencil Cursor Fallback -->
   <style>
@@ -1420,48 +1420,56 @@
         
         <!-- Controls -->
         <div>
-          <div class="section-index-badge">06 / REVENUE SIMULATOR</div>
+          <div class="section-index-badge">06 / GROWTH &amp; ROAS SIMULATOR</div>
           <h2 style="font-size: 1.8rem; margin-bottom: 8px; color: var(--nr-navy-deep); margin-top: 10px;">Calculate Your <span class="dual-marker-box">Revenue Potential</span></h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Project your estimated recurring revenue based on your selected service package and client count.</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Model your projected monthly revenue and net return based on your planned digital ad spend and expected blended ROAS across Meta, Google &amp; Funnels.</p>
 
-          <!-- 1. Service Package Selection -->
+          <!-- 1. Monthly Digital Ad Spend Slider -->
           <div class="calc-input-group">
             <div class="calc-input-label">
-              <span>Select Package:</span>
-              <strong id="packagePriceBadge" style="color: var(--nr-orange-main); font-size: 1.05rem;">₹9,500 / mo</strong>
+              <span>Monthly Digital Ad Spend:</span>
+              <strong id="adSpendVal" style="color: var(--nr-orange-main); font-size: 1.05rem;">₹1,00,000 / mo</strong>
             </div>
-            <select id="calcPackageSelect" class="calc-select" style="width: 100%; padding: 12px 16px; border: 2px solid #1A1D20; border-radius: 12px; font-weight: 700; font-size: 0.95rem; background: #FFFDF9; color: #1A1D20; cursor: pointer; box-shadow: 2px 2px 0px #1A1D20; outline: none;">
-              <option value="6500" data-name="Social Lite Pod">Social Lite Pod — ₹6,500/mo</option>
-              <option value="9500" data-name="Growth &amp; Web Engine" selected>Growth &amp; Web Engine — ₹9,500/mo</option>
-              <option value="15000" data-name="Pro Shoot &amp; Video Suite">Pro Shoot &amp; Video Suite — ₹15,000/mo</option>
-            </select>
-          </div>
-
-          <!-- 2. Number of Clients Slider (1-30) -->
-          <div class="calc-input-group">
-            <div class="calc-input-label">
-              <span>Expected Active Clients / Month:</span>
-              <strong id="clientCountVal" style="color: var(--nr-navy-main); font-size: 1.05rem;">10 Clients</strong>
-            </div>
-            <input type="range" class="calc-slider" id="clientSlider" min="1" max="30" step="1" value="10">
+            <input type="range" class="calc-slider" id="adSpendSlider" min="25000" max="1000000" step="25000" value="100000">
             <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748B; font-weight: 700; margin-top: 6px; font-family: 'JetBrains Mono', monospace;">
-              <span>1 Client</span>
-              <span>10 Clients</span>
-              <span>20 Clients</span>
-              <span>30 Clients</span>
+              <span>₹25K</span>
+              <span>₹2.5L</span>
+              <span>₹5L</span>
+              <span>₹10L</span>
             </div>
           </div>
 
-          <!-- 3. Optional Informational Marketing Budget & Ratio -->
-          <div class="calc-input-group" style="margin-bottom: 0;">
+          <!-- 2. Target Blended ROAS Multiplier Slider -->
+          <div class="calc-input-group">
             <div class="calc-input-label">
-              <span>Estimated Monthly Marketing Cost <em style="font-weight: 500; font-size: 0.8rem; color: #64748B;">(Optional)</em>:</span>
-              <strong id="adSpendVal" style="color: #64748B; font-size: 0.95rem;">₹3,00,000 / mo</strong>
+              <span>Target Blended ROAS Multiplier:</span>
+              <strong id="roasVal" style="color: var(--nr-navy-main); font-size: 1.05rem;">4.2x ROAS</strong>
             </div>
-            <input type="range" class="calc-slider" id="adSpendSlider" min="50000" max="1000000" step="25000" value="300000" style="opacity: 0.85;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; font-size: 0.8rem; color: #64748B; font-family: 'JetBrains Mono', monospace; font-weight: 600;">
-              <span>Revenue-to-Marketing Ratio:</span>
-              <strong id="ratioVal" style="color: #FF6B00; font-weight: 800;">0.32×</strong>
+            <input type="range" class="calc-slider" id="roasSlider" min="2.0" max="6.5" step="0.1" value="4.2">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748B; font-weight: 700; margin-top: 6px; font-family: 'JetBrains Mono', monospace;">
+              <span>2.0x (Baseline)</span>
+              <span>3.5x (Target)</span>
+              <span>5.0x (High Scale)</span>
+              <span>6.5x (Peak)</span>
+            </div>
+          </div>
+
+          <!-- 3. Industry Benchmark Presets (Realistic Quick Taps) -->
+          <div class="calc-input-group" style="margin-bottom: 0;">
+            <div class="calc-input-label" style="margin-bottom: 8px;">
+              <span>Industry Benchmark Presets:</span>
+              <span id="presetLabel" style="font-size: 0.75rem; color: #16A34A; font-weight: 800; background: #DCFCE7; padding: 2px 8px; border-radius: 999px;">D2C Scaling (4.2x)</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="calc-preset-chip active" data-spend="100000" data-roas="4.2" data-label="D2C Scaling (4.2x)" style="padding: 6px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 700; border: 1.5px solid #1A1D20; background: #1A1D20; color: #FFF; cursor: pointer; transition: all 0.2s;">
+                🛒 D2C / E-Com (4.2x)
+              </button>
+              <button type="button" class="calc-preset-chip" data-spend="150000" data-roas="4.8" data-label="B2B High-Ticket Pipeline (4.8x)" style="padding: 6px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 700; border: 1.5px solid #CBD5E1; background: #FFFDF9; color: #475569; cursor: pointer; transition: all 0.2s;">
+                💼 B2B High-Ticket (4.8x)
+              </button>
+              <button type="button" class="calc-preset-chip" data-spend="50000" data-roas="3.6" data-label="Local Retail &amp; Footfall (3.6x)" style="padding: 6px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 700; border: 1.5px solid #CBD5E1; background: #FFFDF9; color: #475569; cursor: pointer; transition: all 0.2s;">
+                📍 Local Store &amp; WhatsApp (3.6x)
+              </button>
             </div>
           </div>
         </div>
@@ -1469,25 +1477,25 @@
         <!-- Result Box -->
         <div class="calc-result-box">
           <div class="title" style="font-size: 0.82rem; letter-spacing: 0.08em; color: #94a3b8;">PROJECTED MONTHLY REVENUE</div>
-          <div class="value" id="projectedRevenue" style="font-size: clamp(2.2rem, 3.8vw, 3.2rem); font-weight: 800; color: var(--nr-orange-bright); margin-bottom: 6px;">₹95,000</div>
+          <div class="value" id="projectedRevenue" style="font-size: clamp(2.2rem, 3.8vw, 3.2rem); font-weight: 800; color: var(--nr-orange-bright); margin-bottom: 6px;">₹4,20,000</div>
           
-          <div class="roi-badge" id="clientBadge" style="margin-bottom: 14px; font-weight: 800; font-size: 0.85rem; background: rgba(255,107,0,0.18); border: 1.5px solid var(--nr-orange-main); color: var(--nr-orange-bright);">
-            10 ACTIVE CLIENTS
+          <div class="roi-badge" id="netProfitBadge" style="margin-bottom: 14px; font-weight: 800; font-size: 0.85rem; background: rgba(34,197,94,0.18); border: 1.5px solid #22C55E; color: #4ADE80;">
+            +₹3,20,000 Monthly Net Value Generated
           </div>
 
           <!-- Calculation Line -->
-          <div id="calcFormulaLine" style="font-size: 0.85rem; color: #E2E8F0; font-weight: 700; margin-bottom: 16px; font-family: 'JetBrains Mono', monospace; background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 8px;">
-            10 clients × ₹9,500/month = ₹95,000/month
+          <div id="calcFormulaLine" style="font-size: 0.82rem; color: #E2E8F0; font-weight: 700; margin-bottom: 16px; font-family: 'JetBrains Mono', monospace; background: rgba(0,0,0,0.25); padding: 8px 12px; border-radius: 8px;">
+            ₹1,00,000 Ad Spend × 4.2x ROAS = ₹4,20,000 Projected Revenue
           </div>
 
           <!-- Annual Projected Revenue -->
           <div style="border-top: 1px dashed rgba(255, 255, 255, 0.2); padding-top: 14px; margin-bottom: 10px;">
-            <div style="font-size: 0.75rem; text-transform: uppercase; color: #94A3B8; font-weight: 700; letter-spacing: 0.05em;">PROJECTED ANNUAL REVENUE</div>
-            <div id="projectedAnnualRevenue" style="font-size: 1.45rem; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">₹11,40,000 <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 600;">/ year</span></div>
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #94A3B8; font-weight: 700; letter-spacing: 0.05em;">PROJECTED ANNUAL RUN-RATE</div>
+            <div id="projectedAnnualRevenue" style="font-size: 1.45rem; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; margin-top: 2px;">₹50,40,000 <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 600;">/ year</span></div>
           </div>
 
           <!-- Subtitle Disclaimer -->
-          <p style="font-size: 0.76rem; color: #94A3B8; margin-bottom: 18px; font-style: italic;">*Illustrative projection based on selected package and client count.*</p>
+          <p style="font-size: 0.76rem; color: #94A3B8; margin-bottom: 18px; font-style: italic;">*Realistic projection based on Meta Advantage+ CAPI, Google Ads intent, and high-converting funnels.*</p>
 
           <a href="audit.html" class="btn-orange" style="width: 100%; justify-content: center;">
             <span>Claim Your Custom Growth Plan →</span>
@@ -3243,57 +3251,74 @@
         });
       }
 
-      // --- 10. PRICING-BASED REVENUE SIMULATOR ---
-      const calcPackageSelect = document.getElementById('calcPackageSelect');
-      const clientSlider = document.getElementById('clientSlider');
+      // --- 10. REALISTIC AD SPEND & ROAS GROWTH SIMULATOR ---
       const adSpendSlider = document.getElementById('adSpendSlider');
-      const packagePriceBadge = document.getElementById('packagePriceBadge');
-      const clientCountVal = document.getElementById('clientCountVal');
+      const roasSlider = document.getElementById('roasSlider');
       const adSpendVal = document.getElementById('adSpendVal');
-      const ratioVal = document.getElementById('ratioVal');
+      const roasVal = document.getElementById('roasVal');
       const projectedRevenue = document.getElementById('projectedRevenue');
-      const clientBadge = document.getElementById('clientBadge');
+      const netProfitBadge = document.getElementById('netProfitBadge');
       const projectedAnnualRevenue = document.getElementById('projectedAnnualRevenue');
       const calcFormulaLine = document.getElementById('calcFormulaLine');
+      const presetChips = document.querySelectorAll('.calc-preset-chip');
+      const presetLabel = document.getElementById('presetLabel');
 
       function formatINR(val) {
         return '₹' + Math.round(val).toLocaleString('en-IN');
       }
 
       function updateCalculator() {
-        if (!calcPackageSelect || !clientSlider) return;
-        const pkgPrice = parseInt(calcPackageSelect.value, 10) || 9500;
-        const clientCount = parseInt(clientSlider.value, 10) || 10;
-        const spend = adSpendSlider ? (parseInt(adSpendSlider.value, 10) || 300000) : 300000;
+        if (!adSpendSlider || !roasSlider) return;
+        const spend = parseInt(adSpendSlider.value, 10) || 100000;
+        const roas = parseFloat(roasSlider.value) || 4.2;
 
-        if (packagePriceBadge) packagePriceBadge.textContent = formatINR(pkgPrice) + ' / mo';
-        if (clientCountVal) clientCountVal.textContent = clientCount + (clientCount === 1 ? ' Client' : ' Clients');
         if (adSpendVal) adSpendVal.textContent = formatINR(spend) + ' / mo';
+        if (roasVal) roasVal.textContent = roas.toFixed(1) + 'x ROAS';
 
-        const monthlyRevenue = clientCount * pkgPrice;
+        const monthlyRevenue = spend * roas;
+        const netGain = monthlyRevenue - spend;
         const annualRevenue = monthlyRevenue * 12;
 
-        if (ratioVal && spend > 0) {
-          const ratio = (monthlyRevenue / spend).toFixed(2);
-          ratioVal.textContent = ratio + '×';
-        }
-
         if (projectedRevenue) projectedRevenue.textContent = formatINR(monthlyRevenue);
-        if (clientBadge) clientBadge.textContent = clientCount + (clientCount === 1 ? ' ACTIVE CLIENT' : ' ACTIVE CLIENTS');
+        if (netProfitBadge) {
+          netProfitBadge.textContent = (netGain >= 0 ? '+' : '') + formatINR(netGain) + ' Monthly Net Value Generated';
+        }
         if (projectedAnnualRevenue) {
           projectedAnnualRevenue.innerHTML = formatINR(annualRevenue) + ' <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 600;">/ year</span>';
         }
         if (calcFormulaLine) {
-          calcFormulaLine.textContent = `${clientCount} clients × ${formatINR(pkgPrice)}/month = ${formatINR(monthlyRevenue)}/month`;
+          calcFormulaLine.textContent = `${formatINR(spend)} Ad Spend × ${roas.toFixed(1)}x ROAS = ${formatINR(monthlyRevenue)} Projected Revenue`;
         }
       }
 
-      if (calcPackageSelect && clientSlider) {
-        calcPackageSelect.addEventListener('change', updateCalculator);
-        clientSlider.addEventListener('input', updateCalculator, { passive: true });
-        if (adSpendSlider) {
-          adSpendSlider.addEventListener('input', updateCalculator, { passive: true });
-        }
+      if (adSpendSlider && roasSlider) {
+        adSpendSlider.addEventListener('input', updateCalculator, { passive: true });
+        roasSlider.addEventListener('input', updateCalculator, { passive: true });
+
+        presetChips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            presetChips.forEach(c => {
+              c.classList.remove('active');
+              c.style.background = '#FFFDF9';
+              c.style.color = '#475569';
+              c.style.borderColor = '#CBD5E1';
+            });
+            chip.classList.add('active');
+            chip.style.background = '#1A1D20';
+            chip.style.color = '#FFFFFF';
+            chip.style.borderColor = '#1A1D20';
+
+            const s = parseInt(chip.getAttribute('data-spend'), 10);
+            const r = parseFloat(chip.getAttribute('data-roas'));
+            const lbl = chip.getAttribute('data-label');
+
+            if (s && adSpendSlider) adSpendSlider.value = s;
+            if (r && roasSlider) roasSlider.value = r;
+            if (lbl && presetLabel) presetLabel.textContent = lbl;
+            updateCalculator();
+          });
+        });
+
         updateCalculator();
       }
 
