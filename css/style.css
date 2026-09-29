@@ -3376,28 +3376,28 @@ button {
   align-items: center;
   justify-content: center;
   background: #FFFDF9;
-  border: 2px solid #1A1D20;
-  border-radius: 40px;
-  padding: 4px;
-  box-shadow: 4px 4px 0px #1A1D20;
-  margin: 24px auto 40px;
-  gap: 6px;
+  border: 2.5px solid #1A1D20;
+  border-radius: 60px;
+  padding: 8px 10px;
+  box-shadow: 6px 6px 0px #1A1D20;
+  margin: 30px auto 46px;
+  gap: 10px;
   max-width: 100%;
 }
 
 .billing-segment-btn {
   background: transparent;
   border: none;
-  padding: 9px 18px;
-  border-radius: 30px;
+  padding: 13px 26px;
+  border-radius: 50px;
   font-family: inherit;
-  font-size: 0.88rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: #64748B;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   transition: all 0.2s ease;
   outline: none;
 }
@@ -3410,17 +3410,17 @@ button {
 .billing-segment-btn.active {
   background: #1A1D20;
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
 }
 
 .discount-pill {
-  font-size: 0.74rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 20px;
+  padding: 5px 12px;
+  border-radius: 24px;
   background: #FFF1E6;
   color: #FF6B00;
-  border: 1px solid #FF6B00;
+  border: 1.5px solid #FF6B00;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3437,13 +3437,13 @@ button {
 .discount-pill-green {
   background: #DCFCE7 !important;
   color: #15803D !important;
-  border: 1px solid #22C55E !important;
+  border: 1.5px solid #22C55E !important;
 }
 
 .discount-pill-fire {
   background: #FFE4E6 !important;
   color: #E11D48 !important;
-  border: 1px solid #FB7185 !important;
+  border: 1.5px solid #FB7185 !important;
 }
 
 .billing-segment-btn.active .discount-pill-fire {
@@ -3459,7 +3459,7 @@ button {
 }
 
 .price-billing-calc {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #64748B;
   margin-top: 6px;
@@ -3482,52 +3482,53 @@ button {
     display: inline-flex;
     flex-direction: row;
     width: 100%;
-    max-width: 400px;
-    margin: 18px auto 32px;
-    padding: 4px;
-    border-radius: 20px;
-    gap: 4px;
+    max-width: 440px;
+    margin: 20px auto 35px;
+    padding: 6px;
+    border-radius: 26px;
+    gap: 6px;
     box-sizing: border-box;
   }
   .billing-segment-btn {
     flex: 1 1 0;
     min-width: 0;
     flex-direction: column;
-    padding: 8px 4px;
-    border-radius: 16px;
-    gap: 4px;
-    font-size: 0.78rem;
+    padding: 10px 6px;
+    border-radius: 20px;
+    gap: 5px;
+    font-size: 0.88rem;
     text-align: center;
     justify-content: center;
   }
   .billing-segment-btn span:first-child {
     font-weight: 800;
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     white-space: nowrap;
   }
   .discount-pill {
-    font-size: 0.65rem;
-    padding: 2px 6px;
+    font-size: 0.72rem;
+    padding: 3px 8px;
     letter-spacing: 0.02em;
     max-width: 100%;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 }
 
 @media (max-width: 370px) {
   .pricing-switch-segmented {
-    padding: 3px;
-    gap: 2px;
+    padding: 4px;
+    gap: 4px;
   }
   .billing-segment-btn {
-    padding: 6px 2px;
+    padding: 8px 3px;
+    border-radius: 18px;
   }
   .billing-segment-btn span:first-child {
-    font-size: 0.72rem;
+    font-size: 0.80rem;
   }
   .discount-pill {
-    font-size: 0.60rem;
-    padding: 1px 4px;
+    font-size: 0.65rem;
+    padding: 2px 5px;
   }
 }
 
