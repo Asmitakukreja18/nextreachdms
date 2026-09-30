@@ -81,6 +81,13 @@ class NextReachBackendHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
 
+        # Redirect single case-study to case-studies
+        if path in ['/case-study.html', '/case-study']:
+            self.send_response(301)
+            self.send_header('Location', '/case-studies.html')
+            self.end_headers()
+            return
+
         # 1. API: Get Leads
         if path == '/api/leads':
             leads = load_json(LEADS_FILE, [])

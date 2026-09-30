@@ -207,6 +207,12 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // --- REDIRECT CASE-STUDY TO CASE-STUDIES ---
+  if (pathname === '/case-study.html' || pathname === '/case-study') {
+    res.writeHead(301, { 'Location': '/case-studies.html' });
+    return res.end();
+  }
+
   // --- STATIC FILE SERVING ---
   let filePath = path.join(BASE_DIR, pathname === '/' ? 'index.html' : pathname);
 

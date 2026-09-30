@@ -5,7 +5,7 @@ NextReach DMS is a high-performance growth marketing agency and multi-channel re
 ## 🚀 Key Features & Pages
 - **Homepage (`index.html`)**: Attention Engineering, Infrastructure, GEO AI Search Optimization, Lead Gen Systems, and Customer Retention.
 - **Our Growth System (`process.html`)**: 5-Stage framework: Audit, Strategy, Execution, Optimization, and Scaling.
-- **Case Study (`case-study.html`)**: 3X Leads in 30 Days deep dive with interactive Growth Velocity visualizations.
+- **Case Studies (`case-studies.html`)**: Verified client revenue breakthroughs and live website showcase.
 - **Free Growth Audit (`audit.html`)**: Confidential performance audit and strategy teardown.
 - **About Us (`about.html`)**: Narrative, Mission, Vision, and Operating Principles.
 - **Contact Hub (`contact.html`)**: Direct enterprise helpline, instant WhatsApp link, and global office locations (Delhi NCR & Dubai).

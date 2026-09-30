@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=case-studies.html">
+  <script>
+    window.location.replace("case-studies.html");
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Client Case Study Breakdown │ NextReach DMS</title>
   <meta name="description" content="In-depth breakdown of how NextReach engineered enterprise scale, automated funnels, and massive revenue growth for leading brands.">
@@ -469,9 +473,18 @@
       <div style="text-align: center; margin-bottom: 32px;">
         <span class="case-hero-badge" id="cBadge">💼 WhatsApp SaaS • Meta Verified Cloud API</span>
         <h1 class="case-hero-title" id="cTitle">Marketiqx: Intelligent WhatsApp Conversations &amp; Meta Cloud API Engine</h1>
-        <p class="case-hero-sub" style="margin: 0 auto 28px;" id="cSubtitle">
+        <p class="case-hero-sub" style="margin: 0 auto 20px;" id="cSubtitle">
           Engineered high-throughput SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.
         </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 18px;">
+          <a id="cLiveBtn" href="https://whatsappmarketing-g1wc.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-visit-live" style="padding: 12px 28px; font-size: 0.95rem;">
+            <span>🌐 Launch Live Website</span>
+            <span>↗</span>
+          </a>
+          <a href="case-studies.html" class="btn-navy-outline" style="padding: 12px 24px; font-size: 0.95rem;">
+            <span>← All Client Projects</span>
+          </a>
+        </div>
       </div>
 
       <!-- 3-KPI Outcome Banner -->
@@ -645,6 +658,7 @@
         pageTitle: "Case Study: Marketiqx WhatsApp SaaS & Cloud API Platform │ NextReach",
         badge: "💼 WhatsApp SaaS • Meta Verified Cloud API",
         title: "Marketiqx: Intelligent WhatsApp Conversations & Meta Cloud API Engine",
+        liveUrl: "https://whatsappmarketing-g1wc.vercel.app/",
         subtitle: "Engineered high-throughput SaaS platform, Meta Cloud API multi-agent inbox, zero-drop template broadcast queue, and high-converting trial onboarding funnels.",
         metrics: [
           { val: "99.4%", lbl: "Verified Inbox Delivery SLA" },
@@ -674,6 +688,7 @@
         pageTitle: "Case Study: Let's Explore DMC Global Travel & AI Engine │ NextReach",
         badge: "✈️ Travel & Tourism • AI Trip Planner",
         title: "Let's Explore DMC: AI Trip Planning Engine & Global Tour Scaling",
+        liveUrl: "https://letsexplore-dmc.vercel.app/",
         subtitle: "Designed high-converting international holiday package portal, interactive AI Trip Planner lead engine, customized group tour workflows, and instant WhatsApp booking concierge.",
         metrics: [
           { val: "+290%", lbl: "Group Tour Enquiries" },
@@ -705,6 +720,7 @@
         pageTitle: "Case Study: Mobile Station Flagship Retail & Express Lab │ NextReach",
         badge: "📱 Premium Retail & D2C • Apple & Flagship Phones",
         title: "Mobile Station: Omnichannel Flagship Smartphone Retail & 30-Min Rapid Repair Hub",
+        liveUrl: "https://mobilestation-mu.vercel.app/",
         subtitle: "Scaled premium flagship smartphone retail and 30-minute component engineering lab with hyper-local geo-fencing ads, trade-in value funnels, and WhatsApp VIP desk.",
         metrics: [
           { val: "₹2.4 Cr", lbl: "Monthly Turnaround GMV" },
@@ -734,6 +750,7 @@
         pageTitle: "Case Study: MedEx Pharmaceuticals WHO-GMP Export Hub │ NextReach",
         badge: "🏥 Global B2B Pharma • WHO-GMP Formulations Export",
         title: "MedEx Pharmaceuticals: WHO-GMP Certified Global Sourcing & Bulk Export Hub",
+        liveUrl: "https://growmedex.vercel.app/",
         subtitle: "Built an international B2B pharmaceutical sourcing portal, multi-currency RFQ product directory, wholesale WhatsApp desk, and compliance-first overseas lead pipelines.",
         metrics: [
           { val: "14+", lbl: "Export Destination Countries" },
@@ -768,6 +785,11 @@
       document.getElementById('cBadge').textContent = data.badge;
       document.getElementById('cTitle').textContent = data.title;
       document.getElementById('cSubtitle').textContent = data.subtitle;
+
+      const liveBtn = document.getElementById('cLiveBtn');
+      if (liveBtn && data.liveUrl) {
+        liveBtn.href = data.liveUrl;
+      }
 
       document.getElementById('cMet1Val').textContent = data.metrics[0].val;
       document.getElementById('cMet1Lbl').textContent = data.metrics[0].lbl;
