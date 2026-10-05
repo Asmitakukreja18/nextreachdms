@@ -116,14 +116,14 @@
 
       lastScrollY = currentY;
 
-      // C. Wave dynamics impulse for fluid pencil bobbing & tilting
-      scrollVelocity = Math.min(2.0, scrollVelocity * 0.72 + Math.min(absDy, 50) * 0.06 + 0.4);
+      // C. Wave dynamics impulse for big fluid pencil waves
+      scrollVelocity = Math.min(2.4, scrollVelocity * 0.74 + Math.min(absDy, 60) * 0.08 + 0.55);
       isScrolling = true;
 
       clearTimeout(scrollStopTimer);
       scrollStopTimer = setTimeout(() => {
         isScrolling = false;
-      }, 160);
+      }, 180);
 
       if (!isWaveAnimationRunning) {
         isWaveAnimationRunning = true;
@@ -133,9 +133,9 @@
 
     function renderWaveMotion() {
       if (isScrolling) {
-        wavePhase += 0.24; // Playful wave frequency
+        wavePhase += 0.20; // Broad, sweeping wave frequency
       } else {
-        scrollVelocity *= 0.85; // Smooth spring dampening back to rest
+        scrollVelocity *= 0.88; // Smooth spring dampening back to rest
         if (scrollVelocity < 0.015) {
           scrollVelocity = 0;
           isWaveAnimationRunning = false;
@@ -143,23 +143,27 @@
             pencilRider.style.transform = 'translate3d(0, 0px, 0) rotate(0deg)';
           }
           if (trailDots) {
-            trailDots.style.transform = 'translate3d(0, 0px, 0)';
+            trailDots.querySelectorAll('span').forEach(dot => dot.style.transform = 'translate3d(0, 0px, 0)');
           }
           return;
         }
       }
 
-      // Sinusoidal wave calculations ("like in wave", uper se niche jaye left to right)
-      const waveAngle = Math.sin(wavePhase) * (14 * scrollVelocity); // Tilt wave ±14 deg
-      const waveY = Math.sin(wavePhase * 0.9) * (5.5 * scrollVelocity); // Bobbing up and down
-      const trailY = Math.sin((wavePhase - 0.4) * 0.9) * (3.2 * scrollVelocity);
+      // Big Sinusoidal Wave Calculations ("pencil should take big waves")
+      const waveAngle = Math.sin(wavePhase) * (26 * scrollVelocity); // Expressive dynamic tilt wave ±26 deg
+      const waveY = Math.sin(wavePhase * 0.78) * (18 * scrollVelocity); // Big undulating waves: ±18px dip & crest
 
       if (pencilRider) {
         pencilRider.style.transform = `translate3d(0, ${waveY}px, 0) rotate(${waveAngle}deg)`;
       }
 
       if (trailDots) {
-        trailDots.style.transform = `translate3d(0, ${trailY}px, 0)`;
+        const dots = trailDots.querySelectorAll('span');
+        dots.forEach((dot, idx) => {
+          const dotOffset = (idx + 1) * 0.35;
+          const dotY = Math.sin((wavePhase - dotOffset) * 0.78) * (12 * scrollVelocity);
+          dot.style.transform = `translate3d(0, ${dotY}px, 0)`;
+        });
       }
 
       requestAnimationFrame(renderWaveMotion);
