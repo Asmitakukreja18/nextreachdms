@@ -14,19 +14,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=127.0">
 
-  <!-- Native Cute Cartoon Pencil Cursor Fallback -->
-  <style>
-    html, body {
-      cursor: url('images/kawaii-orange-pencil-cursor.png?v=109.0') 33 69, auto;
-    }
-    a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, 
-    input[type="submit"], input[type="button"], select, .theme-toggle-btn {
-      cursor: url('images/kawaii-orange-pencil-cursor.png?v=109.0') 33 69, pointer;
-    }
-    input[type="text"], input[type="email"], input[type="tel"], textarea {
-      cursor: url('images/kawaii-orange-pencil-cursor.png?v=109.0') 33 69, text;
-    }
-  </style>
+
 
   <!-- CDN Dependencies: GSAP, ScrollTrigger, Lenis, VanillaTilt, Canvas Confetti -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -377,17 +365,18 @@
   </script>
 
   <!-- ==========================================================================
-       2. SCROLL PROGRESS BAR, CUSTOM CURSOR & HAND-DRAWN LIVE WRITING PENCIL
+       2. TOP SCROLL PROGRESS TRACK WITH WAVING PENCIL RIDER & BLACK ARROW
        ========================================================================== -->
-  <!-- Minimal Clean Scroll Progress Line -->
-  <div class="scroll-progress-bar" id="scrollProgress" style="position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #ff6b00, #ff2a6d); z-index: 99999; width: 0; pointer-events: none;"></div>
-
-  <!-- Real-Time Hand-Drawn Smooth Curved Pencil Writing Canvas Overlay -->
-  <canvas id="pencilTrailCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999990;"></canvas>
-
-  <!-- Kawaii Orange Pencil Touch & Cursor Element (Appears where user touches or moves) -->
-  <div id="handDrawnPencil" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 46px; height: 66px; pointer-events: none; z-index: 999999; transform: translate3d(-100px, -100px, 0); filter: drop-shadow(2px 6px 12px rgba(255,107,0,0.35)); will-change: transform; transition: opacity 0.25s ease, filter 0.15s ease; opacity: 0;">
-    <img src="images/kawaii-orange-pencil.png" alt="Kawaii Orange Pencil" style="width: 100%; height: 100%; object-fit: contain; pointer-events: none; user-select: none; display: block;">
+  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
+    <div class="scroll-progress-fill" id="scrollProgress">
+      <div class="scroll-pencil-trail-dots" id="scrollPencilTrailDots">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress...">
+        <img src="images/cute-pencil-cursor.svg" alt="Waving Pencil Rider" class="rider-pencil-img">
+      </div>
+    </div>
+    <div class="scroll-track-arrow">►</div>
   </div>
 
 

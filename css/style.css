@@ -8391,34 +8391,27 @@ body {
    HAND-SKETCHED PENCIL CURSOR & PENCIL PRELOADER ANIMATION
    ========================================================================== */
 /* ==========================================================================
-   NATIVE CUTE PENCIL CURSOR REPLACEMENT ACROSS ALL ELEMENTS
+   DEFAULT CLEAN ARROW CURSOR (Standard browser cursor - no pencil on cursor)
    ========================================================================== */
 html, body {
-  cursor: url('../images/cute-pencil-cursor.svg') 0 0, auto !important;
+  cursor: default !important;
 }
 
 a, button, [role="button"], .btn, .btn-orange, .btn-visit-live, .project-card, .tilt-card, 
 input[type="submit"], input[type="button"], select, .theme-toggle-btn, .project-filter-btn {
-  cursor: url('../images/cute-pencil-cursor-hover.svg') 0 0, pointer !important;
+  cursor: pointer !important;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], textarea {
-  cursor: url('../images/cute-pencil-cursor.svg') 0 0, text !important;
+  cursor: text !important;
 }
 
 .custom-cursor-dot,
 .custom-cursor-aura,
-.cute-pencil-cursor {
+.cute-pencil-cursor,
+#handDrawnPencil,
+#pencilTrailCanvas {
   display: none !important;
-}
-
-@media (max-width: 991px), (hover: none), (pointer: coarse) {
-  html, body, a, button, input, select, textarea {
-    cursor: auto !important;
-  }
-  #pencilTrailCanvas {
-    display: none !important;
-  }
 }
 
 /* ==========================================================================
@@ -8639,9 +8632,9 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 4px !important;
-  background: rgba(26, 29, 32, 0.08) !important;
-  border-bottom: 1px solid rgba(26, 29, 32, 0.12) !important;
+  height: 3.5px !important;
+  background: rgba(26, 29, 32, 0.14) !important;
+  border-bottom: 1.5px solid rgba(26, 29, 32, 0.2) !important;
   z-index: 999995 !important;
   pointer-events: none !important;
 }
@@ -8654,17 +8647,42 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   will-change: width;
 }
 
+/* Trailing sketch marks / dots behind the pencil */
+.scroll-pencil-trail-dots {
+  position: absolute !important;
+  right: 14px !important;
+  top: -2px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  pointer-events: none !important;
+}
+
+.scroll-pencil-trail-dots span {
+  display: inline-block !important;
+  width: 3.5px !important;
+  height: 3.5px !important;
+  border-radius: 50% !important;
+  background: #17110F !important;
+  will-change: transform, opacity !important;
+}
+
+.scroll-pencil-trail-dots span:nth-child(1) { opacity: 0.25 !important; transform: scale(0.7) !important; }
+.scroll-pencil-trail-dots span:nth-child(2) { opacity: 0.45 !important; transform: scale(0.85) !important; }
+.scroll-pencil-trail-dots span:nth-child(3) { opacity: 0.7 !important; transform: scale(1.0) !important; }
+.scroll-pencil-trail-dots span:nth-child(4) { opacity: 0.9 !important; transform: scale(1.15) !important; }
+
 .scroll-pencil-rider {
   position: absolute !important;
-  right: -14px !important;
-  top: -18px !important;
-  width: 24px !important;
-  height: 38px !important;
+  right: -10px !important;
+  top: -16px !important;
+  width: 30px !important;
+  height: 30px !important;
   pointer-events: none !important;
-  transform-origin: 16px 36px !important;
+  transform-origin: 22px 24px !important;
   will-change: transform;
-  filter: drop-shadow(1px 3px 6px rgba(0, 45, 98, 0.4)) !important;
-  transition: transform 0.06s ease-out;
+  filter: drop-shadow(1px 2px 4px rgba(23, 17, 15, 0.35)) !important;
+  transition: transform 0.08s ease-out;
 }
 
 .rider-pencil-img {
@@ -8674,29 +8692,18 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   display: block !important;
 }
 
-.scroll-pencil-rider svg {
-  display: block;
-  width: 24px;
-  height: 38px;
-}
-
 .scroll-track-arrow {
   position: absolute !important;
   right: 0 !important;
-  top: -6px !important;
-  font-size: 11px !important;
+  top: -7px !important;
+  font-size: 13px !important;
   color: #17110F !important;
   line-height: 1 !important;
-  opacity: 0.65 !important;
+  font-weight: 900 !important;
 }
 
 /* Responsive mobile & tablet layout enhancements */
 @media (max-width: 991px) {
-  #handDrawnPencil,
-  #pencilTrailCanvas {
-    display: none !important;
-  }
-
   .scroll-progress-track {
     height: 3px !important;
   }
@@ -8704,17 +8711,8 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   .scroll-pencil-rider {
     width: 24px !important;
     height: 24px !important;
-    right: -12px !important;
-    top: -10px !important;
-  }
-
-  .scroll-pencil-rider svg {
-    width: 24px !important;
-    height: 24px !important;
-  }
-
-  .scroll-track-arrow {
-    display: none !important;
+    right: -8px !important;
+    top: -12px !important;
   }
 }
 
