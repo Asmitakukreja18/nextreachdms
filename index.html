@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=127.0">
+  <link rel="stylesheet" href="css/style.css?v=130.0">
 
 
 
@@ -367,16 +367,20 @@
   <!-- ==========================================================================
        2. TOP SCROLL PROGRESS TRACK WITH WAVING PENCIL RIDER & BLACK ARROW
        ========================================================================== -->
-  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
-    <div class="scroll-progress-fill" id="scrollProgress">
-      <div class="scroll-pencil-trail-dots" id="scrollPencilTrailDots">
+  <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(26, 29, 32, 0.14); border-bottom: 1.5px solid rgba(26, 29, 32, 0.22); z-index: 9999999; pointer-events: none; overflow: visible;">
+    <div class="scroll-progress-fill" id="scrollProgress" style="height: 100%; width: 0%; background: #17110F; position: relative; will-change: width; overflow: visible;">
+      <div class="scroll-pencil-trail-dots" id="scrollPencilTrailDots" style="position: absolute; right: 18px; top: 1px; display: flex; align-items: center; gap: 5px; pointer-events: none;">
         <span></span><span></span><span></span><span></span>
       </div>
-      <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress...">
-        <img src="images/cute-pencil-cursor.svg" alt="Waving Pencil Rider" class="rider-pencil-img">
+      <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress..." style="position: absolute; right: -8px; top: 0px; width: 34px; height: 34px; pointer-events: none; will-change: transform; filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.35));">
+        <img src="images/cute-pencil-cursor.svg" alt="Waving Pencil Rider" class="rider-pencil-img" style="width: 100%; height: 100%; object-fit: contain; display: block;">
       </div>
     </div>
-    <div class="scroll-track-arrow">►</div>
+    <div class="scroll-track-arrow" style="position: absolute; right: 0; top: -4px; display: flex; align-items: center; justify-content: center;">
+      <svg class="scroll-track-arrow-svg" viewBox="0 0 10 12" width="10" height="12">
+        <polygon points="0,0 10,6 0,12" fill="#17110F" />
+      </svg>
+    </div>
   </div>
 
 

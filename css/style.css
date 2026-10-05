@@ -8271,6 +8271,8 @@ body {
     display: inline-block !important;
     margin: 6px 4px !important;
   }
+}
+
 /* Explicit Proof Bar Layout (Prevent Avatar Text Overlap) */
 .client-proof-bar {
   display: flex !important;
@@ -8632,11 +8634,12 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 3.5px !important;
+  height: 4px !important;
   background: rgba(26, 29, 32, 0.14) !important;
-  border-bottom: 1.5px solid rgba(26, 29, 32, 0.2) !important;
-  z-index: 999995 !important;
+  border-bottom: 1.5px solid rgba(26, 29, 32, 0.22) !important;
+  z-index: 9999999 !important;
   pointer-events: none !important;
+  overflow: visible !important;
 }
 
 .scroll-progress-fill {
@@ -8645,13 +8648,14 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   background: #17110F !important;
   position: relative !important;
   will-change: width;
+  overflow: visible !important;
 }
 
 /* Trailing sketch marks / dots behind the pencil */
 .scroll-pencil-trail-dots {
   position: absolute !important;
-  right: 14px !important;
-  top: -2px !important;
+  right: 18px !important;
+  top: 1px !important;
   display: flex !important;
   align-items: center !important;
   gap: 5px !important;
@@ -8674,14 +8678,14 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
 .scroll-pencil-rider {
   position: absolute !important;
-  right: -10px !important;
-  top: -16px !important;
-  width: 30px !important;
-  height: 30px !important;
+  right: -8px !important;
+  top: 0px !important;
+  width: 34px !important;
+  height: 34px !important;
   pointer-events: none !important;
-  transform-origin: 22px 24px !important;
+  transform-origin: 26px 8px !important;
   will-change: transform;
-  filter: drop-shadow(1px 2px 4px rgba(23, 17, 15, 0.35)) !important;
+  filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.35)) !important;
   transition: transform 0.08s ease-out;
 }
 
@@ -8695,24 +8699,30 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 .scroll-track-arrow {
   position: absolute !important;
   right: 0 !important;
-  top: -7px !important;
-  font-size: 13px !important;
-  color: #17110F !important;
+  top: -4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   line-height: 1 !important;
-  font-weight: 900 !important;
+}
+
+.scroll-track-arrow-svg {
+  display: block !important;
+  width: 10px !important;
+  height: 12px !important;
 }
 
 /* Responsive mobile & tablet layout enhancements */
 @media (max-width: 991px) {
   .scroll-progress-track {
-    height: 3px !important;
+    height: 3.5px !important;
   }
 
   .scroll-pencil-rider {
-    width: 24px !important;
-    height: 24px !important;
-    right: -8px !important;
-    top: -12px !important;
+    width: 28px !important;
+    height: 28px !important;
+    right: -6px !important;
+    top: 0px !important;
   }
 }
 
