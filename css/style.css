@@ -364,7 +364,11 @@ button {
   height: 80px;
   display: flex;
   align-items: center;
-  transition: all var(--transition-fast);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), height var(--transition-fast), background var(--transition-fast);
+}
+
+.header-nav.nav-hidden {
+  transform: translateY(-100%) !important;
 }
 
 .nav-wrapper {
@@ -8640,11 +8644,19 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   z-index: 9999999 !important;
   pointer-events: none !important;
   overflow: visible !important;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+}
+
+.scroll-progress-track.track-visible {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
 
 .scroll-progress-fill {
   height: 100% !important;
-  width: 0% !important;
+  width: 0%;
   background: #17110F !important;
   position: relative !important;
   will-change: width;
@@ -8686,7 +8698,6 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   transform-origin: 26px 8px !important;
   will-change: transform;
   filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.35)) !important;
-  transition: transform 0.08s ease-out;
 }
 
 .rider-pencil-img {
