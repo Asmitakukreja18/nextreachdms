@@ -8553,25 +8553,15 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
 /* 6. Glowing Live Website Button ("🌐 Launch Live Website") */
 @keyframes liveBtnGlow {
-  0% { box-shadow: 4px 4px 0px #1A1D20, 0 0 0px rgba(255, 107, 0, 0); }
-  50% { box-shadow: 4px 4px 0px #1A1D20, 0 0 16px rgba(255, 107, 0, 0.55); }
-  100% { box-shadow: 4px 4px 0px #1A1D20, 0 0 0px rgba(255, 107, 0, 0); }
+  0% { box-shadow: 3px 3px 0px #1A1D20, 0 0 0px rgba(255, 107, 0, 0); }
+  50% { box-shadow: 3px 3px 0px #1A1D20, 0 0 12px rgba(255, 107, 0, 0.45); }
+  100% { box-shadow: 3px 3px 0px #1A1D20, 0 0 0px rgba(255, 107, 0, 0); }
 }
 
 .btn-visit-live {
   animation: liveBtnGlow 2.4s ease-in-out infinite !important;
-  transition: all 0.2s ease !important;
 }
 
-.btn-visit-live:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 6px 6px 0px #1A1D20, 0 0 20px rgba(255, 107, 0, 0.7) !important;
-}
-
-.btn-visit-live:active {
-  transform: translateY(2px) scale(0.97) !important;
-  box-shadow: 2px 2px 0px #1A1D20 !important;
-}
 
 /* 7. Button Spring Feedback */
 .btn-orange:hover, .btn-solid-orange:hover, .btn-navy-outline:hover {
@@ -8637,36 +8627,101 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   100% { opacity: 1; transform: scale(1.02); }
 }
 
-/* Client Project Live Website Action Buttons */
+/* Client Project Dual Action Buttons (Launch Website & Case Study) */
 .project-card-actions {
-  display: flex !important;
-  gap: 12px !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+  width: 100% !important;
   margin-top: 18px !important;
+  align-items: stretch !important;
 }
 
+.project-card-actions:has(> :only-child),
+.project-card-actions > :only-child {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+/* Primary Action: Launch Website */
 .btn-visit-live {
   background: #FF6B00 !important;
   color: #FFFFFF !important;
   font-weight: 800 !important;
-  font-size: 0.88rem !important;
-  padding: 10px 20px !important;
-  border-radius: 8px !important;
+  font-size: 0.83rem !important;
+  letter-spacing: -0.01em !important;
+  padding: 10px 8px !important;
+  border-radius: 10px !important;
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3) !important;
-  transition: all 0.25s ease !important;
+  justify-content: center !important;
+  gap: 6px !important;
   border: 1.8px solid #1A1D20 !important;
+  box-shadow: 3px 3px 0px #1A1D20 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  width: 100% !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
 }
 
 .btn-visit-live:hover {
-  background: #FF8526 !important;
+  background: #FF7A00 !important;
   color: #FFFFFF !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.45) !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0px #1A1D20, 0 0 16px rgba(255, 107, 0, 0.5) !important;
+}
+
+.btn-visit-live:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px #1A1D20 !important;
+}
+
+/* Secondary Action: Case Study */
+.project-learn-btn {
+  background: #FFFDF9 !important;
+  color: #002D62 !important;
+  font-weight: 800 !important;
+  font-size: 0.83rem !important;
+  letter-spacing: -0.01em !important;
+  padding: 10px 8px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border: 1.8px solid #1A1D20 !important;
+  box-shadow: 3px 3px 0px #1A1D20 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+
+.project-learn-btn:hover {
+  background: #002D62 !important;
+  color: #FFFFFF !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0px #1A1D20, 0 0 16px rgba(0, 45, 98, 0.3) !important;
+}
+
+.project-learn-btn:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px #1A1D20 !important;
+}
+
+@media (max-width: 520px) {
+  .project-card-actions {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
 }
 
 /* ==========================================================================
@@ -8803,11 +8858,13 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   }
 
   .project-card-actions {
-    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
     width: 100% !important;
   }
 
-  .btn-visit-live {
+  .btn-visit-live,
+  .project-learn-btn {
     width: 100% !important;
     justify-content: center !important;
   }
