@@ -8700,11 +8700,11 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 /* Trailing sketch marks / dots behind the pencil */
 .scroll-pencil-trail-dots {
   position: absolute !important;
-  right: 18px !important;
-  top: 1px !important;
+  right: 22px !important;
+  top: 7px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 5px !important;
+  gap: 4px !important;
   pointer-events: none !important;
 }
 
@@ -8717,21 +8717,22 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   will-change: transform, opacity !important;
 }
 
-.scroll-pencil-trail-dots span:nth-child(1) { opacity: 0.25 !important; transform: scale(0.7) !important; }
-.scroll-pencil-trail-dots span:nth-child(2) { opacity: 0.45 !important; transform: scale(0.85) !important; }
+.scroll-pencil-trail-dots span:nth-child(1) { opacity: 0.25 !important; transform: scale(0.65) !important; }
+.scroll-pencil-trail-dots span:nth-child(2) { opacity: 0.45 !important; transform: scale(0.8) !important; }
 .scroll-pencil-trail-dots span:nth-child(3) { opacity: 0.7 !important; transform: scale(1.0) !important; }
-.scroll-pencil-trail-dots span:nth-child(4) { opacity: 0.9 !important; transform: scale(1.15) !important; }
+.scroll-pencil-trail-dots span:nth-child(4) { opacity: 0.9 !important; transform: scale(1.2) !important; }
 
+/* Pencil hangs below the top line with its tip touching the line with visual gap */
 .scroll-pencil-rider {
   position: absolute !important;
-  right: -8px !important;
-  top: 0px !important;
-  width: 34px !important;
-  height: 34px !important;
+  right: -3px !important;
+  top: 4px !important;
+  width: 36px !important;
+  height: 28px !important;
   pointer-events: none !important;
-  transform-origin: 26px 8px !important;
+  transform-origin: 90% 10% !important;
   will-change: transform;
-  filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.35)) !important;
+  filter: drop-shadow(1px 3px 5px rgba(23, 17, 15, 0.3)) !important;
 }
 
 .rider-pencil-img {
@@ -8739,6 +8740,8 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   height: 100% !important;
   object-fit: contain !important;
   display: block !important;
+  pointer-events: none !important;
+  user-select: none !important;
 }
 
 .scroll-track-arrow {
@@ -8765,9 +8768,16 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
   .scroll-pencil-rider {
     width: 28px !important;
-    height: 28px !important;
-    right: -6px !important;
-    top: 0px !important;
+    height: 22px !important;
+    right: -2px !important;
+    top: 4px !important;
+    transform-origin: 90% 10% !important;
+  }
+
+  .scroll-pencil-trail-dots {
+    right: 18px !important;
+    top: 6px !important;
+    gap: 3px !important;
   }
 }
 

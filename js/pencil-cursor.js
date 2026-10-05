@@ -41,7 +41,7 @@
             <span></span>
           </div>
           <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress...">
-            <img src="images/cute-pencil-cursor.svg" alt="Waving Pencil Rider" class="rider-pencil-img">
+            <img src="images/chatgpt-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">
           </div>
         </div>
         <div class="scroll-track-arrow">
@@ -149,10 +149,10 @@
         }
       }
 
-      // Sinusoidal wave calculations ("like in wave")
+      // Sinusoidal wave calculations ("like in wave", uper se niche jaye left to right)
       const waveAngle = Math.sin(wavePhase) * (14 * scrollVelocity); // Tilt wave ±14 deg
-      const waveY = Math.abs(Math.sin(wavePhase * 0.85)) * (4.5 * scrollVelocity); // Bobbing down
-      const trailY = Math.abs(Math.sin((wavePhase - 0.5) * 0.85)) * (2.2 * scrollVelocity);
+      const waveY = Math.sin(wavePhase * 0.9) * (5.5 * scrollVelocity); // Bobbing up and down
+      const trailY = Math.sin((wavePhase - 0.4) * 0.9) * (3.2 * scrollVelocity);
 
       if (pencilRider) {
         pencilRider.style.transform = `translate3d(0, ${waveY}px, 0) rotate(${waveAngle}deg)`;
