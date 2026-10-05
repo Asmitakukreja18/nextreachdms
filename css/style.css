@@ -7408,6 +7408,11 @@ body {
   border-radius: 6px !important;
   border: 1.5px solid #1A1D20 !important;
   filter: grayscale(100%) contrast(110%) !important;
+  transition: filter 0.35s ease !important;
+}
+
+.polaroid-photo-frame:hover .founder-portrait-img {
+  filter: grayscale(0%) contrast(100%) !important;
 }
 
 .polaroid-photo-caption {
