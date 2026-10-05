@@ -149,9 +149,11 @@
         }
       }
 
-      // Big, Slow, Smooth Sinusoidal Waves ("pencil should take big waves, thoda slow wave le")
+      // Big, Slow, Downward Sinusoidal Waves ("wave krte hue niche jana hai pencil ko")
+      // waveCycle dips strictly downwards into the page (0 to +25px), never clipping above the top line
+      const waveCycle = (1 - Math.cos(wavePhase)) * 0.5; // Smooth 0 to 1 cycle
+      const waveY = waveCycle * (25 * scrollVelocity); // Sweeps downwards by up to 25px into view
       const waveAngle = Math.sin(wavePhase) * (20 * scrollVelocity); // Graceful tilt wave ±20 deg
-      const waveY = Math.sin(wavePhase) * (18 * scrollVelocity); // Big undulating waves: ±18px dip & crest
 
       if (pencilRider) {
         pencilRider.style.transform = `translate3d(0, ${waveY}px, 0) rotate(${waveAngle}deg)`;
@@ -160,8 +162,9 @@
       if (trailDots) {
         const dots = trailDots.querySelectorAll('span');
         dots.forEach((dot, idx) => {
-          const dotOffset = (idx + 1) * 0.22;
-          const dotY = Math.sin(wavePhase - dotOffset) * (11 * scrollVelocity);
+          const dotOffset = (idx + 1) * 0.25;
+          const dotCycle = (1 - Math.cos(wavePhase - dotOffset)) * 0.5;
+          const dotY = dotCycle * (15 * scrollVelocity);
           dot.style.transform = `translate3d(0, ${dotY}px, 0)`;
         });
       }
