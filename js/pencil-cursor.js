@@ -116,14 +116,14 @@
 
       lastScrollY = currentY;
 
-      // C. Wave dynamics impulse for big fluid pencil waves
-      scrollVelocity = Math.min(2.4, scrollVelocity * 0.74 + Math.min(absDy, 60) * 0.08 + 0.55);
+      // C. Wave dynamics impulse for smooth, slow, big fluid pencil waves
+      scrollVelocity = Math.min(1.8, scrollVelocity * 0.80 + Math.min(absDy, 50) * 0.04 + 0.32);
       isScrolling = true;
 
       clearTimeout(scrollStopTimer);
       scrollStopTimer = setTimeout(() => {
         isScrolling = false;
-      }, 180);
+      }, 200);
 
       if (!isWaveAnimationRunning) {
         isWaveAnimationRunning = true;
@@ -133,9 +133,9 @@
 
     function renderWaveMotion() {
       if (isScrolling) {
-        wavePhase += 0.20; // Broad, sweeping wave frequency
+        wavePhase += 0.07; // Relaxed, slow, elegant wave frequency (was 0.20)
       } else {
-        scrollVelocity *= 0.88; // Smooth spring dampening back to rest
+        scrollVelocity *= 0.91; // Smooth spring dampening back to rest
         if (scrollVelocity < 0.015) {
           scrollVelocity = 0;
           isWaveAnimationRunning = false;
@@ -149,9 +149,9 @@
         }
       }
 
-      // Big Sinusoidal Wave Calculations ("pencil should take big waves")
-      const waveAngle = Math.sin(wavePhase) * (26 * scrollVelocity); // Expressive dynamic tilt wave ±26 deg
-      const waveY = Math.sin(wavePhase * 0.78) * (18 * scrollVelocity); // Big undulating waves: ±18px dip & crest
+      // Big, Slow, Smooth Sinusoidal Waves ("pencil should take big waves, thoda slow wave le")
+      const waveAngle = Math.sin(wavePhase) * (20 * scrollVelocity); // Graceful tilt wave ±20 deg
+      const waveY = Math.sin(wavePhase) * (18 * scrollVelocity); // Big undulating waves: ±18px dip & crest
 
       if (pencilRider) {
         pencilRider.style.transform = `translate3d(0, ${waveY}px, 0) rotate(${waveAngle}deg)`;
@@ -160,8 +160,8 @@
       if (trailDots) {
         const dots = trailDots.querySelectorAll('span');
         dots.forEach((dot, idx) => {
-          const dotOffset = (idx + 1) * 0.35;
-          const dotY = Math.sin((wavePhase - dotOffset) * 0.78) * (12 * scrollVelocity);
+          const dotOffset = (idx + 1) * 0.22;
+          const dotY = Math.sin(wavePhase - dotOffset) * (11 * scrollVelocity);
           dot.style.transform = `translate3d(0, ${dotY}px, 0)`;
         });
       }
