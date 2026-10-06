@@ -119,29 +119,35 @@
         progressBar.style.setProperty('width', scrollPct + '%', 'important');
       }
 
-      // B. Floating Sinusoidal Pencil Motion (adwali.com / Image 2 style)
+      // B. Floating Sinusoidal Pencil Motion with Big Sweeping Waves (dipping outside/below header)
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
       const px = 25 + (scrollPct / 100) * (winW - 75);
-      const waveFreq = 0.0032;
-      const waveBaseY = winW < 768 ? 85 : 95;
-      const waveAmp = winW < 768 ? 32 : 42;
+      const waveFreq = 0.0022; // Broad sweeping frequency
+      const waveBaseY = winW < 768 ? 130 : 155; // Centered well below the 80px header
+      const waveAmp = winW < 768 ? 52 : 72; // Deep 144px total vertical wave swoop
       const waveY = waveBaseY + Math.sin(currentY * waveFreq) * waveAmp;
-      const waveAngle = Math.cos(currentY * waveFreq) * 20;
+      const waveAngle = Math.cos(currentY * waveFreq) * 26; // Dynamic slope tilt matching deep wave
+      const rad = (waveAngle * Math.PI) / 180;
 
       if (pencilRider) {
-        pencilRider.style.transform = `translate3d(${(px - 28).toFixed(1)}px, ${(waveY - 18).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
+        pencilRider.style.transform = `translate3d(${(px - 26).toFixed(1)}px, ${(waveY - 20).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
       }
 
-      // C. Curved Dashed Polyline Trail trailing behind the pencil (Image 2)
+      // Calculate exact position of the orange eraser base (bottom-left of pencil)
+      // Vector from center to eraser is (-18px, +12px) unrotated
+      const eraserX = px - 18 * Math.cos(rad) - 12 * Math.sin(rad);
+      const eraserY = waveY - 18 * Math.sin(rad) + 12 * Math.cos(rad);
+
+      // C. Curved Dashed Polyline Trail trailing cleanly behind the eraser
       if (dashedPolyline) {
         const trailPoints = [];
-        const numPoints = 18;
+        const numPoints = 15; // Proportional, neat trail length matching pencil size
         const xStep = Math.max(7, winW * 0.009);
         for (let i = numPoints; i >= 0; i--) {
-          const ptX = px - (i * xStep);
+          const ptX = eraserX - (i * xStep);
           if (ptX < 0) continue;
-          const lagY = currentY - (i * 38);
-          const ptY = waveBaseY + Math.sin(lagY * waveFreq) * waveAmp;
+          const lagY = currentY - (i * 44);
+          const ptY = (waveBaseY + Math.sin(lagY * waveFreq) * waveAmp) + (eraserY - waveY);
           trailPoints.push(ptX.toFixed(1) + ',' + ptY.toFixed(1));
         }
         dashedPolyline.setAttribute('points', trailPoints.join(' '));

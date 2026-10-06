@@ -8779,8 +8779,8 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 .pencil-dashed-polyline {
   fill: none !important;
   stroke: rgba(74, 66, 61, 0.45) !important;
-  stroke-width: 2.5 !important;
-  stroke-dasharray: 6 8 !important; /* Dashed sketch curve */
+  stroke-width: 2px !important;
+  stroke-dasharray: 4.5 6.5 !important; /* Proportional, neat dashed curve */
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
 }
