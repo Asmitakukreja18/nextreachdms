@@ -121,12 +121,12 @@
         progressBar.style.setProperty('width', scrollPct + '%', 'important');
       }
 
-      // B. Continuous Sinusoidal Wave Dynamics (matching adwali.com):
-      // py sweeps down into view and ang tilts naturally with the wave slope
-      const waveFreq = 0.0052;
+      // B. Big, Broad Sinusoidal Waves (matching adwali.com):
+      // Wavelength is long and sweeping (~2600px of scroll per cycle) with deep 34px downward curve
+      const waveFreq = 0.0024;
       const waveCycle = (1 - Math.cos(currentY * waveFreq)) * 0.5; // Smooth 0 to 1 cycle
-      const waveY = waveCycle * 22; // Sweeps downwards up to 22px into view
-      const waveAngle = Math.sin(currentY * waveFreq) * 16; // Dynamic tilt ±16 deg matching wave slope
+      const waveY = waveCycle * 34; // Big, sweeping curve dipping down up to 34px into view
+      const waveAngle = Math.sin(currentY * waveFreq) * 18; // Dynamic tilt ±18 deg matching wave slope
 
       if (pencilRider) {
         pencilRider.style.transform = `translate3d(0, ${waveY.toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
@@ -136,9 +136,9 @@
       if (trailDots) {
         const dots = trailDots.querySelectorAll('span');
         dots.forEach((dot, idx) => {
-          const lagY = Math.max(0, currentY - (idx + 1) * 32);
+          const lagY = Math.max(0, currentY - (idx + 1) * 45);
           const dotCycle = (1 - Math.cos(lagY * waveFreq)) * 0.5;
-          const dotY = dotCycle * 14;
+          const dotY = dotCycle * 22;
           dot.style.transform = `translate3d(0, ${dotY.toFixed(1)}px, 0)`;
         });
       }

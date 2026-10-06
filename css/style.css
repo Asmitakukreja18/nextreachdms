@@ -8732,10 +8732,10 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 4px !important;
-  background: rgba(26, 29, 32, 0.12) !important;
-  border-bottom: 1.5px solid rgba(26, 29, 32, 0.22) !important;
-  z-index: 9999999 !important;
+  height: 3.5px !important;
+  background: repeating-linear-gradient(90deg, rgba(74, 66, 61, 0.18) 0px, rgba(74, 66, 61, 0.18) 6px, transparent 6px, transparent 12px) !important;
+  border-bottom: none !important;
+  z-index: 950 !important; /* Behind header (.header-nav is z-index: 1000) */
   pointer-events: none !important;
   overflow: visible !important;
   transform: translateY(0) !important;
@@ -8746,7 +8746,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 .scroll-progress-fill {
   height: 100% !important;
   width: 0%;
-  background: #17110F !important;
+  background: repeating-linear-gradient(90deg, #17110F 0px, #17110F 8px, transparent 8px, transparent 14px) !important;
   position: relative !important;
   will-change: width;
   overflow: visible !important;
