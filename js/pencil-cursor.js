@@ -119,41 +119,61 @@
         progressBar.style.setProperty('width', scrollPct + '%', 'important');
       }
 
-      // B. Floating Sinusoidal Pencil Motion hugging right near the header ("header ke pas hi")
+      // B. Floating Sinusoidal Wave Pencil Motion & Dashed Trail ("wave chahiye yawrr" + "header ke pas hi")
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
+      const isMobile = winW < 768;
       const px = 25 + (scrollPct / 100) * (winW - 75);
       const isHeaderHidden = headerNav && headerNav.classList.contains('nav-hidden');
-      const headerH = headerNav ? headerNav.offsetHeight : (winW < 768 ? 70 : 80);
+      const headerH = headerNav ? headerNav.offsetHeight : (isMobile ? 70 : 80);
       
-      // Keep pencil right under the header edge (or top: 18px if header is hidden)
-      const waveBaseY = isHeaderHidden ? 20 : (headerH + 4);
-      const waveAmp = 7; // Gentle, subtle wave (±7px) hugging close to the header line
-      const waveFreq = 0.0035;
-      const waveY = waveBaseY + Math.sin(currentY * waveFreq) * waveAmp;
-      const waveAngle = Math.cos(currentY * waveFreq) * 8; // Gentle tilt ±8 deg
+      // Center the wave right under the header border (or near top: 26px when header auto-hides)
+      const waveBaseY = isHeaderHidden ? (isMobile ? 22 : 28) : (headerH + (isMobile ? 8 : 12));
+      const waveAmp = isMobile ? 16 : 22; // Visible, lively wave oscillation (±22px) dipping slightly outside header
+      const waveLength = isMobile ? 150 : 200; // Spatial wavelength in pixels for prominent undulating waves
+      const k = (2 * Math.PI) / waveLength;
+
+      // Pure sinusoidal spatial height function
+      const getWaveY = (x) => waveBaseY + Math.sin(x * k) * waveAmp;
+
+      const waveY = getWaveY(px);
+      const slope = Math.cos(px * k) * waveAmp * k;
+      const waveAngle = Math.atan(slope) * (180 / Math.PI); // Pencil tilts dynamically along wave slope
       const rad = (waveAngle * Math.PI) / 180;
 
+      const halfW = isMobile ? 22 : 26;
+      const halfH = isMobile ? 17 : 20;
+
       if (pencilRider) {
-        pencilRider.style.transform = `translate3d(${(px - 26).toFixed(1)}px, ${(waveY - 18).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
+        pencilRider.style.transform = `translate3d(${(px - halfW).toFixed(1)}px, ${(waveY - halfH).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
       }
 
-      // Calculate exact position of the orange eraser base (bottom-left of pencil)
-      const eraserX = px - 18 * Math.cos(rad) - 12 * Math.sin(rad);
-      const eraserY = waveY - 18 * Math.sin(rad) + 12 * Math.cos(rad);
+      // Calculate exact coordinate of the orange eraser base (bottom-left of pencil)
+      const offX = isMobile ? -17 : -20;
+      const offY = isMobile ? 12 : 14;
+      const rotX = offX * Math.cos(rad) - offY * Math.sin(rad);
+      const rotY = offX * Math.sin(rad) + offY * Math.cos(rad);
+      const eraserX = px + rotX;
+      const eraserY = waveY + rotY;
 
-      // C. Curved Dashed Polyline Trail staying close right behind the pencil along the header
+      // C. Curved Sinusoidal Dashed Polyline Trail trailing cleanly behind the eraser along the wave
       if (dashedPolyline) {
-        const trailPoints = [];
-        const numPoints = 12; // Compact, clean trail length
-        const xStep = Math.max(6, winW * 0.008);
-        for (let i = numPoints; i >= 0; i--) {
-          const ptX = eraserX - (i * xStep);
-          if (ptX < 0) continue;
-          const lagY = currentY - (i * 30);
-          const ptY = (waveBaseY + Math.sin(lagY * waveFreq) * waveAmp) + (eraserY - waveY);
-          trailPoints.push(ptX.toFixed(1) + ',' + ptY.toFixed(1));
+        const offsetToEraser = eraserY - getWaveY(eraserX);
+        const maxTrailLen = isMobile ? 170 : 230;
+        const trailLen = Math.min(Math.max(0, eraserX - 15), maxTrailLen);
+        const numPoints = 26;
+
+        if (trailLen > 6) {
+          const trailPoints = [];
+          for (let i = numPoints; i >= 0; i--) {
+            const ptX = eraserX - (trailLen * (i / numPoints));
+            if (ptX < 0) continue;
+            const ptY = getWaveY(ptX) + offsetToEraser;
+            trailPoints.push(ptX.toFixed(1) + ',' + ptY.toFixed(1));
+          }
+          dashedPolyline.setAttribute('points', trailPoints.join(' '));
+        } else {
+          dashedPolyline.setAttribute('points', '');
         }
-        dashedPolyline.setAttribute('points', trailPoints.join(' '));
       }
 
       if (Math.abs(targetY - currentY) > 0.4) {

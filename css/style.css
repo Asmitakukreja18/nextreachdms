@@ -8794,7 +8794,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   height: 40px !important;
   z-index: 951 !important; /* Behind header */
   pointer-events: none !important;
-  transform-origin: 90% 10% !important;
+  transform-origin: 50% 50% !important;
   will-change: transform;
   filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.3)) !important;
 }
