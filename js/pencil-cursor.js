@@ -103,10 +103,10 @@
     }
 
     function renderLoop() {
-      // Smooth linear interpolation (lerp) for buttery 60/120fps motion on mobile & desktop
+      // Responsive linear interpolation (lerp) for snappy, fluid 60/120fps motion
       const diff = targetY - currentY;
-      if (Math.abs(diff) > 0.4) {
-        currentY += diff * 0.22;
+      if (Math.abs(diff) > 0.2) {
+        currentY += diff * 0.45;
       } else {
         currentY = targetY;
       }
@@ -122,11 +122,10 @@
         progressBar.style.opacity = scrollPct > 0.3 ? '1' : '0';
       }
 
-      // Emerge Factor: In the starting scroll (0 to ~60px), smoothly transition from being tucked
-      // inside/behind the header to fully emerged and waving forward ("starting mai isse thoda andar karo like header ke matlab header ke andar chupao dfir vo aage badte aise")
+      // Emerge Factor: Snappy, smooth transition from tucked inside header to emerged
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
       const isMobile = winW < 768;
-      const emergeDistance = isMobile ? 45 : 60;
+      const emergeDistance = isMobile ? 22 : 30;
       const emergeFactor = Math.min(1, Math.max(0, currentY / emergeDistance));
 
       // B. Floating Sinusoidal Wave Pencil Motion & Dashed Trail
@@ -171,7 +170,7 @@
 
       // C. Curved Sinusoidal Dashed Polyline Trail trailing cleanly behind the eraser along the wave
       if (dashedPolyline) {
-        if (emergeFactor < 0.15) {
+        if (emergeFactor < 0.1) {
           dashedPolyline.setAttribute('points', '');
         } else {
           const offsetToEraser = eraserY - getWaveY(eraserX);
@@ -194,7 +193,7 @@
         }
       }
 
-      if (Math.abs(targetY - currentY) > 0.4) {
+      if (Math.abs(targetY - currentY) > 0.2) {
         requestAnimationFrame(renderLoop);
       } else {
         isTicking = false;
