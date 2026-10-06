@@ -103,10 +103,10 @@
     }
 
     function renderLoop() {
-      // Fast, ultra-responsive linear interpolation for instant real-time scroll tracking
+      // Balanced, natural linear interpolation for smooth, responsive scroll tracking
       const diff = targetY - currentY;
-      if (Math.abs(diff) > 0.1) {
-        currentY += diff * 0.85;
+      if (Math.abs(diff) > 0.25) {
+        currentY += diff * 0.35;
       } else {
         currentY = targetY;
       }
@@ -122,10 +122,10 @@
         progressBar.style.opacity = scrollPct > 0.3 ? '1' : '0';
       }
 
-      // Emerge Factor: Instantaneous, crisp transition right on scroll
+      // Emerge Factor: Smooth, natural transition right on scroll
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
       const isMobile = winW < 768;
-      const emergeDistance = isMobile ? 12 : 16;
+      const emergeDistance = isMobile ? 26 : 34;
       const emergeFactor = Math.min(1, Math.max(0, currentY / emergeDistance));
 
       // B. Floating Sinusoidal Wave Pencil Motion & Dashed Trail
@@ -140,17 +140,15 @@
       const waveBaseY = normalBaseY + tuckOffset;
 
       const waveAmp = (isMobile ? 14 : 18) * emergeFactor; // Dynamic wave oscillation activates as pencil emerges
-      const waveLength = isMobile ? 85 : 110; // Shorter wavelength for faster, lively ripples ("fast wave ho thoda")
+      const waveLength = isMobile ? 130 : 165; // Balanced, natural sinusoidal wavelength
       const k = (2 * Math.PI) / waveLength;
-      // Dynamic scroll phase so wave undulates briskly and noticeably as user scrolls
-      const wavePhase = currentY * 0.016;
 
-      // Pure sinusoidal spatial height function with faster dynamic wave ripples
-      const getWaveY = (x) => waveBaseY + Math.sin(x * k + wavePhase) * waveAmp;
+      // Pure sinusoidal spatial height function (natural graceful waves)
+      const getWaveY = (x) => waveBaseY + Math.sin(x * k) * waveAmp;
 
       const waveY = getWaveY(px);
-      const slope = Math.cos(px * k + wavePhase) * waveAmp * k;
-      const waveAngle = Math.atan(slope) * (180 / Math.PI); // Pencil tilts dynamically along wave slope
+      const slope = Math.cos(px * k) * waveAmp * k;
+      const waveAngle = Math.atan(slope) * (180 / Math.PI); // Pencil tilts gracefully along wave slope
       const rad = (waveAngle * Math.PI) / 180;
 
       const halfW = isMobile ? 22 : 26;
@@ -195,7 +193,7 @@
         }
       }
 
-      if (Math.abs(targetY - currentY) > 0.1) {
+      if (Math.abs(targetY - currentY) > 0.25) {
         requestAnimationFrame(renderLoop);
       } else {
         isTicking = false;
