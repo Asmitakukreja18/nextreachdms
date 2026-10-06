@@ -8733,19 +8733,14 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   left: 0 !important;
   width: 100% !important;
   height: 4px !important;
-  background: rgba(26, 29, 32, 0.14) !important;
+  background: rgba(26, 29, 32, 0.12) !important;
   border-bottom: 1.5px solid rgba(26, 29, 32, 0.22) !important;
   z-index: 9999999 !important;
   pointer-events: none !important;
   overflow: visible !important;
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
-}
-
-.scroll-progress-track.track-visible {
   transform: translateY(0) !important;
   opacity: 1 !important;
+  transition: opacity 0.25s ease !important;
 }
 
 .scroll-progress-fill {
@@ -8760,18 +8755,18 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 /* Trailing sketch marks / dots behind the pencil */
 .scroll-pencil-trail-dots {
   position: absolute !important;
-  right: 22px !important;
+  right: 36px !important;
   top: 7px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 4px !important;
+  gap: 4.5px !important;
   pointer-events: none !important;
 }
 
 .scroll-pencil-trail-dots span {
   display: inline-block !important;
-  width: 3.5px !important;
-  height: 3.5px !important;
+  width: 4px !important;
+  height: 4px !important;
   border-radius: 50% !important;
   background: #17110F !important;
   will-change: transform, opacity !important;
@@ -8786,13 +8781,13 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 .scroll-pencil-rider {
   position: absolute !important;
   right: -3px !important;
-  top: 4px !important;
-  width: 36px !important;
-  height: 28px !important;
+  top: 3px !important;
+  width: 52px !important;
+  height: 40px !important;
   pointer-events: none !important;
   transform-origin: 90% 10% !important;
   will-change: transform;
-  filter: drop-shadow(1px 3px 5px rgba(23, 17, 15, 0.3)) !important;
+  filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.32)) !important;
 }
 
 .rider-pencil-img {
@@ -8816,8 +8811,8 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
 .scroll-track-arrow-svg {
   display: block !important;
-  width: 10px !important;
-  height: 12px !important;
+  width: 11px !important;
+  height: 13px !important;
 }
 
 /* Responsive mobile & tablet layout enhancements */
@@ -8827,17 +8822,17 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   }
 
   .scroll-pencil-rider {
-    width: 28px !important;
-    height: 22px !important;
+    width: 44px !important;
+    height: 34px !important;
     right: -2px !important;
-    top: 4px !important;
+    top: 3px !important;
     transform-origin: 90% 10% !important;
   }
 
   .scroll-pencil-trail-dots {
-    right: 18px !important;
+    right: 28px !important;
     top: 6px !important;
-    gap: 3px !important;
+    gap: 3.5px !important;
   }
 }
 

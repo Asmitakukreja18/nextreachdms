@@ -58,13 +58,11 @@
     const trailDots = document.getElementById('scrollPencilTrailDots');
     const headerNav = document.getElementById('mainNavbar') || document.querySelector('.header-nav');
 
-    // 2. Physics & Sinusoidal Wave Dynamics ("like in wave")
-    let scrollVelocity = 0;
-    let wavePhase = 0;
-    let isScrolling = false;
-    let scrollStopTimer = null;
-    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
-    let isWaveAnimationRunning = false;
+    // 2. Physics & Direct Scroll-Linked Sinusoidal Dynamics (matching adwali.com)
+    let currentY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+    let targetY = currentY;
+    let lastY = currentY;
+    let isTicking = false;
 
     function getScrollOffset() {
       return window.pageYOffset || document.documentElement.scrollTop || window.scrollY || document.body.scrollTop || 0;
@@ -81,9 +79,39 @@
     }
 
     function updateProgress() {
-      const currentY = getScrollOffset();
-      const deltaY = currentY - lastScrollY;
-      const absDy = Math.abs(deltaY);
+      targetY = getScrollOffset();
+
+      // Ensure progress track is always visible once user interacts or scrolls
+      if (progressTrack && !progressTrack.classList.contains('track-visible')) {
+        progressTrack.classList.add('track-visible');
+      }
+
+      // Header show/hide behavior (like adwali.com):
+      // Hide header when scrolling down past 120px; restore when scrolling up
+      const dy = targetY - lastY;
+      if (headerNav) {
+        if (targetY > 120 && dy > 4) {
+          headerNav.classList.add('nav-hidden');
+        } else if (dy < -4 || targetY <= 120) {
+          headerNav.classList.remove('nav-hidden');
+        }
+      }
+      lastY = targetY;
+
+      if (!isTicking) {
+        isTicking = true;
+        requestAnimationFrame(renderLoop);
+      }
+    }
+
+    function renderLoop() {
+      // Smooth linear interpolation (lerp) for buttery 60/120fps motion on mobile & desktop
+      const diff = targetY - currentY;
+      if (Math.abs(diff) > 0.4) {
+        currentY += diff * 0.22;
+      } else {
+        currentY = targetY;
+      }
 
       // A. Calculate scroll progress percentage (0% to 100%)
       const maxScroll = getScrollMax();
@@ -93,89 +121,41 @@
         progressBar.style.setProperty('width', scrollPct + '%', 'important');
       }
 
-      // B. Scroll Direction Logic:
-      // In Hero / Top section (scrollY <= 90px):
-      // -> ALWAYS show Header, hide Pencil Track
-      if (currentY <= 90) {
-        if (headerNav) headerNav.classList.remove('nav-hidden');
-        if (progressTrack) progressTrack.classList.remove('track-visible');
-      } else {
-        // Scrolling DOWN (deltaY > 2):
-        // -> Hide Header, Show Pencil Track
-        if (deltaY > 2) {
-          if (headerNav) headerNav.classList.add('nav-hidden');
-          if (progressTrack) progressTrack.classList.add('track-visible');
-        }
-        // Scrolling UP (deltaY < -4):
-        // -> Show Header, Hide Pencil Track
-        else if (deltaY < -4) {
-          if (headerNav) headerNav.classList.remove('nav-hidden');
-          if (progressTrack) progressTrack.classList.remove('track-visible');
-        }
-      }
-
-      lastScrollY = currentY;
-
-      // C. Wave dynamics impulse for smooth, slow, big fluid pencil waves
-      scrollVelocity = Math.min(1.8, scrollVelocity * 0.80 + Math.min(absDy, 50) * 0.04 + 0.32);
-      isScrolling = true;
-
-      clearTimeout(scrollStopTimer);
-      scrollStopTimer = setTimeout(() => {
-        isScrolling = false;
-      }, 200);
-
-      if (!isWaveAnimationRunning) {
-        isWaveAnimationRunning = true;
-        requestAnimationFrame(renderWaveMotion);
-      }
-    }
-
-    function renderWaveMotion() {
-      if (isScrolling) {
-        wavePhase += 0.07; // Relaxed, slow, elegant wave frequency (was 0.20)
-      } else {
-        scrollVelocity *= 0.91; // Smooth spring dampening back to rest
-        if (scrollVelocity < 0.015) {
-          scrollVelocity = 0;
-          isWaveAnimationRunning = false;
-          if (pencilRider) {
-            pencilRider.style.transform = 'translate3d(0, 0px, 0) rotate(0deg)';
-          }
-          if (trailDots) {
-            trailDots.querySelectorAll('span').forEach(dot => dot.style.transform = 'translate3d(0, 0px, 0)');
-          }
-          return;
-        }
-      }
-
-      // Big, Slow, Downward Sinusoidal Waves ("wave krte hue niche jana hai pencil ko")
-      // waveCycle dips strictly downwards into the page (0 to +25px), never clipping above the top line
-      const waveCycle = (1 - Math.cos(wavePhase)) * 0.5; // Smooth 0 to 1 cycle
-      const waveY = waveCycle * (25 * scrollVelocity); // Sweeps downwards by up to 25px into view
-      const waveAngle = Math.sin(wavePhase) * (20 * scrollVelocity); // Graceful tilt wave ±20 deg
+      // B. Continuous Sinusoidal Wave Dynamics (matching adwali.com):
+      // py sweeps down into view and ang tilts naturally with the wave slope
+      const waveFreq = 0.0052;
+      const waveCycle = (1 - Math.cos(currentY * waveFreq)) * 0.5; // Smooth 0 to 1 cycle
+      const waveY = waveCycle * 22; // Sweeps downwards up to 22px into view
+      const waveAngle = Math.sin(currentY * waveFreq) * 16; // Dynamic tilt ±16 deg matching wave slope
 
       if (pencilRider) {
-        pencilRider.style.transform = `translate3d(0, ${waveY}px, 0) rotate(${waveAngle}deg)`;
+        pencilRider.style.transform = `translate3d(0, ${waveY.toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
       }
 
+      // C. Trailing sketch marks waving in organic unison behind the pencil
       if (trailDots) {
         const dots = trailDots.querySelectorAll('span');
         dots.forEach((dot, idx) => {
-          const dotOffset = (idx + 1) * 0.25;
-          const dotCycle = (1 - Math.cos(wavePhase - dotOffset)) * 0.5;
-          const dotY = dotCycle * (15 * scrollVelocity);
-          dot.style.transform = `translate3d(0, ${dotY}px, 0)`;
+          const lagY = Math.max(0, currentY - (idx + 1) * 32);
+          const dotCycle = (1 - Math.cos(lagY * waveFreq)) * 0.5;
+          const dotY = dotCycle * 14;
+          dot.style.transform = `translate3d(0, ${dotY.toFixed(1)}px, 0)`;
         });
       }
 
-      requestAnimationFrame(renderWaveMotion);
+      if (Math.abs(targetY - currentY) > 0.4) {
+        requestAnimationFrame(renderLoop);
+      } else {
+        isTicking = false;
+      }
     }
 
     // Expose globally so other modules can trigger updates if needed
     window._pencilUpdateProgress = updateProgress;
 
     window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('touchmove', updateProgress, { passive: true });
+    window.addEventListener('touchend', updateProgress, { passive: true });
     window.addEventListener('resize', updateProgress, { passive: true });
 
     // Initial check on page load
