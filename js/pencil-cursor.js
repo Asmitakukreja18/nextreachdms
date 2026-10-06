@@ -140,14 +140,16 @@
       const waveBaseY = normalBaseY + tuckOffset;
 
       const waveAmp = (isMobile ? 14 : 18) * emergeFactor; // Dynamic wave oscillation activates as pencil emerges
-      const waveLength = isMobile ? 150 : 200; // Spatial wavelength in pixels for prominent undulating waves
+      const waveLength = isMobile ? 85 : 110; // Shorter wavelength for faster, lively ripples ("fast wave ho thoda")
       const k = (2 * Math.PI) / waveLength;
+      // Dynamic scroll phase so wave undulates briskly and noticeably as user scrolls
+      const wavePhase = currentY * 0.016;
 
-      // Pure sinusoidal spatial height function
-      const getWaveY = (x) => waveBaseY + Math.sin(x * k) * waveAmp;
+      // Pure sinusoidal spatial height function with faster dynamic wave ripples
+      const getWaveY = (x) => waveBaseY + Math.sin(x * k + wavePhase) * waveAmp;
 
       const waveY = getWaveY(px);
-      const slope = Math.cos(px * k) * waveAmp * k;
+      const slope = Math.cos(px * k + wavePhase) * waveAmp * k;
       const waveAngle = Math.atan(slope) * (180 / Math.PI); // Pencil tilts dynamically along wave slope
       const rad = (waveAngle * Math.PI) / 180;
 
