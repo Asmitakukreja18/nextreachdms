@@ -119,34 +119,37 @@
         progressBar.style.setProperty('width', scrollPct + '%', 'important');
       }
 
-      // B. Floating Sinusoidal Pencil Motion with Big Sweeping Waves (dipping outside/below header)
+      // B. Floating Sinusoidal Pencil Motion hugging right near the header ("header ke pas hi")
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
       const px = 25 + (scrollPct / 100) * (winW - 75);
-      const waveFreq = 0.0022; // Broad sweeping frequency
-      const waveBaseY = winW < 768 ? 130 : 155; // Centered well below the 80px header
-      const waveAmp = winW < 768 ? 52 : 72; // Deep 144px total vertical wave swoop
+      const isHeaderHidden = headerNav && headerNav.classList.contains('nav-hidden');
+      const headerH = headerNav ? headerNav.offsetHeight : (winW < 768 ? 70 : 80);
+      
+      // Keep pencil right under the header edge (or top: 18px if header is hidden)
+      const waveBaseY = isHeaderHidden ? 20 : (headerH + 4);
+      const waveAmp = 7; // Gentle, subtle wave (±7px) hugging close to the header line
+      const waveFreq = 0.0035;
       const waveY = waveBaseY + Math.sin(currentY * waveFreq) * waveAmp;
-      const waveAngle = Math.cos(currentY * waveFreq) * 26; // Dynamic slope tilt matching deep wave
+      const waveAngle = Math.cos(currentY * waveFreq) * 8; // Gentle tilt ±8 deg
       const rad = (waveAngle * Math.PI) / 180;
 
       if (pencilRider) {
-        pencilRider.style.transform = `translate3d(${(px - 26).toFixed(1)}px, ${(waveY - 20).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
+        pencilRider.style.transform = `translate3d(${(px - 26).toFixed(1)}px, ${(waveY - 18).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
       }
 
       // Calculate exact position of the orange eraser base (bottom-left of pencil)
-      // Vector from center to eraser is (-18px, +12px) unrotated
       const eraserX = px - 18 * Math.cos(rad) - 12 * Math.sin(rad);
       const eraserY = waveY - 18 * Math.sin(rad) + 12 * Math.cos(rad);
 
-      // C. Curved Dashed Polyline Trail trailing cleanly behind the eraser
+      // C. Curved Dashed Polyline Trail staying close right behind the pencil along the header
       if (dashedPolyline) {
         const trailPoints = [];
-        const numPoints = 15; // Proportional, neat trail length matching pencil size
-        const xStep = Math.max(7, winW * 0.009);
+        const numPoints = 12; // Compact, clean trail length
+        const xStep = Math.max(6, winW * 0.008);
         for (let i = numPoints; i >= 0; i--) {
           const ptX = eraserX - (i * xStep);
           if (ptX < 0) continue;
-          const lagY = currentY - (i * 44);
+          const lagY = currentY - (i * 30);
           const ptY = (waveBaseY + Math.sin(lagY * waveFreq) * waveAmp) + (eraserY - waveY);
           trailPoints.push(ptX.toFixed(1) + ',' + ptY.toFixed(1));
         }
