@@ -8747,8 +8747,9 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   width: 0%;
   background: #17110F !important; /* Solid black progress line */
   position: relative !important;
-  will-change: width;
+  will-change: width, opacity;
   overflow: visible !important;
+  transition: opacity 0.2s ease;
 }
 
 /* Dynamic black triangle arrow attached to the front/head of the progress line */
@@ -8792,10 +8793,11 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   left: 0 !important;
   width: 52px !important;
   height: 40px !important;
-  z-index: 951 !important; /* Behind header */
+  z-index: 951 !important; /* Behind header (.header-nav is z-index: 1000) */
   pointer-events: none !important;
   transform-origin: 50% 50% !important;
-  will-change: transform;
+  will-change: transform, opacity;
+  opacity: 0;
   filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.3)) !important;
 }
 
