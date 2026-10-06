@@ -103,10 +103,10 @@
     }
 
     function renderLoop() {
-      // Responsive linear interpolation (lerp) for snappy, fluid 60/120fps motion
+      // Fast, ultra-responsive linear interpolation for instant real-time scroll tracking
       const diff = targetY - currentY;
-      if (Math.abs(diff) > 0.2) {
-        currentY += diff * 0.45;
+      if (Math.abs(diff) > 0.1) {
+        currentY += diff * 0.85;
       } else {
         currentY = targetY;
       }
@@ -122,10 +122,10 @@
         progressBar.style.opacity = scrollPct > 0.3 ? '1' : '0';
       }
 
-      // Emerge Factor: Snappy, smooth transition from tucked inside header to emerged
+      // Emerge Factor: Instantaneous, crisp transition right on scroll
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
       const isMobile = winW < 768;
-      const emergeDistance = isMobile ? 22 : 30;
+      const emergeDistance = isMobile ? 12 : 16;
       const emergeFactor = Math.min(1, Math.max(0, currentY / emergeDistance));
 
       // B. Floating Sinusoidal Wave Pencil Motion & Dashed Trail
@@ -193,7 +193,7 @@
         }
       }
 
-      if (Math.abs(targetY - currentY) > 0.2) {
+      if (Math.abs(targetY - currentY) > 0.1) {
         requestAnimationFrame(renderLoop);
       } else {
         isTicking = false;
