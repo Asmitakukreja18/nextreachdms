@@ -17,48 +17,52 @@
     if (window._pencilProgressInitialized) return;
     window._pencilProgressInitialized = true;
 
-    // Clean up any obsolete pencil cursor elements or canvas
-    const oldPencil = document.getElementById('handDrawnPencil');
-    if (oldPencil) oldPencil.remove();
-    const oldCanvas = document.getElementById('pencilTrailCanvas');
-    if (oldCanvas) oldCanvas.remove();
-    const oldCursorStyle = document.getElementById('pencilCursorHideStyle');
-    if (oldCursorStyle) oldCursorStyle.remove();
+    // Clean up obsolete elements if present
+    const oldDots = document.getElementById('scrollPencilTrailDots');
+    if (oldDots) oldDots.remove();
+    const oldFixedArrow = document.querySelector('.scroll-track-arrow');
+    if (oldFixedArrow) oldFixedArrow.remove();
 
-    // 1. Ensure Top Scroll Progress Track exists
+    // 1. Ensure Top Scroll Progress Track exists (Solid line with head arrow)
     let progressTrack = document.getElementById('scrollProgressTrack');
     if (!progressTrack) {
       progressTrack = document.createElement('div');
       progressTrack.id = 'scrollProgressTrack';
       progressTrack.className = 'scroll-progress-track';
       progressTrack.setAttribute('aria-hidden', 'true');
-      progressTrack.innerHTML = `
-        <div class="scroll-progress-fill" id="scrollProgress">
-          <div class="scroll-pencil-trail-dots" id="scrollPencilTrailDots">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress...">
-            <img src="images/chatgpt-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">
-          </div>
-        </div>
-        <div class="scroll-track-arrow">
-          <svg class="scroll-track-arrow-svg" viewBox="0 0 10 12" width="10" height="12">
-            <polygon points="0,0 10,6 0,12" fill="#17110F" />
-          </svg>
-        </div>
-      `;
+      progressTrack.innerHTML = '<div class="scroll-progress-fill" id="scrollProgress"></div>';
       document.body.prepend(progressTrack);
     }
 
+    // 2. Ensure SVG Dashed Curved Trail exists
+    let trailSvg = document.getElementById('pencilTrailSvg');
+    if (!trailSvg) {
+      trailSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      trailSvg.id = 'pencilTrailSvg';
+      trailSvg.setAttribute('class', 'pencil-trail-svg');
+      trailSvg.setAttribute('aria-hidden', 'true');
+      trailSvg.innerHTML = '<polyline class="pencil-dashed-polyline" id="pencilDashedTrail" points=""></polyline>';
+      document.body.prepend(trailSvg);
+    }
+
+    // 3. Ensure Pencil Rider exists and is attached to body for independent free wave motion
+    let pencilRider = document.getElementById('scrollPencilRider');
+    if (!pencilRider) {
+      pencilRider = document.createElement('div');
+      pencilRider.id = 'scrollPencilRider';
+      pencilRider.className = 'scroll-pencil-rider';
+      pencilRider.title = 'Scrolling progress...';
+      pencilRider.innerHTML = '<img src="images/chatgpt-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">';
+      document.body.appendChild(pencilRider);
+    } else if (pencilRider.parentElement && pencilRider.parentElement.id === 'scrollProgress') {
+      document.body.appendChild(pencilRider);
+    }
+
     const progressBar = document.getElementById('scrollProgress');
-    const pencilRider = document.getElementById('scrollPencilRider');
-    const trailDots = document.getElementById('scrollPencilTrailDots');
+    const dashedPolyline = document.getElementById('pencilDashedTrail');
     const headerNav = document.getElementById('mainNavbar') || document.querySelector('.header-nav');
 
-    // 2. Physics & Direct Scroll-Linked Sinusoidal Dynamics (matching adwali.com)
+    // 4. Physics & Direct Scroll-Linked Dynamics (adwali.com style)
     let currentY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
     let targetY = currentY;
     let lastY = currentY;
@@ -81,13 +85,7 @@
     function updateProgress() {
       targetY = getScrollOffset();
 
-      // Ensure progress track is always visible once user interacts or scrolls
-      if (progressTrack && !progressTrack.classList.contains('track-visible')) {
-        progressTrack.classList.add('track-visible');
-      }
-
       // Header show/hide behavior (like adwali.com):
-      // Hide header when scrolling down past 120px; restore when scrolling up
       const dy = targetY - lastY;
       if (headerNav) {
         if (targetY > 120 && dy > 4) {
@@ -113,7 +111,7 @@
         currentY = targetY;
       }
 
-      // A. Calculate scroll progress percentage (0% to 100%)
+      // A. Solid Top Progress Line (0% to 100%) with head arrow
       const maxScroll = getScrollMax();
       const scrollPct = Math.min(100, Math.max(0, (currentY / maxScroll) * 100));
 
@@ -121,26 +119,32 @@
         progressBar.style.setProperty('width', scrollPct + '%', 'important');
       }
 
-      // B. Big, Broad Sinusoidal Waves (matching adwali.com):
-      // Wavelength is long and sweeping (~2600px of scroll per cycle) with deep 34px downward curve
-      const waveFreq = 0.0024;
-      const waveCycle = (1 - Math.cos(currentY * waveFreq)) * 0.5; // Smooth 0 to 1 cycle
-      const waveY = waveCycle * 34; // Big, sweeping curve dipping down up to 34px into view
-      const waveAngle = Math.sin(currentY * waveFreq) * 18; // Dynamic tilt ±18 deg matching wave slope
+      // B. Floating Sinusoidal Pencil Motion (adwali.com / Image 2 style)
+      const winW = window.innerWidth || document.documentElement.clientWidth || 1;
+      const px = 25 + (scrollPct / 100) * (winW - 75);
+      const waveFreq = 0.0032;
+      const waveBaseY = winW < 768 ? 85 : 95;
+      const waveAmp = winW < 768 ? 32 : 42;
+      const waveY = waveBaseY + Math.sin(currentY * waveFreq) * waveAmp;
+      const waveAngle = Math.cos(currentY * waveFreq) * 20;
 
       if (pencilRider) {
-        pencilRider.style.transform = `translate3d(0, ${waveY.toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
+        pencilRider.style.transform = `translate3d(${(px - 28).toFixed(1)}px, ${(waveY - 18).toFixed(1)}px, 0) rotate(${waveAngle.toFixed(1)}deg)`;
       }
 
-      // C. Trailing sketch marks waving in organic unison behind the pencil
-      if (trailDots) {
-        const dots = trailDots.querySelectorAll('span');
-        dots.forEach((dot, idx) => {
-          const lagY = Math.max(0, currentY - (idx + 1) * 45);
-          const dotCycle = (1 - Math.cos(lagY * waveFreq)) * 0.5;
-          const dotY = dotCycle * 22;
-          dot.style.transform = `translate3d(0, ${dotY.toFixed(1)}px, 0)`;
-        });
+      // C. Curved Dashed Polyline Trail trailing behind the pencil (Image 2)
+      if (dashedPolyline) {
+        const trailPoints = [];
+        const numPoints = 18;
+        const xStep = Math.max(7, winW * 0.009);
+        for (let i = numPoints; i >= 0; i--) {
+          const ptX = px - (i * xStep);
+          if (ptX < 0) continue;
+          const lagY = currentY - (i * 38);
+          const ptY = waveBaseY + Math.sin(lagY * waveFreq) * waveAmp;
+          trailPoints.push(ptX.toFixed(1) + ',' + ptY.toFixed(1));
+        }
+        dashedPolyline.setAttribute('points', trailPoints.join(' '));
       }
 
       if (Math.abs(targetY - currentY) > 0.4) {

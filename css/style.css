@@ -8732,62 +8732,71 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 3.5px !important;
-  background: repeating-linear-gradient(90deg, rgba(74, 66, 61, 0.18) 0px, rgba(74, 66, 61, 0.18) 6px, transparent 6px, transparent 12px) !important;
+  height: 3px !important;
+  background: rgba(23, 17, 15, 0.08) !important;
   border-bottom: none !important;
-  z-index: 950 !important; /* Behind header (.header-nav is z-index: 1000) */
+  z-index: 1002 !important; /* Top edge progress line */
   pointer-events: none !important;
   overflow: visible !important;
   transform: translateY(0) !important;
   opacity: 1 !important;
-  transition: opacity 0.25s ease !important;
 }
 
 .scroll-progress-fill {
   height: 100% !important;
   width: 0%;
-  background: repeating-linear-gradient(90deg, #17110F 0px, #17110F 8px, transparent 8px, transparent 14px) !important;
+  background: #17110F !important; /* Solid black progress line */
   position: relative !important;
   will-change: width;
   overflow: visible !important;
 }
 
-/* Trailing sketch marks / dots behind the pencil */
-.scroll-pencil-trail-dots {
+/* Dynamic black triangle arrow attached to the front/head of the progress line */
+.scroll-progress-fill::after {
+  content: "" !important;
   position: absolute !important;
-  right: 36px !important;
-  top: 7px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 4.5px !important;
+  right: -13px !important;
+  top: -5px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 13px solid #17110F !important;
+  border-top: 6.5px solid transparent !important;
+  border-bottom: 6.5px solid transparent !important;
+  display: block !important;
+}
+
+/* Curved dashed trail line behind the flying pencil (Image 2) */
+.pencil-trail-svg {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 950 !important; /* Behind header (.header-nav is z-index: 1000) */
   pointer-events: none !important;
+  overflow: visible !important;
 }
 
-.scroll-pencil-trail-dots span {
-  display: inline-block !important;
-  width: 4px !important;
-  height: 4px !important;
-  border-radius: 50% !important;
-  background: #17110F !important;
-  will-change: transform, opacity !important;
+.pencil-dashed-polyline {
+  fill: none !important;
+  stroke: rgba(74, 66, 61, 0.45) !important;
+  stroke-width: 2.5 !important;
+  stroke-dasharray: 6 8 !important; /* Dashed sketch curve */
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
 }
 
-.scroll-pencil-trail-dots span:nth-child(1) { opacity: 0.25 !important; transform: scale(0.65) !important; }
-.scroll-pencil-trail-dots span:nth-child(2) { opacity: 0.45 !important; transform: scale(0.8) !important; }
-.scroll-pencil-trail-dots span:nth-child(3) { opacity: 0.7 !important; transform: scale(1.0) !important; }
-.scroll-pencil-trail-dots span:nth-child(4) { opacity: 0.9 !important; transform: scale(1.2) !important; }
-
-/* Pencil hangs below the top line with its tip touching the line with visual gap */
+/* Floating sinusoidal pencil rider */
 .scroll-pencil-rider {
-  position: absolute !important;
-  right: -3px !important;
-  top: 3px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 52px !important;
   height: 40px !important;
+  z-index: 951 !important; /* Behind header */
   pointer-events: none !important;
   transform-origin: 90% 10% !important;
   will-change: transform;
-  filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.32)) !important;
+  filter: drop-shadow(1px 3px 6px rgba(23, 17, 15, 0.3)) !important;
 }
 
 .rider-pencil-img {
@@ -8799,40 +8808,15 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   user-select: none !important;
 }
 
-.scroll-track-arrow {
-  position: absolute !important;
-  right: 0 !important;
-  top: -4px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-}
-
-.scroll-track-arrow-svg {
-  display: block !important;
-  width: 11px !important;
-  height: 13px !important;
-}
-
 /* Responsive mobile & tablet layout enhancements */
 @media (max-width: 991px) {
   .scroll-progress-track {
-    height: 3.5px !important;
+    height: 3px !important;
   }
 
   .scroll-pencil-rider {
     width: 44px !important;
     height: 34px !important;
-    right: -2px !important;
-    top: 3px !important;
-    transform-origin: 90% 10% !important;
-  }
-
-  .scroll-pencil-trail-dots {
-    right: 28px !important;
-    top: 6px !important;
-    gap: 3.5px !important;
   }
 }
 

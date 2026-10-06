@@ -365,22 +365,16 @@
   </script>
 
   <!-- ==========================================================================
-       2. TOP SCROLL PROGRESS TRACK WITH WAVING PENCIL RIDER & BLACK ARROW
+       2. TOP SCROLL PROGRESS TRACK WITH BLACK ARROW & WAVING PENCIL WITH DASHED TRAIL
        ========================================================================== -->
   <div class="scroll-progress-track" id="scrollProgressTrack" aria-hidden="true">
-    <div class="scroll-progress-fill" id="scrollProgress">
-      <div class="scroll-pencil-trail-dots" id="scrollPencilTrailDots">
-        <span></span><span></span><span></span><span></span>
-      </div>
-      <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress...">
-        <img src="images/chatgpt-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">
-      </div>
-    </div>
-    <div class="scroll-track-arrow">
-      <svg class="scroll-track-arrow-svg" viewBox="0 0 10 12" width="10" height="12">
-        <polygon points="0,0 10,6 0,12" fill="#17110F" />
-      </svg>
-    </div>
+    <div class="scroll-progress-fill" id="scrollProgress"></div>
+  </div>
+  <svg class="pencil-trail-svg" id="pencilTrailSvg" aria-hidden="true">
+    <polyline class="pencil-dashed-polyline" id="pencilDashedTrail" points=""></polyline>
+  </svg>
+  <div class="scroll-pencil-rider" id="scrollPencilRider" title="Scrolling progress...">
+    <img src="images/chatgpt-pencil.png" alt="Waving Pencil Rider" class="rider-pencil-img">
   </div>
 
 
