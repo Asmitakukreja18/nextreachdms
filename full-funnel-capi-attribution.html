@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Funnel CAPI Attribution │ NextReach DMS</title>
+  <meta name="description" content="Server-Side Meta CAPI & Google Enhanced Conversions. Recover 35%+ lost ad attribution data, beat iOS tracking limits, and scale ad accounts profitably.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=130.0">
+  <style>
+    .page-hero {
+      padding: clamp(48px, 6vw, 84px) 20px 48px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, rgba(255, 107, 0, 0.08) 0%, rgba(0, 45, 98, 0.02) 60%, transparent 100%);
+    }
+    .metric-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 40px 0 20px;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-card-top);
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--nr-orange-main);
+    }
+    .metric-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-weight: 800;
+      color: var(--nr-navy-deep);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .metric-val span {
+      color: var(--nr-orange-main);
+    }
+    .metric-lbl {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .section-block {
+      padding: 60px 0;
+    }
+    .tech-stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .tech-box {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    .tech-box:hover {
+      border-color: var(--nr-orange-main);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+    }
+    .tech-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .tech-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--nr-navy-deep);
+      margin-bottom: 10px;
+    }
+    .tech-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .arch-card {
+      background: #001A3D;
+      border-radius: var(--radius-xl);
+      padding: clamp(32px, 4vw, 56px);
+      color: #fff;
+      margin-top: 36px;
+    }
+    .arch-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+      position: relative;
+    }
+    .arch-step {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 24px 18px;
+    }
+    .arch-badge {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--nr-orange-main);
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+    }
+    .arch-step-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .arch-step-desc {
+      font-size: 0.82rem;
+      color: #94A3B8;
+      line-height: 1.55;
+    }
+
+    .faq-accordion {
+      max-width: 860px;
+      margin: 36px auto 0;
+    }
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .faq-question {
+      padding: 18px 22px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--nr-navy-deep);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-question:hover {
+      color: var(--nr-orange-main);
+    }
+    .faq-answer {
+      padding: 0 22px 18px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+    .faq-toggle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      transition: transform 0.2s ease;
+      color: var(--nr-orange-main);
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #001A3D 0%, #002D62 100%);
+      border-radius: var(--radius-xl);
+      padding: 56px 40px;
+      color: #fff;
+      text-align: center;
+      margin: 60px 0 80px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(255, 107, 0, 0.3);
+    }
+
+    @media (max-width: 991px) {
+      .metric-grid-4, .tech-stack-grid, .arch-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .metric-grid-4, .tech-stack-grid, .arch-flow {
+        grid-template-columns: 1fr;
+      }
+      .cta-banner {
+        padding: 36px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainNavbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-link">
+        <img src="images/logo.png" alt="Next Reach DMS Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+
+        <!-- SERVICES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="services.html" class="dropdown-trigger active">
+            Services <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-services">
+            <div class="container mega-menu-grid">
+              <div class="mega-column">
+                <div class="mega-col-title">GROWTH SOLUTIONS</div>
+                <a href="performance-paid-media.html"><span>🎯</span> Performance Paid Media &amp; PPC</a>
+                <a href="creative-strategy-ugc.html"><span>🎬</span> Creative Strategy &amp; UGC</a>
+                <a href="b2b-outbound-lead-gen.html"><span>💼</span> B2B Outbound Lead Gen</a>
+                <a href="conversion-rate-optimization.html"><span>⚡</span> Conversion Rate Optimization</a>
+                <a href="full-funnel-capi-attribution.html"><span>🔄</span> Full-Funnel CAPI Attribution</a>
+                <a href="whatsapp-ai-retargeting.html"><span>💬</span> WhatsApp AI Retargeting</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">PAID MEDIA PLATFORMS</div>
+                <a href="performance-paid-media.html"><span>🔍</span> Google Ads &amp; High-Intent PPC</a>
+                <a href="performance-paid-media.html"><span>📱</span> Meta (FB &amp; IG) Advantage+</a>
+                <a href="performance-paid-media.html"><span>👔</span> LinkedIn B2B Ad Funnels</a>
+                <a href="performance-paid-media.html"><span>🎥</span> YouTube Direct-Response</a>
+                <a href="growth-engine.html"><span>📈</span> Scaled Revenue Engine</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">WHATSAPP &amp; AI</div>
+                <a href="whatsapp-business-api.html"><span>💬</span> Official Meta WhatsApp API</a>
+                <a href="whatsapp-ai-retargeting.html"><span>🤖</span> WhatsApp AI Automation</a>
+                <a href="rcs-messaging-services.html"><span>📱</span> RCS Interactive Messaging</a>
+                <a href="bulk-sms.html"><span>🚀</span> Omnichannel Campaigns</a>
+              </div>
+              <div class="mega-column">
+                <div class="mega-col-title">COMPANY &amp; FRAMEWORK</div>
+                <a href="growth-engine.html"><span>⚙️</span> Growth Engine Architecture</a>
+                <a href="process.html"><span>🧭</span> 4-Stage Scaling Framework</a>
+                <a href="case-studies.html"><span>🏆</span> Case Studies &amp; Proof</a>
+                <a href="about.html"><span>🏢</span> About NextReach DMS</a>
+                <a href="audit.html"><span>📊</span> 90-Day Free Audit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES MEGA DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="about.html#industries" class="dropdown-trigger">
+            Industries <span class="chevron">⌄</span>
+          </a>
+          <div class="mega-menu mega-menu-industries">
+            <div class="container mega-menu-grid mega-menu-grid-4">
+              <div class="mega-column">
+                <a href="case-studies.html?cat=ecommerce"><span>🛒</span> E-commerce</a>
+                <a href="case-studies.html?cat=realestate"><span>🏰</span> Real Estate</a>
+                <a href="case-studies.html?cat=healthcare"><span>🩺</span> Healthcare</a>
+                <a href="case-studies.html?cat=education"><span>🎓</span> Education</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=saas"><span>💻</span> SaaS &amp; Tech</a>
+                <a href="case-studies.html?cat=hospitality"><span>🏨</span> Hospitality</a>
+                <a href="case-studies.html?cat=beauty"><span>💄</span> Fashion &amp; Beauty</a>
+                <a href="case-studies.html?cat=automotive"><span>🚗</span> Automotive</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=fintech"><span>💳</span> Fintech</a>
+                <a href="case-studies.html?cat=fnb"><span>🍽️</span> Food &amp; Beverage</a>
+                <a href="case-studies.html?cat=d2c"><span>📦</span> D2C Brands</a>
+                <a href="case-studies.html?cat=b2b"><span>💼</span> B2B Enterprises</a>
+              </div>
+              <div class="mega-column">
+                <a href="case-studies.html?cat=startups"><span>🚀</span> Startups</a>
+                <a href="case-studies.html?cat=jewellery"><span>💎</span> Jewellery</a>
+                <a href="case-studies.html?cat=travel"><span>✈️</span> Travel &amp; Tourism</a>
+                <a href="case-studies.html" class="mega-link-accent"><span>🌟</span> All industries →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+917499181193" class="nav-phone-btn" title="Call NextReach Growth Director: +91 74991 81193">
+          <span>📞</span>
+        </a>
+        <a href="audit.html" class="nav-cta-btn">
+          <span>Get Free Audit →</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px;">
+        <span class="section-tag" style="background: rgba(255, 107, 0, 0.12); color: var(--nr-orange-main); font-weight: 800; padding: 6px 18px; border-radius: 999px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.08em; border: 1px dashed rgba(255,107,0,0.4);">
+          Growth Solutions Pillar 05
+        </span>
+        <span style="background: #FFFDF9; border: 2px solid #1A1D20; color: #1A1D20; font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 30px; box-shadow: 2.5px 2.5px 0px #FF6B00;">
+          🔄 Server-Side CAPI • Multi-Touch Attribution • Zero Blindspots
+        </span>
+      </div>
+
+      <h1 style="font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 800; color: var(--nr-navy-deep); line-height: 1.15; max-width: 980px; margin: 0 auto 20px;">
+        Full-Funnel CAPI Attribution <br>
+        <span style="background: rgba(255, 107, 0, 0.15); color: #FF6B00; border: 1.5px dashed #FF6B00; padding: 2px 14px; border-radius: 8px; display: inline-block;">Recover 35%+ Lost Ad Revenue Data</span>
+      </h1>
+
+      <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.65; max-width: 760px; margin: 0 auto 30px;">
+        Browser pixels and third-party cookies are broken. If ad platforms can't see who bought, their machine learning targets the wrong people. We build enterprise server-side Conversions API (CAPI) infrastructure, Cloudflare edge gateways, and multi-touch attribution models that train ad algorithms on real revenue.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="audit.html" class="nav-cta-btn" style="padding: 14px 28px; font-size: 1rem;">
+          Claim Free Pixel &amp; CAPI Audit →
+        </a>
+        <a href="contact.html" style="background: #ffffff; border: 2px solid var(--nr-navy-main); color: var(--nr-navy-main); font-weight: 700; padding: 14px 28px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition-smooth);">
+          Talk to Tracking Engineer
+        </a>
+      </div>
+
+      <!-- KEY METRICS -->
+      <div class="metric-grid-4">
+        <div class="metric-card">
+          <div class="metric-val"><span>9.2/10</span></div>
+          <div class="metric-lbl">Event Match Quality (EMQ)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">+<span>34%</span></div>
+          <div class="metric-lbl">More Tracked Purchases in Meta</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val"><span>100%</span></div>
+          <div class="metric-lbl">Immunity to Ad-Blockers &amp; Safari ITP</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">-<span>28%</span></div>
+          <div class="metric-lbl">Blended CAC via Better Algorithm Training</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE DIAGRAM -->
+  <section class="section-block">
+    <div class="container">
+      <div class="arch-card">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <span class="section-tag" style="background: rgba(255, 107, 0, 0.2); color: #FF6B00; font-weight: 800; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; text-transform: uppercase;">
+            Enterprise First-Party Pipeline
+          </span>
+          <h3 style="font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-top: 10px;">
+            How Server-Side CAPI Restores Total Attribution
+          </h3>
+          <p style="color: #94A3B8; font-size: 0.95rem; margin-top: 8px;">
+            Bypassing browser limitations with secure, encrypted server-to-server data transmission.
+          </p>
+        </div>
+
+        <div class="arch-flow">
+          <div class="arch-step">
+            <div class="arch-badge">01. USER ACTION</div>
+            <div class="arch-step-title">Browser/App Interaction</div>
+            <div class="arch-step-desc">User views product, adds to cart, or completes purchase on mobile or desktop.</div>
+          </div>
+          <div class="arch-step">
+            <div class="arch-badge">02. FIRST-PARTY EDGE</div>
+            <div class="arch-step-title">Cloudflare Worker Gateway</div>
+            <div class="arch-step-desc">Data passes directly to your first-party domain subdomain (e.g. data.yourbrand.com). Ad blockers cannot intercept.</div>
+          </div>
+          <div class="arch-step">
+            <div class="arch-badge">03. SHA-256 HASHING</div>
+            <div class="arch-step-title">Data Enrichment &amp; Deduplication</div>
+            <div class="arch-step-desc">Hashed phone, email, IP, and event_id ensure flawless matching with zero double-counting.</div>
+          </div>
+          <div class="arch-step">
+            <div class="arch-badge">04. ALGORITHM FEED</div>
+            <div class="arch-step-title">Direct CAPI Server Push</div>
+            <div class="arch-step-desc">Meta Graph API &amp; Google Enhanced Conversions receive pristine signals, giving AI bidding supreme confidence.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 CAPABILITIES OF ATTRIBUTION -->
+  <section class="section-block" style="background: #ffffff; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 30px;">
+        <span class="section-tag" style="background: rgba(255, 107, 0, 0.12); color: var(--nr-orange-main); font-weight: 800; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; text-transform: uppercase;">
+          Full-Funnel Capabilities
+        </span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--nr-navy-deep); font-weight: 800; margin-top: 10px;">
+          What We Build For Your Data Stack
+        </h2>
+      </div>
+
+      <div class="tech-stack-grid">
+        <div class="tech-box">
+          <span class="tech-icon">⚡</span>
+          <h3 class="tech-title">Server-Side Meta CAPI Gateway</h3>
+          <p class="tech-desc">Direct HTTP POST server-to-server integration sending ViewContent, AddToCart, InitiateCheckout, and Purchase events with 9.0+ EMQ ratings.</p>
+        </div>
+
+        <div class="tech-box">
+          <span class="tech-icon">🔍</span>
+          <h3 class="tech-title">Google Ads Enhanced Conversions</h3>
+          <p class="tech-desc">Pass encrypted first-party transaction data directly to Google Ads Smart Bidding, ensuring high-value buyers are accurately credited across Search &amp; YouTube.</p>
+        </div>
+
+        <div class="tech-box">
+          <span class="tech-icon">🛡️</span>
+          <h3 class="tech-title">Real-Time Event Deduplication</h3>
+          <p class="tech-desc">Synchronizing browser pixel and server CAPI events with cryptographic event IDs so ad platforms never inflate metrics with phantom duplicate purchases.</p>
+        </div>
+
+        <div class="tech-box">
+          <span class="tech-icon">📊</span>
+          <h3 class="tech-title">Multi-Touch Attribution Modeling</h3>
+          <p class="tech-desc">Discover the real journey behind conversions. Compare First-Click, Last-Click, Linear, and Data-Driven Shapley models to uncover hidden top-of-funnel winners.</p>
+        </div>
+
+        <div class="tech-box">
+          <span class="tech-icon">🔄</span>
+          <h3 class="tech-title">Offline &amp; CRM Deal Conversion Sync</h3>
+          <p class="tech-desc">Feed WhatsApp closings, manual bank transfers, and B2B pipeline deal signatures back into ad platforms so algorithms prioritize high-ticket contracts.</p>
+        </div>
+
+        <div class="tech-box">
+          <span class="tech-icon">📈</span>
+          <h3 class="tech-title">TripleWhale &amp; Hyros Integration</h3>
+          <p class="tech-desc">Independent third-party attribution dashboards providing unfiltered blended ROAS, new-customer CAC, and lifetime value tracking across every dollar spent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section-block" style="background: #ffffff; border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 30px;">
+        <span class="section-tag" style="background: rgba(0, 45, 98, 0.08); color: var(--nr-navy-main); font-weight: 800; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; text-transform: uppercase;">
+          Clear Answers
+        </span>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--nr-navy-deep); font-weight: 800; margin-top: 10px;">
+          Frequently Asked Questions About CAPI &amp; Attribution
+        </h2>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why isn't standard Shopify/WooCommerce pixel enough anymore?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Default browser integrations get severely degraded by Apple's iOS 14.5+ ATT framework, Safari Intelligent Tracking Prevention (ITP) which wipes cookies in 24 hours, and ad blockers used by 40%+ of internet users. Server-side CAPI bypasses the browser completely.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is Event Match Quality (EMQ) and why does it matter?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            EMQ is Meta's score (from 1 to 10) evaluating how effectively your customer data matches with actual Meta user profiles. Most DIY setups score between 4.0 and 6.0. NextReach DMS engineers setups that reliably hit 8.5 to 9.5, dramatically dropping ad costs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How long does it take to implement server-side tracking?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Our data engineering team configures, tests, and validates server-side CAPI, Google Enhanced Conversions, and event deduplication within 72 to 96 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="container">
+    <div class="cta-banner">
+      <span class="section-tag" style="background: rgba(255, 107, 0, 0.2); color: #FF6B00; border: 1px solid rgba(255, 107, 0, 0.4); font-weight: 800; padding: 6px 16px; border-radius: 999px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: inline-block;">
+        Fix Broken Data Today
+      </span>
+      <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; margin-bottom: 16px; line-height: 1.2;">
+        Get Pristine Data Back into Your Ad Accounts
+      </h2>
+      <p style="font-size: 1.1rem; color: #CBD5E1; max-width: 680px; margin: 0 auto 30px; line-height: 1.6;">
+        Let our tracking engineers perform a comprehensive Event Match Quality audit on your Meta and Google Ad accounts.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="audit.html" class="nav-cta-btn" style="padding: 16px 36px; font-size: 1.05rem;">
+          Get Free CAPI Tracking Audit →
+        </a>
+        <a href="contact.html" style="background: rgba(255, 255, 255, 0.1); border: 1.5px solid rgba(255, 255, 255, 0.3); color: #fff; font-weight: 700; padding: 16px 32px; border-radius: 999px; text-decoration: none; transition: var(--transition-smooth);">
+          Book Data Architecture Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-master" style="background: #001A3D; color: #CBD5E1; padding: 70px 0 30px; border-top: 4px solid #FF6B00;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-brand">
+          <img src="images/logo.png" alt="Next Reach DMS Logo" style="height: 48px; margin-bottom: 16px;">
+          <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; max-width: 320px; margin-bottom: 18px;">
+            Full-service performance growth agency &amp; AI revenue engine partnering with B2B, B2C &amp; D2C brands to build high-ticket pipeline. Har brand ki <span style="color: #FF6B00; font-weight: 800; background: rgba(255,107,0,0.18); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(255,107,0,0.4);">NextReach</span> baat.
+          </p>
+          <div class="footer-nda-pill">
+            <span>🔒 Enterprise NDA Protected</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>growth solutions</h4>
+          <ul>
+            <li><a href="performance-paid-media.html">Performance Paid Media &amp; PPC</a></li>
+            <li><a href="creative-strategy-ugc.html">Creative Strategy &amp; UGC</a></li>
+            <li><a href="b2b-outbound-lead-gen.html">B2B Outbound Lead Gen</a></li>
+            <li><a href="conversion-rate-optimization.html">Conversion Rate Optimization</a></li>
+            <li><a href="full-funnel-capi-attribution.html">Full-Funnel CAPI Attribution</a></li>
+            <li><a href="whatsapp-ai-retargeting.html">WhatsApp AI Retargeting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>company &amp; framework</h4>
+          <ul>
+            <li><a href="growth-engine.html">Growth Engine</a></li>
+            <li><a href="process.html">4-Stage Framework</a></li>
+            <li><a href="case-studies.html">Case Studies &amp; Proof</a></li>
+            <li><a href="about.html">About NextReach DMS</a></li>
+            <li><a href="audit.html">90-Day Free Audit</a></li>
+            <li><a href="contact.html">Contact Growth Directors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>direct connect</h4>
+          <ul class="footer-contact-list">
+            <li><a href="tel:+917499181193">📞 +91 74991 81193</a></li>
+            <li><a href="mailto:contact@nextreachdms.com">✉️ contact@nextreachdms.com</a></li>
+            <li class="footer-address">
+              📍 Sahakar Nagar, Opp. New Cotton Market,<br>
+              Amravati, Maharashtra 444601
+            </li>
+            <li class="response-tag">⏱️ Fast Response: Under 4 Hours</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar" style="border-top: 1px dashed rgba(255,255,255,0.15); margin-top: 50px; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.84rem;">
+        <div class="footer-copy">&copy; 2026 NextReach DMS. All rights reserved.</div>
+        <div class="footer-center-tag">made in Amravati, built to scale.</div>
+        <div class="footer-right-tag">Predictable Revenue &amp; High ROAS.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('mobile-open');
+        const isOpen = navLinks.classList.contains('mobile-open');
+        mobileBtn.innerHTML = isOpen ? '✕' : '☰';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+          navLinks.classList.remove('mobile-open');
+          mobileBtn.innerHTML = '☰';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollBar = document.getElementById('scrollProgress');
+      if (scrollBar) {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollBar.style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>
