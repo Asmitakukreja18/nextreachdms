@@ -103,10 +103,10 @@
     }
 
     function renderLoop() {
-      // Balanced, natural linear interpolation for smooth, responsive scroll tracking
+      // Faster, snappy linear interpolation so pencil keeps up quickly with scroll
       const diff = targetY - currentY;
-      if (Math.abs(diff) > 0.25) {
-        currentY += diff * 0.35;
+      if (Math.abs(diff) > 0.15) {
+        currentY += diff * 0.62;
       } else {
         currentY = targetY;
       }
@@ -122,10 +122,10 @@
         progressBar.style.opacity = scrollPct > 0.3 ? '1' : '0';
       }
 
-      // Emerge Factor: Smooth, natural transition right on scroll
+      // Emerge Factor: Faster, prompt emergence from header on scroll
       const winW = window.innerWidth || document.documentElement.clientWidth || 1;
       const isMobile = winW < 768;
-      const emergeDistance = isMobile ? 26 : 34;
+      const emergeDistance = isMobile ? 16 : 22;
       const emergeFactor = Math.min(1, Math.max(0, currentY / emergeDistance));
 
       // B. Floating Sinusoidal Wave Pencil Motion & Dashed Trail
@@ -140,7 +140,7 @@
       const waveBaseY = normalBaseY + tuckOffset;
 
       const waveAmp = (isMobile ? 14 : 18) * emergeFactor; // Dynamic wave oscillation activates as pencil emerges
-      const waveLength = isMobile ? 130 : 165; // Balanced, natural sinusoidal wavelength
+      const waveLength = isMobile ? 115 : 145; // Active, healthy wave curvature
       const k = (2 * Math.PI) / waveLength;
 
       // Pure sinusoidal spatial height function (natural graceful waves)
@@ -193,7 +193,7 @@
         }
       }
 
-      if (Math.abs(targetY - currentY) > 0.25) {
+      if (Math.abs(targetY - currentY) > 0.15) {
         requestAnimationFrame(renderLoop);
       } else {
         isTicking = false;
